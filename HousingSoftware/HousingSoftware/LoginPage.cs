@@ -28,7 +28,7 @@ namespace HousingSoftware
                 if (username == correctUsername && password == correctPassword)
                 {
                     // redirecting to home page
-                    HomePage homePage = new HomePage();
+                    AdminPage homePage = new AdminPage();
                     homePage.ShowDialog();
                 }
                 else

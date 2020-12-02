@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HousingSoftware
 {
-    public partial class HomePage : Form
+    public partial class AdminPage : Form
     {
-        public HomePage()
+        public AdminPage()
         {
             InitializeComponent();
+        }
+
+        private void AdminPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
