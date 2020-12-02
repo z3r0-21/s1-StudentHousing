@@ -20,3 +20,4 @@ C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftw
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.csproj.CoreCompileInputs.cache
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.exe
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.pdb
+C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.TenantPage.resources
