@@ -42,6 +42,13 @@ namespace HousingSoftware
             return password;
         }
 
+        public void InitializeTenant(int studNum, string fname, string inputedPassword)
+        {
+            studentNumber = studNum;
+            firstname = fname;
+            password = inputedPassword;
+        }
+
 
     }
 }

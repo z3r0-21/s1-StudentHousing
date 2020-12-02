@@ -12,11 +12,14 @@ namespace HousingSoftware
 {
     public partial class LoginPage : Form
     {
-        private string correctUsername = "user";
-        private string correctPassword = "password";
+        private string adminUsername = "admin";
+        private string adminPassword = "admin";
+
+        
         public LoginPage()
         {
             InitializeComponent();
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -25,12 +28,16 @@ namespace HousingSoftware
             string password = tbxPassword.Text;
             if(!String.IsNullOrEmpty(tbxUsername.Text) && !String.IsNullOrEmpty(tbxPassword.Text))
             {
-                if (username == correctUsername && password == correctPassword)
+                if (username == adminUsername && password == adminPassword)
                 {
                     // redirecting to home page
                     AdminPage homePage = new AdminPage();
+                    Hide();
                     homePage.ShowDialog();
+                    Close();
+
                 }
+                
                 else
                 {
                     MessageBox.Show("There is no such profile! Check yours username and password!");

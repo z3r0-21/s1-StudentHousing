@@ -32,6 +32,12 @@ namespace HousingSoftware
             return password;
         }
 
+
+        public void AddTenant(Tenant inputedTenant)
+        {
+            tenants.Add(inputedTenant);
+        }
+
         public void SetTenants(List<Tenant> inputedTenants)
         {
             tenants = inputedTenants;
