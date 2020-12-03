@@ -11,6 +11,7 @@ namespace HousingSoftware
         private int studentNumber;
         private string firstname;
         private string password;
+        private List<Grocery> groceriesTenant = new List<Grocery>();
 
         public void SetStudentNumber(int studNum)
         {
@@ -47,6 +48,36 @@ namespace HousingSoftware
             studentNumber = studNum;
             firstname = fname;
             password = inputedPassword;
+        }
+
+        public void SetGroceriesTenant(List<Grocery> groceries)
+        {
+            groceriesTenant = groceries;
+        }
+
+        public List<Grocery> GetGroceriesTenant()
+        {
+            return groceriesTenant;
+        }
+
+        public void AddGrocery(Grocery grocery)
+        {
+            groceriesTenant.Add(grocery);
+        }
+
+        public void RemoveGrocery(Grocery grocery)
+        {
+            groceriesTenant.Remove(grocery);
+        }
+
+        public void RemoveGroceryAt(int index)
+        {
+            groceriesTenant.RemoveAt(index);
+        }
+
+        public void RemoveAllGroceries()
+        {
+            groceriesTenant.Clear();
         }
 
 
