@@ -722,6 +722,7 @@
             this.btnRemoveTenant.TabIndex = 7;
             this.btnRemoveTenant.Text = "Remove";
             this.btnRemoveTenant.UseVisualStyleBackColor = true;
+            this.btnRemoveTenant.Click += new System.EventHandler(this.btnRemoveTenant_Click);
             // 
             // tbxStudentNumRemove
             // 

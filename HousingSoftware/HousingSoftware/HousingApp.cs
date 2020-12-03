@@ -54,7 +54,45 @@ namespace HousingSoftware
             tbxPasswordRegister.Clear();
         }
 
-        private bool checkForTenantProfile(string username, string password)
+        private int searchTenantProfile(int studentNum)
+        {
+            List<Tenant> allRegisteredTenants = admin.GetTenants();
+            int index = -1;
+            for (int i = 0;i < allRegisteredTenants.Count();i++)
+            {
+                if (allRegisteredTenants[i].GetStudentNumber() == studentNum)
+                {
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        private void btnRemoveTenant_Click(object sender, EventArgs e)
+        {
+            int studentNum = Convert.ToInt32(tbxStudentNumRemove.Text);
+
+            if (!String.IsNullOrEmpty(tbxStudentNumRemove.Text))
+            {
+                
+                if(searchTenantProfile(studentNum) != -1)
+                {
+                    int index = searchTenantProfile(studentNum);
+                    admin.RemoveTenantAt(index);
+                }
+                else
+                {
+                    MessageBox.Show("There is no such profile!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill the textbox!");
+            }
+            tbxStudentNumRemove.Clear();
+        }
+
+        private bool checkForTenantCredentials(string username, string password)
         {
             foreach (Tenant tenant in admin.GetTenants())
             {
@@ -80,7 +118,7 @@ namespace HousingSoftware
                     MenuAdmin.Show();
                     btnLogOutAdmin.Show();
                 }
-                else if(checkForTenantProfile(username, password))
+                else if(checkForTenantCredentials(username, password))
                 {
                     gbxLogin.Hide();
                     MenuTenant.Show();
@@ -112,5 +150,7 @@ namespace HousingSoftware
             btnLogOutTenant.Hide();
             gbxLogin.Show();
         }
+
+
     }
 }

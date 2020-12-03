@@ -38,6 +38,16 @@ namespace HousingSoftware
             tenants.Add(inputedTenant);
         }
 
+        public void RemoveTenant(Tenant inputedTenant)
+        {
+            tenants.Remove(inputedTenant);
+        }
+
+        public void RemoveTenantAt(int index)
+        {
+            tenants.RemoveAt(index);
+        }
+
         public void SetTenants(List<Tenant> inputedTenants)
         {
             tenants = inputedTenants;
