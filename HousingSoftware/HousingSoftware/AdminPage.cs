@@ -12,6 +12,9 @@ namespace HousingSoftware
 {
     public partial class AdminPage : Form
     {
+        private string adminUsername = "admin";
+        private string adminPassword = "admin";
+
         Admin admin;
         Tenant currentTenant;
         public AdminPage()
@@ -23,16 +26,18 @@ namespace HousingSoftware
 
         private void AdminPage_Load(object sender, EventArgs e)
         {
+            MenuAdmin.Hide();
+            MenuTenant.Hide();
 
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            int studentNum = Convert.ToInt32(tbxStudentNum.Text);
-            string fname = tbxFirstName.Text;
-            string password = tbxPassword.Text;
+            int studentNum = Convert.ToInt32(tbxStudentNumRegister.Text);
+            string fname = tbxFirstNameRegister.Text;
+            string password = tbxPasswordRegister.Text;
 
-            if(!String.IsNullOrEmpty(tbxStudentNum.Text) && !String.IsNullOrEmpty(tbxFirstName.Text) && !String.IsNullOrEmpty(tbxPassword.Text))
+            if(!String.IsNullOrEmpty(tbxStudentNumRegister.Text) && !String.IsNullOrEmpty(tbxFirstNameRegister.Text) && !String.IsNullOrEmpty(tbxPasswordRegister.Text))
             {
                 currentTenant = new Tenant();
                 currentTenant.InitializeTenant(studentNum, fname, password);
@@ -45,5 +50,30 @@ namespace HousingSoftware
             }
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = tbxUsernameLogin.Text;
+            string password = tbxPasswordLogin.Text;
+            if (!String.IsNullOrEmpty(tbxUsernameLogin.Text) && !String.IsNullOrEmpty(tbxPasswordLogin.Text))
+            {
+                if (username == adminUsername && password == adminPassword)
+                {
+                    // redirecting to home page
+                    gbxLogin.Hide();
+                    MenuAdmin.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("There is no such profile! Check yours username and password!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill both your username and password to Log in!");
+            }
+            tbxUsernameLogin.Clear();
+            tbxPasswordLogin.Clear();
+        }
     }
 }
