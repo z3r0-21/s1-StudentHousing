@@ -63,7 +63,7 @@ namespace HousingSoftware
         {
             Complaints.Add(complaintText);
             RefreshComplaintsList();
-            //test2
+            
 
         }
 
