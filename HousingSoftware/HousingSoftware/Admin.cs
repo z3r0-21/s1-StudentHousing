@@ -12,6 +12,7 @@ namespace HousingSoftware
         private string password;
         private List<Tenant> tenants = new List<Tenant>();
         private List<Grocery> allGroceries = new List<Grocery>();
+ 
 
         public void SetUsername(string inputedUsername)
         {

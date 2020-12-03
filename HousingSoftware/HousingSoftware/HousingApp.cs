@@ -63,8 +63,6 @@ namespace HousingSoftware
         {
             Complaints.Add(complaintText);
             RefreshComplaintsList();
-            
-
         }
 
         private void MarkComplaintAsDone()
@@ -215,6 +213,11 @@ namespace HousingSoftware
             {
                 MessageBox.Show("Please, make sure to select an item which you would like to be marked as done.");
             }
+        }
+
+        private void timerClock_Tick(object sender, EventArgs e)
+        {
+            lbTime.Text = DateTime.Now.ToString();
         }
     }
 }
