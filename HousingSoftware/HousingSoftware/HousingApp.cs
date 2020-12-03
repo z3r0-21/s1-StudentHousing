@@ -17,6 +17,7 @@ namespace HousingSoftware
 
         Admin admin;
         Tenant currentTenant;
+        Tenant tenant1;
         public HousingApp()
         {
             InitializeComponent();
@@ -30,6 +31,12 @@ namespace HousingSoftware
             btnLogOutAdmin.Hide();
             MenuTenant.Hide();
             btnLogOutTenant.Hide();
+
+            // make a tenant for testing
+            tenant1 = new Tenant();
+            tenant1.InitializeTenant(1, "user", "user");
+            admin.AddTenant(tenant1);
+
         }
 
         private int searchTenantProfile(int studentNum)
