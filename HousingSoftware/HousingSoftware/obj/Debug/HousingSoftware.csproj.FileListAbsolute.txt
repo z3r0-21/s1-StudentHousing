@@ -13,9 +13,9 @@ C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\bin\Debug\HousingSoftw
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\bin\Debug\HousingSoftware.exe
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\bin\Debug\HousingSoftware.pdb
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.csprojAssemblyReference.cache
-C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.AdminPage.resources
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.Properties.Resources.resources
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.csproj.GenerateResource.cache
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.csproj.CoreCompileInputs.cache
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.exe
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.pdb
+C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.HousingApp.resources

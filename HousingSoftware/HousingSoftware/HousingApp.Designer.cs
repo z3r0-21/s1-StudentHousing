@@ -1,6 +1,6 @@
 ﻿namespace HousingSoftware
 {
-    partial class AdminPage
+    partial class HousingApp
     {
         /// <summary>
         /// Required designer variable.
@@ -124,6 +124,8 @@
             this.tbxUsernameLogin = new System.Windows.Forms.TextBox();
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
+            this.btnLogOutAdmin = new System.Windows.Forms.Button();
+            this.btnLogOutTenant = new System.Windows.Forms.Button();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -172,7 +174,7 @@
             this.MenuAdmin.Controls.Add(this.tabComplaintsAdmin);
             this.MenuAdmin.Controls.Add(this.tabManageTenants);
             this.MenuAdmin.Location = new System.Drawing.Point(11, 247);
-            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.MenuAdmin.Name = "MenuAdmin";
             this.MenuAdmin.SelectedIndex = 0;
             this.MenuAdmin.Size = new System.Drawing.Size(687, 466);
@@ -183,10 +185,10 @@
             this.tabHomeAdmin.Controls.Add(this.lbWelcomeMsgAdmin);
             this.tabHomeAdmin.ImageKey = "(none)";
             this.tabHomeAdmin.Location = new System.Drawing.Point(4, 22);
-            this.tabHomeAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabHomeAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.tabHomeAdmin.Name = "tabHomeAdmin";
-            this.tabHomeAdmin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabHomeAdmin.Size = new System.Drawing.Size(717, 521);
+            this.tabHomeAdmin.Padding = new System.Windows.Forms.Padding(2);
+            this.tabHomeAdmin.Size = new System.Drawing.Size(679, 440);
             this.tabHomeAdmin.TabIndex = 0;
             this.tabHomeAdmin.Text = "Home";
             this.tabHomeAdmin.UseVisualStyleBackColor = true;
@@ -207,10 +209,10 @@
             this.tabGroceriesAdmin.Controls.Add(this.gbxAddGrocery);
             this.tabGroceriesAdmin.Controls.Add(this.gbxGroceriesAdmin);
             this.tabGroceriesAdmin.Location = new System.Drawing.Point(4, 22);
-            this.tabGroceriesAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabGroceriesAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.tabGroceriesAdmin.Name = "tabGroceriesAdmin";
-            this.tabGroceriesAdmin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabGroceriesAdmin.Size = new System.Drawing.Size(679, 422);
+            this.tabGroceriesAdmin.Padding = new System.Windows.Forms.Padding(2);
+            this.tabGroceriesAdmin.Size = new System.Drawing.Size(679, 440);
             this.tabGroceriesAdmin.TabIndex = 1;
             this.tabGroceriesAdmin.Text = "Groceries";
             this.tabGroceriesAdmin.UseVisualStyleBackColor = true;
@@ -224,9 +226,9 @@
             this.gbxPayListGroceries.Controls.Add(this.btnShowToPayList);
             this.gbxPayListGroceries.Controls.Add(this.lbStudNumUnpaidItems);
             this.gbxPayListGroceries.Location = new System.Drawing.Point(313, 13);
-            this.gbxPayListGroceries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxPayListGroceries.Margin = new System.Windows.Forms.Padding(2);
             this.gbxPayListGroceries.Name = "gbxPayListGroceries";
-            this.gbxPayListGroceries.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxPayListGroceries.Padding = new System.Windows.Forms.Padding(2);
             this.gbxPayListGroceries.Size = new System.Drawing.Size(343, 398);
             this.gbxPayListGroceries.TabIndex = 4;
             this.gbxPayListGroceries.TabStop = false;
@@ -235,7 +237,7 @@
             // btnMarkAllAsPaid
             // 
             this.btnMarkAllAsPaid.Location = new System.Drawing.Point(201, 346);
-            this.btnMarkAllAsPaid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMarkAllAsPaid.Margin = new System.Windows.Forms.Padding(2);
             this.btnMarkAllAsPaid.Name = "btnMarkAllAsPaid";
             this.btnMarkAllAsPaid.Size = new System.Drawing.Size(113, 26);
             this.btnMarkAllAsPaid.TabIndex = 4;
@@ -245,7 +247,7 @@
             // btnMarkSelectedAsPaid
             // 
             this.btnMarkSelectedAsPaid.Location = new System.Drawing.Point(27, 346);
-            this.btnMarkSelectedAsPaid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMarkSelectedAsPaid.Margin = new System.Windows.Forms.Padding(2);
             this.btnMarkSelectedAsPaid.Name = "btnMarkSelectedAsPaid";
             this.btnMarkSelectedAsPaid.Size = new System.Drawing.Size(135, 26);
             this.btnMarkSelectedAsPaid.TabIndex = 4;
@@ -256,7 +258,7 @@
             // 
             this.lbxUnpaidGroceriesPerStudent.FormattingEnabled = true;
             this.lbxUnpaidGroceriesPerStudent.Location = new System.Drawing.Point(27, 90);
-            this.lbxUnpaidGroceriesPerStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxUnpaidGroceriesPerStudent.Margin = new System.Windows.Forms.Padding(2);
             this.lbxUnpaidGroceriesPerStudent.Name = "lbxUnpaidGroceriesPerStudent";
             this.lbxUnpaidGroceriesPerStudent.Size = new System.Drawing.Size(289, 225);
             this.lbxUnpaidGroceriesPerStudent.TabIndex = 3;
@@ -264,7 +266,7 @@
             // tbxStudNumUnpaidItems
             // 
             this.tbxStudNumUnpaidItems.Location = new System.Drawing.Point(109, 43);
-            this.tbxStudNumUnpaidItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxStudNumUnpaidItems.Margin = new System.Windows.Forms.Padding(2);
             this.tbxStudNumUnpaidItems.Name = "tbxStudNumUnpaidItems";
             this.tbxStudNumUnpaidItems.Size = new System.Drawing.Size(96, 20);
             this.tbxStudNumUnpaidItems.TabIndex = 2;
@@ -272,7 +274,7 @@
             // btnShowToPayList
             // 
             this.btnShowToPayList.Location = new System.Drawing.Point(216, 39);
-            this.btnShowToPayList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowToPayList.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowToPayList.Name = "btnShowToPayList";
             this.btnShowToPayList.Size = new System.Drawing.Size(115, 25);
             this.btnShowToPayList.TabIndex = 1;
@@ -295,9 +297,9 @@
             this.gbxAddGrocery.Controls.Add(this.tbxGroceryName);
             this.gbxAddGrocery.Controls.Add(this.lbGroceryName);
             this.gbxAddGrocery.Location = new System.Drawing.Point(24, 13);
-            this.gbxAddGrocery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAddGrocery.Margin = new System.Windows.Forms.Padding(2);
             this.gbxAddGrocery.Name = "gbxAddGrocery";
-            this.gbxAddGrocery.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAddGrocery.Padding = new System.Windows.Forms.Padding(2);
             this.gbxAddGrocery.Size = new System.Drawing.Size(231, 109);
             this.gbxAddGrocery.TabIndex = 3;
             this.gbxAddGrocery.TabStop = false;
@@ -306,7 +308,7 @@
             // btnAddGrocery
             // 
             this.btnAddGrocery.Location = new System.Drawing.Point(85, 73);
-            this.btnAddGrocery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddGrocery.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddGrocery.Name = "btnAddGrocery";
             this.btnAddGrocery.Size = new System.Drawing.Size(89, 19);
             this.btnAddGrocery.TabIndex = 2;
@@ -316,7 +318,7 @@
             // tbxGroceryName
             // 
             this.tbxGroceryName.Location = new System.Drawing.Point(85, 40);
-            this.tbxGroceryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxGroceryName.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGroceryName.Name = "tbxGroceryName";
             this.tbxGroceryName.Size = new System.Drawing.Size(90, 20);
             this.tbxGroceryName.TabIndex = 1;
@@ -338,9 +340,9 @@
             this.gbxGroceriesAdmin.Controls.Add(this.lbxRecentGroceries);
             this.gbxGroceriesAdmin.Controls.Add(this.lbRecentGroceries);
             this.gbxGroceriesAdmin.Location = new System.Drawing.Point(24, 126);
-            this.gbxGroceriesAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxGroceriesAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.gbxGroceriesAdmin.Name = "gbxGroceriesAdmin";
-            this.gbxGroceriesAdmin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxGroceriesAdmin.Padding = new System.Windows.Forms.Padding(2);
             this.gbxGroceriesAdmin.Size = new System.Drawing.Size(231, 271);
             this.gbxGroceriesAdmin.TabIndex = 2;
             this.gbxGroceriesAdmin.TabStop = false;
@@ -348,7 +350,7 @@
             // btnRemoveAllGroceries
             // 
             this.btnRemoveAllGroceries.Location = new System.Drawing.Point(127, 233);
-            this.btnRemoveAllGroceries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveAllGroceries.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveAllGroceries.Name = "btnRemoveAllGroceries";
             this.btnRemoveAllGroceries.Size = new System.Drawing.Size(97, 26);
             this.btnRemoveAllGroceries.TabIndex = 3;
@@ -358,7 +360,7 @@
             // btnRemoveSelectedGrocery
             // 
             this.btnRemoveSelectedGrocery.Location = new System.Drawing.Point(4, 233);
-            this.btnRemoveSelectedGrocery.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveSelectedGrocery.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveSelectedGrocery.Name = "btnRemoveSelectedGrocery";
             this.btnRemoveSelectedGrocery.Size = new System.Drawing.Size(105, 26);
             this.btnRemoveSelectedGrocery.TabIndex = 2;
@@ -369,7 +371,7 @@
             // 
             this.lbxRecentGroceries.FormattingEnabled = true;
             this.lbxRecentGroceries.Location = new System.Drawing.Point(41, 41);
-            this.lbxRecentGroceries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxRecentGroceries.Margin = new System.Windows.Forms.Padding(2);
             this.lbxRecentGroceries.Name = "lbxRecentGroceries";
             this.lbxRecentGroceries.Size = new System.Drawing.Size(156, 173);
             this.lbxRecentGroceries.TabIndex = 0;
@@ -389,7 +391,7 @@
             this.tabAnnouncementsAdmin.Controls.Add(this.gbxPostAnnouncements);
             this.tabAnnouncementsAdmin.Controls.Add(this.gbxNewsFeed);
             this.tabAnnouncementsAdmin.Location = new System.Drawing.Point(4, 22);
-            this.tabAnnouncementsAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAnnouncementsAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.tabAnnouncementsAdmin.Name = "tabAnnouncementsAdmin";
             this.tabAnnouncementsAdmin.Size = new System.Drawing.Size(679, 440);
             this.tabAnnouncementsAdmin.TabIndex = 2;
@@ -402,9 +404,9 @@
             this.gbxPostAnnouncements.Controls.Add(this.tbxPostAnnouncement);
             this.gbxPostAnnouncements.Controls.Add(this.lbWriteMessage);
             this.gbxPostAnnouncements.Location = new System.Drawing.Point(351, 37);
-            this.gbxPostAnnouncements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxPostAnnouncements.Margin = new System.Windows.Forms.Padding(2);
             this.gbxPostAnnouncements.Name = "gbxPostAnnouncements";
-            this.gbxPostAnnouncements.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxPostAnnouncements.Padding = new System.Windows.Forms.Padding(2);
             this.gbxPostAnnouncements.Size = new System.Drawing.Size(286, 279);
             this.gbxPostAnnouncements.TabIndex = 3;
             this.gbxPostAnnouncements.TabStop = false;
@@ -413,7 +415,7 @@
             // btnPostAnnouncement
             // 
             this.btnPostAnnouncement.Location = new System.Drawing.Point(85, 227);
-            this.btnPostAnnouncement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPostAnnouncement.Margin = new System.Windows.Forms.Padding(2);
             this.btnPostAnnouncement.Name = "btnPostAnnouncement";
             this.btnPostAnnouncement.Size = new System.Drawing.Size(121, 32);
             this.btnPostAnnouncement.TabIndex = 2;
@@ -423,7 +425,7 @@
             // tbxPostAnnouncement
             // 
             this.tbxPostAnnouncement.Location = new System.Drawing.Point(33, 66);
-            this.tbxPostAnnouncement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxPostAnnouncement.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPostAnnouncement.Multiline = true;
             this.tbxPostAnnouncement.Name = "tbxPostAnnouncement";
             this.tbxPostAnnouncement.Size = new System.Drawing.Size(228, 146);
@@ -444,9 +446,9 @@
             this.gbxNewsFeed.Controls.Add(this.lbxAllAnnouncements);
             this.gbxNewsFeed.Controls.Add(this.lbAllAnnouncements);
             this.gbxNewsFeed.Location = new System.Drawing.Point(25, 20);
-            this.gbxNewsFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxNewsFeed.Margin = new System.Windows.Forms.Padding(2);
             this.gbxNewsFeed.Name = "gbxNewsFeed";
-            this.gbxNewsFeed.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxNewsFeed.Padding = new System.Windows.Forms.Padding(2);
             this.gbxNewsFeed.Size = new System.Drawing.Size(283, 417);
             this.gbxNewsFeed.TabIndex = 2;
             this.gbxNewsFeed.TabStop = false;
@@ -456,7 +458,7 @@
             // 
             this.lbxAllAnnouncements.FormattingEnabled = true;
             this.lbxAllAnnouncements.Location = new System.Drawing.Point(29, 68);
-            this.lbxAllAnnouncements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxAllAnnouncements.Margin = new System.Windows.Forms.Padding(2);
             this.lbxAllAnnouncements.Name = "lbxAllAnnouncements";
             this.lbxAllAnnouncements.Size = new System.Drawing.Size(231, 316);
             this.lbxAllAnnouncements.TabIndex = 0;
@@ -476,7 +478,7 @@
             this.tabAgreementsAdmin.Controls.Add(this.lbxAllAgreementsAdmin);
             this.tabAgreementsAdmin.Controls.Add(this.lbAllAgreementsAdmin);
             this.tabAgreementsAdmin.Location = new System.Drawing.Point(4, 22);
-            this.tabAgreementsAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAgreementsAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.tabAgreementsAdmin.Name = "tabAgreementsAdmin";
             this.tabAgreementsAdmin.Size = new System.Drawing.Size(679, 440);
             this.tabAgreementsAdmin.TabIndex = 3;
@@ -487,7 +489,7 @@
             // 
             this.lbxAllAgreementsAdmin.FormattingEnabled = true;
             this.lbxAllAgreementsAdmin.Location = new System.Drawing.Point(203, 87);
-            this.lbxAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.lbxAllAgreementsAdmin.Name = "lbxAllAgreementsAdmin";
             this.lbxAllAgreementsAdmin.Size = new System.Drawing.Size(231, 316);
             this.lbxAllAgreementsAdmin.TabIndex = 0;
@@ -508,7 +510,7 @@
             this.tabHouseRulesAdmin.Controls.Add(this.gbxRule);
             this.tabHouseRulesAdmin.Controls.Add(this.gbxRules);
             this.tabHouseRulesAdmin.Location = new System.Drawing.Point(4, 22);
-            this.tabHouseRulesAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabHouseRulesAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.tabHouseRulesAdmin.Name = "tabHouseRulesAdmin";
             this.tabHouseRulesAdmin.Size = new System.Drawing.Size(679, 440);
             this.tabHouseRulesAdmin.TabIndex = 4;
@@ -524,9 +526,9 @@
             this.groupBox1.Controls.Add(this.tbxEditRule);
             this.groupBox1.Controls.Add(this.lbEditRule);
             this.groupBox1.Location = new System.Drawing.Point(719, 56);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(357, 322);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -535,7 +537,7 @@
             // btnSearchRule
             // 
             this.btnSearchRule.Location = new System.Drawing.Point(223, 56);
-            this.btnSearchRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchRule.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchRule.Name = "btnSearchRule";
             this.btnSearchRule.Size = new System.Drawing.Size(114, 25);
             this.btnSearchRule.TabIndex = 5;
@@ -545,7 +547,7 @@
             // tbxRuleNum
             // 
             this.tbxRuleNum.Location = new System.Drawing.Point(96, 60);
-            this.tbxRuleNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxRuleNum.Margin = new System.Windows.Forms.Padding(2);
             this.tbxRuleNum.Name = "tbxRuleNum";
             this.tbxRuleNum.Size = new System.Drawing.Size(102, 20);
             this.tbxRuleNum.TabIndex = 4;
@@ -563,7 +565,7 @@
             // btnEditRule
             // 
             this.btnEditRule.Location = new System.Drawing.Point(128, 272);
-            this.btnEditRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditRule.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditRule.Name = "btnEditRule";
             this.btnEditRule.Size = new System.Drawing.Size(121, 32);
             this.btnEditRule.TabIndex = 2;
@@ -573,7 +575,7 @@
             // tbxEditRule
             // 
             this.tbxEditRule.Location = new System.Drawing.Point(24, 146);
-            this.tbxEditRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxEditRule.Margin = new System.Windows.Forms.Padding(2);
             this.tbxEditRule.Multiline = true;
             this.tbxEditRule.Name = "tbxEditRule";
             this.tbxEditRule.Size = new System.Drawing.Size(329, 103);
@@ -595,9 +597,9 @@
             this.gbxRule.Controls.Add(this.tbxAddRule);
             this.gbxRule.Controls.Add(this.lbWriteRule);
             this.gbxRule.Location = new System.Drawing.Point(328, 70);
-            this.gbxRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRule.Margin = new System.Windows.Forms.Padding(2);
             this.gbxRule.Name = "gbxRule";
-            this.gbxRule.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRule.Padding = new System.Windows.Forms.Padding(2);
             this.gbxRule.Size = new System.Drawing.Size(288, 279);
             this.gbxRule.TabIndex = 5;
             this.gbxRule.TabStop = false;
@@ -606,7 +608,7 @@
             // btnAddRule
             // 
             this.btnAddRule.Location = new System.Drawing.Point(85, 227);
-            this.btnAddRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddRule.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddRule.Name = "btnAddRule";
             this.btnAddRule.Size = new System.Drawing.Size(121, 32);
             this.btnAddRule.TabIndex = 2;
@@ -616,7 +618,7 @@
             // tbxAddRule
             // 
             this.tbxAddRule.Location = new System.Drawing.Point(66, 60);
-            this.tbxAddRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxAddRule.Margin = new System.Windows.Forms.Padding(2);
             this.tbxAddRule.Multiline = true;
             this.tbxAddRule.Name = "tbxAddRule";
             this.tbxAddRule.Size = new System.Drawing.Size(165, 146);
@@ -636,9 +638,9 @@
             // 
             this.gbxRules.Controls.Add(this.lbxRules);
             this.gbxRules.Location = new System.Drawing.Point(24, 70);
-            this.gbxRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRules.Margin = new System.Windows.Forms.Padding(2);
             this.gbxRules.Name = "gbxRules";
-            this.gbxRules.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRules.Padding = new System.Windows.Forms.Padding(2);
             this.gbxRules.Size = new System.Drawing.Size(268, 342);
             this.gbxRules.TabIndex = 4;
             this.gbxRules.TabStop = false;
@@ -648,7 +650,7 @@
             // 
             this.lbxRules.FormattingEnabled = true;
             this.lbxRules.Location = new System.Drawing.Point(19, 40);
-            this.lbxRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxRules.Margin = new System.Windows.Forms.Padding(2);
             this.lbxRules.Name = "lbxRules";
             this.lbxRules.Size = new System.Drawing.Size(231, 277);
             this.lbxRules.TabIndex = 0;
@@ -657,7 +659,7 @@
             // 
             this.tabComplaintsAdmin.Controls.Add(this.gbxAllComplaints);
             this.tabComplaintsAdmin.Location = new System.Drawing.Point(4, 22);
-            this.tabComplaintsAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabComplaintsAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.tabComplaintsAdmin.Name = "tabComplaintsAdmin";
             this.tabComplaintsAdmin.Size = new System.Drawing.Size(679, 440);
             this.tabComplaintsAdmin.TabIndex = 5;
@@ -668,9 +670,9 @@
             // 
             this.gbxAllComplaints.Controls.Add(this.lbxAllComplaints);
             this.gbxAllComplaints.Location = new System.Drawing.Point(194, 54);
-            this.gbxAllComplaints.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAllComplaints.Margin = new System.Windows.Forms.Padding(2);
             this.gbxAllComplaints.Name = "gbxAllComplaints";
-            this.gbxAllComplaints.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAllComplaints.Padding = new System.Windows.Forms.Padding(2);
             this.gbxAllComplaints.Size = new System.Drawing.Size(277, 349);
             this.gbxAllComplaints.TabIndex = 3;
             this.gbxAllComplaints.TabStop = false;
@@ -680,7 +682,7 @@
             // 
             this.lbxAllComplaints.FormattingEnabled = true;
             this.lbxAllComplaints.Location = new System.Drawing.Point(20, 17);
-            this.lbxAllComplaints.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxAllComplaints.Margin = new System.Windows.Forms.Padding(2);
             this.lbxAllComplaints.Name = "lbxAllComplaints";
             this.lbxAllComplaints.Size = new System.Drawing.Size(231, 316);
             this.lbxAllComplaints.TabIndex = 0;
@@ -690,7 +692,7 @@
             this.tabManageTenants.Controls.Add(this.gbxRemoveTenant);
             this.tabManageTenants.Controls.Add(this.gbxRegisterTenants);
             this.tabManageTenants.Location = new System.Drawing.Point(4, 22);
-            this.tabManageTenants.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabManageTenants.Margin = new System.Windows.Forms.Padding(2);
             this.tabManageTenants.Name = "tabManageTenants";
             this.tabManageTenants.Size = new System.Drawing.Size(679, 440);
             this.tabManageTenants.TabIndex = 6;
@@ -703,9 +705,9 @@
             this.gbxRemoveTenant.Controls.Add(this.tbxStudentNumRemove);
             this.gbxRemoveTenant.Controls.Add(this.lbStudentNumRemove);
             this.gbxRemoveTenant.Location = new System.Drawing.Point(351, 58);
-            this.gbxRemoveTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRemoveTenant.Margin = new System.Windows.Forms.Padding(2);
             this.gbxRemoveTenant.Name = "gbxRemoveTenant";
-            this.gbxRemoveTenant.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRemoveTenant.Padding = new System.Windows.Forms.Padding(2);
             this.gbxRemoveTenant.Size = new System.Drawing.Size(301, 148);
             this.gbxRemoveTenant.TabIndex = 1;
             this.gbxRemoveTenant.TabStop = false;
@@ -714,7 +716,7 @@
             // btnRemoveTenant
             // 
             this.btnRemoveTenant.Location = new System.Drawing.Point(147, 87);
-            this.btnRemoveTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveTenant.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveTenant.Name = "btnRemoveTenant";
             this.btnRemoveTenant.Size = new System.Drawing.Size(114, 26);
             this.btnRemoveTenant.TabIndex = 7;
@@ -724,7 +726,7 @@
             // tbxStudentNumRemove
             // 
             this.tbxStudentNumRemove.Location = new System.Drawing.Point(147, 44);
-            this.tbxStudentNumRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxStudentNumRemove.Margin = new System.Windows.Forms.Padding(2);
             this.tbxStudentNumRemove.Name = "tbxStudentNumRemove";
             this.tbxStudentNumRemove.Size = new System.Drawing.Size(115, 20);
             this.tbxStudentNumRemove.TabIndex = 5;
@@ -749,9 +751,9 @@
             this.gbxRegisterTenants.Controls.Add(this.lbFirstNameRegister);
             this.gbxRegisterTenants.Controls.Add(this.lbStudentNumRegister);
             this.gbxRegisterTenants.Location = new System.Drawing.Point(13, 45);
-            this.gbxRegisterTenants.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRegisterTenants.Margin = new System.Windows.Forms.Padding(2);
             this.gbxRegisterTenants.Name = "gbxRegisterTenants";
-            this.gbxRegisterTenants.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxRegisterTenants.Padding = new System.Windows.Forms.Padding(2);
             this.gbxRegisterTenants.Size = new System.Drawing.Size(309, 322);
             this.gbxRegisterTenants.TabIndex = 0;
             this.gbxRegisterTenants.TabStop = false;
@@ -760,7 +762,7 @@
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(135, 250);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(114, 26);
             this.btnRegister.TabIndex = 6;
@@ -771,7 +773,7 @@
             // tbxPasswordRegister
             // 
             this.tbxPasswordRegister.Location = new System.Drawing.Point(135, 193);
-            this.tbxPasswordRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxPasswordRegister.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPasswordRegister.Name = "tbxPasswordRegister";
             this.tbxPasswordRegister.Size = new System.Drawing.Size(115, 20);
             this.tbxPasswordRegister.TabIndex = 5;
@@ -779,7 +781,7 @@
             // tbxFirstNameRegister
             // 
             this.tbxFirstNameRegister.Location = new System.Drawing.Point(135, 131);
-            this.tbxFirstNameRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxFirstNameRegister.Margin = new System.Windows.Forms.Padding(2);
             this.tbxFirstNameRegister.Name = "tbxFirstNameRegister";
             this.tbxFirstNameRegister.Size = new System.Drawing.Size(115, 20);
             this.tbxFirstNameRegister.TabIndex = 4;
@@ -787,7 +789,7 @@
             // tbxStudentNumRegister
             // 
             this.tbxStudentNumRegister.Location = new System.Drawing.Point(135, 70);
-            this.tbxStudentNumRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxStudentNumRegister.Margin = new System.Windows.Forms.Padding(2);
             this.tbxStudentNumRegister.Name = "tbxStudentNumRegister";
             this.tbxStudentNumRegister.Size = new System.Drawing.Size(115, 20);
             this.tbxStudentNumRegister.TabIndex = 3;
@@ -832,7 +834,7 @@
             this.MenuTenant.Controls.Add(this.tabHouseRulesTenant);
             this.MenuTenant.Controls.Add(this.tabComplaintsTenant);
             this.MenuTenant.Location = new System.Drawing.Point(702, 247);
-            this.MenuTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MenuTenant.Margin = new System.Windows.Forms.Padding(2);
             this.MenuTenant.Name = "MenuTenant";
             this.MenuTenant.SelectedIndex = 0;
             this.MenuTenant.Size = new System.Drawing.Size(626, 462);
@@ -843,9 +845,9 @@
             this.tabHomeTenant.Controls.Add(this.lbWelcomeMsgTenant);
             this.tabHomeTenant.ImageKey = "(none)";
             this.tabHomeTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabHomeTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabHomeTenant.Margin = new System.Windows.Forms.Padding(2);
             this.tabHomeTenant.Name = "tabHomeTenant";
-            this.tabHomeTenant.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabHomeTenant.Padding = new System.Windows.Forms.Padding(2);
             this.tabHomeTenant.Size = new System.Drawing.Size(618, 436);
             this.tabHomeTenant.TabIndex = 0;
             this.tabHomeTenant.Text = "Home";
@@ -865,9 +867,9 @@
             // 
             this.tabGroceriesTenant.Controls.Add(this.gbxPayListGroceriesTenant);
             this.tabGroceriesTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabGroceriesTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabGroceriesTenant.Margin = new System.Windows.Forms.Padding(2);
             this.tabGroceriesTenant.Name = "tabGroceriesTenant";
-            this.tabGroceriesTenant.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabGroceriesTenant.Padding = new System.Windows.Forms.Padding(2);
             this.tabGroceriesTenant.Size = new System.Drawing.Size(618, 436);
             this.tabGroceriesTenant.TabIndex = 1;
             this.tabGroceriesTenant.Text = "Groceries";
@@ -877,9 +879,9 @@
             // 
             this.gbxPayListGroceriesTenant.Controls.Add(this.lbxUnpaidGroceries);
             this.gbxPayListGroceriesTenant.Location = new System.Drawing.Point(170, 45);
-            this.gbxPayListGroceriesTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxPayListGroceriesTenant.Margin = new System.Windows.Forms.Padding(2);
             this.gbxPayListGroceriesTenant.Name = "gbxPayListGroceriesTenant";
-            this.gbxPayListGroceriesTenant.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxPayListGroceriesTenant.Padding = new System.Windows.Forms.Padding(2);
             this.gbxPayListGroceriesTenant.Size = new System.Drawing.Size(302, 376);
             this.gbxPayListGroceriesTenant.TabIndex = 4;
             this.gbxPayListGroceriesTenant.TabStop = false;
@@ -889,7 +891,7 @@
             // 
             this.lbxUnpaidGroceries.FormattingEnabled = true;
             this.lbxUnpaidGroceries.Location = new System.Drawing.Point(27, 52);
-            this.lbxUnpaidGroceries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxUnpaidGroceries.Margin = new System.Windows.Forms.Padding(2);
             this.lbxUnpaidGroceries.Name = "lbxUnpaidGroceries";
             this.lbxUnpaidGroceries.Size = new System.Drawing.Size(244, 290);
             this.lbxUnpaidGroceries.TabIndex = 3;
@@ -899,7 +901,7 @@
             this.tabAnnouncementsTenant.Controls.Add(this.groupBox2);
             this.tabAnnouncementsTenant.Controls.Add(this.groupBox3);
             this.tabAnnouncementsTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabAnnouncementsTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAnnouncementsTenant.Margin = new System.Windows.Forms.Padding(2);
             this.tabAnnouncementsTenant.Name = "tabAnnouncementsTenant";
             this.tabAnnouncementsTenant.Size = new System.Drawing.Size(618, 436);
             this.tabAnnouncementsTenant.TabIndex = 2;
@@ -912,9 +914,9 @@
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(319, 42);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(286, 279);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
@@ -923,7 +925,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(85, 227);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 32);
             this.button1.TabIndex = 2;
@@ -933,7 +935,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(33, 66);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(228, 146);
@@ -954,9 +956,9 @@
             this.groupBox3.Controls.Add(this.listBox1);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(16, 23);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(283, 397);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -966,7 +968,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(28, 52);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(231, 316);
             this.listBox1.TabIndex = 0;
@@ -986,7 +988,7 @@
             this.tabAgreementsTenant.Controls.Add(this.gbxAllAgreements);
             this.tabAgreementsTenant.Controls.Add(this.gbxAddAgreement);
             this.tabAgreementsTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabAgreementsTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabAgreementsTenant.Margin = new System.Windows.Forms.Padding(2);
             this.tabAgreementsTenant.Name = "tabAgreementsTenant";
             this.tabAgreementsTenant.Size = new System.Drawing.Size(618, 436);
             this.tabAgreementsTenant.TabIndex = 3;
@@ -998,9 +1000,9 @@
             this.gbxAllAgreements.Controls.Add(this.listBox2);
             this.gbxAllAgreements.Controls.Add(this.label3);
             this.gbxAllAgreements.Location = new System.Drawing.Point(335, 26);
-            this.gbxAllAgreements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAllAgreements.Margin = new System.Windows.Forms.Padding(2);
             this.gbxAllAgreements.Name = "gbxAllAgreements";
-            this.gbxAllAgreements.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAllAgreements.Padding = new System.Windows.Forms.Padding(2);
             this.gbxAllAgreements.Size = new System.Drawing.Size(244, 387);
             this.gbxAllAgreements.TabIndex = 5;
             this.gbxAllAgreements.TabStop = false;
@@ -1009,7 +1011,7 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(28, 57);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(193, 316);
             this.listBox2.TabIndex = 0;
@@ -1030,9 +1032,9 @@
             this.gbxAddAgreement.Controls.Add(this.tbxAddAgreement);
             this.gbxAddAgreement.Controls.Add(this.lbWriteAgreement);
             this.gbxAddAgreement.Location = new System.Drawing.Point(13, 52);
-            this.gbxAddAgreement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAddAgreement.Margin = new System.Windows.Forms.Padding(2);
             this.gbxAddAgreement.Name = "gbxAddAgreement";
-            this.gbxAddAgreement.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxAddAgreement.Padding = new System.Windows.Forms.Padding(2);
             this.gbxAddAgreement.Size = new System.Drawing.Size(286, 279);
             this.gbxAddAgreement.TabIndex = 4;
             this.gbxAddAgreement.TabStop = false;
@@ -1040,7 +1042,7 @@
             // btnAddAgreement
             // 
             this.btnAddAgreement.Location = new System.Drawing.Point(85, 227);
-            this.btnAddAgreement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddAgreement.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAgreement.Name = "btnAddAgreement";
             this.btnAddAgreement.Size = new System.Drawing.Size(121, 32);
             this.btnAddAgreement.TabIndex = 2;
@@ -1050,7 +1052,7 @@
             // tbxAddAgreement
             // 
             this.tbxAddAgreement.Location = new System.Drawing.Point(33, 66);
-            this.tbxAddAgreement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxAddAgreement.Margin = new System.Windows.Forms.Padding(2);
             this.tbxAddAgreement.Multiline = true;
             this.tbxAddAgreement.Name = "tbxAddAgreement";
             this.tbxAddAgreement.Size = new System.Drawing.Size(228, 146);
@@ -1070,7 +1072,7 @@
             // 
             this.tabHouseRulesTenant.Controls.Add(this.groupBox4);
             this.tabHouseRulesTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabHouseRulesTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabHouseRulesTenant.Margin = new System.Windows.Forms.Padding(2);
             this.tabHouseRulesTenant.Name = "tabHouseRulesTenant";
             this.tabHouseRulesTenant.Size = new System.Drawing.Size(618, 436);
             this.tabHouseRulesTenant.TabIndex = 4;
@@ -1081,9 +1083,9 @@
             // 
             this.groupBox4.Controls.Add(this.listBox3);
             this.groupBox4.Location = new System.Drawing.Point(181, 19);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(283, 400);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
@@ -1093,7 +1095,7 @@
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(32, 39);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(2);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(231, 329);
             this.listBox3.TabIndex = 0;
@@ -1104,7 +1106,7 @@
             this.tabComplaintsTenant.Controls.Add(this.tbxWriteComplaint);
             this.tabComplaintsTenant.Controls.Add(this.lbWriteComplaint);
             this.tabComplaintsTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabComplaintsTenant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabComplaintsTenant.Margin = new System.Windows.Forms.Padding(2);
             this.tabComplaintsTenant.Name = "tabComplaintsTenant";
             this.tabComplaintsTenant.Size = new System.Drawing.Size(618, 436);
             this.tabComplaintsTenant.TabIndex = 5;
@@ -1114,7 +1116,7 @@
             // btnComplaint
             // 
             this.btnComplaint.Location = new System.Drawing.Point(273, 279);
-            this.btnComplaint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnComplaint.Margin = new System.Windows.Forms.Padding(2);
             this.btnComplaint.Name = "btnComplaint";
             this.btnComplaint.Size = new System.Drawing.Size(121, 32);
             this.btnComplaint.TabIndex = 2;
@@ -1124,7 +1126,7 @@
             // tbxWriteComplaint
             // 
             this.tbxWriteComplaint.Location = new System.Drawing.Point(221, 119);
-            this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(2);
             this.tbxWriteComplaint.Multiline = true;
             this.tbxWriteComplaint.Name = "tbxWriteComplaint";
             this.tbxWriteComplaint.Size = new System.Drawing.Size(228, 146);
@@ -1150,7 +1152,7 @@
             this.gbxLogin.Controls.Add(this.tbxUsernameLogin);
             this.gbxLogin.Controls.Add(this.lbPasswordLogin);
             this.gbxLogin.Controls.Add(this.lbUsernameLogin);
-            this.gbxLogin.Location = new System.Drawing.Point(573, 34);
+            this.gbxLogin.Location = new System.Drawing.Point(572, 12);
             this.gbxLogin.Name = "gbxLogin";
             this.gbxLogin.Size = new System.Drawing.Size(235, 184);
             this.gbxLogin.TabIndex = 1;
@@ -1198,17 +1200,39 @@
             this.lbUsernameLogin.TabIndex = 0;
             this.lbUsernameLogin.Text = "Username:";
             // 
-            // AdminPage
+            // btnLogOutAdmin
+            // 
+            this.btnLogOutAdmin.Location = new System.Drawing.Point(593, 233);
+            this.btnLogOutAdmin.Name = "btnLogOutAdmin";
+            this.btnLogOutAdmin.Size = new System.Drawing.Size(78, 31);
+            this.btnLogOutAdmin.TabIndex = 3;
+            this.btnLogOutAdmin.Text = "Log out";
+            this.btnLogOutAdmin.UseVisualStyleBackColor = true;
+            this.btnLogOutAdmin.Click += new System.EventHandler(this.btnLogOutAdmin_Click);
+            // 
+            // btnLogOutTenant
+            // 
+            this.btnLogOutTenant.Location = new System.Drawing.Point(1218, 233);
+            this.btnLogOutTenant.Name = "btnLogOutTenant";
+            this.btnLogOutTenant.Size = new System.Drawing.Size(78, 31);
+            this.btnLogOutTenant.TabIndex = 4;
+            this.btnLogOutTenant.Text = "Log out";
+            this.btnLogOutTenant.UseVisualStyleBackColor = true;
+            this.btnLogOutTenant.Click += new System.EventHandler(this.btnLogOutTenant_Click);
+            // 
+            // HousingApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1339, 717);
+            this.Controls.Add(this.btnLogOutTenant);
+            this.Controls.Add(this.btnLogOutAdmin);
             this.Controls.Add(this.gbxLogin);
             this.Controls.Add(this.MenuTenant);
             this.Controls.Add(this.MenuAdmin);
-            this.Name = "AdminPage";
-            this.Text = "AdminPage";
-            this.Load += new System.EventHandler(this.AdminPage_Load);
+            this.Name = "HousingApp";
+            this.Text = "Housing App";
+            this.Load += new System.EventHandler(this.HousingApp_Load);
             this.MenuAdmin.ResumeLayout(false);
             this.tabHomeAdmin.ResumeLayout(false);
             this.tabHomeAdmin.PerformLayout();
@@ -1362,5 +1386,7 @@
         private System.Windows.Forms.TextBox tbxUsernameLogin;
         private System.Windows.Forms.Label lbPasswordLogin;
         private System.Windows.Forms.Label lbUsernameLogin;
+        private System.Windows.Forms.Button btnLogOutAdmin;
+        private System.Windows.Forms.Button btnLogOutTenant;
     }
 }

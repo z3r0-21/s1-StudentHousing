@@ -10,25 +10,26 @@ using System.Windows.Forms;
 
 namespace HousingSoftware
 {
-    public partial class AdminPage : Form
+    public partial class HousingApp : Form
     {
         private string adminUsername = "admin";
         private string adminPassword = "admin";
 
         Admin admin;
         Tenant currentTenant;
-        public AdminPage()
+        public HousingApp()
         {
             InitializeComponent();
             admin = new Admin();
             
         }
 
-        private void AdminPage_Load(object sender, EventArgs e)
+        private void HousingApp_Load(object sender, EventArgs e)
         {
             MenuAdmin.Hide();
+            btnLogOutAdmin.Hide();
             MenuTenant.Hide();
-
+            btnLogOutTenant.Hide();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -42,12 +43,28 @@ namespace HousingSoftware
                 currentTenant = new Tenant();
                 currentTenant.InitializeTenant(studentNum, fname, password);
                 admin.AddTenant(currentTenant);
-
+                
             }
             else
             {
                 MessageBox.Show("Please fill all the textboxes!");
             }
+            tbxStudentNumRegister.Clear();
+            tbxFirstNameRegister.Clear();
+            tbxPasswordRegister.Clear();
+        }
+
+        private bool checkForTenantProfile(string username, string password)
+        {
+            foreach (Tenant tenant in admin.GetTenants())
+            {
+                if(tenant.GetStudentNumber().ToString() == username &&
+                    tenant.GetPassword() == password)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -61,8 +78,14 @@ namespace HousingSoftware
                     // redirecting to home page
                     gbxLogin.Hide();
                     MenuAdmin.Show();
+                    btnLogOutAdmin.Show();
                 }
-
+                else if(checkForTenantProfile(username, password))
+                {
+                    gbxLogin.Hide();
+                    MenuTenant.Show();
+                    btnLogOutTenant.Show();
+                }
                 else
                 {
                     MessageBox.Show("There is no such profile! Check yours username and password!");
@@ -74,6 +97,20 @@ namespace HousingSoftware
             }
             tbxUsernameLogin.Clear();
             tbxPasswordLogin.Clear();
+        }
+
+        private void btnLogOutAdmin_Click(object sender, EventArgs e)
+        {
+            MenuAdmin.Hide();
+            btnLogOutAdmin.Hide();
+            gbxLogin.Show();
+        }
+
+        private void btnLogOutTenant_Click(object sender, EventArgs e)
+        {
+            MenuTenant.Hide();
+            btnLogOutTenant.Hide();
+            gbxLogin.Show();
         }
     }
 }
