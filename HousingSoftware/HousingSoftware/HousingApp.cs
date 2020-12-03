@@ -18,6 +18,8 @@ namespace HousingSoftware
         Admin admin;
         Tenant currentTenant;
         Tenant tenant1;
+
+        List<string> Complaints = new List<string>();
         public HousingApp()
         {
             InitializeComponent();
@@ -27,6 +29,10 @@ namespace HousingSoftware
 
         private void HousingApp_Load(object sender, EventArgs e)
         {
+            MenuAdmin.Dock = DockStyle.Fill;
+            MenuTenant.Dock = DockStyle.Fill;
+            gbxLogin.Dock = DockStyle.Fill;
+
             MenuAdmin.Hide();
             btnLogOutAdmin.Hide();
             MenuTenant.Hide();
@@ -51,6 +57,33 @@ namespace HousingSoftware
                 }
             }
             return index;
+        }
+
+        private void AddComplaints(string complaintText)
+        {
+            Complaints.Add(complaintText);
+            RefreshComplaintsList();
+
+        }
+
+        private void MarkComplaintAsDone()
+        {
+            int selectedIndex = lbxAllComplaints.SelectedIndex;
+            Complaints.RemoveAt(selectedIndex);
+
+
+            RefreshComplaintsList();
+        }
+
+        private void RefreshComplaintsList()
+        {
+
+            lbxAllComplaints.Items.Clear();
+
+            foreach (string complaint in Complaints)
+            {
+               lbxAllComplaints.Items.Add(complaint);
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -164,6 +197,23 @@ namespace HousingSoftware
             gbxLogin.Show();
         }
 
+        private void btnComplaint_Click(object sender, EventArgs e)
+        {
+            //send a complaint
+            AddComplaints(tbxWriteComplaint.Text);
+        }
 
+        private void btnMarkAsDone_Click(object sender, EventArgs e)
+        {
+            
+            if(Complaints.Count > 0 && lbxAllComplaints.SelectedIndex != -1)
+            {
+                MarkComplaintAsDone();
+            }
+            else
+            {
+                MessageBox.Show("Please, make sure to select an item which you would like to be marked as done.");
+            }
+        }
     }
 }

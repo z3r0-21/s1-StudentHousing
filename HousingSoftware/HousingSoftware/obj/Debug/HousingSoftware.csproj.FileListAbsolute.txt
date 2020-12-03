@@ -19,3 +19,13 @@ C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftw
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.exe
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.pdb
 C:\Users\tonit\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.HousingApp.resources
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\bin\Debug\HousingSoftware.exe.config
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\bin\Debug\HousingSoftware.exe
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\bin\Debug\HousingSoftware.pdb
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.csprojAssemblyReference.cache
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.HousingApp.resources
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.Properties.Resources.resources
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.csproj.GenerateResource.cache
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.csproj.CoreCompileInputs.cache
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.exe
+D:\Uni\AP - Software\Project\p-cb-s03-8\HousingSoftware\HousingSoftware\obj\Debug\HousingSoftware.pdb

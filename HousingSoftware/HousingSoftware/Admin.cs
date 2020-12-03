@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HousingSoftware
 {
-    class Admin
+    public class Admin
     {
         private string username;
         private string password;
