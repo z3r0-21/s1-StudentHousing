@@ -32,6 +32,20 @@ namespace HousingSoftware
             btnLogOutTenant.Hide();
         }
 
+        private int searchTenantProfile(int studentNum)
+        {
+            List<Tenant> allRegisteredTenants = admin.GetTenants();
+            int index = -1;
+            for (int i = 0; i < allRegisteredTenants.Count(); i++)
+            {
+                if (allRegisteredTenants[i].GetStudentNumber() == studentNum)
+                {
+                    index = i;
+                }
+            }
+            return index;
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             int studentNum = Convert.ToInt32(tbxStudentNumRegister.Text);
@@ -40,10 +54,16 @@ namespace HousingSoftware
 
             if(!String.IsNullOrEmpty(tbxStudentNumRegister.Text) && !String.IsNullOrEmpty(tbxFirstNameRegister.Text) && !String.IsNullOrEmpty(tbxPasswordRegister.Text))
             {
-                currentTenant = new Tenant();
-                currentTenant.InitializeTenant(studentNum, fname, password);
-                admin.AddTenant(currentTenant);
-                
+                if (searchTenantProfile(studentNum) == -1)
+                {
+                    currentTenant = new Tenant();
+                    currentTenant.InitializeTenant(studentNum, fname, password);
+                    admin.AddTenant(currentTenant);
+                }
+                else
+                {
+                    MessageBox.Show("Profile with same student number already exists!");
+                }
             }
             else
             {
@@ -52,20 +72,6 @@ namespace HousingSoftware
             tbxStudentNumRegister.Clear();
             tbxFirstNameRegister.Clear();
             tbxPasswordRegister.Clear();
-        }
-
-        private int searchTenantProfile(int studentNum)
-        {
-            List<Tenant> allRegisteredTenants = admin.GetTenants();
-            int index = -1;
-            for (int i = 0;i < allRegisteredTenants.Count();i++)
-            {
-                if (allRegisteredTenants[i].GetStudentNumber() == studentNum)
-                {
-                    index = i;
-                }
-            }
-            return index;
         }
 
         private void btnRemoveTenant_Click(object sender, EventArgs e)

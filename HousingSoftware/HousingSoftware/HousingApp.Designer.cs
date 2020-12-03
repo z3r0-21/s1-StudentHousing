@@ -307,17 +307,17 @@
             // 
             // btnAddGrocery
             // 
-            this.btnAddGrocery.Location = new System.Drawing.Point(85, 73);
+            this.btnAddGrocery.Location = new System.Drawing.Point(85, 64);
             this.btnAddGrocery.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddGrocery.Name = "btnAddGrocery";
-            this.btnAddGrocery.Size = new System.Drawing.Size(89, 19);
+            this.btnAddGrocery.Size = new System.Drawing.Size(90, 32);
             this.btnAddGrocery.TabIndex = 2;
             this.btnAddGrocery.Text = "Add grocery";
             this.btnAddGrocery.UseVisualStyleBackColor = true;
             // 
             // tbxGroceryName
             // 
-            this.tbxGroceryName.Location = new System.Drawing.Point(85, 40);
+            this.tbxGroceryName.Location = new System.Drawing.Point(85, 36);
             this.tbxGroceryName.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGroceryName.Name = "tbxGroceryName";
             this.tbxGroceryName.Size = new System.Drawing.Size(90, 20);
@@ -326,7 +326,7 @@
             // lbGroceryName
             // 
             this.lbGroceryName.AutoSize = true;
-            this.lbGroceryName.Location = new System.Drawing.Point(31, 41);
+            this.lbGroceryName.Location = new System.Drawing.Point(31, 37);
             this.lbGroceryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbGroceryName.Name = "lbGroceryName";
             this.lbGroceryName.Size = new System.Drawing.Size(38, 13);
