@@ -22,6 +22,7 @@ namespace HousingSoftware
         Agreements newAgreement;
 
         List<string> Complaints = new List<string>();
+        Grocery currentGrocery;
         public HousingApp()
         {
             InitializeComponent();
@@ -220,6 +221,75 @@ namespace HousingSoftware
         private void timerClock_Tick(object sender, EventArgs e)
         {
             lbTime.Text = DateTime.Now.ToString();
+        }
+
+        private void showRecentGroceries()
+        {
+            // clear the listbox for all recent groceries
+            lbxRecentGroceries.Items.Clear();
+
+            foreach (Grocery grocery in admin.GetAllGroceries())
+            {
+                lbxRecentGroceries.Items.Add(grocery.GetName());
+            }
+        }
+
+        private bool isGroceryExist(string groceryName)
+        {
+            foreach (Grocery grocery in admin.GetAllGroceries())
+            {
+                if (grocery.GetName() == groceryName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void btnAddGrocery_Click(object sender, EventArgs e)
+        {
+            string groceryName = tbxGroceryName.Text;
+            if(!String.IsNullOrEmpty(tbxGroceryName.Text))
+            {
+                currentGrocery = new Grocery();
+                currentGrocery.SetName(groceryName);
+                if (!isGroceryExist(currentGrocery.GetName()))
+                {
+                    admin.AddGrocery(currentGrocery);
+
+                    // Show recent groceries in the listbox Recent groceries
+                    showRecentGroceries();
+                }
+                else
+                {
+                    MessageBox.Show("This grocery already exists in the list!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please write down a name of the grocery!");
+            }
+            tbxGroceryName.Clear();
+        }
+
+        private void btnRemoveSelectedGrocery_Click(object sender, EventArgs e)
+        {
+            if(lbxRecentGroceries.SelectedIndex != -1)
+            {
+                int index = lbxRecentGroceries.SelectedIndex;
+                admin.RemoveGroceryAt(index);
+                showRecentGroceries();
+            }
+            else
+            {
+                MessageBox.Show("Please select a item to delete it!");
+            }
+        }
+
+        private void btnRemoveAllGroceries_Click(object sender, EventArgs e)
+        {
+            admin.RemoveAllGroceries();
+            showRecentGroceries();
         }
 
         private void btnAddAgreement_Click(object sender, EventArgs e)
