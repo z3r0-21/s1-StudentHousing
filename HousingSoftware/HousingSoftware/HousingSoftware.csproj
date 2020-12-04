@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="Agreements.cs" />
     <Compile Include="Grocery.cs" />
     <Compile Include="HousingApp.cs">
       <SubType>Form</SubType>

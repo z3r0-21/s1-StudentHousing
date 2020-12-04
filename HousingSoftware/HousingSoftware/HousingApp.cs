@@ -19,6 +19,8 @@ namespace HousingSoftware
         Tenant currentTenant;
         Tenant tenant1;
 
+        Agreements newAgreement;
+
         List<string> Complaints = new List<string>();
         public HousingApp()
         {
@@ -218,6 +220,23 @@ namespace HousingSoftware
         private void timerClock_Tick(object sender, EventArgs e)
         {
             lbTime.Text = DateTime.Now.ToString();
+        }
+
+        private void btnAddAgreement_Click(object sender, EventArgs e)
+        {
+            if(tbxAddAgreement.Text != "" && tbxAddAgreement.Text.Length > 20)
+            {
+                string agreement = tbxAddAgreement.Text;
+                newAgreement = new Agreements();
+                newAgreement.AddNewAgreement(agreement);
+
+                lbxAllAgreementsTenant.Items.Add(agreement);
+                lbxAllAgreementsAdmin.Items.Add(agreement);
+            }
+            else
+            {
+                MessageBox.Show("Please, make sure to enter a text containing 20 more charachters.");
+            }
         }
     }
 }
