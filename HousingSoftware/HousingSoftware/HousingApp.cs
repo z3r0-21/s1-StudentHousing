@@ -309,5 +309,19 @@ namespace HousingSoftware
                 //test
             }
         }
+
+        private void btnAgree_Click(object sender, EventArgs e)
+        {
+            //string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString();
+            //newAgreement.Agree();
+
+        }
+
+        private void btnDisagree_Click(object sender, EventArgs e)
+        {
+            //string selectedAgreement = newAgreement.GetAgreement();
+            //newAgreement.Disagree();
+            //lbxAllAgreementsTenant.Items.Add(newAgreement);
+        }
     }
 }

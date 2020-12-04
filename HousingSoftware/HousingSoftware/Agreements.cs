@@ -10,44 +10,52 @@ namespace HousingSoftware
     {
         private string agreement;
         private int approveRate;
-        private int totalAgree;
-        private int totaolDisagree;
-        private bool Voted = false;
+        private List<string> tenantsAgreed = new List<string>();
+        private List<string> tenantsDisagreed = new List<string>();
+        private int totalDisagree;
+
+        public string GetAgreement()
+        {
+            return this.agreement;
+        }
 
         public void AddNewAgreement(string suggestedAgreement)
         {
             agreement = suggestedAgreement;
         }
 
-        public void Agree()
+        public void Agree(string tenant, string studentNr)
         {
-            if(Voted == false)
+            if (!tenantsAgreed.Contains(studentNr) && !tenantsDisagreed.Contains(studentNr))
             {
-                totalAgree++;
-                Voted = true;
+                tenantsAgreed.Add(tenant);
             }
         }
 
-        public void Disagree()
+        public void Disagree(string tenant, string studentNr)
         {
-            if (Voted == false)
+            if (!tenantsAgreed.Contains(studentNr) && !tenantsDisagreed.Contains(studentNr))
             {
-                totaolDisagree++;
-                Voted = true;
+                tenantsDisagreed.Add(tenant);
             }
         }
 
         public int GetAgreementRatio()
         {
-            if(totalAgree != 0 && totaolDisagree != 0)
-            {
-                approveRate = (totalAgree / totaolDisagree) * 100;
-                return approveRate;
-            }
-            else
-            {
-                return approveRate = 0;
-            }
+            
+                if (tenantsDisagreed.Count != 0 && tenantsDisagreed.Count == 0)
+                {
+                    return approveRate = 100;
+                }
+                else if (tenantsAgreed.Count != 0 && tenantsDisagreed.Count != 0)
+                {
+                    approveRate = (tenantsAgreed.Count / tenantsDisagreed.Count) * 100;
+                    return approveRate;
+                }
+                else
+                {
+                    return approveRate = 0;
+                }
             
         }
 

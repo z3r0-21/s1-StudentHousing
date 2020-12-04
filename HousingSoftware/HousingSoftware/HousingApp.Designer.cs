@@ -110,6 +110,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabAgreementsTenant = new System.Windows.Forms.TabPage();
             this.gbxAllAgreements = new System.Windows.Forms.GroupBox();
+            this.btnDisagree = new System.Windows.Forms.Button();
+            this.btnAgree = new System.Windows.Forms.Button();
             this.lbxAllAgreementsTenant = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbxAddAgreement = new System.Windows.Forms.GroupBox();
@@ -130,8 +132,6 @@
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
-            this.btnAgree = new System.Windows.Forms.Button();
-            this.btnDisagree = new System.Windows.Forms.Button();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -220,7 +220,7 @@
             // btnLogOutAdmin
             // 
             this.btnLogOutAdmin.Location = new System.Drawing.Point(7, 489);
-            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutAdmin.Name = "btnLogOutAdmin";
             this.btnLogOutAdmin.Size = new System.Drawing.Size(104, 38);
             this.btnLogOutAdmin.TabIndex = 3;
@@ -889,7 +889,7 @@
             // btnLogOutTenant
             // 
             this.btnLogOutTenant.Location = new System.Drawing.Point(32, 489);
-            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutTenant.Name = "btnLogOutTenant";
             this.btnLogOutTenant.Size = new System.Drawing.Size(104, 38);
             this.btnLogOutTenant.TabIndex = 4;
@@ -1052,6 +1052,26 @@
             this.gbxAllAgreements.TabIndex = 5;
             this.gbxAllAgreements.TabStop = false;
             // 
+            // btnDisagree
+            // 
+            this.btnDisagree.Location = new System.Drawing.Point(37, 444);
+            this.btnDisagree.Name = "btnDisagree";
+            this.btnDisagree.Size = new System.Drawing.Size(256, 28);
+            this.btnDisagree.TabIndex = 3;
+            this.btnDisagree.Text = "Disagree with selected";
+            this.btnDisagree.UseVisualStyleBackColor = true;
+            this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
+            // 
+            // btnAgree
+            // 
+            this.btnAgree.Location = new System.Drawing.Point(37, 415);
+            this.btnAgree.Name = "btnAgree";
+            this.btnAgree.Size = new System.Drawing.Size(256, 28);
+            this.btnAgree.TabIndex = 2;
+            this.btnAgree.Text = "Agree with selected";
+            this.btnAgree.UseVisualStyleBackColor = true;
+            this.btnAgree.Click += new System.EventHandler(this.btnAgree_Click);
+            // 
             // lbxAllAgreementsTenant
             // 
             this.lbxAllAgreementsTenant.FormattingEnabled = true;
@@ -1197,9 +1217,9 @@
             this.gbxLogin.Controls.Add(this.lbPasswordLogin);
             this.gbxLogin.Controls.Add(this.lbUsernameLogin);
             this.gbxLogin.Location = new System.Drawing.Point(763, 15);
-            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4);
             this.gbxLogin.Name = "gbxLogin";
-            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4);
             this.gbxLogin.Size = new System.Drawing.Size(313, 226);
             this.gbxLogin.TabIndex = 1;
             this.gbxLogin.TabStop = false;
@@ -1207,7 +1227,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(125, 160);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(143, 33);
             this.btnLogin.TabIndex = 4;
@@ -1218,7 +1238,7 @@
             // tbxPasswordLogin
             // 
             this.tbxPasswordLogin.Location = new System.Drawing.Point(125, 106);
-            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPasswordLogin.Name = "tbxPasswordLogin";
             this.tbxPasswordLogin.Size = new System.Drawing.Size(141, 22);
             this.tbxPasswordLogin.TabIndex = 3;
@@ -1226,7 +1246,7 @@
             // tbxUsernameLogin
             // 
             this.tbxUsernameLogin.Location = new System.Drawing.Point(125, 60);
-            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxUsernameLogin.Name = "tbxUsernameLogin";
             this.tbxUsernameLogin.Size = new System.Drawing.Size(141, 22);
             this.tbxUsernameLogin.TabIndex = 2;
@@ -1257,24 +1277,6 @@
             this.timerClock.Interval = 60000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
-            // btnAgree
-            // 
-            this.btnAgree.Location = new System.Drawing.Point(37, 415);
-            this.btnAgree.Name = "btnAgree";
-            this.btnAgree.Size = new System.Drawing.Size(256, 28);
-            this.btnAgree.TabIndex = 2;
-            this.btnAgree.Text = "Agree with selected";
-            this.btnAgree.UseVisualStyleBackColor = true;
-            // 
-            // btnDisagree
-            // 
-            this.btnDisagree.Location = new System.Drawing.Point(37, 444);
-            this.btnDisagree.Name = "btnDisagree";
-            this.btnDisagree.Size = new System.Drawing.Size(256, 28);
-            this.btnDisagree.TabIndex = 3;
-            this.btnDisagree.Text = "Disagree with selected";
-            this.btnDisagree.UseVisualStyleBackColor = true;
-            // 
             // HousingApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1283,7 +1285,7 @@
             this.Controls.Add(this.gbxLogin);
             this.Controls.Add(this.MenuTenant);
             this.Controls.Add(this.MenuAdmin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HousingApp";
             this.Text = "Housing App";
             this.Load += new System.EventHandler(this.HousingApp_Load);
