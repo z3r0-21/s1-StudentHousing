@@ -230,7 +230,7 @@ namespace HousingSoftware
                 newAgreement = new Agreements();
                 newAgreement.AddNewAgreement(agreement);
 
-                lbxAllAgreementsTenant.Items.Add(agreement);
+                lbxAllAgreementsTenant.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
                 lbxAllAgreementsAdmin.Items.Add(agreement);
             }
             else

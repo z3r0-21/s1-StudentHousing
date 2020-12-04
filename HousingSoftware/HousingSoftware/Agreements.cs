@@ -39,8 +39,16 @@ namespace HousingSoftware
 
         public int GetAgreementRatio()
         {
-            approveRate = (totalAgree / totaolDisagree) * 100;
-            return approveRate;
+            if(totalAgree != 0 && totaolDisagree != 0)
+            {
+                approveRate = (totalAgree / totaolDisagree) * 100;
+                return approveRate;
+            }
+            else
+            {
+                return approveRate = 0;
+            }
+            
         }
 
     }
