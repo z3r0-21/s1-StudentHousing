@@ -130,6 +130,8 @@
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.btnAgree = new System.Windows.Forms.Button();
+            this.btnDisagree = new System.Windows.Forms.Button();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -1038,13 +1040,15 @@
             // 
             // gbxAllAgreements
             // 
+            this.gbxAllAgreements.Controls.Add(this.btnDisagree);
+            this.gbxAllAgreements.Controls.Add(this.btnAgree);
             this.gbxAllAgreements.Controls.Add(this.lbxAllAgreementsTenant);
             this.gbxAllAgreements.Controls.Add(this.label3);
             this.gbxAllAgreements.Location = new System.Drawing.Point(447, 32);
             this.gbxAllAgreements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxAllAgreements.Name = "gbxAllAgreements";
             this.gbxAllAgreements.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxAllAgreements.Size = new System.Drawing.Size(325, 476);
+            this.gbxAllAgreements.Size = new System.Drawing.Size(325, 500);
             this.gbxAllAgreements.TabIndex = 5;
             this.gbxAllAgreements.TabStop = false;
             // 
@@ -1056,7 +1060,7 @@
             this.lbxAllAgreementsTenant.Location = new System.Drawing.Point(37, 70);
             this.lbxAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbxAllAgreementsTenant.Name = "lbxAllAgreementsTenant";
-            this.lbxAllAgreementsTenant.Size = new System.Drawing.Size(256, 388);
+            this.lbxAllAgreementsTenant.Size = new System.Drawing.Size(256, 340);
             this.lbxAllAgreementsTenant.TabIndex = 0;
             // 
             // label3
@@ -1253,6 +1257,24 @@
             this.timerClock.Interval = 60000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
+            // btnAgree
+            // 
+            this.btnAgree.Location = new System.Drawing.Point(37, 415);
+            this.btnAgree.Name = "btnAgree";
+            this.btnAgree.Size = new System.Drawing.Size(256, 28);
+            this.btnAgree.TabIndex = 2;
+            this.btnAgree.Text = "Agree with selected";
+            this.btnAgree.UseVisualStyleBackColor = true;
+            // 
+            // btnDisagree
+            // 
+            this.btnDisagree.Location = new System.Drawing.Point(37, 444);
+            this.btnDisagree.Name = "btnDisagree";
+            this.btnDisagree.Size = new System.Drawing.Size(256, 28);
+            this.btnDisagree.TabIndex = 3;
+            this.btnDisagree.Text = "Disagree with selected";
+            this.btnDisagree.UseVisualStyleBackColor = true;
+            // 
             // HousingApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1423,5 +1445,7 @@
         private System.Windows.Forms.Button btnMarkAsDone;
         private System.Windows.Forms.Timer timerClock;
         private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Button btnDisagree;
+        private System.Windows.Forms.Button btnAgree;
     }
 }
