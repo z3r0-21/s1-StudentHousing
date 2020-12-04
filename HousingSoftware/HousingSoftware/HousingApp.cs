@@ -236,6 +236,7 @@ namespace HousingSoftware
             else
             {
                 MessageBox.Show("Please, make sure to enter a text containing 20 more charachters.");
+                //test
             }
         }
     }
