@@ -41,10 +41,15 @@ namespace HousingSoftware
             MenuTenant.Hide();
             btnLogOutTenant.Hide();
 
+            // Initialize admin 
+
+
             // make a tenant for testing
             tenant1 = new Tenant();
             tenant1.InitializeTenant(1, "user", "user");
+            tenant1.SetGroceriesTenant(admin.GetAllGroceries());
             admin.AddTenant(tenant1);
+            
 
         }
 
@@ -100,7 +105,9 @@ namespace HousingSoftware
                 {
                     currentTenant = new Tenant();
                     currentTenant.InitializeTenant(studentNum, fname, password);
+                    currentTenant.SetGroceriesTenant(admin.GetAllGroceries());
                     admin.AddTenant(currentTenant);
+                    // add groceries to new registered tenants
                 }
                 else
                 {
@@ -140,17 +147,29 @@ namespace HousingSoftware
             tbxStudentNumRemove.Clear();
         }
 
-        private bool checkForTenantCredentials(string username, string password)
+        private int checkForTenantCredentials(string username, string password)
         {
-            foreach (Tenant tenant in admin.GetTenants())
+            int index = -1;
+            List<Tenant> tenants = admin.GetTenants();
+            for (int i = 0;i < tenants.Count();i++)
             {
-                if(tenant.GetStudentNumber().ToString() == username &&
-                    tenant.GetPassword() == password)
+                if(tenants[i].GetStudentNumber().ToString() == username &&
+                    tenants[i].GetPassword() == password)
                 {
-                    return true;
+                    index = i;
                 }
             }
-            return false;
+            return index;
+        }
+
+        private void showUnpaidGroceries(int index)
+        {
+            lbxUnpaidGroceries.Items.Clear();
+            List<Grocery> groceries = admin.GetTenants()[index].GetGroceriesTenant();
+            foreach (Grocery grocery in groceries)
+            {
+                lbxUnpaidGroceries.Items.Add(grocery.GetName());
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -166,11 +185,13 @@ namespace HousingSoftware
                     MenuAdmin.Show();
                     btnLogOutAdmin.Show();
                 }
-                else if(checkForTenantCredentials(username, password))
+                else if(checkForTenantCredentials(username, password) != -1)
                 {
+                    int index = checkForTenantCredentials(username, password);
                     gbxLogin.Hide();
                     MenuTenant.Show();
                     btnLogOutTenant.Show();
+                    showUnpaidGroceries(index);
                 }
                 else
                 {
@@ -246,6 +267,17 @@ namespace HousingSoftware
             return false;
         }
 
+        private void addGroceryToTenants(Grocery grocery)
+        {
+            lbxUnpaidGroceries.Items.Clear();
+            foreach (Tenant tenant in admin.GetTenants())
+            {
+                
+                tenant.AddGrocery(grocery);
+                
+            }
+        }
+
         private void btnAddGrocery_Click(object sender, EventArgs e)
         {
             string groceryName = tbxGroceryName.Text;
@@ -256,9 +288,10 @@ namespace HousingSoftware
                 if (!isGroceryExist(currentGrocery.GetName()))
                 {
                     admin.AddGrocery(currentGrocery);
+                    showRecentGroceries(); // Show recent groceries in the listbox Recent groceries
 
-                    // Show recent groceries in the listbox Recent groceries
-                    showRecentGroceries();
+                    //addGroceryToTenants(currentGrocery);
+
                 }
                 else
                 {
