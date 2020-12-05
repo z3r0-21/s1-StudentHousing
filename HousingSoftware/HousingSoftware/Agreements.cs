@@ -12,7 +12,7 @@ namespace HousingSoftware
         private int approveRate;
         private List<string> tenantsAgreed = new List<string>();
         private List<string> tenantsDisagreed = new List<string>();
-        private int totalDisagree;
+       
 
         public string GetAgreement()
         {

@@ -345,16 +345,15 @@ namespace HousingSoftware
 
         private void btnAgree_Click(object sender, EventArgs e)
         {
-            //string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString();
-            //newAgreement.Agree();
+            //selected agreement
+            string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString();
+
 
         }
 
         private void btnDisagree_Click(object sender, EventArgs e)
         {
-            //string selectedAgreement = newAgreement.GetAgreement();
-            //newAgreement.Disagree();
-            //lbxAllAgreementsTenant.Items.Add(newAgreement);
+            //selected agreement
         }
     }
 }
