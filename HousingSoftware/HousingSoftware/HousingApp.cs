@@ -168,7 +168,7 @@ namespace HousingSoftware
             List<Grocery> groceries = admin.GetTenants()[index].GetGroceriesTenant();
             foreach (Grocery grocery in groceries)
             {
-                lbxUnpaidGroceries.Items.Add(grocery.GetName());
+                lbxUnpaidGroceries.Items.Add(grocery.GetInfo());
             }
         }
 
@@ -184,6 +184,7 @@ namespace HousingSoftware
                     gbxLogin.Hide();
                     MenuAdmin.Show();
                     btnLogOutAdmin.Show();
+                    lbWelcomeMsgAdmin.Text = $"Welcome, {username}";
                 }
                 else if(checkForTenantCredentials(username, password) != -1)
                 {
@@ -191,6 +192,9 @@ namespace HousingSoftware
                     gbxLogin.Hide();
                     MenuTenant.Show();
                     btnLogOutTenant.Show();
+
+                    string fname = admin.GetTenants()[index].GetFirstName();
+                    lbWelcomeMsgTenant.Text = $"Welcome, {fname}";
                     showUnpaidGroceries(index);
                 }
                 else
@@ -251,7 +255,7 @@ namespace HousingSoftware
 
             foreach (Grocery grocery in admin.GetAllGroceries())
             {
-                lbxRecentGroceries.Items.Add(grocery.GetName());
+                lbxRecentGroceries.Items.Add(grocery.GetInfo());
             }
         }
 
@@ -281,10 +285,13 @@ namespace HousingSoftware
         private void btnAddGrocery_Click(object sender, EventArgs e)
         {
             string groceryName = tbxGroceryName.Text;
-            if(!String.IsNullOrEmpty(tbxGroceryName.Text))
+            double groceryPrice = Convert.ToDouble(tbxGroceryPrice.Text);
+
+            if(!String.IsNullOrEmpty(tbxGroceryName.Text) && !String.IsNullOrEmpty(tbxGroceryPrice.Text))
             {
                 currentGrocery = new Grocery();
-                currentGrocery.SetName(groceryName);
+                currentGrocery.InitialiseGrocery(groceryName, groceryPrice);
+
                 if (!isGroceryExist(currentGrocery.GetName()))
                 {
                     admin.AddGrocery(currentGrocery);
@@ -303,6 +310,7 @@ namespace HousingSoftware
                 MessageBox.Show("Please write down a name of the grocery!");
             }
             tbxGroceryName.Clear();
+            tbxGroceryPrice.Clear();
         }
 
         private void btnRemoveSelectedGrocery_Click(object sender, EventArgs e)
