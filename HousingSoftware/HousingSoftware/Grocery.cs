@@ -9,6 +9,7 @@ namespace HousingSoftware
     public class Grocery
     {
         private string name;
+        private double price;
         
         // can add price ?
 
@@ -20,6 +21,25 @@ namespace HousingSoftware
         public string GetName()
         {
             return name;
+        }
+
+        public void SetPrice(double newPrice)
+        {
+            price = newPrice;
+        }
+
+        public double GetPrice()
+        {
+            return price;
+        }
+        public void InitialiseGrocery(string newName, double newPrice)
+        {
+            name = newName;
+            price = newPrice;
+        }
+        public string GetInfo()
+        {
+            return $"{name} - ${price}";
         }
 
     }
