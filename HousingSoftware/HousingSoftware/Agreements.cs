@@ -10,8 +10,8 @@ namespace HousingSoftware
     {
         private string agreement;
         private int approveRate;
-        private List<string> tenantsAgreed = new List<string>();
-        private List<string> tenantsDisagreed = new List<string>();
+        private List<int> tenantsAgreed = new List<int>();
+        private List<int> tenantsDisagreed = new List<int>();
        
 
         public string GetAgreement()
@@ -24,19 +24,19 @@ namespace HousingSoftware
             agreement = suggestedAgreement;
         }
 
-        public void Agree(string tenant, string studentNr)
+        public void Agree(int studentNr)
         {
             if (!tenantsAgreed.Contains(studentNr) && !tenantsDisagreed.Contains(studentNr))
             {
-                tenantsAgreed.Add(tenant);
+                tenantsAgreed.Add(studentNr);
             }
         }
 
-        public void Disagree(string tenant, string studentNr)
+        public void Disagree(int studentNr)
         {
             if (!tenantsAgreed.Contains(studentNr) && !tenantsDisagreed.Contains(studentNr))
             {
-                tenantsDisagreed.Add(tenant);
+                tenantsDisagreed.Add(studentNr);
             }
         }
 

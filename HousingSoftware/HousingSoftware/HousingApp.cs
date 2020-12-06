@@ -21,7 +21,7 @@ namespace HousingSoftware
 
         Agreements newAgreement;
 
-        List<string> Complaints = new List<string>();
+        
         Grocery currentGrocery;
         public HousingApp()
         {
@@ -67,29 +67,15 @@ namespace HousingSoftware
             return index;
         }
 
-        private void AddComplaints(string complaintText)
-        {
-            Complaints.Add(complaintText);
-            RefreshComplaintsList();
-        }
-
-        private void MarkComplaintAsDone()
-        {
-            int selectedIndex = lbxAllComplaints.SelectedIndex;
-            Complaints.RemoveAt(selectedIndex);
-
-
-            RefreshComplaintsList();
-        }
-
+     
         private void RefreshComplaintsList()
         {
 
             lbxAllComplaints.Items.Clear();
 
-            foreach (string complaint in Complaints)
+            foreach (string complaint in admin.GetComplaints())
             {
-               lbxAllComplaints.Items.Add(complaint);
+                lbxAllComplaints.Items.Add(complaint);
             }
         }
 
@@ -226,16 +212,26 @@ namespace HousingSoftware
 
         private void btnComplaint_Click(object sender, EventArgs e)
         {
-            //send a complaint
-            AddComplaints(tbxWriteComplaint.Text);
+            if(!String.IsNullOrEmpty(tbxWriteComplaint.Text))
+            {
+                admin.AddComplaint(tbxWriteComplaint.Text);
+                RefreshComplaintsList();
+                tbxWriteComplaint.Clear();
+                MessageBox.Show("Your complaint has been sent to Student Housing BV.");
+            }
+            else
+            {
+                MessageBox.Show("In order to send a complaint, please, enter a text in the text box.");
+            }
         }
 
         private void btnMarkAsDone_Click(object sender, EventArgs e)
         {
-            
-            if(Complaints.Count > 0 && lbxAllComplaints.SelectedIndex != -1)
+
+            if (admin.GetComplaints().Count > 0 && lbxAllComplaints.SelectedIndex != -1)
             {
-                MarkComplaintAsDone();
+                admin.RemoveComplaint(lbxAllComplaints.SelectedItem.ToString());
+                RefreshComplaintsList();
             }
             else
             {
@@ -340,14 +336,14 @@ namespace HousingSoftware
                 string agreement = tbxAddAgreement.Text;
                 newAgreement = new Agreements();
                 newAgreement.AddNewAgreement(agreement);
+                admin.AddAgreement(newAgreement);
 
                 lbxAllAgreementsTenant.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
-                lbxAllAgreementsAdmin.Items.Add(agreement);
+                lbxAllAgreementsAdmin.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
             }
             else
             {
                 MessageBox.Show("Please, make sure to enter a text containing 20 more charachters.");
-                //test
             }
         }
 

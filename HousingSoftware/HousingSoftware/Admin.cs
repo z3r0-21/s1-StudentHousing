@@ -12,8 +12,12 @@ namespace HousingSoftware
         private string password;
         private List<Tenant> tenants = new List<Tenant>();
         private List<Grocery> allGroceries = new List<Grocery>();
- 
+        private List<string> complaints = new List<string>();
+        private List<Agreements> agreements = new List<Agreements>();
 
+       
+
+        //  USERNAME
         public void SetUsername(string inputedUsername)
         {
             username = inputedUsername;
@@ -24,6 +28,7 @@ namespace HousingSoftware
             return username;
         }
 
+        //  PASSWORD
         public void SetPassword(string inputedPassword)
         {
             password = inputedPassword;
@@ -34,7 +39,7 @@ namespace HousingSoftware
             return password;
         }
 
-
+        //  MANAGE TENANTS
         public void AddTenant(Tenant inputedTenant)
         {
             tenants.Add(inputedTenant);
@@ -60,7 +65,7 @@ namespace HousingSoftware
             return tenants;
         }
 
-
+        //  MANAGE GROCERIES
         public void SetAllGroceries(List<Grocery> groceries)
         {
             allGroceries = groceries;
@@ -90,6 +95,34 @@ namespace HousingSoftware
         {
             allGroceries.Clear();
         }
+
+        //  COMPLAINTS
+        public void AddComplaint(string newComplaint)
+        {
+            complaints.Add(newComplaint);
+        }
+
+        public void RemoveComplaint(string selectedComplaint)
+        {
+            complaints.Remove(selectedComplaint);
+        }
+
+        public List<string> GetComplaints()
+        {
+            return complaints;
+        }
+
+        // AGREEMENTS
+        public void AddAgreement(Agreements newAgreements)
+        {
+            agreements.Add(newAgreements);
+        }
+
+        public List<Agreements> GetAgreements()
+        {
+            return agreements;
+        }
+
 
     }
 }

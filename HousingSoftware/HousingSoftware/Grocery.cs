@@ -10,8 +10,6 @@ namespace HousingSoftware
     {
         private string name;
         private double price;
-        
-        // can add price ?
 
         public void SetName(string groceryName)
         {
