@@ -94,7 +94,13 @@ namespace HousingSoftware
                 lbxAllAgreementsAdmin.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
             }
         }
-
+        private void AddGroceriesTenant(Tenant tenant, List<Grocery> groceries)
+        {
+            foreach (Grocery grocery in groceries)
+            {
+                tenant.AddGrocery(grocery);
+            }
+        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
             int studentNum;
@@ -111,7 +117,9 @@ namespace HousingSoftware
                 {
                     currentTenant = new Tenant();
                     currentTenant.InitializeTenant(studentNum, fname, password);
-                    currentTenant.SetGroceriesTenant(admin.GetAllGroceries());
+                    //currentTenant.SetGroceriesTenant(admin.GetAllGroceries());
+
+                    AddGroceriesTenant(currentTenant, admin.GetAllGroceries());
                     admin.AddTenant(currentTenant);
                     // add groceries to new registered tenants
                 }
@@ -208,7 +216,7 @@ namespace HousingSoftware
 
                     string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
                     lbWelcomeMsgTenant.Text = $"Welcome, {fname}";
-                    showUnpaidGroceries(lbxUnpaidGroceries, index);
+                    showUnpaidGroceries(lbxUnpaidGroceries, indexCurrTenant);
                 }
                 else
                 {
@@ -396,7 +404,7 @@ namespace HousingSoftware
                     if(indexSelectedItem != -1)
                     {
                         admin.GetTenants()[indexSearchedTenant].GetGroceriesTenant().RemoveAt(indexSelectedItem);
-                        lbxUnpaidGroceriesPerStudent.ClearSelected();
+                        lbxUnpaidGroceriesPerStudent.Items.RemoveAt(indexSelectedItem);
                         //showUnpaidGroceries(lbxUnpaidGroceriesPerStudent, indexSearchedTenant);
                     }
                     else
@@ -437,6 +445,31 @@ namespace HousingSoftware
             else
             {
                 MessageBox.Show("Student is not selected. Write student's student number!");
+            }
+        }
+
+
+        private void btnClsSelectedLineRecentGroceries_Click(object sender, EventArgs e)
+        {
+            if (lbxRecentGroceries.SelectedIndex != -1)
+            {
+                lbxRecentGroceries.ClearSelected();
+            }
+            else
+            {
+                MessageBox.Show("There is no selected item!");
+            }
+        }
+
+        private void btnClsSelectLinePayListGroceries_Click(object sender, EventArgs e)
+        {
+            if (lbxUnpaidGroceriesPerStudent.SelectedIndex != -1)
+            {
+                lbxUnpaidGroceriesPerStudent.ClearSelected();
+            }
+            else
+            {
+                MessageBox.Show("There is no selected item!");
             }
         }
 
