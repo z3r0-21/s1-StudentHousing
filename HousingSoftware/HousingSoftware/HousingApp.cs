@@ -21,7 +21,9 @@ namespace HousingSoftware
 
         Agreements newAgreement;
 
-        
+        int indexCurrTenant;
+
+
         Grocery currentGrocery;
 
         int indexSearchedTenant = -1;
@@ -77,6 +79,19 @@ namespace HousingSoftware
             foreach (string complaint in admin.GetComplaints())
             {
                 lbxAllComplaints.Items.Add(complaint);
+            }
+        }
+
+        private void RefreshAgreements()
+        {
+
+            lbxAllAgreementsTenant.Items.Clear();
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                lbxAllAgreementsTenant.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
+                lbxAllAgreementsAdmin.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
             }
         }
 
@@ -186,12 +201,12 @@ namespace HousingSoftware
                 }
                 else if(checkForTenantCredentials(username, password) != -1)
                 {
-                    int index = checkForTenantCredentials(username, password);
+                    indexCurrTenant = checkForTenantCredentials(username, password);
                     gbxLogin.Hide();
                     MenuTenant.Show();
                     btnLogOutTenant.Show();
 
-                    string fname = admin.GetTenants()[index].GetFirstName();
+                    string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
                     lbWelcomeMsgTenant.Text = $"Welcome, {fname}";
                     showUnpaidGroceries(lbxUnpaidGroceries, index);
                 }
@@ -434,8 +449,7 @@ namespace HousingSoftware
                 newAgreement.AddNewAgreement(agreement);
                 admin.AddAgreement(newAgreement);
 
-                lbxAllAgreementsTenant.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
-                lbxAllAgreementsAdmin.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
+                RefreshAgreements();
             }
             else
             {
@@ -453,7 +467,17 @@ namespace HousingSoftware
 
         private void btnDisagree_Click(object sender, EventArgs e)
         {
-            //selected agreement
+            //get the student number of the currently logged tennants
+            Tenant currentTenantNr = admin.GetTenants()[indexCurrTenant];
+
+            string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
+            int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
+
+            //select
+            
+            newAgreement.Disagree(stNumber);
+
+
         }
     }
 }
