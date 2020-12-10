@@ -134,6 +134,7 @@
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.btndeleteAnnouncement = new System.Windows.Forms.Button();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -222,7 +223,7 @@
             // btnLogOutAdmin
             // 
             this.btnLogOutAdmin.Location = new System.Drawing.Point(7, 489);
-            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutAdmin.Name = "btnLogOutAdmin";
             this.btnLogOutAdmin.Size = new System.Drawing.Size(104, 38);
             this.btnLogOutAdmin.TabIndex = 3;
@@ -469,6 +470,7 @@
             this.btnPostAnnouncement.TabIndex = 2;
             this.btnPostAnnouncement.Text = "Post";
             this.btnPostAnnouncement.UseVisualStyleBackColor = true;
+            this.btnPostAnnouncement.Click += new System.EventHandler(this.btnPostAnnouncement_Click);
             // 
             // tbxPostAnnouncement
             // 
@@ -490,6 +492,7 @@
             // 
             // gbxNewsFeed
             // 
+            this.gbxNewsFeed.Controls.Add(this.btndeleteAnnouncement);
             this.gbxNewsFeed.Controls.Add(this.lbxAllAnnouncements);
             this.gbxNewsFeed.Controls.Add(this.lbAllAnnouncements);
             this.gbxNewsFeed.Location = new System.Drawing.Point(34, 25);
@@ -505,10 +508,10 @@
             // 
             this.lbxAllAnnouncements.FormattingEnabled = true;
             this.lbxAllAnnouncements.ItemHeight = 16;
-            this.lbxAllAnnouncements.Location = new System.Drawing.Point(39, 84);
+            this.lbxAllAnnouncements.Location = new System.Drawing.Point(40, 69);
             this.lbxAllAnnouncements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbxAllAnnouncements.Name = "lbxAllAnnouncements";
-            this.lbxAllAnnouncements.Size = new System.Drawing.Size(306, 388);
+            this.lbxAllAnnouncements.Size = new System.Drawing.Size(306, 372);
             this.lbxAllAnnouncements.TabIndex = 0;
             // 
             // lbAllAnnouncements
@@ -913,7 +916,7 @@
             // btnLogOutTenant
             // 
             this.btnLogOutTenant.Location = new System.Drawing.Point(32, 489);
-            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutTenant.Name = "btnLogOutTenant";
             this.btnLogOutTenant.Size = new System.Drawing.Size(104, 38);
             this.btnLogOutTenant.TabIndex = 4;
@@ -924,7 +927,7 @@
             // lbWelcomeMsgTenant
             // 
             this.lbWelcomeMsgTenant.AutoSize = true;
-            this.lbWelcomeMsgTenant.Location = new System.Drawing.Point(89, 84);
+            this.lbWelcomeMsgTenant.Location = new System.Drawing.Point(50, 25);
             this.lbWelcomeMsgTenant.Name = "lbWelcomeMsgTenant";
             this.lbWelcomeMsgTenant.Size = new System.Drawing.Size(74, 17);
             this.lbWelcomeMsgTenant.TabIndex = 0;
@@ -1241,9 +1244,9 @@
             this.gbxLogin.Controls.Add(this.lbPasswordLogin);
             this.gbxLogin.Controls.Add(this.lbUsernameLogin);
             this.gbxLogin.Location = new System.Drawing.Point(763, 14);
-            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4);
             this.gbxLogin.Name = "gbxLogin";
-            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4);
             this.gbxLogin.Size = new System.Drawing.Size(313, 226);
             this.gbxLogin.TabIndex = 1;
             this.gbxLogin.TabStop = false;
@@ -1251,7 +1254,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(125, 160);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(142, 34);
             this.btnLogin.TabIndex = 4;
@@ -1262,7 +1265,7 @@
             // tbxPasswordLogin
             // 
             this.tbxPasswordLogin.Location = new System.Drawing.Point(125, 106);
-            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPasswordLogin.Name = "tbxPasswordLogin";
             this.tbxPasswordLogin.Size = new System.Drawing.Size(141, 22);
             this.tbxPasswordLogin.TabIndex = 3;
@@ -1270,7 +1273,7 @@
             // tbxUsernameLogin
             // 
             this.tbxUsernameLogin.Location = new System.Drawing.Point(125, 60);
-            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxUsernameLogin.Name = "tbxUsernameLogin";
             this.tbxUsernameLogin.Size = new System.Drawing.Size(141, 22);
             this.tbxUsernameLogin.TabIndex = 2;
@@ -1301,6 +1304,16 @@
             this.timerClock.Interval = 60000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
+            // btndeleteAnnouncement
+            // 
+            this.btndeleteAnnouncement.Location = new System.Drawing.Point(116, 446);
+            this.btndeleteAnnouncement.Name = "btndeleteAnnouncement";
+            this.btndeleteAnnouncement.Size = new System.Drawing.Size(157, 32);
+            this.btndeleteAnnouncement.TabIndex = 4;
+            this.btndeleteAnnouncement.Text = "Delete";
+            this.btndeleteAnnouncement.UseVisualStyleBackColor = true;
+            this.btndeleteAnnouncement.Click += new System.EventHandler(this.btndeleteAnnouncement_Click);
+            // 
             // HousingApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1309,7 +1322,7 @@
             this.Controls.Add(this.gbxLogin);
             this.Controls.Add(this.MenuTenant);
             this.Controls.Add(this.MenuAdmin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HousingApp";
             this.Text = "Housing App";
             this.Load += new System.EventHandler(this.HousingApp_Load);
@@ -1475,5 +1488,6 @@
         private System.Windows.Forms.Button btnAgree;
         private System.Windows.Forms.TextBox tbxGroceryPrice;
         private System.Windows.Forms.Label lbGroceryPrice;
+        private System.Windows.Forms.Button btndeleteAnnouncement;
     }
 }

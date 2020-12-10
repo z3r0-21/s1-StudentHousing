@@ -14,8 +14,9 @@ namespace HousingSoftware
         private List<Grocery> allGroceries = new List<Grocery>();
         private List<string> complaints = new List<string>();
         private List<Agreements> agreements = new List<Agreements>();
+        private List<Announcements> announcements = new List<Announcements>();
 
-       
+
 
         //  USERNAME
         public void SetUsername(string inputedUsername)
@@ -121,6 +122,13 @@ namespace HousingSoftware
         public List<Agreements> GetAgreements()
         {
             return agreements;
+        }
+
+        // ANNOUNCEMENTS
+
+        public void AddAnnouncement(Announcements announcement)
+        {
+            announcements.Add(announcement);
         }
 
 

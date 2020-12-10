@@ -18,7 +18,7 @@ namespace HousingSoftware
         Admin admin;
         Tenant currentTenant;
         Tenant tenant1;
-
+        Announcements newannouncement;
         Agreements newAgreement;
 
         
@@ -358,6 +358,30 @@ namespace HousingSoftware
         private void btnDisagree_Click(object sender, EventArgs e)
         {
             //selected agreement
+        }
+
+        private void btnPostAnnouncement_Click(object sender, EventArgs e)
+        {
+            if(tbxPostAnnouncement.Text != "")
+            {
+                string announcement = tbxPostAnnouncement.Text;
+                newannouncement = new Announcements(announcement);
+                //newannouncement.AddAnnouncement(announcement);
+                admin.AddAnnouncement(newannouncement);
+                lbxAllAnnouncements.Items.Add($"{admin.GetUsername()}  -  {announcement}");
+            }
+            else
+            {
+                MessageBox.Show($"Please, type something.");
+            }
+            tbxPostAnnouncement.Clear();
+        }
+ 
+
+        private void btndeleteAnnouncement_Click(object sender, EventArgs e)
+        {
+            int index = lbxAllAnnouncements.SelectedIndex;
+            lbxAllAnnouncements.Items.RemoveAt(index);
         }
     }
 }
