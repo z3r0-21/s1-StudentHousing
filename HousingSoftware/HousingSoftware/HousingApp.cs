@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,19 +15,21 @@ namespace HousingSoftware
         private string adminUsername = "admin";
         private string adminPassword = "admin";
 
-        Admin admin;
+        Admin admin = new Admin();
         Tenant currentTenant;
         Tenant tenant1;
         Announcements newannouncement;
         Agreements newAgreement;
 
-        
+        int indexCurrTenant;
+
+
         Grocery currentGrocery;
+
+        int indexSearchedTenant = -1;
         public HousingApp()
         {
-            InitializeComponent();
-            admin = new Admin();
-            
+            InitializeComponent();        
         }
 
         private void HousingApp_Load(object sender, EventArgs e)
@@ -41,17 +43,18 @@ namespace HousingSoftware
             MenuTenant.Hide();
             btnLogOutTenant.Hide();
 
-            // Initialize admin 
-
+             
+            //admin = new Admin();
 
             // make a tenant for testing
             tenant1 = new Tenant();
             tenant1.InitializeTenant(1, "user", "user");
-            tenant1.SetGroceriesTenant(admin.GetAllGroceries());
+            //tenant1.SetGroceriesTenant(admin.GetAllGroceries());
             admin.AddTenant(tenant1);
             
 
         }
+
 
         private int searchTenantProfile(int studentNum)
         {
@@ -79,19 +82,44 @@ namespace HousingSoftware
             }
         }
 
+        private void RefreshAgreements()
+        {
+
+            lbxAllAgreementsTenant.Items.Clear();
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                lbxAllAgreementsTenant.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
+                lbxAllAgreementsAdmin.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
+            }
+        }
+        private void AddGroceriesTenant(Tenant tenant, List<Grocery> groceries)
+        {
+            foreach (Grocery grocery in groceries)
+            {
+                tenant.AddGrocery(grocery);
+            }
+        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            int studentNum = Convert.ToInt32(tbxStudentNumRegister.Text);
-            string fname = tbxFirstNameRegister.Text;
-            string password = tbxPasswordRegister.Text;
+            int studentNum;
+            string fname;
+            string password;
 
             if(!String.IsNullOrEmpty(tbxStudentNumRegister.Text) && !String.IsNullOrEmpty(tbxFirstNameRegister.Text) && !String.IsNullOrEmpty(tbxPasswordRegister.Text))
             {
+                studentNum = Convert.ToInt32(tbxStudentNumRegister.Text);
+                fname = tbxFirstNameRegister.Text;
+                password = tbxPasswordRegister.Text;
+
                 if (searchTenantProfile(studentNum) == -1)
                 {
                     currentTenant = new Tenant();
                     currentTenant.InitializeTenant(studentNum, fname, password);
-                    currentTenant.SetGroceriesTenant(admin.GetAllGroceries());
+                    //currentTenant.SetGroceriesTenant(admin.GetAllGroceries());
+
+                    AddGroceriesTenant(currentTenant, admin.GetAllGroceries());
                     admin.AddTenant(currentTenant);
                     // add groceries to new registered tenants
                 }
@@ -111,12 +139,13 @@ namespace HousingSoftware
 
         private void btnRemoveTenant_Click(object sender, EventArgs e)
         {
-            int studentNum = Convert.ToInt32(tbxStudentNumRemove.Text);
+            int studentNum;
 
             if (!String.IsNullOrEmpty(tbxStudentNumRemove.Text))
             {
-                
-                if(searchTenantProfile(studentNum) != -1)
+                studentNum = Convert.ToInt32(tbxStudentNumRemove.Text);
+
+                if (searchTenantProfile(studentNum) != -1)
                 {
                     int index = searchTenantProfile(studentNum);
                     admin.RemoveTenantAt(index);
@@ -148,22 +177,28 @@ namespace HousingSoftware
             return index;
         }
 
-        private void showUnpaidGroceries(int index)
+        private void showUnpaidGroceries(ListBox unpaidGroceries, int index)
         {
-            lbxUnpaidGroceries.Items.Clear();
+            //lbxUnpaidGroceries.Items.Clear();
+            unpaidGroceries.Items.Clear();
             List<Grocery> groceries = admin.GetTenants()[index].GetGroceriesTenant();
             foreach (Grocery grocery in groceries)
             {
-                lbxUnpaidGroceries.Items.Add(grocery.GetInfo());
+                //lbxUnpaidGroceries.Items.Add(grocery.GetInfo());
+                unpaidGroceries.Items.Add(grocery.GetInfo());
             }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = tbxUsernameLogin.Text;
-            string password = tbxPasswordLogin.Text;
+            string username;
+            string password;
+
             if (!String.IsNullOrEmpty(tbxUsernameLogin.Text) && !String.IsNullOrEmpty(tbxPasswordLogin.Text))
             {
+                username = tbxUsernameLogin.Text;
+                password = tbxPasswordLogin.Text;
+
                 if (username == adminUsername && password == adminPassword)
                 {
                     // redirecting to home page
@@ -174,14 +209,14 @@ namespace HousingSoftware
                 }
                 else if(checkForTenantCredentials(username, password) != -1)
                 {
-                    int index = checkForTenantCredentials(username, password);
+                    indexCurrTenant = checkForTenantCredentials(username, password);
                     gbxLogin.Hide();
                     MenuTenant.Show();
                     btnLogOutTenant.Show();
 
-                    string fname = admin.GetTenants()[index].GetFirstName();
+                    string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
                     lbWelcomeMsgTenant.Text = $"Welcome, {fname}";
-                    showUnpaidGroceries(index);
+                    showUnpaidGroceries(lbxUnpaidGroceries, indexCurrTenant);
                 }
                 else
                 {
@@ -280,11 +315,14 @@ namespace HousingSoftware
 
         private void btnAddGrocery_Click(object sender, EventArgs e)
         {
-            string groceryName = tbxGroceryName.Text;
-            double groceryPrice = Convert.ToDouble(tbxGroceryPrice.Text);
+            string groceryName;
+            double groceryPrice;
 
             if(!String.IsNullOrEmpty(tbxGroceryName.Text) && !String.IsNullOrEmpty(tbxGroceryPrice.Text))
             {
+                groceryName = tbxGroceryName.Text;
+                groceryPrice = Convert.ToDouble(tbxGroceryPrice.Text);
+
                 currentGrocery = new Grocery();
                 currentGrocery.InitialiseGrocery(groceryName, groceryPrice);
 
@@ -293,8 +331,7 @@ namespace HousingSoftware
                     admin.AddGrocery(currentGrocery);
                     showRecentGroceries(); // Show recent groceries in the listbox Recent groceries
 
-                    //addGroceryToTenants(currentGrocery);
-
+                    addGroceryToTenants(currentGrocery);
                 }
                 else
                 {
@@ -303,7 +340,7 @@ namespace HousingSoftware
             }
             else
             {
-                MessageBox.Show("Please write down a name of the grocery!");
+                MessageBox.Show("Please write down a name and price of the grocery!");
             }
             tbxGroceryName.Clear();
             tbxGroceryPrice.Clear();
@@ -329,6 +366,113 @@ namespace HousingSoftware
             showRecentGroceries();
         }
 
+        private void btnShowToPayList_Click(object sender, EventArgs e)
+        {
+
+            lbxUnpaidGroceriesPerStudent.Items.Clear();
+            int studNum;
+
+            if (!String.IsNullOrEmpty(tbxStudNumUnpaidItems.Text))
+            {
+                studNum = Convert.ToInt32(tbxStudNumUnpaidItems.Text);
+
+                indexSearchedTenant = searchTenantProfile(studNum);
+                if (indexSearchedTenant != -1)
+                {
+                    showUnpaidGroceries(lbxUnpaidGroceriesPerStudent, indexSearchedTenant);
+                }
+                else
+                {
+                    MessageBox.Show("There is no student with such student number!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please fill the text box!");
+            }
+            tbxStudNumUnpaidItems.Clear();
+        }
+
+        private void btnMarkSelectedAsPaid_Click(object sender, EventArgs e)
+        {
+            int indexSelectedItem = lbxUnpaidGroceriesPerStudent.SelectedIndex;
+            if (indexSearchedTenant != -1)
+            {
+                if (lbxUnpaidGroceriesPerStudent.Items.Count > 0)
+                {
+                    if(indexSelectedItem != -1)
+                    {
+                        admin.GetTenants()[indexSearchedTenant].GetGroceriesTenant().RemoveAt(indexSelectedItem);
+                        lbxUnpaidGroceriesPerStudent.Items.RemoveAt(indexSelectedItem);
+                        //showUnpaidGroceries(lbxUnpaidGroceriesPerStudent, indexSearchedTenant);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select an item to mark it as paid!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There are no unpaid groceries for this student!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Student is not selected. Write student's student number!");
+            }
+        }
+
+        public void markGroceriesAsPaid(int indexTenant)
+        {
+            admin.GetTenants()[indexTenant].RemoveAllGroceries();
+        }
+
+        private void btnMarkAllAsPaid_Click(object sender, EventArgs e)
+        {
+            if (indexSearchedTenant != -1)
+            {
+                if (lbxUnpaidGroceriesPerStudent.Items.Count > 0)
+                {
+                    markGroceriesAsPaid(indexSearchedTenant);
+                    lbxUnpaidGroceriesPerStudent.Items.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("There are no unpaid groceries!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Student is not selected. Write student's student number!");
+            }
+        }
+
+
+        private void btnClsSelectedLineRecentGroceries_Click(object sender, EventArgs e)
+        {
+            if (lbxRecentGroceries.SelectedIndex != -1)
+            {
+                lbxRecentGroceries.ClearSelected();
+            }
+            else
+            {
+                MessageBox.Show("There is no selected item!");
+            }
+        }
+
+        private void btnClsSelectLinePayListGroceries_Click(object sender, EventArgs e)
+        {
+            if (lbxUnpaidGroceriesPerStudent.SelectedIndex != -1)
+            {
+                lbxUnpaidGroceriesPerStudent.ClearSelected();
+            }
+            else
+            {
+                MessageBox.Show("There is no selected item!");
+            }
+        }
+
         private void btnAddAgreement_Click(object sender, EventArgs e)
         {
             if(tbxAddAgreement.Text != "" && tbxAddAgreement.Text.Length > 20)
@@ -338,8 +482,7 @@ namespace HousingSoftware
                 newAgreement.AddNewAgreement(agreement);
                 admin.AddAgreement(newAgreement);
 
-                lbxAllAgreementsTenant.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
-                lbxAllAgreementsAdmin.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
+                RefreshAgreements();
             }
             else
             {
@@ -357,7 +500,17 @@ namespace HousingSoftware
 
         private void btnDisagree_Click(object sender, EventArgs e)
         {
-            //selected agreement
+            //get the student number of the currently logged tennants
+            Tenant currentTenantNr = admin.GetTenants()[indexCurrTenant];
+
+            string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
+            int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
+
+            //select
+            
+            newAgreement.Disagree(stNumber);
+
+
         }
 
         private void btnPostAnnouncement_Click(object sender, EventArgs e)
