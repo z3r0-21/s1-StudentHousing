@@ -346,13 +346,32 @@ namespace HousingSoftware
             tbxGroceryPrice.Clear();
         }
 
+        private void RemoveSelectedGroceryTenants(string groceryName)
+        {
+            foreach (Tenant tenant in admin.GetTenants())
+            {
+                foreach (Grocery grocery in tenant.GetGroceriesTenant())
+                {
+                    if (grocery.GetName() == groceryName)
+                    {
+                        tenant.RemoveGrocery(grocery);
+                        break;
+                    }
+                }
+            }
+        }
+
         private void btnRemoveSelectedGrocery_Click(object sender, EventArgs e)
         {
             if(lbxRecentGroceries.SelectedIndex != -1)
             {
                 int index = lbxRecentGroceries.SelectedIndex;
+                //string[] currentGroceryItem = lbxRecentGroceries.SelectedItem.ToString().Split(' ');
+                string selectedGroceryName = lbxRecentGroceries.SelectedItem.ToString().Split(' ')[0];
+                
                 admin.RemoveGroceryAt(index);
                 showRecentGroceries();
+                RemoveSelectedGroceryTenants(selectedGroceryName);
             }
             else
             {
@@ -360,9 +379,18 @@ namespace HousingSoftware
             }
         }
 
+        private void RemoveAllGroceriesTenants()
+        {
+            foreach (Tenant tenant in admin.GetTenants())
+            {
+                tenant.RemoveAllGroceries();
+            }
+        }
+
         private void btnRemoveAllGroceries_Click(object sender, EventArgs e)
         {
             admin.RemoveAllGroceries();
+            RemoveAllGroceriesTenants();
             showRecentGroceries();
         }
 
