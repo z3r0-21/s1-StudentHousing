@@ -16,6 +16,12 @@ namespace HousingSoftware
         private List<Agreements> agreements = new List<Agreements>();
         private List<Announcements> announcements = new List<Announcements>();
 
+        public Admin(string inputedUsername, string inputedPassword)
+        {
+            username = inputedUsername;
+            password = inputedPassword;
+        }
+
 
 
         //  USERNAME

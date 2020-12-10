@@ -15,7 +15,7 @@ namespace HousingSoftware
         private string adminUsername = "admin";
         private string adminPassword = "admin";
 
-        Admin admin = new Admin();
+        Admin admin = new Admin("admin", "admin");
         Tenant currentTenant;
         Tenant tenant1;
         Announcements newannouncement;
@@ -522,6 +522,7 @@ namespace HousingSoftware
                 //newannouncement.AddAnnouncement(announcement);
                 admin.AddAnnouncement(newannouncement);
                 lbxAllAnnouncements.Items.Add($"{admin.GetUsername()}  -  {announcement}");
+                lbxUserAllAnnouncements.Items.Add($"{admin.GetUsername()}  -  {announcement}");
             }
             else
             {
@@ -529,12 +530,12 @@ namespace HousingSoftware
             }
             tbxPostAnnouncement.Clear();
         }
- 
 
         private void btndeleteAnnouncement_Click(object sender, EventArgs e)
         {
             int index = lbxAllAnnouncements.SelectedIndex;
             lbxAllAnnouncements.Items.RemoveAt(index);
         }
+
     }
 }
