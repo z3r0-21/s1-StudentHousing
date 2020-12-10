@@ -43,7 +43,7 @@ namespace HousingSoftware
         public int GetAgreementRatio()
         {
             
-                if (tenantsDisagreed.Count != 0 && tenantsDisagreed.Count == 0)
+                if (tenantsAgreed.Count != 0 && tenantsDisagreed.Count == 0)
                 {
                     return approveRate = 100;
                 }
@@ -57,6 +57,16 @@ namespace HousingSoftware
                     return approveRate = 0;
                 }
             
+        }
+
+        public List<int> GetAgreed()
+        {
+            return this.tenantsAgreed;
+        }
+
+        public List<int> GetDisagreed()
+        {
+            return this.tenantsDisagreed;
         }
 
     }

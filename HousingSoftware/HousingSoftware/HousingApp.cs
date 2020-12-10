@@ -34,6 +34,10 @@ namespace HousingSoftware
 
         private void HousingApp_Load(object sender, EventArgs e)
         {
+            lbTime.Text = DateTime.Now.ToString("HH:mm");
+            lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd");
+
+
             MenuAdmin.Dock = DockStyle.Fill;
             MenuTenant.Dock = DockStyle.Fill;
             gbxLogin.Dock = DockStyle.Fill;
@@ -82,18 +86,19 @@ namespace HousingSoftware
             }
         }
 
+
         private void RefreshAgreements()
         {
-
             lbxAllAgreementsTenant.Items.Clear();
             lbxAllAgreementsAdmin.Items.Clear();
 
             foreach (Agreements agreement in admin.GetAgreements())
             {
-                lbxAllAgreementsTenant.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
-                lbxAllAgreementsAdmin.Items.Add($"{newAgreement.GetAgreementRatio()}% agreed: {agreement}");
+                lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
         }
+
         private void AddGroceriesTenant(Tenant tenant, List<Grocery> groceries)
         {
             foreach (Grocery grocery in groceries)
@@ -189,6 +194,7 @@ namespace HousingSoftware
             }
         }
 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username;
@@ -276,7 +282,8 @@ namespace HousingSoftware
 
         private void timerClock_Tick(object sender, EventArgs e)
         {
-            lbTime.Text = DateTime.Now.ToString();
+            lbTime.Text = DateTime.Now.ToString("HH:mm");
+            lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd");
         }
 
         private void showRecentGroceries()
@@ -501,44 +508,97 @@ namespace HousingSoftware
             }
         }
 
+        private int FindAgreementIndex(string agreementText)
+        {
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if(agreement.GetAgreement() == agreementText)
+                {
+                    return admin.GetAgreements().IndexOf(agreement);
+                }
+            }
+            return -1;
+        }
+
+        private bool hasVoted(Agreements selectedAgreement, int studentNr)
+        {
+
+            if (selectedAgreement.GetAgreed().Contains(studentNr) || selectedAgreement.GetDisagreed().Contains(studentNr))
+            {
+                MessageBox.Show("You have already voted for the selected agreement.");
+                return true;
+            }
+            
+            return false;
+        }
+
         private void btnAddAgreement_Click(object sender, EventArgs e)
         {
-            if(tbxAddAgreement.Text != "" && tbxAddAgreement.Text.Length > 20)
-            {
-                string agreement = tbxAddAgreement.Text;
-                newAgreement = new Agreements();
-                newAgreement.AddNewAgreement(agreement);
-                admin.AddAgreement(newAgreement);
+            string agreement = tbxAddAgreement.Text;
 
-                RefreshAgreements();
+            if (FindAgreementIndex(agreement) != -1)
+            {
+                MessageBox.Show($"This agreement already exists.");
             }
             else
             {
-                MessageBox.Show("Please, make sure to enter a text containing 20 more charachters.");
+                if (tbxAddAgreement.Text != "" && tbxAddAgreement.Text.Length > 20)
+                {
+                    newAgreement = new Agreements();
+                    admin.AddAgreement(newAgreement);
+                    newAgreement.AddNewAgreement(agreement);
+                    tbxAddAgreement.Clear();
+
+                    RefreshAgreements();
+
+                    MessageBox.Show($"Your agreement has been added.");
+
+                }
+                else
+                {
+                    MessageBox.Show("Please, make sure to enter a text containing 20 more charachters.");
+                }
             }
+          
         }
 
-        private void btnAgree_Click(object sender, EventArgs e)
-        {
-            //selected agreement
-            string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString();
-
-
-        }
-
-        private void btnDisagree_Click(object sender, EventArgs e)
+        private void AgreeDisagree(char choice)
         {
             //get the student number of the currently logged tennants
-            Tenant currentTenantNr = admin.GetTenants()[indexCurrTenant];
+            Tenant currentTenant = admin.GetTenants()[indexCurrTenant];
 
             string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
             int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
 
             //select
-            
-            newAgreement.Disagree(stNumber);
+            string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString().Split(':')[1];
+            //selectedAgreement = selectedAgreement.TrimStart(' ');
+            selectedAgreement = selectedAgreement.Remove(0, 1);
+            int index = FindAgreementIndex(selectedAgreement);
 
+            if (!hasVoted(admin.GetAgreements()[index], stNumber))
+            {
+               if(choice == 'a')
+               {
+                    admin.GetAgreements()[index].Agree(stNumber);
+               }
+               else if(choice == 'd')
+               {
+                    admin.GetAgreements()[index].Disagree(stNumber);
+                }
+               
+            }
+            RefreshAgreements();
+        }
 
+        private void btnAgree_Click(object sender, EventArgs e)
+        {
+            AgreeDisagree('a');
+        }
+
+        private void btnDisagree_Click(object sender, EventArgs e)
+        {
+            AgreeDisagree('d');
         }
 
         private void btnPostAnnouncement_Click(object sender, EventArgs e)
