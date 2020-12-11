@@ -69,19 +69,12 @@
             this.lbxAllAgreementsAdmin = new System.Windows.Forms.ListBox();
             this.lbAllAgreementsAdmin = new System.Windows.Forms.Label();
             this.tabHouseRulesAdmin = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearchRule = new System.Windows.Forms.Button();
-            this.tbxRuleNum = new System.Windows.Forms.TextBox();
-            this.lbRuleNum = new System.Windows.Forms.Label();
-            this.btnEditRule = new System.Windows.Forms.Button();
-            this.tbxEditRule = new System.Windows.Forms.TextBox();
-            this.lbEditRule = new System.Windows.Forms.Label();
             this.gbxRule = new System.Windows.Forms.GroupBox();
             this.btnAddRule = new System.Windows.Forms.Button();
             this.tbxAddRule = new System.Windows.Forms.TextBox();
             this.lbWriteRule = new System.Windows.Forms.Label();
             this.gbxRules = new System.Windows.Forms.GroupBox();
-            this.lbxRules = new System.Windows.Forms.ListBox();
+            this.lbxRulesAdmin = new System.Windows.Forms.ListBox();
             this.tabComplaintsAdmin = new System.Windows.Forms.TabPage();
             this.btnMarkAsDone = new System.Windows.Forms.Button();
             this.gbxAllComplaints = new System.Windows.Forms.GroupBox();
@@ -107,22 +100,22 @@
             this.gbxPayListGroceriesTenant = new System.Windows.Forms.GroupBox();
             this.lbxUnpaidGroceries = new System.Windows.Forms.ListBox();
             this.tabAnnouncementsTenant = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbxNewsFeedTenant = new System.Windows.Forms.GroupBox();
             this.lbxUserAllAnnouncements = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblAllAnnouncementTenant = new System.Windows.Forms.Label();
             this.tabAgreementsTenant = new System.Windows.Forms.TabPage();
             this.gbxAllAgreements = new System.Windows.Forms.GroupBox();
             this.btnDisagree = new System.Windows.Forms.Button();
             this.btnAgree = new System.Windows.Forms.Button();
             this.lbxAllAgreementsTenant = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAllAgreementsTenant = new System.Windows.Forms.Label();
             this.gbxAddAgreement = new System.Windows.Forms.GroupBox();
             this.btnAddAgreement = new System.Windows.Forms.Button();
             this.tbxAddAgreement = new System.Windows.Forms.TextBox();
             this.lbWriteAgreement = new System.Windows.Forms.Label();
             this.tabHouseRulesTenant = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.gbxHouseRulseTenant = new System.Windows.Forms.GroupBox();
+            this.lbxRulesTenant = new System.Windows.Forms.ListBox();
             this.tabComplaintsTenant = new System.Windows.Forms.TabPage();
             this.btnComplaint = new System.Windows.Forms.Button();
             this.tbxWriteComplaint = new System.Windows.Forms.TextBox();
@@ -145,7 +138,6 @@
             this.gbxNewsFeed.SuspendLayout();
             this.tabAgreementsAdmin.SuspendLayout();
             this.tabHouseRulesAdmin.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.gbxRule.SuspendLayout();
             this.gbxRules.SuspendLayout();
             this.tabComplaintsAdmin.SuspendLayout();
@@ -158,12 +150,12 @@
             this.tabGroceriesTenant.SuspendLayout();
             this.gbxPayListGroceriesTenant.SuspendLayout();
             this.tabAnnouncementsTenant.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbxNewsFeedTenant.SuspendLayout();
             this.tabAgreementsTenant.SuspendLayout();
             this.gbxAllAgreements.SuspendLayout();
             this.gbxAddAgreement.SuspendLayout();
             this.tabHouseRulesTenant.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbxHouseRulseTenant.SuspendLayout();
             this.tabComplaintsTenant.SuspendLayout();
             this.gbxLogin.SuspendLayout();
             this.SuspendLayout();
@@ -604,7 +596,6 @@
             // 
             // tabHouseRulesAdmin
             // 
-            this.tabHouseRulesAdmin.Controls.Add(this.groupBox1);
             this.tabHouseRulesAdmin.Controls.Add(this.gbxRule);
             this.tabHouseRulesAdmin.Controls.Add(this.gbxRules);
             this.tabHouseRulesAdmin.Location = new System.Drawing.Point(4, 25);
@@ -615,95 +606,23 @@
             this.tabHouseRulesAdmin.Text = "House Rules";
             this.tabHouseRulesAdmin.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnSearchRule);
-            this.groupBox1.Controls.Add(this.tbxRuleNum);
-            this.groupBox1.Controls.Add(this.lbRuleNum);
-            this.groupBox1.Controls.Add(this.btnEditRule);
-            this.groupBox1.Controls.Add(this.tbxEditRule);
-            this.groupBox1.Controls.Add(this.lbEditRule);
-            this.groupBox1.Location = new System.Drawing.Point(959, 69);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.groupBox1.Size = new System.Drawing.Size(476, 396);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Edit rule";
-            // 
-            // btnSearchRule
-            // 
-            this.btnSearchRule.Location = new System.Drawing.Point(297, 69);
-            this.btnSearchRule.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.btnSearchRule.Name = "btnSearchRule";
-            this.btnSearchRule.Size = new System.Drawing.Size(152, 31);
-            this.btnSearchRule.TabIndex = 5;
-            this.btnSearchRule.Text = "Search";
-            this.btnSearchRule.UseVisualStyleBackColor = true;
-            // 
-            // tbxRuleNum
-            // 
-            this.tbxRuleNum.Location = new System.Drawing.Point(128, 74);
-            this.tbxRuleNum.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.tbxRuleNum.Name = "tbxRuleNum";
-            this.tbxRuleNum.Size = new System.Drawing.Size(135, 22);
-            this.tbxRuleNum.TabIndex = 4;
-            // 
-            // lbRuleNum
-            // 
-            this.lbRuleNum.AutoSize = true;
-            this.lbRuleNum.Location = new System.Drawing.Point(31, 79);
-            this.lbRuleNum.Name = "lbRuleNum";
-            this.lbRuleNum.Size = new System.Drawing.Size(93, 17);
-            this.lbRuleNum.TabIndex = 3;
-            this.lbRuleNum.Text = "Rule number:";
-            // 
-            // btnEditRule
-            // 
-            this.btnEditRule.Location = new System.Drawing.Point(171, 335);
-            this.btnEditRule.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.btnEditRule.Name = "btnEditRule";
-            this.btnEditRule.Size = new System.Drawing.Size(161, 39);
-            this.btnEditRule.TabIndex = 2;
-            this.btnEditRule.Text = "Edit";
-            this.btnEditRule.UseVisualStyleBackColor = true;
-            // 
-            // tbxEditRule
-            // 
-            this.tbxEditRule.Location = new System.Drawing.Point(32, 180);
-            this.tbxEditRule.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.tbxEditRule.Multiline = true;
-            this.tbxEditRule.Name = "tbxEditRule";
-            this.tbxEditRule.Size = new System.Drawing.Size(437, 126);
-            this.tbxEditRule.TabIndex = 1;
-            // 
-            // lbEditRule
-            // 
-            this.lbEditRule.AutoSize = true;
-            this.lbEditRule.Location = new System.Drawing.Point(212, 143);
-            this.lbEditRule.Name = "lbEditRule";
-            this.lbEditRule.Size = new System.Drawing.Size(60, 17);
-            this.lbEditRule.TabIndex = 0;
-            this.lbEditRule.Text = "Edit rule";
-            // 
             // gbxRule
             // 
             this.gbxRule.Controls.Add(this.btnAddRule);
             this.gbxRule.Controls.Add(this.tbxAddRule);
             this.gbxRule.Controls.Add(this.lbWriteRule);
-            this.gbxRule.Location = new System.Drawing.Point(437, 86);
+            this.gbxRule.Location = new System.Drawing.Point(410, 8);
             this.gbxRule.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxRule.Name = "gbxRule";
             this.gbxRule.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.gbxRule.Size = new System.Drawing.Size(384, 343);
+            this.gbxRule.Size = new System.Drawing.Size(353, 295);
             this.gbxRule.TabIndex = 5;
             this.gbxRule.TabStop = false;
             this.gbxRule.Text = "Add rule";
             // 
             // btnAddRule
             // 
-            this.btnAddRule.Location = new System.Drawing.Point(113, 279);
+            this.btnAddRule.Location = new System.Drawing.Point(111, 251);
             this.btnAddRule.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnAddRule.Name = "btnAddRule";
             this.btnAddRule.Size = new System.Drawing.Size(161, 39);
@@ -713,7 +632,7 @@
             // 
             // tbxAddRule
             // 
-            this.tbxAddRule.Location = new System.Drawing.Point(88, 74);
+            this.tbxAddRule.Location = new System.Drawing.Point(86, 46);
             this.tbxAddRule.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxAddRule.Multiline = true;
             this.tbxAddRule.Name = "tbxAddRule";
@@ -723,7 +642,7 @@
             // lbWriteRule
             // 
             this.lbWriteRule.AutoSize = true;
-            this.lbWriteRule.Location = new System.Drawing.Point(105, 47);
+            this.lbWriteRule.Location = new System.Drawing.Point(103, 19);
             this.lbWriteRule.Name = "lbWriteRule";
             this.lbWriteRule.Size = new System.Drawing.Size(147, 17);
             this.lbWriteRule.TabIndex = 0;
@@ -731,7 +650,7 @@
             // 
             // gbxRules
             // 
-            this.gbxRules.Controls.Add(this.lbxRules);
+            this.gbxRules.Controls.Add(this.lbxRulesAdmin);
             this.gbxRules.Location = new System.Drawing.Point(32, 86);
             this.gbxRules.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxRules.Name = "gbxRules";
@@ -741,15 +660,15 @@
             this.gbxRules.TabStop = false;
             this.gbxRules.Text = "House rules";
             // 
-            // lbxRules
+            // lbxRulesAdmin
             // 
-            this.lbxRules.FormattingEnabled = true;
-            this.lbxRules.ItemHeight = 16;
-            this.lbxRules.Location = new System.Drawing.Point(25, 49);
-            this.lbxRules.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.lbxRules.Name = "lbxRules";
-            this.lbxRules.Size = new System.Drawing.Size(307, 340);
-            this.lbxRules.TabIndex = 0;
+            this.lbxRulesAdmin.FormattingEnabled = true;
+            this.lbxRulesAdmin.ItemHeight = 16;
+            this.lbxRulesAdmin.Location = new System.Drawing.Point(25, 49);
+            this.lbxRulesAdmin.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.lbxRulesAdmin.Name = "lbxRulesAdmin";
+            this.lbxRulesAdmin.Size = new System.Drawing.Size(307, 340);
+            this.lbxRulesAdmin.TabIndex = 0;
             // 
             // tabComplaintsAdmin
             // 
@@ -1016,7 +935,7 @@
             // 
             // tabAnnouncementsTenant
             // 
-            this.tabAnnouncementsTenant.Controls.Add(this.groupBox3);
+            this.tabAnnouncementsTenant.Controls.Add(this.gbxNewsFeedTenant);
             this.tabAnnouncementsTenant.Location = new System.Drawing.Point(4, 25);
             this.tabAnnouncementsTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tabAnnouncementsTenant.Name = "tabAnnouncementsTenant";
@@ -1025,18 +944,18 @@
             this.tabAnnouncementsTenant.Text = "Announcements";
             this.tabAnnouncementsTenant.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // gbxNewsFeedTenant
             // 
-            this.groupBox3.Controls.Add(this.lbxUserAllAnnouncements);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(21, 28);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.groupBox3.Size = new System.Drawing.Size(377, 489);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "News feed";
+            this.gbxNewsFeedTenant.Controls.Add(this.lbxUserAllAnnouncements);
+            this.gbxNewsFeedTenant.Controls.Add(this.lblAllAnnouncementTenant);
+            this.gbxNewsFeedTenant.Location = new System.Drawing.Point(21, 28);
+            this.gbxNewsFeedTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.gbxNewsFeedTenant.Name = "gbxNewsFeedTenant";
+            this.gbxNewsFeedTenant.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.gbxNewsFeedTenant.Size = new System.Drawing.Size(377, 489);
+            this.gbxNewsFeedTenant.TabIndex = 2;
+            this.gbxNewsFeedTenant.TabStop = false;
+            this.gbxNewsFeedTenant.Text = "News feed";
             // 
             // lbxUserAllAnnouncements
             // 
@@ -1048,14 +967,14 @@
             this.lbxUserAllAnnouncements.Size = new System.Drawing.Size(307, 388);
             this.lbxUserAllAnnouncements.TabIndex = 0;
             // 
-            // label2
+            // lblAllAnnouncementTenant
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "All announcements";
+            this.lblAllAnnouncementTenant.AutoSize = true;
+            this.lblAllAnnouncementTenant.Location = new System.Drawing.Point(125, 27);
+            this.lblAllAnnouncementTenant.Name = "lblAllAnnouncementTenant";
+            this.lblAllAnnouncementTenant.Size = new System.Drawing.Size(128, 17);
+            this.lblAllAnnouncementTenant.TabIndex = 1;
+            this.lblAllAnnouncementTenant.Text = "All announcements";
             // 
             // tabAgreementsTenant
             // 
@@ -1074,7 +993,7 @@
             this.gbxAllAgreements.Controls.Add(this.btnDisagree);
             this.gbxAllAgreements.Controls.Add(this.btnAgree);
             this.gbxAllAgreements.Controls.Add(this.lbxAllAgreementsTenant);
-            this.gbxAllAgreements.Controls.Add(this.label3);
+            this.gbxAllAgreements.Controls.Add(this.lblAllAgreementsTenant);
             this.gbxAllAgreements.Location = new System.Drawing.Point(447, 32);
             this.gbxAllAgreements.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxAllAgreements.Name = "gbxAllAgreements";
@@ -1116,14 +1035,14 @@
             this.lbxAllAgreementsTenant.Size = new System.Drawing.Size(256, 340);
             this.lbxAllAgreementsTenant.TabIndex = 0;
             // 
-            // label3
+            // lblAllAgreementsTenant
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "All agreements";
+            this.lblAllAgreementsTenant.AutoSize = true;
+            this.lblAllAgreementsTenant.Location = new System.Drawing.Point(113, 32);
+            this.lblAllAgreementsTenant.Name = "lblAllAgreementsTenant";
+            this.lblAllAgreementsTenant.Size = new System.Drawing.Size(102, 17);
+            this.lblAllAgreementsTenant.TabIndex = 1;
+            this.lblAllAgreementsTenant.Text = "All agreements";
             // 
             // gbxAddAgreement
             // 
@@ -1169,7 +1088,7 @@
             // 
             // tabHouseRulesTenant
             // 
-            this.tabHouseRulesTenant.Controls.Add(this.groupBox4);
+            this.tabHouseRulesTenant.Controls.Add(this.gbxHouseRulseTenant);
             this.tabHouseRulesTenant.Location = new System.Drawing.Point(4, 25);
             this.tabHouseRulesTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tabHouseRulesTenant.Name = "tabHouseRulesTenant";
@@ -1178,27 +1097,27 @@
             this.tabHouseRulesTenant.Text = "House Rules";
             this.tabHouseRulesTenant.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // gbxHouseRulseTenant
             // 
-            this.groupBox4.Controls.Add(this.listBox3);
-            this.groupBox4.Location = new System.Drawing.Point(241, 23);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.groupBox4.Size = new System.Drawing.Size(377, 492);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "House rules";
+            this.gbxHouseRulseTenant.Controls.Add(this.lbxRulesTenant);
+            this.gbxHouseRulseTenant.Location = new System.Drawing.Point(241, 23);
+            this.gbxHouseRulseTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.gbxHouseRulseTenant.Name = "gbxHouseRulseTenant";
+            this.gbxHouseRulseTenant.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.gbxHouseRulseTenant.Size = new System.Drawing.Size(377, 492);
+            this.gbxHouseRulseTenant.TabIndex = 4;
+            this.gbxHouseRulseTenant.TabStop = false;
+            this.gbxHouseRulseTenant.Text = "House rules";
             // 
-            // listBox3
+            // lbxRulesTenant
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(43, 48);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(307, 404);
-            this.listBox3.TabIndex = 0;
+            this.lbxRulesTenant.FormattingEnabled = true;
+            this.lbxRulesTenant.ItemHeight = 16;
+            this.lbxRulesTenant.Location = new System.Drawing.Point(43, 48);
+            this.lbxRulesTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.lbxRulesTenant.Name = "lbxRulesTenant";
+            this.lbxRulesTenant.Size = new System.Drawing.Size(307, 404);
+            this.lbxRulesTenant.TabIndex = 0;
             // 
             // tabComplaintsTenant
             // 
@@ -1341,8 +1260,6 @@
             this.tabAgreementsAdmin.ResumeLayout(false);
             this.tabAgreementsAdmin.PerformLayout();
             this.tabHouseRulesAdmin.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.gbxRule.ResumeLayout(false);
             this.gbxRule.PerformLayout();
             this.gbxRules.ResumeLayout(false);
@@ -1359,15 +1276,15 @@
             this.tabGroceriesTenant.ResumeLayout(false);
             this.gbxPayListGroceriesTenant.ResumeLayout(false);
             this.tabAnnouncementsTenant.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbxNewsFeedTenant.ResumeLayout(false);
+            this.gbxNewsFeedTenant.PerformLayout();
             this.tabAgreementsTenant.ResumeLayout(false);
             this.gbxAllAgreements.ResumeLayout(false);
             this.gbxAllAgreements.PerformLayout();
             this.gbxAddAgreement.ResumeLayout(false);
             this.gbxAddAgreement.PerformLayout();
             this.tabHouseRulesTenant.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.gbxHouseRulseTenant.ResumeLayout(false);
             this.tabComplaintsTenant.ResumeLayout(false);
             this.tabComplaintsTenant.PerformLayout();
             this.gbxLogin.ResumeLayout(false);
@@ -1412,19 +1329,12 @@
         private System.Windows.Forms.Label lbAllAnnouncements;
         private System.Windows.Forms.ListBox lbxAllAgreementsAdmin;
         private System.Windows.Forms.Label lbAllAgreementsAdmin;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnSearchRule;
-        private System.Windows.Forms.TextBox tbxRuleNum;
-        private System.Windows.Forms.Label lbRuleNum;
-        private System.Windows.Forms.Button btnEditRule;
-        private System.Windows.Forms.TextBox tbxEditRule;
-        private System.Windows.Forms.Label lbEditRule;
         private System.Windows.Forms.GroupBox gbxRule;
         private System.Windows.Forms.Button btnAddRule;
         private System.Windows.Forms.TextBox tbxAddRule;
         private System.Windows.Forms.Label lbWriteRule;
         private System.Windows.Forms.GroupBox gbxRules;
-        private System.Windows.Forms.ListBox lbxRules;
+        private System.Windows.Forms.ListBox lbxRulesAdmin;
         private System.Windows.Forms.GroupBox gbxAllComplaints;
         private System.Windows.Forms.ListBox lbxAllComplaints;
         private System.Windows.Forms.GroupBox gbxRegisterTenants;
@@ -1446,20 +1356,20 @@
         private System.Windows.Forms.GroupBox gbxPayListGroceriesTenant;
         private System.Windows.Forms.ListBox lbxUnpaidGroceries;
         private System.Windows.Forms.TabPage tabAnnouncementsTenant;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbxNewsFeedTenant;
         private System.Windows.Forms.ListBox lbxUserAllAnnouncements;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAllAnnouncementTenant;
         private System.Windows.Forms.TabPage tabAgreementsTenant;
         private System.Windows.Forms.GroupBox gbxAllAgreements;
         private System.Windows.Forms.ListBox lbxAllAgreementsTenant;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAllAgreementsTenant;
         private System.Windows.Forms.GroupBox gbxAddAgreement;
         private System.Windows.Forms.Button btnAddAgreement;
         private System.Windows.Forms.TextBox tbxAddAgreement;
         private System.Windows.Forms.Label lbWriteAgreement;
         private System.Windows.Forms.TabPage tabHouseRulesTenant;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.GroupBox gbxHouseRulseTenant;
+        private System.Windows.Forms.ListBox lbxRulesTenant;
         private System.Windows.Forms.TabPage tabComplaintsTenant;
         private System.Windows.Forms.Button btnComplaint;
         private System.Windows.Forms.TextBox tbxWriteComplaint;
