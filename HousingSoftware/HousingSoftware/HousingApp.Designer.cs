@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.MenuAdmin = new System.Windows.Forms.TabControl();
             this.tabHomeAdmin = new System.Windows.Forms.TabPage();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.lbWelcomeMsgAdmin = new System.Windows.Forms.Label();
             this.btnLogOutAdmin = new System.Windows.Forms.Button();
@@ -133,7 +134,6 @@
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
-            this.lblDate = new System.Windows.Forms.Label();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -200,6 +200,16 @@
             this.tabHomeAdmin.Text = "Home";
             this.tabHomeAdmin.UseVisualStyleBackColor = true;
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(105, 185);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(38, 17);
+            this.lblDate.TabIndex = 5;
+            this.lblDate.Text = "Date";
+            // 
             // lbTime
             // 
             this.lbTime.AutoSize = true;
@@ -223,7 +233,7 @@
             // btnLogOutAdmin
             // 
             this.btnLogOutAdmin.Location = new System.Drawing.Point(7, 489);
-            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutAdmin.Name = "btnLogOutAdmin";
             this.btnLogOutAdmin.Size = new System.Drawing.Size(104, 38);
             this.btnLogOutAdmin.TabIndex = 3;
@@ -266,7 +276,7 @@
             // btnClsSelectLinePayListGroceries
             // 
             this.btnClsSelectLinePayListGroceries.Location = new System.Drawing.Point(171, 404);
-            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectLinePayListGroceries.Name = "btnClsSelectLinePayListGroceries";
             this.btnClsSelectLinePayListGroceries.Size = new System.Drawing.Size(143, 32);
             this.btnClsSelectLinePayListGroceries.TabIndex = 5;
@@ -413,7 +423,7 @@
             // btnClsSelectedLineRecentGroceries
             // 
             this.btnClsSelectedLineRecentGroceries.Location = new System.Drawing.Point(88, 281);
-            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectedLineRecentGroceries.Name = "btnClsSelectedLineRecentGroceries";
             this.btnClsSelectedLineRecentGroceries.Size = new System.Drawing.Size(143, 32);
             this.btnClsSelectedLineRecentGroceries.TabIndex = 6;
@@ -953,7 +963,7 @@
             // btnLogOutTenant
             // 
             this.btnLogOutTenant.Location = new System.Drawing.Point(32, 489);
-            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutTenant.Name = "btnLogOutTenant";
             this.btnLogOutTenant.Size = new System.Drawing.Size(104, 38);
             this.btnLogOutTenant.TabIndex = 4;
@@ -1240,9 +1250,9 @@
             this.gbxLogin.Controls.Add(this.lbPasswordLogin);
             this.gbxLogin.Controls.Add(this.lbUsernameLogin);
             this.gbxLogin.Location = new System.Drawing.Point(763, 15);
-            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4);
             this.gbxLogin.Name = "gbxLogin";
-            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4);
             this.gbxLogin.Size = new System.Drawing.Size(313, 225);
             this.gbxLogin.TabIndex = 1;
             this.gbxLogin.TabStop = false;
@@ -1250,7 +1260,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(125, 160);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(143, 33);
             this.btnLogin.TabIndex = 4;
@@ -1261,15 +1271,16 @@
             // tbxPasswordLogin
             // 
             this.tbxPasswordLogin.Location = new System.Drawing.Point(125, 106);
-            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxPasswordLogin.Name = "tbxPasswordLogin";
             this.tbxPasswordLogin.Size = new System.Drawing.Size(141, 22);
             this.tbxPasswordLogin.TabIndex = 3;
+            this.tbxPasswordLogin.UseSystemPasswordChar = true;
             // 
             // tbxUsernameLogin
             // 
             this.tbxUsernameLogin.Location = new System.Drawing.Point(125, 60);
-            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxUsernameLogin.Name = "tbxUsernameLogin";
             this.tbxUsernameLogin.Size = new System.Drawing.Size(141, 22);
             this.tbxUsernameLogin.TabIndex = 2;
@@ -1300,16 +1311,6 @@
             this.timerClock.Interval = 60000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(105, 185);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(38, 17);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "Date";
-            // 
             // HousingApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1318,7 +1319,7 @@
             this.Controls.Add(this.gbxLogin);
             this.Controls.Add(this.MenuTenant);
             this.Controls.Add(this.MenuAdmin);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HousingApp";
             this.Text = "Housing App";
             this.Load += new System.EventHandler(this.HousingApp_Load);
