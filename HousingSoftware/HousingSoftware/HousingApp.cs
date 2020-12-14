@@ -20,6 +20,7 @@ namespace HousingSoftware
         Tenant tenant1;
         Announcements newannouncement;
         Agreements newAgreement;
+        HouseRules newHouseRule;
 
         int indexCurrTenant;
         int indexTenantEdit;
@@ -679,6 +680,15 @@ namespace HousingSoftware
             tbxEditFNameTenant.Clear();
             tbxEditPasswordTenant.Clear();
             gbxEditTenant.Visible = false;
+        }
+
+        private void btnAddRule_Click(object sender, EventArgs e)
+        {
+            string newrule = tbxAddRule.Text;
+            newHouseRule = new HouseRules(newrule);
+            lbxRulesAdmin.Items.Add(newHouseRule.HouseRule);
+            lbxRulesTenant.Items.Add(newHouseRule.HouseRule);
+            
         }
     }
 }

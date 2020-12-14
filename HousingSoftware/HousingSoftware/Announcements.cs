@@ -28,9 +28,6 @@ namespace HousingSoftware
         public Announcements(string newAnnouncement)
         {
             Announcement = newAnnouncement;
-
-
-
         }
     }
 }

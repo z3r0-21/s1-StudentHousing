@@ -15,6 +15,7 @@ namespace HousingSoftware
         private List<string> complaints = new List<string>();
         private List<Agreements> agreements = new List<Agreements>();
         private List<Announcements> announcements = new List<Announcements>();
+        private List<HouseRules> houseRules = new List<HouseRules>();
 
         public Admin(string inputedUsername, string inputedPassword)
         {
@@ -136,7 +137,10 @@ namespace HousingSoftware
         {
             announcements.Add(announcement);
         }
-
+        public void AddHouseRule(HouseRules HouseRule)
+        {
+            houseRules.Add(HouseRule);
+        }
 
     }
 }
