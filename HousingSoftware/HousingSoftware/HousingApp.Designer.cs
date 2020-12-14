@@ -149,6 +149,8 @@
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.btnDeleteRule = new System.Windows.Forms.Button();
+            this.btnEditRule = new System.Windows.Forms.Button();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -667,6 +669,8 @@
             // 
             // tabHouseRulesAdmin
             // 
+            this.tabHouseRulesAdmin.Controls.Add(this.btnEditRule);
+            this.tabHouseRulesAdmin.Controls.Add(this.btnDeleteRule);
             this.tabHouseRulesAdmin.Controls.Add(this.gbxRule);
             this.tabHouseRulesAdmin.Controls.Add(this.gbxRules);
             this.tabHouseRulesAdmin.Location = new System.Drawing.Point(4, 25);
@@ -700,6 +704,7 @@
             this.btnAddRule.TabIndex = 2;
             this.btnAddRule.Text = "Add";
             this.btnAddRule.UseVisualStyleBackColor = true;
+            this.btnAddRule.Click += new System.EventHandler(this.btnAddRule_Click);
             // 
             // tbxAddRule
             // 
@@ -1487,6 +1492,25 @@
             this.timerClock.Interval = 60000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
+            // btnDeleteRule
+            // 
+            this.btnDeleteRule.Location = new System.Drawing.Point(43, 397);
+            this.btnDeleteRule.Name = "btnDeleteRule";
+            this.btnDeleteRule.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteRule.TabIndex = 6;
+            this.btnDeleteRule.Text = "Delete";
+            this.btnDeleteRule.UseVisualStyleBackColor = true;
+            this.btnDeleteRule.Click += new System.EventHandler(this.btnDeleteRule_Click);
+            // 
+            // btnEditRule
+            // 
+            this.btnEditRule.Location = new System.Drawing.Point(182, 397);
+            this.btnEditRule.Name = "btnEditRule";
+            this.btnEditRule.Size = new System.Drawing.Size(75, 23);
+            this.btnEditRule.TabIndex = 7;
+            this.btnEditRule.Text = "Edit";
+            this.btnEditRule.UseVisualStyleBackColor = true;
+            // 
             // HousingApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1682,5 +1706,7 @@
         private System.Windows.Forms.Button btnShowAllComplaints;
         private System.Windows.Forms.Button btnSearchComplaint;
         private System.Windows.Forms.TextBox tbxSearchComplaint;
+        private System.Windows.Forms.Button btnEditRule;
+        private System.Windows.Forms.Button btnDeleteRule;
     }
 }

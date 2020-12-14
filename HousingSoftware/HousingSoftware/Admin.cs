@@ -137,9 +137,15 @@ namespace HousingSoftware
         {
             announcements.Add(announcement);
         }
+        // House Rules
         public void AddHouseRule(HouseRules HouseRule)
         {
             houseRules.Add(HouseRule);
+        }
+
+        public List<HouseRules> HouseRules
+        {
+            get {return this.houseRules; }
         }
 
     }

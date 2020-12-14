@@ -268,6 +268,7 @@ namespace HousingSoftware
                     string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
                     lbWelcomeMsgTenant.Text = $"Welcome, {fname}";
                     showUnpaidGroceries(lbxUnpaidGroceries, indexCurrTenant);
+                    refreshHouseRules();
                 }
                 else
                 {
@@ -751,6 +752,31 @@ namespace HousingSoftware
         private void btnSearchComplaint_Click(object sender, EventArgs e)
         {
             SearchComplaints(tbxSearchComplaint.Text);
+        }
+        private void refreshHouseRules()
+        {
+            lbxRulesAdmin.Items.Clear();
+            lbxRulesTenant.Items.Clear();
+            foreach (HouseRules rule in admin.HouseRules)
+            {
+                lbxRulesAdmin.Items.Add(rule.HouseRule);
+                lbxRulesTenant.Items.Add(rule.HouseRule);
+            }
+        }
+
+        private void btnAddRule_Click(object sender, EventArgs e)
+        {
+            string rule = tbxAddRule.Text;
+            newHouseRule = new HouseRules(rule);
+            admin.AddHouseRule(newHouseRule);
+            refreshHouseRules();
+        }
+
+        private void btnDeleteRule_Click(object sender, EventArgs e)
+        {
+            int index = lbxRulesAdmin.SelectedIndex;
+            admin.HouseRules.RemoveAt(index);
+            refreshHouseRules();
         }
     }
 }
