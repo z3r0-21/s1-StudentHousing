@@ -22,7 +22,7 @@ namespace HousingSoftware
         Agreements newAgreement;
 
         int indexCurrTenant;
-
+        int indexTenantEdit;
 
         Grocery currentGrocery;
 
@@ -212,6 +212,9 @@ namespace HousingSoftware
                     MenuAdmin.Show();
                     btnLogOutAdmin.Show();
                     lbWelcomeMsgAdmin.Text = $"Welcome, {username}";
+
+                    // Make invisible groupbox for edit tenant credntials unitl a current tenant is searched for profile edit by the admin
+                    gbxEditTenant.Visible = false;
                 }
                 else if(checkForTenantCredentials(username, password) != -1)
                 {
@@ -625,5 +628,57 @@ namespace HousingSoftware
             lbxAllAnnouncements.Items.RemoveAt(index);
         }
 
+        private void btnShowTenantProfileEdit_Click(object sender, EventArgs e)
+        {
+            int studNum;
+            if(!String.IsNullOrEmpty(tbxStudNumSearchTenantEdit.Text))
+            {
+                studNum = Convert.ToInt32(tbxStudNumSearchTenantEdit.Text);
+                indexTenantEdit = searchTenantProfile(studNum);
+                if (indexTenantEdit != -1)
+                {
+                    gbxEditTenant.Visible = true;
+                    string currentFName = admin.GetTenants()[indexTenantEdit].GetFirstName();
+                    string currentPassword = admin.GetTenants()[indexTenantEdit].GetPassword();
+
+                    // Show the current data for the searched tenant profile for edit
+                    tbxEditFNameTenant.Text = currentFName;
+                    tbxEditPasswordTenant.Text = currentPassword;
+                }
+                else
+                {
+                    MessageBox.Show("Tenant with such student number doesn't exist!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill the text box to edit a tenant profile!");
+            }
+            tbxStudNumSearchTenantEdit.Clear();
+        }
+
+        private void btnSaveChangesEditTenantProfile_Click(object sender, EventArgs e)
+        {
+            string fName;
+            string password;
+
+            if(!String.IsNullOrEmpty(tbxEditFNameTenant.Text) && !String.IsNullOrEmpty(tbxEditPasswordTenant.Text))
+            {
+                fName = tbxEditFNameTenant.Text;
+                password = tbxEditPasswordTenant.Text;
+                
+                // Set new values for first name and password of the tenant
+                admin.GetTenants()[indexTenantEdit].SetFirstName(fName);
+                admin.GetTenants()[indexTenantEdit].SetPassword(password);
+
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the text boxes!");
+            }
+            tbxEditFNameTenant.Clear();
+            tbxEditPasswordTenant.Clear();
+            gbxEditTenant.Visible = false;
+        }
     }
 }
