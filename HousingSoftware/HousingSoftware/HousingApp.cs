@@ -87,6 +87,19 @@ namespace HousingSoftware
             }
         }
 
+        private void SearchComplaints(string searchText)
+        {
+            lbxAllComplaints.Items.Clear();
+
+            foreach (string complaint in admin.GetComplaints())
+            {
+                if (complaint.Contains(searchText))
+                {
+                    lbxAllComplaints.Items.Add(complaint);
+                }
+            }
+        }
+
 
         private void RefreshAgreements()
         {
@@ -97,6 +110,34 @@ namespace HousingSoftware
             {
                 lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
                 lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+            }
+        }
+
+        private void SearchAgreementsTenant(string searchText)
+        {
+            lbxAllAgreementsTenant.Items.Clear();
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if (agreement.GetAgreement().Contains(searchText))
+                {
+                    lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                }
+            }
+        }
+
+        private void SearchAgreementsAdmin(string searchText)
+        {
+            lbxAllAgreementsTenant.Items.Clear();
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if (agreement.GetAgreement().Contains(searchText))
+                {
+                    lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                }
             }
         }
 
@@ -259,7 +300,7 @@ namespace HousingSoftware
         {
             if(!String.IsNullOrEmpty(tbxWriteComplaint.Text))
             {
-                admin.AddComplaint(tbxWriteComplaint.Text);
+                admin.AddComplaint($"{DateTime.Now.ToString("MMMM dd, yyyy")}: {tbxWriteComplaint.Text}");
                 RefreshComplaintsList();
                 tbxWriteComplaint.Clear();
                 MessageBox.Show("Your complaint has been sent to Student Housing BV.");
@@ -682,13 +723,34 @@ namespace HousingSoftware
             gbxEditTenant.Visible = false;
         }
 
-        private void btnAddRule_Click(object sender, EventArgs e)
+        private void btnSearchAgreement_Click(object sender, EventArgs e)
         {
-            string newrule = tbxAddRule.Text;
-            newHouseRule = new HouseRules(newrule);
-            lbxRulesAdmin.Items.Add(newHouseRule.HouseRule);
-            lbxRulesTenant.Items.Add(newHouseRule.HouseRule);
-            
+            SearchAgreementsTenant(tbxSearchAgreementsTenant.Text);
+        }
+
+        private void btnShowAllAgreements_Click(object sender, EventArgs e)
+        {
+            RefreshAgreements();
+        }
+
+        private void btnSearchAgreementAdmin_Click(object sender, EventArgs e)
+        {
+            SearchAgreementsAdmin(tbxSearchAgreementsAdmin.Text);
+        }
+
+        private void btnShowAllAgreementsAdmin_Click(object sender, EventArgs e)
+        {
+            RefreshAgreements();
+        }
+
+        private void btnShowAllComplaints_Click(object sender, EventArgs e)
+        {
+            RefreshComplaintsList();
+        }
+
+        private void btnSearchComplaint_Click(object sender, EventArgs e)
+        {
+            SearchComplaints(tbxSearchComplaint.Text);
         }
     }
 }
