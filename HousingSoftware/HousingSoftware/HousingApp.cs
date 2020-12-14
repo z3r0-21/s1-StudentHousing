@@ -86,6 +86,19 @@ namespace HousingSoftware
             }
         }
 
+        private void SearchComplaints(string searchText)
+        {
+            lbxAllComplaints.Items.Clear();
+
+            foreach (string complaint in admin.GetComplaints())
+            {
+                if (complaint.Contains(searchText))
+                {
+                    lbxAllComplaints.Items.Add(complaint);
+                }
+            }
+        }
+
 
         private void RefreshAgreements()
         {
@@ -727,6 +740,16 @@ namespace HousingSoftware
         private void btnShowAllAgreementsAdmin_Click(object sender, EventArgs e)
         {
             RefreshAgreements();
+        }
+
+        private void btnShowAllComplaints_Click(object sender, EventArgs e)
+        {
+            RefreshComplaintsList();
+        }
+
+        private void btnSearchComplaint_Click(object sender, EventArgs e)
+        {
+            SearchComplaints(tbxSearchComplaint.Text);
         }
     }
 }
