@@ -80,8 +80,12 @@
             this.gbxRules = new System.Windows.Forms.GroupBox();
             this.lbxRulesAdmin = new System.Windows.Forms.ListBox();
             this.tabComplaintsAdmin = new System.Windows.Forms.TabPage();
-            this.btnMarkAsDone = new System.Windows.Forms.Button();
+            this.gbxSearchComplaints = new System.Windows.Forms.GroupBox();
+            this.btnShowAllComplaints = new System.Windows.Forms.Button();
+            this.btnSearchComplaint = new System.Windows.Forms.Button();
+            this.tbxSearchComplaint = new System.Windows.Forms.TextBox();
             this.gbxAllComplaints = new System.Windows.Forms.GroupBox();
+            this.btnMarkAsDone = new System.Windows.Forms.Button();
             this.lbxAllComplaints = new System.Windows.Forms.ListBox();
             this.tabManageTenants = new System.Windows.Forms.TabPage();
             this.gbxEditTenant = new System.Windows.Forms.GroupBox();
@@ -145,10 +149,6 @@
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
-            this.gbxSearchComplaints = new System.Windows.Forms.GroupBox();
-            this.btnShowAllComplaints = new System.Windows.Forms.Button();
-            this.btnSearchComplaint = new System.Windows.Forms.Button();
-            this.tbxSearchComplaint = new System.Windows.Forms.TextBox();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -164,6 +164,7 @@
             this.gbxRule.SuspendLayout();
             this.gbxRules.SuspendLayout();
             this.tabComplaintsAdmin.SuspendLayout();
+            this.gbxSearchComplaints.SuspendLayout();
             this.gbxAllComplaints.SuspendLayout();
             this.tabManageTenants.SuspendLayout();
             this.gbxEditTenant.SuspendLayout();
@@ -184,7 +185,6 @@
             this.gbxHouseRulseTenant.SuspendLayout();
             this.tabComplaintsTenant.SuspendLayout();
             this.gbxLogin.SuspendLayout();
-            this.gbxSearchComplaints.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuAdmin
@@ -754,16 +754,44 @@
             this.tabComplaintsAdmin.Text = "Complaints";
             this.tabComplaintsAdmin.UseVisualStyleBackColor = true;
             // 
-            // btnMarkAsDone
+            // gbxSearchComplaints
             // 
-            this.btnMarkAsDone.Location = new System.Drawing.Point(-4, 269);
-            this.btnMarkAsDone.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnMarkAsDone.Name = "btnMarkAsDone";
-            this.btnMarkAsDone.Size = new System.Drawing.Size(277, 48);
-            this.btnMarkAsDone.TabIndex = 4;
-            this.btnMarkAsDone.Text = "Mark the selected complaint as done";
-            this.btnMarkAsDone.UseVisualStyleBackColor = true;
-            this.btnMarkAsDone.Click += new System.EventHandler(this.btnMarkAsDone_Click);
+            this.gbxSearchComplaints.Controls.Add(this.btnShowAllComplaints);
+            this.gbxSearchComplaints.Controls.Add(this.btnSearchComplaint);
+            this.gbxSearchComplaints.Controls.Add(this.tbxSearchComplaint);
+            this.gbxSearchComplaints.Location = new System.Drawing.Point(362, 142);
+            this.gbxSearchComplaints.Name = "gbxSearchComplaints";
+            this.gbxSearchComplaints.Size = new System.Drawing.Size(286, 137);
+            this.gbxSearchComplaints.TabIndex = 8;
+            this.gbxSearchComplaints.TabStop = false;
+            this.gbxSearchComplaints.Text = "Search for a complaint";
+            // 
+            // btnShowAllComplaints
+            // 
+            this.btnShowAllComplaints.Location = new System.Drawing.Point(61, 95);
+            this.btnShowAllComplaints.Name = "btnShowAllComplaints";
+            this.btnShowAllComplaints.Size = new System.Drawing.Size(155, 26);
+            this.btnShowAllComplaints.TabIndex = 2;
+            this.btnShowAllComplaints.Text = "Show all complaints";
+            this.btnShowAllComplaints.UseVisualStyleBackColor = true;
+            this.btnShowAllComplaints.Click += new System.EventHandler(this.btnShowAllComplaints_Click);
+            // 
+            // btnSearchComplaint
+            // 
+            this.btnSearchComplaint.Location = new System.Drawing.Point(61, 63);
+            this.btnSearchComplaint.Name = "btnSearchComplaint";
+            this.btnSearchComplaint.Size = new System.Drawing.Size(155, 22);
+            this.btnSearchComplaint.TabIndex = 1;
+            this.btnSearchComplaint.Text = "Search";
+            this.btnSearchComplaint.UseVisualStyleBackColor = true;
+            this.btnSearchComplaint.Click += new System.EventHandler(this.btnSearchComplaint_Click);
+            // 
+            // tbxSearchComplaint
+            // 
+            this.tbxSearchComplaint.Location = new System.Drawing.Point(17, 36);
+            this.tbxSearchComplaint.Name = "tbxSearchComplaint";
+            this.tbxSearchComplaint.Size = new System.Drawing.Size(244, 22);
+            this.tbxSearchComplaint.TabIndex = 0;
             // 
             // gbxAllComplaints
             // 
@@ -777,6 +805,17 @@
             this.gbxAllComplaints.TabIndex = 3;
             this.gbxAllComplaints.TabStop = false;
             this.gbxAllComplaints.Text = "All complaints";
+            // 
+            // btnMarkAsDone
+            // 
+            this.btnMarkAsDone.Location = new System.Drawing.Point(21, 270);
+            this.btnMarkAsDone.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnMarkAsDone.Name = "btnMarkAsDone";
+            this.btnMarkAsDone.Size = new System.Drawing.Size(231, 35);
+            this.btnMarkAsDone.TabIndex = 4;
+            this.btnMarkAsDone.Text = "Mark the selected complaint as done";
+            this.btnMarkAsDone.UseVisualStyleBackColor = true;
+            this.btnMarkAsDone.Click += new System.EventHandler(this.btnMarkAsDone_Click);
             // 
             // lbxAllComplaints
             // 
@@ -971,7 +1010,7 @@
             this.btnRegister.Location = new System.Drawing.Point(135, 235);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(114, 24);
+            this.btnRegister.Size = new System.Drawing.Size(114, 29);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -1393,15 +1432,15 @@
             this.gbxLogin.Controls.Add(this.tbxUsernameLogin);
             this.gbxLogin.Controls.Add(this.lbPasswordLogin);
             this.gbxLogin.Controls.Add(this.lbUsernameLogin);
-            this.gbxLogin.Location = new System.Drawing.Point(572, 11);
+            this.gbxLogin.Location = new System.Drawing.Point(434, 11);
             this.gbxLogin.Name = "gbxLogin";
-            this.gbxLogin.Size = new System.Drawing.Size(235, 172);
+            this.gbxLogin.Size = new System.Drawing.Size(514, 172);
             this.gbxLogin.TabIndex = 1;
             this.gbxLogin.TabStop = false;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(94, 122);
+            this.btnLogin.Location = new System.Drawing.Point(267, 124);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(107, 25);
             this.btnLogin.TabIndex = 4;
@@ -1411,7 +1450,7 @@
             // 
             // tbxPasswordLogin
             // 
-            this.tbxPasswordLogin.Location = new System.Drawing.Point(94, 81);
+            this.tbxPasswordLogin.Location = new System.Drawing.Point(267, 83);
             this.tbxPasswordLogin.Name = "tbxPasswordLogin";
             this.tbxPasswordLogin.Size = new System.Drawing.Size(107, 22);
             this.tbxPasswordLogin.TabIndex = 3;
@@ -1419,7 +1458,7 @@
             // 
             // tbxUsernameLogin
             // 
-            this.tbxUsernameLogin.Location = new System.Drawing.Point(94, 46);
+            this.tbxUsernameLogin.Location = new System.Drawing.Point(267, 48);
             this.tbxUsernameLogin.Name = "tbxUsernameLogin";
             this.tbxUsernameLogin.Size = new System.Drawing.Size(107, 22);
             this.tbxUsernameLogin.TabIndex = 2;
@@ -1427,7 +1466,7 @@
             // lbPasswordLogin
             // 
             this.lbPasswordLogin.AutoSize = true;
-            this.lbPasswordLogin.Location = new System.Drawing.Point(18, 83);
+            this.lbPasswordLogin.Location = new System.Drawing.Point(181, 83);
             this.lbPasswordLogin.Name = "lbPasswordLogin";
             this.lbPasswordLogin.Size = new System.Drawing.Size(73, 17);
             this.lbPasswordLogin.TabIndex = 1;
@@ -1436,56 +1475,17 @@
             // lbUsernameLogin
             // 
             this.lbUsernameLogin.AutoSize = true;
-            this.lbUsernameLogin.Location = new System.Drawing.Point(18, 46);
+            this.lbUsernameLogin.Location = new System.Drawing.Point(64, 51);
             this.lbUsernameLogin.Name = "lbUsernameLogin";
-            this.lbUsernameLogin.Size = new System.Drawing.Size(77, 17);
+            this.lbUsernameLogin.Size = new System.Drawing.Size(190, 17);
             this.lbUsernameLogin.TabIndex = 0;
-            this.lbUsernameLogin.Text = "Username:";
+            this.lbUsernameLogin.Text = "Username / Student number:";
             // 
             // timerClock
             // 
             this.timerClock.Enabled = true;
             this.timerClock.Interval = 60000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
-            // 
-            // gbxSearchComplaints
-            // 
-            this.gbxSearchComplaints.Controls.Add(this.btnShowAllComplaints);
-            this.gbxSearchComplaints.Controls.Add(this.btnSearchComplaint);
-            this.gbxSearchComplaints.Controls.Add(this.tbxSearchComplaint);
-            this.gbxSearchComplaints.Location = new System.Drawing.Point(362, 142);
-            this.gbxSearchComplaints.Name = "gbxSearchComplaints";
-            this.gbxSearchComplaints.Size = new System.Drawing.Size(286, 137);
-            this.gbxSearchComplaints.TabIndex = 8;
-            this.gbxSearchComplaints.TabStop = false;
-            this.gbxSearchComplaints.Text = "Search for a complaint";
-            // 
-            // btnShowAllComplaints
-            // 
-            this.btnShowAllComplaints.Location = new System.Drawing.Point(61, 95);
-            this.btnShowAllComplaints.Name = "btnShowAllComplaints";
-            this.btnShowAllComplaints.Size = new System.Drawing.Size(155, 22);
-            this.btnShowAllComplaints.TabIndex = 2;
-            this.btnShowAllComplaints.Text = "Show all complaints";
-            this.btnShowAllComplaints.UseVisualStyleBackColor = true;
-            this.btnShowAllComplaints.Click += new System.EventHandler(this.btnShowAllComplaints_Click);
-            // 
-            // btnSearchComplaint
-            // 
-            this.btnSearchComplaint.Location = new System.Drawing.Point(61, 63);
-            this.btnSearchComplaint.Name = "btnSearchComplaint";
-            this.btnSearchComplaint.Size = new System.Drawing.Size(155, 22);
-            this.btnSearchComplaint.TabIndex = 1;
-            this.btnSearchComplaint.Text = "Search";
-            this.btnSearchComplaint.UseVisualStyleBackColor = true;
-            this.btnSearchComplaint.Click += new System.EventHandler(this.btnSearchComplaint_Click);
-            // 
-            // tbxSearchComplaint
-            // 
-            this.tbxSearchComplaint.Location = new System.Drawing.Point(17, 36);
-            this.tbxSearchComplaint.Name = "tbxSearchComplaint";
-            this.tbxSearchComplaint.Size = new System.Drawing.Size(244, 22);
-            this.tbxSearchComplaint.TabIndex = 0;
             // 
             // HousingApp
             // 
@@ -1523,6 +1523,8 @@
             this.gbxRule.PerformLayout();
             this.gbxRules.ResumeLayout(false);
             this.tabComplaintsAdmin.ResumeLayout(false);
+            this.gbxSearchComplaints.ResumeLayout(false);
+            this.gbxSearchComplaints.PerformLayout();
             this.gbxAllComplaints.ResumeLayout(false);
             this.tabManageTenants.ResumeLayout(false);
             this.gbxEditTenant.ResumeLayout(false);
@@ -1554,8 +1556,6 @@
             this.tabComplaintsTenant.PerformLayout();
             this.gbxLogin.ResumeLayout(false);
             this.gbxLogin.PerformLayout();
-            this.gbxSearchComplaints.ResumeLayout(false);
-            this.gbxSearchComplaints.PerformLayout();
             this.ResumeLayout(false);
 
         }
