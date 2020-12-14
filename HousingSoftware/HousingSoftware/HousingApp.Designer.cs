@@ -198,7 +198,7 @@
             this.MenuAdmin.Controls.Add(this.tabHouseRulesAdmin);
             this.MenuAdmin.Controls.Add(this.tabComplaintsAdmin);
             this.MenuAdmin.Controls.Add(this.tabManageTenants);
-            this.MenuAdmin.Location = new System.Drawing.Point(11, 187);
+            this.MenuAdmin.Location = new System.Drawing.Point(11, 188);
             this.MenuAdmin.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MenuAdmin.Name = "MenuAdmin";
             this.MenuAdmin.SelectedIndex = 0;
