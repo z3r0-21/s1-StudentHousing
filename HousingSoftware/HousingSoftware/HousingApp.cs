@@ -99,6 +99,34 @@ namespace HousingSoftware
             }
         }
 
+        private void SearchAgreementsTenant(string searchText)
+        {
+            lbxAllAgreementsTenant.Items.Clear();
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if (agreement.GetAgreement().Contains(searchText))
+                {
+                    lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                }
+            }
+        }
+
+        private void SearchAgreementsAdmin(string searchText)
+        {
+            lbxAllAgreementsTenant.Items.Clear();
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if (agreement.GetAgreement().Contains(searchText))
+                {
+                    lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                }
+            }
+        }
+
         private void AddGroceriesTenant(Tenant tenant, List<Grocery> groceries)
         {
             foreach (Grocery grocery in groceries)
@@ -258,7 +286,7 @@ namespace HousingSoftware
         {
             if(!String.IsNullOrEmpty(tbxWriteComplaint.Text))
             {
-                admin.AddComplaint(tbxWriteComplaint.Text);
+                admin.AddComplaint($"{DateTime.Now.ToString("MMMM dd, yyyy")}: {tbxWriteComplaint.Text}");
                 RefreshComplaintsList();
                 tbxWriteComplaint.Clear();
                 MessageBox.Show("Your complaint has been sent to Student Housing BV.");
@@ -679,6 +707,26 @@ namespace HousingSoftware
             tbxEditFNameTenant.Clear();
             tbxEditPasswordTenant.Clear();
             gbxEditTenant.Visible = false;
+        }
+
+        private void btnSearchAgreement_Click(object sender, EventArgs e)
+        {
+            SearchAgreementsTenant(tbxSearchAgreementsTenant.Text);
+        }
+
+        private void btnShowAllAgreements_Click(object sender, EventArgs e)
+        {
+            RefreshAgreements();
+        }
+
+        private void btnSearchAgreementAdmin_Click(object sender, EventArgs e)
+        {
+            SearchAgreementsAdmin(tbxSearchAgreementsAdmin.Text);
+        }
+
+        private void btnShowAllAgreementsAdmin_Click(object sender, EventArgs e)
+        {
+            RefreshAgreements();
         }
     }
 }
