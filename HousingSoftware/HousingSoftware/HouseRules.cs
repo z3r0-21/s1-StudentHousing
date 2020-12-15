@@ -13,7 +13,7 @@ namespace HousingSoftware
 
         public HouseRules(string newHouseRule)
         {
-            houseRule = newHouseRule;
+            this.houseRule = newHouseRule;
         }
  
         public string HouseRule

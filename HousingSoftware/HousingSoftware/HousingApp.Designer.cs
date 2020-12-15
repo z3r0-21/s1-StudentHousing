@@ -1523,6 +1523,7 @@
             this.editBox.Name = "editBox";
             this.editBox.Size = new System.Drawing.Size(170, 89);
             this.editBox.TabIndex = 8;
+            this.editBox.Visible = false;
             // 
             // btnSaveEditedRule
             // 
@@ -1532,6 +1533,7 @@
             this.btnSaveEditedRule.TabIndex = 9;
             this.btnSaveEditedRule.Text = "Save";
             this.btnSaveEditedRule.UseVisualStyleBackColor = true;
+            this.btnSaveEditedRule.Visible = false;
             this.btnSaveEditedRule.Click += new System.EventHandler(this.btnSaveEditedRule_Click);
             // 
             // HousingApp

@@ -771,6 +771,7 @@ namespace HousingSoftware
             newHouseRule = new HouseRules(rule);
             admin.AddHouseRule(newHouseRule);
             refreshHouseRules();
+            tbxAddRule.Clear();
         }
 
         private void btnDeleteRule_Click(object sender, EventArgs e)
@@ -783,6 +784,8 @@ namespace HousingSoftware
 
         private void btnEditRule_Click(object sender, EventArgs e)
         {
+            editBox.Visible = true;
+            btnSaveEditedRule.Visible = true;
             int index = lbxRulesAdmin.SelectedIndex;
             string textToEdit = lbxRulesAdmin.Items[index].ToString();
             editBox.Text = textToEdit;
@@ -790,8 +793,16 @@ namespace HousingSoftware
 
         private void btnSaveEditedRule_Click(object sender, EventArgs e)
         {
+            string rule = editBox.Text;
+            newHouseRule = new HouseRules(rule);
             int index = lbxRulesAdmin.SelectedIndex;
-            lbxRulesAdmin.Items[index] = editBox.Text;
+            int indexTenant = index;
+            lbxRulesAdmin.Items[index] = rule;
+            admin.HouseRules[index] = newHouseRule;
+            editBox.Visible = false;
+            btnSaveEditedRule.Visible = false;
+            refreshHouseRules();
+            editBox.Clear();
         }
 
     }
