@@ -762,6 +762,7 @@ namespace HousingSoftware
                 lbxRulesAdmin.Items.Add(rule.HouseRule);
                 lbxRulesTenant.Items.Add(rule.HouseRule);
             }
+            
         }
 
         private void btnAddRule_Click(object sender, EventArgs e)
@@ -777,6 +778,21 @@ namespace HousingSoftware
             int index = lbxRulesAdmin.SelectedIndex;
             admin.HouseRules.RemoveAt(index);
             refreshHouseRules();
+            
         }
+
+        private void btnEditRule_Click(object sender, EventArgs e)
+        {
+            int index = lbxRulesAdmin.SelectedIndex;
+            string textToEdit = lbxRulesAdmin.Items[index].ToString();
+            editBox.Text = textToEdit;
+        }
+
+        private void btnSaveEditedRule_Click(object sender, EventArgs e)
+        {
+            int index = lbxRulesAdmin.SelectedIndex;
+            lbxRulesAdmin.Items[index] = editBox.Text;
+        }
+
     }
 }

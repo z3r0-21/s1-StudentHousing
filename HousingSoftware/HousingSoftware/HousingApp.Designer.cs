@@ -73,6 +73,8 @@
             this.lbxAllAgreementsAdmin = new System.Windows.Forms.ListBox();
             this.lbAllAgreementsAdmin = new System.Windows.Forms.Label();
             this.tabHouseRulesAdmin = new System.Windows.Forms.TabPage();
+            this.btnEditRule = new System.Windows.Forms.Button();
+            this.btnDeleteRule = new System.Windows.Forms.Button();
             this.gbxRule = new System.Windows.Forms.GroupBox();
             this.btnAddRule = new System.Windows.Forms.Button();
             this.tbxAddRule = new System.Windows.Forms.TextBox();
@@ -149,8 +151,8 @@
             this.lbPasswordLogin = new System.Windows.Forms.Label();
             this.lbUsernameLogin = new System.Windows.Forms.Label();
             this.timerClock = new System.Windows.Forms.Timer(this.components);
-            this.btnDeleteRule = new System.Windows.Forms.Button();
-            this.btnEditRule = new System.Windows.Forms.Button();
+            this.editBox = new System.Windows.Forms.TextBox();
+            this.btnSaveEditedRule = new System.Windows.Forms.Button();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -669,6 +671,8 @@
             // 
             // tabHouseRulesAdmin
             // 
+            this.tabHouseRulesAdmin.Controls.Add(this.btnSaveEditedRule);
+            this.tabHouseRulesAdmin.Controls.Add(this.editBox);
             this.tabHouseRulesAdmin.Controls.Add(this.btnEditRule);
             this.tabHouseRulesAdmin.Controls.Add(this.btnDeleteRule);
             this.tabHouseRulesAdmin.Controls.Add(this.gbxRule);
@@ -680,6 +684,26 @@
             this.tabHouseRulesAdmin.TabIndex = 4;
             this.tabHouseRulesAdmin.Text = "House Rules";
             this.tabHouseRulesAdmin.UseVisualStyleBackColor = true;
+            // 
+            // btnEditRule
+            // 
+            this.btnEditRule.Location = new System.Drawing.Point(182, 397);
+            this.btnEditRule.Name = "btnEditRule";
+            this.btnEditRule.Size = new System.Drawing.Size(75, 23);
+            this.btnEditRule.TabIndex = 7;
+            this.btnEditRule.Text = "Edit";
+            this.btnEditRule.UseVisualStyleBackColor = true;
+            this.btnEditRule.Click += new System.EventHandler(this.btnEditRule_Click);
+            // 
+            // btnDeleteRule
+            // 
+            this.btnDeleteRule.Location = new System.Drawing.Point(43, 397);
+            this.btnDeleteRule.Name = "btnDeleteRule";
+            this.btnDeleteRule.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteRule.TabIndex = 6;
+            this.btnDeleteRule.Text = "Delete";
+            this.btnDeleteRule.UseVisualStyleBackColor = true;
+            this.btnDeleteRule.Click += new System.EventHandler(this.btnDeleteRule_Click);
             // 
             // gbxRule
             // 
@@ -1492,24 +1516,23 @@
             this.timerClock.Interval = 60000;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
-            // btnDeleteRule
+            // editBox
             // 
-            this.btnDeleteRule.Location = new System.Drawing.Point(43, 397);
-            this.btnDeleteRule.Name = "btnDeleteRule";
-            this.btnDeleteRule.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteRule.TabIndex = 6;
-            this.btnDeleteRule.Text = "Delete";
-            this.btnDeleteRule.UseVisualStyleBackColor = true;
-            this.btnDeleteRule.Click += new System.EventHandler(this.btnDeleteRule_Click);
+            this.editBox.Location = new System.Drawing.Point(308, 275);
+            this.editBox.Multiline = true;
+            this.editBox.Name = "editBox";
+            this.editBox.Size = new System.Drawing.Size(170, 89);
+            this.editBox.TabIndex = 8;
             // 
-            // btnEditRule
+            // btnSaveEditedRule
             // 
-            this.btnEditRule.Location = new System.Drawing.Point(182, 397);
-            this.btnEditRule.Name = "btnEditRule";
-            this.btnEditRule.Size = new System.Drawing.Size(75, 23);
-            this.btnEditRule.TabIndex = 7;
-            this.btnEditRule.Text = "Edit";
-            this.btnEditRule.UseVisualStyleBackColor = true;
+            this.btnSaveEditedRule.Location = new System.Drawing.Point(372, 373);
+            this.btnSaveEditedRule.Name = "btnSaveEditedRule";
+            this.btnSaveEditedRule.Size = new System.Drawing.Size(75, 29);
+            this.btnSaveEditedRule.TabIndex = 9;
+            this.btnSaveEditedRule.Text = "Save";
+            this.btnSaveEditedRule.UseVisualStyleBackColor = true;
+            this.btnSaveEditedRule.Click += new System.EventHandler(this.btnSaveEditedRule_Click);
             // 
             // HousingApp
             // 
@@ -1543,6 +1566,7 @@
             this.gbxSearchAgreementAdmin.ResumeLayout(false);
             this.gbxSearchAgreementAdmin.PerformLayout();
             this.tabHouseRulesAdmin.ResumeLayout(false);
+            this.tabHouseRulesAdmin.PerformLayout();
             this.gbxRule.ResumeLayout(false);
             this.gbxRule.PerformLayout();
             this.gbxRules.ResumeLayout(false);
@@ -1708,5 +1732,7 @@
         private System.Windows.Forms.TextBox tbxSearchComplaint;
         private System.Windows.Forms.Button btnEditRule;
         private System.Windows.Forms.Button btnDeleteRule;
+        private System.Windows.Forms.TextBox editBox;
+        private System.Windows.Forms.Button btnSaveEditedRule;
     }
 }
