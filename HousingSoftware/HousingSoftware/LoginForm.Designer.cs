@@ -1,7 +1,7 @@
 ﻿
 namespace HousingSoftware
 {
-    partial class frmLogin
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -62,6 +62,7 @@ namespace HousingSoftware
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // tbxPasswordLogin
             // 
@@ -100,14 +101,15 @@ namespace HousingSoftware
             this.lbUsernameLogin.TabIndex = 0;
             this.lbUsernameLogin.Text = "Username / Student number:";
             // 
-            // frmLogin
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gbxLogin);
-            this.Name = "frmLogin";
+            this.Name = "LoginForm";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.gbxLogin.ResumeLayout(false);
             this.gbxLogin.PerformLayout();
             this.ResumeLayout(false);

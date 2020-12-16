@@ -1,7 +1,7 @@
 ﻿
 namespace HousingSoftware
 {
-    partial class frmAdmin
+    partial class AdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -1049,13 +1049,13 @@ namespace HousingSoftware
             this.lbStudentNumRegister.TabIndex = 0;
             this.lbStudentNumRegister.Text = "Student number:";
             // 
-            // frmAdmin
+            // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 679);
             this.Controls.Add(this.MenuAdmin);
-            this.Name = "frmAdmin";
+            this.Name = "AdminForm";
             this.Text = "Admin";
             this.MenuAdmin.ResumeLayout(false);
             this.tabHomeAdmin.ResumeLayout(false);

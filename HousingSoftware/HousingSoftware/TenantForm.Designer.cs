@@ -1,6 +1,6 @@
 ﻿namespace HousingSoftware
 {
-    partial class frmTenant
+    partial class TenantForm
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             // btnLogOutTenant
             // 
             this.btnLogOutTenant.Location = new System.Drawing.Point(32, 460);
-            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutTenant.Name = "btnLogOutTenant";
             this.btnLogOutTenant.Size = new System.Drawing.Size(104, 36);
             this.btnLogOutTenant.TabIndex = 4;
@@ -224,9 +224,9 @@
             this.gbxSearchAgreementTenant.Controls.Add(this.btnSearchAgreementTenant);
             this.gbxSearchAgreementTenant.Controls.Add(this.tbxSearchAgreementsTenant);
             this.gbxSearchAgreementTenant.Location = new System.Drawing.Point(19, 331);
-            this.gbxSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementTenant.Name = "gbxSearchAgreementTenant";
-            this.gbxSearchAgreementTenant.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementTenant.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementTenant.Size = new System.Drawing.Size(381, 169);
             this.gbxSearchAgreementTenant.TabIndex = 6;
             this.gbxSearchAgreementTenant.TabStop = false;
@@ -235,29 +235,29 @@
             // btnShowAllAgreementsTenant
             // 
             this.btnShowAllAgreementsTenant.Location = new System.Drawing.Point(81, 117);
-            this.btnShowAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAllAgreementsTenant.Name = "btnShowAllAgreementsTenant";
             this.btnShowAllAgreementsTenant.Size = new System.Drawing.Size(207, 27);
             this.btnShowAllAgreementsTenant.TabIndex = 2;
             this.btnShowAllAgreementsTenant.Text = "Show all agreements";
             this.btnShowAllAgreementsTenant.UseVisualStyleBackColor = true;
-            this.btnShowAllAgreementsTenant.Click += new System.EventHandler(this.btnShowAllAgreements_Click);
+            //this.btnShowAllAgreementsTenant.Click += new System.EventHandler(this.btnShowAllAgreements_Click);
             // 
             // btnSearchAgreementTenant
             // 
             this.btnSearchAgreementTenant.Location = new System.Drawing.Point(81, 78);
-            this.btnSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchAgreementTenant.Name = "btnSearchAgreementTenant";
             this.btnSearchAgreementTenant.Size = new System.Drawing.Size(207, 27);
             this.btnSearchAgreementTenant.TabIndex = 1;
             this.btnSearchAgreementTenant.Text = "Search";
             this.btnSearchAgreementTenant.UseVisualStyleBackColor = true;
-            this.btnSearchAgreementTenant.Click += new System.EventHandler(this.btnSearchAgreement_Click);
+            //this.btnSearchAgreementTenant.Click += new System.EventHandler(this.btnSearchAgreement_Click);
             // 
             // tbxSearchAgreementsTenant
             // 
             this.tbxSearchAgreementsTenant.Location = new System.Drawing.Point(23, 44);
-            this.tbxSearchAgreementsTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxSearchAgreementsTenant.Margin = new System.Windows.Forms.Padding(4);
             this.tbxSearchAgreementsTenant.Name = "tbxSearchAgreementsTenant";
             this.tbxSearchAgreementsTenant.Size = new System.Drawing.Size(324, 22);
             this.tbxSearchAgreementsTenant.TabIndex = 0;
@@ -285,7 +285,7 @@
             this.btnDisagree.TabIndex = 3;
             this.btnDisagree.Text = "Disagree with selected";
             this.btnDisagree.UseVisualStyleBackColor = true;
-            this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
+            //this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
             // 
             // btnAgree
             // 
@@ -296,7 +296,7 @@
             this.btnAgree.TabIndex = 2;
             this.btnAgree.Text = "Agree with selected";
             this.btnAgree.UseVisualStyleBackColor = true;
-            this.btnAgree.Click += new System.EventHandler(this.btnAgree_Click);
+            //this.btnAgree.Click += new System.EventHandler(this.btnAgree_Click);
             // 
             // lbxAllAgreementsTenant
             // 
@@ -340,7 +340,7 @@
             this.btnAddAgreement.TabIndex = 2;
             this.btnAddAgreement.Text = "Add";
             this.btnAddAgreement.UseVisualStyleBackColor = true;
-            this.btnAddAgreement.Click += new System.EventHandler(this.btnAddAgreement_Click);
+            //this.btnAddAgreement.Click += new System.EventHandler(this.btnAddAgreement_Click);
             // 
             // tbxAddAgreement
             // 
@@ -415,7 +415,7 @@
             this.btnComplaint.TabIndex = 2;
             this.btnComplaint.Text = "Send";
             this.btnComplaint.UseVisualStyleBackColor = true;
-            this.btnComplaint.Click += new System.EventHandler(this.btnComplaint_Click);
+            //this.btnComplaint.Click += new System.EventHandler(this.btnComplaint_Click);
             // 
             // tbxWriteComplaint
             // 
@@ -439,22 +439,22 @@
             // 
             this.timerClock.Enabled = true;
             this.timerClock.Interval = 60000;
-            this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
+            //this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // frmTenant
+            // TenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(989, 588);
             this.Controls.Add(this.MenuTenant);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmTenant";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "TenantForm";
             this.Text = "Tenant";
             this.Load += new System.EventHandler(this.HousingApp_Load);
             this.MenuTenant.ResumeLayout(false);
