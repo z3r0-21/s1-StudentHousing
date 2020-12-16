@@ -18,13 +18,13 @@ namespace HousingSoftware
         Grocery currentGrocery;
         int indexSearchedTenant = -1;
 
-        LoginForm loginForm;
+        //LoginForm loginForm;
         Admin admin;
-        public AdminForm(LoginForm loginForm,Admin admin)
+        public AdminForm(Admin admin)
         {
             InitializeComponent();
             this.admin = admin;
-            this.loginForm = loginForm;
+            //this.loginForm = loginForm;
         }
 
         private int searchTenantProfile(int studentNum)
@@ -149,6 +149,7 @@ namespace HousingSoftware
 
         private void btnLogOutAdmin_Click(object sender, EventArgs e)
         {
+            LoginForm loginForm = new LoginForm(admin);
             loginForm.Show();
             this.Close();
 

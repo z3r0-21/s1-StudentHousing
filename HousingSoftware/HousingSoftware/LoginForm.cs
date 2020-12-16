@@ -12,7 +12,9 @@ namespace HousingSoftware
 {
     public partial class LoginForm : Form
     {
+        
         Admin admin = new Admin("admin", "admin");
+        
         Tenant tenant1 = new Tenant();
         int indexCurrTenant;
 
@@ -20,13 +22,25 @@ namespace HousingSoftware
         {
             InitializeComponent();
         }
-
+        public LoginForm(Admin admin)
+        {
+            InitializeComponent();
+            this.admin = admin;
+        }
 
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            // should delete
             tenant1.InitializeTenant(1, "user", "user");
             admin.AddTenant(tenant1);
+
+            /*
+            List<Admin> admins = new List<Admin>();
+            Admin currentAdmin;
+            // in the specified method
+            currentAdmin = new Admin("user", "pass");
+            admins.Add(currentAdmin);*/
         }
 
         private int checkForTenantCredentials(string username, string password)
@@ -56,7 +70,7 @@ namespace HousingSoftware
 
                 if (username == admin.GetUsername() && password == admin.GetPassword())
                 {
-                    AdminForm adminForm = new AdminForm(this,admin);
+                    AdminForm adminForm = new AdminForm(admin);
                     adminForm.Show();
                     this.Hide();
                     // redirecting to home page
@@ -78,7 +92,7 @@ namespace HousingSoftware
 
                     string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
 
-                    TenantForm tenantForm = new TenantForm(this, admin);
+                    TenantForm tenantForm = new TenantForm(admin);
                     tenantForm.Show();
                     this.Hide();
                     //lbWelcomeMsgTenant.Text = $"Welcome, {fname}";

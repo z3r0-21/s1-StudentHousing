@@ -27,14 +27,14 @@ namespace HousingSoftware
 
         Grocery currentGrocery;
 
-        LoginForm LoginForm;
+        //LoginForm LoginForm;
         Admin admin;
         int indexSearchedTenant = -1;
-        public TenantForm(LoginForm loginForm, Admin admin)
+        public TenantForm(Admin admin)
         {
             InitializeComponent();
             this.admin = admin;
-            this.LoginForm = loginForm;
+            //this.LoginForm = loginForm;
         }
 
         private void HousingApp_Load(object sender, EventArgs e)
@@ -49,17 +49,17 @@ namespace HousingSoftware
 
             //MenuAdmin.Hide();
             //btnLogOutAdmin.Hide();
-            MenuTenant.Hide();
-            btnLogOutTenant.Hide();
+            //MenuTenant.Hide();
+            //btnLogOutTenant.Hide();
 
 
             //admin = new Admin();
 
             // make a tenant for testing
-            tenant1 = new Tenant();
-            tenant1.InitializeTenant(1, "user", "user");
+            //tenant1 = new Tenant();
+            //tenant1.InitializeTenant(1, "user", "user");
             //tenant1.SetGroceriesTenant(admin.GetAllGroceries());
-            admin.AddTenant(tenant1);
+            //admin.AddTenant(tenant1);
 
 
         }
@@ -296,7 +296,8 @@ namespace HousingSoftware
 
         private void btnLogOutTenant_Click(object sender, EventArgs e)
         {
-            LoginForm.Show();
+            LoginForm loginForm = new LoginForm(admin);
+            loginForm.Show();
             this.Close();
             //MenuTenant.Hide();
             //btnLogOutTenant.Hide();
