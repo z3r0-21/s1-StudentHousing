@@ -16,7 +16,7 @@ namespace HousingSoftware
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HousingApp());
+            Application.Run(new frmTenant());
         }
     }
 }

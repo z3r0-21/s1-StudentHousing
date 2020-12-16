@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HousingSoftware
 {
-    public partial class HousingApp : Form
+    public partial class frmTenant : Form
     {
         private string adminUsername = "admin";
         private string adminPassword = "admin";
@@ -28,7 +28,7 @@ namespace HousingSoftware
         Grocery currentGrocery;
 
         int indexSearchedTenant = -1;
-        public HousingApp()
+        public frmTenant()
         {
             InitializeComponent();        
         }
