@@ -796,8 +796,7 @@ namespace HousingSoftware
             string rule = editBox.Text;
             newHouseRule = new HouseRules(rule);
             int index = lbxRulesAdmin.SelectedIndex;
-            int indexTenant = index;
-            lbxRulesAdmin.Items[index] = rule;
+            //lbxRulesAdmin.Items[index] = rule;
             admin.HouseRules[index] = newHouseRule;
             editBox.Visible = false;
             btnSaveEditedRule.Visible = false;
