@@ -21,6 +21,9 @@ namespace HousingSoftware
         public LoginForm()
         {
             InitializeComponent();
+            // create manual tenant only when the app is started
+            tenant1.InitializeTenant(1, "user", "user");
+            admin.AddTenant(tenant1);
         }
         public LoginForm(Admin admin)
         {
@@ -31,10 +34,6 @@ namespace HousingSoftware
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // should delete
-            tenant1.InitializeTenant(1, "user", "user");
-            admin.AddTenant(tenant1);
-
             /*
             List<Admin> admins = new List<Admin>();
             Admin currentAdmin;
@@ -73,14 +72,6 @@ namespace HousingSoftware
                     AdminForm adminForm = new AdminForm(admin);
                     adminForm.Show();
                     this.Hide();
-                    // redirecting to home page
-                    //gbxLogin.Hide();
-                    //MenuAdmin.Show();
-                    ////btnLogOutAdmin.Show();
-                    //lbWelcomeMsgAdmin.Text = $"Welcome, {username}";
-
-                    // Make invisible groupbox for edit tenant credntials unitl a current tenant is searched for profile edit by the admin
-                    //gbxEditTenant.Visible = false;
                 }
                 else if (checkForTenantCredentials(username, password) != -1)
                 {
@@ -92,10 +83,9 @@ namespace HousingSoftware
 
                     string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
 
-                    TenantForm tenantForm = new TenantForm(admin);
+                    TenantForm tenantForm = new TenantForm(admin, indexCurrTenant);
                     tenantForm.Show();
                     this.Hide();
-                    //lbWelcomeMsgTenant.Text = $"Welcome, {fname}";
 
                     /*  showUnpaidGroceries(lbxUnpaidGroceries, indexCurrTenant);
                       refreshHouseRules();*/
