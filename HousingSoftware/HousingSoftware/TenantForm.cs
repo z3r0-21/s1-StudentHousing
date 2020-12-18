@@ -59,6 +59,9 @@ namespace HousingSoftware
             lbWelcomeMsgTenant.Text = $"Welcome, {admin.GetTenants()[indexCurrTenant].GetFirstName()}";
             showUnpaidGroceries(lbxUnpaidGroceries, indexCurrTenant);
 
+            // Refresh the listbox containing all agreements
+            RefreshAgreementsTenant();
+
         }
 
         private void btnLogOutTenant_Click(object sender, EventArgs e)
@@ -67,179 +70,10 @@ namespace HousingSoftware
             loginForm.Show();
             this.Close();
         }
-
-
-        //private void RefreshAgreements()
-        //{
-        //    lbxAllAgreementsTenant.Items.Clear();
-        //    lbxAllAgreementsAdmin.Items.Clear();
-
-        //    foreach (Agreements agreement in admin.GetAgreements())
-        //    {
-        //        lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
-        //        lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
-        //    }
-        //}
-
-        //private void SearchAgreementsTenant(string searchText)
-        //{
-        //    lbxAllAgreementsTenant.Items.Clear();
-        //    lbxAllAgreementsAdmin.Items.Clear();
-
-        //    foreach (Agreements agreement in admin.GetAgreements())
-        //    {
-        //        if (agreement.GetAgreement().Contains(searchText))
-        //        {
-        //            lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
-        //        }
-        //    }
-        //}
-
-        //private void SearchAgreementsAdmin(string searchText)
-        //{
-        //    lbxAllAgreementsTenant.Items.Clear();
-        //    lbxAllAgreementsAdmin.Items.Clear();
-
-        //    foreach (Agreements agreement in admin.GetAgreements())
-        //    {
-        //        if (agreement.GetAgreement().Contains(searchText))
-        //        {
-        //            lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
-        //        }
-        //    }
-        //}
-
-
-
-
-        //        private void btnComplaint_Click(object sender, EventArgs e)
-        //        {
-        //            if (!String.IsNullOrEmpty(tbxWriteComplaint.Text))
-        //            {
-        //                admin.AddComplaint($"{DateTime.Now.ToString("MMMM dd, yyyy")}: {tbxWriteComplaint.Text}");
-        //                RefreshComplaintsList();
-        //                tbxWriteComplaint.Clear();
-        //                MessageBox.Show("Your complaint has been sent to Student Housing BV.");
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("In order to send a complaint, please, enter a text in the text box.");
-        //            }
-        //        }
-
-        //        private void btnMarkAsDone_Click(object sender, EventArgs e)
-        //        {
-
-        //            if (admin.GetComplaints().Count > 0 && lbxAllComplaints.SelectedIndex != -1)
-        //            {
-        //                admin.RemoveComplaint(lbxAllComplaints.SelectedItem.ToString());
-        //                RefreshComplaintsList();
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("Please, make sure to select an item which you would like to be marked as done.");
-        //            }
-        //        }
-
         //        private void timerClock_Tick(object sender, EventArgs e)
         //        {
         //            lbTime.Text = DateTime.Now.ToString("HH:mm");
         //            lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd");
-        //        }
-
- 
-
-        //        private int FindAgreementIndex(string agreementText)
-        //        {
-        //            foreach (Agreements agreement in admin.GetAgreements())
-        //            {
-        //                if (agreement.GetAgreement() == agreementText)
-        //                {
-        //                    return admin.GetAgreements().IndexOf(agreement);
-        //                }
-        //            }
-        //            return -1;
-        //        }
-
-        //        private bool hasVoted(Agreements selectedAgreement, int studentNr)
-        //        {
-
-        //            if (selectedAgreement.GetAgreed().Contains(studentNr) || selectedAgreement.GetDisagreed().Contains(studentNr))
-        //            {
-        //                MessageBox.Show("You have already voted for the selected agreement.");
-        //                return true;
-        //            }
-
-        //            return false;
-        //        }
-
-        //        private void btnAddAgreement_Click(object sender, EventArgs e)
-        //        {
-        //            string agreement = tbxAddAgreement.Text;
-
-        //            if (FindAgreementIndex(agreement) != -1)
-        //            {
-        //                MessageBox.Show($"This agreement already exists.");
-        //            }
-        //            else
-        //            {
-        //                if (tbxAddAgreement.Text != "" && tbxAddAgreement.Text.Length > 20)
-        //                {
-        //                    newAgreement = new Agreements();
-        //                    admin.AddAgreement(newAgreement);
-        //                    newAgreement.AddNewAgreement(agreement);
-        //                    tbxAddAgreement.Clear();
-
-        //                    RefreshAgreements();
-
-        //                    MessageBox.Show($"Your agreement has been added.");
-
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show("Please, make sure to enter a text containing 20 more charachters.");
-        //                }
-        //            }
-
-        //        }
-
-        //        private void AgreeDisagree(char choice)
-        //        {
-        //            //get the student number of the currently logged tennants
-        //            Tenant currentTenant = admin.GetTenants()[indexCurrTenant];
-
-        //            string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
-        //            int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
-
-        //            //select
-        //            string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString().Split(':')[1];
-        //            //selectedAgreement = selectedAgreement.TrimStart(' ');
-        //            selectedAgreement = selectedAgreement.Remove(0, 1);
-        //            int index = FindAgreementIndex(selectedAgreement);
-
-        //            if (!hasVoted(admin.GetAgreements()[index], stNumber))
-        //            {
-        //                if (choice == 'a')
-        //                {
-        //                    admin.GetAgreements()[index].Agree(stNumber);
-        //                }
-        //                else if (choice == 'd')
-        //                {
-        //                    admin.GetAgreements()[index].Disagree(stNumber);
-        //                }
-
-        //            }
-        //            RefreshAgreements();
-        //        }
-
-        //        private void btnAgree_Click(object sender, EventArgs e)
-        //        {
-        //            AgreeDisagree('a');
-        //        }
-
-        //        private void btnDisagree_Click(object sender, EventArgs e)
-        //        {
-        //            AgreeDisagree('d');
         //        }
 
         //        private void btnPostAnnouncement_Click(object sender, EventArgs e)
@@ -267,36 +101,150 @@ namespace HousingSoftware
         //        }
 
 
+        //AGREEMENTS
 
-        //        private void btnSearchAgreement_Click(object sender, EventArgs e)
-        //        {
-        //            SearchAgreementsTenant(tbxSearchAgreementsTenant.Text);
-        //        }
+        private void btnAddAgreement_Click(object sender, EventArgs e) // Add new agreement
+        {
+            string agreement = tbxAddAgreement.Text;
 
-        //        private void btnShowAllAgreements_Click(object sender, EventArgs e)
-        //        {
-        //            RefreshAgreements();
-        //        }
+            if (FindAgreementIndex(agreement) != -1)
+            {
+                MessageBox.Show($"This agreement already exists.");
+            }
+            else
+            {
+                if (tbxAddAgreement.Text != "" && tbxAddAgreement.Text.Length > 20)
+                {
+                    newAgreement = new Agreements();
+                    admin.AddAgreement(newAgreement);
+                    newAgreement.AddNewAgreement(agreement);
+                    tbxAddAgreement.Clear();
 
-        //        private void btnSearchAgreementAdmin_Click(object sender, EventArgs e)
-        //        {
-        //            SearchAgreementsAdmin(tbxSearchAgreementsAdmin.Text);
-        //        }
+                    RefreshAgreementsTenant();
 
-        //        private void btnShowAllAgreementsAdmin_Click(object sender, EventArgs e)
-        //        {
-        //            RefreshAgreements();
-        //        }
+                    MessageBox.Show($"Your agreement has been added.");
 
-        //        private void btnShowAllComplaints_Click(object sender, EventArgs e)
-        //        {
-        //            RefreshComplaintsList();
-        //        }
+                }
+                else
+                {
+                    MessageBox.Show("Please, make sure to enter a text containing 20 more charachters.");
+                }
+            }
 
-        //        private void btnSearchComplaint_Click(object sender, EventArgs e)
-        //        {
-        //            SearchComplaints(tbxSearchComplaint.Text);
-        //        }
+        }
+
+        private void RefreshAgreementsTenant() // Refreshes the listbox showing all agreements
+        {
+            lbxAllAgreementsTenant.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+            }
+        }
+        
+
+        private void SearchAgreementsTenant(string searchText) // Search all agreements based on string input
+        {
+            lbxAllAgreementsTenant.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if (agreement.GetAgreement().Contains(searchText))
+                {
+                    lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                }
+            }
+        }
+
+        private void btnSearchAgreement_Click(object sender, EventArgs e) // Search all agreements based on string input
+        {
+            SearchAgreementsTenant(tbxSearchAgreementsTenant.Text);
+        }
+
+        private void btnShowAllAgreements_Click(object sender, EventArgs e) // Show all agreements (can be used after searching)
+        {
+            RefreshAgreementsTenant();
+        }
+
+        private bool hasVoted(Agreements selectedAgreement, int studentNr) // Checks if the currently logged tenant has voted for the selected agreements
+        {
+
+            if (selectedAgreement.GetAgreed().Contains(studentNr) || selectedAgreement.GetDisagreed().Contains(studentNr))
+            {
+                MessageBox.Show("You have already voted for the selected agreement.");
+                return true;
+            }
+
+            return false;
+        }
+
+
+        private int FindAgreementIndex(string agreementText) // Finds the index in the list of the selected agreeemtnt
+        {
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if (agreement.GetAgreement() == agreementText)
+                {
+                    return admin.GetAgreements().IndexOf(agreement);
+                }
+            }
+            return -1;
+        }
+
+        private void AgreeDisagree(char choice) // The currently logged tenant votes for a selected agreements
+        {
+            //get the student number of the currently logged tennants
+            Tenant currentTenant = admin.GetTenants()[indexCurrTenant];
+
+            string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
+            int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
+
+            //select
+            string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString().Split(':')[1];
+            selectedAgreement = selectedAgreement.Remove(0, 1);
+            int index = FindAgreementIndex(selectedAgreement);
+
+            if (!hasVoted(admin.GetAgreements()[index], stNumber))
+            {
+                if (choice == 'a')
+                {
+                    admin.GetAgreements()[index].Agree(stNumber);
+                }
+                else if (choice == 'd')
+                {
+                    admin.GetAgreements()[index].Disagree(stNumber);
+                }
+
+            }
+            RefreshAgreementsTenant();
+        }
+
+        private void btnAgree_Click(object sender, EventArgs e) // Agree
+        {
+            AgreeDisagree('a');
+        }
+
+        private void btnDisagree_Click(object sender, EventArgs e) // Disagree
+        {
+            AgreeDisagree('d');
+        }
+
+        //COMPLAINTS
+        private void btnComplaint_Click(object sender, EventArgs e) // Send an anonymous complaint to the admin
+        {
+            if (!String.IsNullOrEmpty(tbxWriteComplaint.Text))
+            {
+                admin.AddComplaint($"{DateTime.Now.ToString("MMMM dd, yyyy")}: {tbxWriteComplaint.Text}");
+                tbxWriteComplaint.Clear();
+                MessageBox.Show("Your complaint has been sent to Student Housing BV.");
+            }
+            else
+            {
+                MessageBox.Show("In order to send a complaint, please, enter a text in the text box.");
+            }
+        }
+
         //        private void refreshHouseRules()
         //        {
         //            lbxRulesAdmin.Items.Clear();

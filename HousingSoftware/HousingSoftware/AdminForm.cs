@@ -34,6 +34,12 @@ namespace HousingSoftware
 
             // Make edit tenants invisible when loading the admin menu
             gbxEditTenant.Visible = false;
+
+            // Refresh the listbox containing all agreements
+            RefreshAgreementsAdmin();
+
+            // Refresh the listbox containing all complaints
+            RefreshComplaints();
         }
 
         // Method for checking if there is student with such student number
@@ -436,7 +442,7 @@ namespace HousingSoftware
 
 
         // COMPLAINTS
-        private void RefreshComplaintsList()
+        private void RefreshComplaints() // Refreshes the listbox containing all complaints
         {
 
             lbxAllComplaints.Items.Clear();
@@ -447,7 +453,21 @@ namespace HousingSoftware
             }
         }
 
-        private void SearchComplaints(string searchText)
+        private void btnMarkAsDone_Click(object sender, EventArgs e) // Removes the selected agreement from the listbox (and from the list itslef as well)
+        {
+
+            if (admin.GetComplaints().Count > 0 && lbxAllComplaints.SelectedIndex != -1)
+            {
+                admin.RemoveComplaint(lbxAllComplaints.SelectedItem.ToString());
+                RefreshComplaints();
+            }
+            else
+            {
+                MessageBox.Show("Please, make sure to select an item which you would like to be marked as done.");
+            }
+        }
+
+        private void SearchComplaints(string searchText) // Search all available complaints based on string input
         {
             lbxAllComplaints.Items.Clear();
 
@@ -458,6 +478,49 @@ namespace HousingSoftware
                     lbxAllComplaints.Items.Add(complaint);
                 }
             }
+        }
+
+        private void btnSearchComplaint_Click(object sender, EventArgs e) // Search all complaints based on string input
+        {
+            SearchComplaints(tbxSearchComplaint.Text);
+        }
+
+        private void btnShowAllComplaints_Click(object sender, EventArgs e) // Show all complaints (can be used after searching)
+        {
+            RefreshComplaints();
+        }
+
+        //AGREEMENTS
+        private void RefreshAgreementsAdmin() // Refreshes the listbox showing all agreements
+        {
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+            }
+        }
+
+        private void SearchAgreementsAdmin(string searchText) // Search all agreements based on string input
+        {
+            lbxAllAgreementsAdmin.Items.Clear();
+
+            foreach (Agreements agreement in admin.GetAgreements())
+            {
+                if (agreement.GetAgreement().Contains(searchText))
+                {
+                    lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                }
+            }
+        }
+        private void btnSearchAgreementAdmin_Click(object sender, EventArgs e) // Search all agreements based on string input
+        {
+            SearchAgreementsAdmin(tbxSearchAgreementsAdmin.Text);
+        }
+
+        private void btnShowAllAgreementsAdmin_Click(object sender, EventArgs e) // Show all agreements (can be used after searching)
+        {
+            RefreshAgreementsAdmin();
         }
 
     }
