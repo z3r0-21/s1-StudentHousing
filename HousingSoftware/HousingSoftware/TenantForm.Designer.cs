@@ -61,8 +61,11 @@
             this.btnComplaint = new System.Windows.Forms.Button();
             this.tbxWriteComplaint = new System.Windows.Forms.TextBox();
             this.lbWriteComplaint = new System.Windows.Forms.Label();
-            this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.timerTenant = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.lblUnpaidGroceriesNotification = new System.Windows.Forms.Label();
+            this.lblDateTenant = new System.Windows.Forms.Label();
+            this.lbTimeTenant = new System.Windows.Forms.Label();
             this.MenuTenant.SuspendLayout();
             this.tabHomeTenant.SuspendLayout();
             this.tabGroceriesTenant.SuspendLayout();
@@ -96,6 +99,9 @@
             // 
             // tabHomeTenant
             // 
+            this.tabHomeTenant.Controls.Add(this.lblDateTenant);
+            this.tabHomeTenant.Controls.Add(this.lbTimeTenant);
+            this.tabHomeTenant.Controls.Add(this.lblUnpaidGroceriesNotification);
             this.tabHomeTenant.Controls.Add(this.btnLogOutTenant);
             this.tabHomeTenant.Controls.Add(this.lbWelcomeMsgTenant);
             this.tabHomeTenant.ImageKey = "(none)";
@@ -111,7 +117,7 @@
             // btnLogOutTenant
             // 
             this.btnLogOutTenant.Location = new System.Drawing.Point(43, 566);
-            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(5);
             this.btnLogOutTenant.Name = "btnLogOutTenant";
             this.btnLogOutTenant.Size = new System.Drawing.Size(139, 44);
             this.btnLogOutTenant.TabIndex = 4;
@@ -226,9 +232,9 @@
             this.gbxSearchAgreementTenant.Controls.Add(this.btnSearchAgreementTenant);
             this.gbxSearchAgreementTenant.Controls.Add(this.tbxSearchAgreementsTenant);
             this.gbxSearchAgreementTenant.Location = new System.Drawing.Point(25, 407);
-            this.gbxSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gbxSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(5);
             this.gbxSearchAgreementTenant.Name = "gbxSearchAgreementTenant";
-            this.gbxSearchAgreementTenant.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gbxSearchAgreementTenant.Padding = new System.Windows.Forms.Padding(5);
             this.gbxSearchAgreementTenant.Size = new System.Drawing.Size(508, 208);
             this.gbxSearchAgreementTenant.TabIndex = 6;
             this.gbxSearchAgreementTenant.TabStop = false;
@@ -237,7 +243,7 @@
             // btnShowAllAgreementsTenant
             // 
             this.btnShowAllAgreementsTenant.Location = new System.Drawing.Point(108, 144);
-            this.btnShowAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnShowAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(5);
             this.btnShowAllAgreementsTenant.Name = "btnShowAllAgreementsTenant";
             this.btnShowAllAgreementsTenant.Size = new System.Drawing.Size(276, 33);
             this.btnShowAllAgreementsTenant.TabIndex = 2;
@@ -248,7 +254,7 @@
             // btnSearchAgreementTenant
             // 
             this.btnSearchAgreementTenant.Location = new System.Drawing.Point(108, 96);
-            this.btnSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(5);
             this.btnSearchAgreementTenant.Name = "btnSearchAgreementTenant";
             this.btnSearchAgreementTenant.Size = new System.Drawing.Size(276, 33);
             this.btnSearchAgreementTenant.TabIndex = 1;
@@ -259,7 +265,7 @@
             // tbxSearchAgreementsTenant
             // 
             this.tbxSearchAgreementsTenant.Location = new System.Drawing.Point(31, 54);
-            this.tbxSearchAgreementsTenant.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbxSearchAgreementsTenant.Margin = new System.Windows.Forms.Padding(5);
             this.tbxSearchAgreementsTenant.Name = "tbxSearchAgreementsTenant";
             this.tbxSearchAgreementsTenant.Size = new System.Drawing.Size(431, 22);
             this.tbxSearchAgreementsTenant.TabIndex = 0;
@@ -440,15 +446,46 @@
             this.lbWriteComplaint.TabIndex = 0;
             this.lbWriteComplaint.Text = "Write down your complaint:";
             // 
-            // timerClock
+            // timerTenant
             // 
-            this.timerClock.Enabled = true;
-            this.timerClock.Interval = 60000;
+            this.timerTenant.Interval = 1000;
+            this.timerTenant.Tick += new System.EventHandler(this.timerTenant_Tick);
             // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // lblUnpaidGroceriesNotification
+            // 
+            this.lblUnpaidGroceriesNotification.AutoSize = true;
+            this.lblUnpaidGroceriesNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnpaidGroceriesNotification.Location = new System.Drawing.Point(122, 36);
+            this.lblUnpaidGroceriesNotification.Name = "lblUnpaidGroceriesNotification";
+            this.lblUnpaidGroceriesNotification.Size = new System.Drawing.Size(0, 20);
+            this.lblUnpaidGroceriesNotification.TabIndex = 5;
+            this.lblUnpaidGroceriesNotification.Click += new System.EventHandler(this.lblUnpaidGroceriesNotification_Click);
+            // 
+            // lblDateTenant
+            // 
+            this.lblDateTenant.AutoSize = true;
+            this.lblDateTenant.Location = new System.Drawing.Point(169, 207);
+            this.lblDateTenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateTenant.Name = "lblDateTenant";
+            this.lblDateTenant.Size = new System.Drawing.Size(38, 17);
+            this.lblDateTenant.TabIndex = 7;
+            this.lblDateTenant.Text = "Date";
+            // 
+            // lbTimeTenant
+            // 
+            this.lbTimeTenant.AutoSize = true;
+            this.lbTimeTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeTenant.Location = new System.Drawing.Point(164, 182);
+            this.lbTimeTenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimeTenant.Name = "lbTimeTenant";
+            this.lbTimeTenant.Size = new System.Drawing.Size(60, 25);
+            this.lbTimeTenant.TabIndex = 6;
+            this.lbTimeTenant.Text = "Time";
             // 
             // TenantForm
             // 
@@ -457,7 +494,7 @@
             this.ClientSize = new System.Drawing.Size(1319, 724);
             this.Controls.Add(this.MenuTenant);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "TenantForm";
             this.Text = "Tenant";
             this.Load += new System.EventHandler(this.TenantForm_Load);
@@ -512,7 +549,7 @@
         private System.Windows.Forms.TextBox tbxWriteComplaint;
         private System.Windows.Forms.Label lbWriteComplaint;
         private System.Windows.Forms.Button btnLogOutTenant;
-        private System.Windows.Forms.Timer timerClock;
+        private System.Windows.Forms.Timer timerTenant;
         private System.Windows.Forms.Button btnDisagree;
         private System.Windows.Forms.Button btnAgree;
         private System.Windows.Forms.GroupBox gbxSearchAgreementTenant;
@@ -520,5 +557,8 @@
         private System.Windows.Forms.Button btnSearchAgreementTenant;
         private System.Windows.Forms.TextBox tbxSearchAgreementsTenant;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.Label lblUnpaidGroceriesNotification;
+        private System.Windows.Forms.Label lblDateTenant;
+        private System.Windows.Forms.Label lbTimeTenant;
     }
 }

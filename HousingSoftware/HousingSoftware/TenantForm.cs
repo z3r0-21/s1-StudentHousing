@@ -53,28 +53,74 @@ namespace HousingSoftware
 
         private void TenantForm_Load(object sender, EventArgs e)
         {
-            //lbTime.Text = DateTime.Now.ToString("HH:mm");
-            //lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd");
+            WelcomeMessageTenant();
 
-            lbWelcomeMsgTenant.Text = $"Welcome, {admin.GetTenants()[indexCurrTenant].GetFirstName()}";
             showUnpaidGroceries(lbxUnpaidGroceries, indexCurrTenant);
 
             // Refresh the listbox containing all agreements
             RefreshAgreementsTenant();
 
+            timerTenant.Enabled = true;
+
+            lbTimeTenant.Text = DateTime.Now.ToString("HH:mm");
+            lblDateTenant.Text = DateTime.Now.ToString("dddd, MMMM dd");
+
+            if (lbxUnpaidGroceries.Items.Count > 0)
+            {
+                if (lbxUnpaidGroceries.Items.Count == 1)
+                {
+                    lblUnpaidGroceriesNotification.Text = $"There is {lbxUnpaidGroceries.Items.Count} grocery itme to pay for.";
+                }
+                else
+                {
+                    lblUnpaidGroceriesNotification.Text = $"There are {lbxUnpaidGroceries.Items.Count} grocery itmes to pay for.";
+
+                }
+
+                lblUnpaidGroceriesNotification.BackColor = Color.Yellow;
+            }
+            
         }
 
-        private void btnLogOutTenant_Click(object sender, EventArgs e)
+        private void WelcomeMessageTenant()
+        {
+            string time = DateTime.Now.ToString("HH");
+
+            if (time.StartsWith("0"))
+            {
+                time.Remove(0, 1);
+            }
+
+            int currentTime = Convert.ToInt32(time);
+
+            if (currentTime >= 5 && currentTime < 12)
+            {
+                lbWelcomeMsgTenant.Text = $"Good morning, {admin.GetTenants()[indexCurrTenant].GetFirstName()}!";
+            }
+            else if (currentTime >= 12 && currentTime < 17)
+            {
+                lbWelcomeMsgTenant.Text = $"Have a good afternoon, {admin.GetTenants()[indexCurrTenant].GetFirstName()}";
+            }
+            else if (currentTime >= 17 && currentTime < 21)
+            {
+                lbWelcomeMsgTenant.Text = $"Have a nice evening, {admin.GetTenants()[indexCurrTenant].GetFirstName()}!";
+            }
+            else
+            {
+                lbWelcomeMsgTenant.Text = $"Good night, {admin.GetTenants()[indexCurrTenant].GetFirstName()}";
+            }
+
+        }
+
+            private void btnLogOutTenant_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm(admin);
             loginForm.Show();
             this.Close();
+
+            timerTenant.Enabled = false;
         }
-        //        private void timerClock_Tick(object sender, EventArgs e)
-        //        {
-        //            lbTime.Text = DateTime.Now.ToString("HH:mm");
-        //            lblDate.Text = DateTime.Now.ToString("dddd, MMMM dd");
-        //        }
+  
 
         //        private void btnPostAnnouncement_Click(object sender, EventArgs e)
         //        {
@@ -243,6 +289,28 @@ namespace HousingSoftware
             {
                 MessageBox.Show("In order to send a complaint, please, enter a text in the text box.");
             }
+        }
+
+        private void timerTenant_Tick(object sender, EventArgs e)
+        {
+            WelcomeMessageTenant();
+
+            if (lblUnpaidGroceriesNotification.BackColor == Color.Yellow)
+            {
+                lblUnpaidGroceriesNotification.BackColor = Color.Red;
+            }
+            else if (lblUnpaidGroceriesNotification.BackColor == Color.Red)
+            {
+                lblUnpaidGroceriesNotification.BackColor = Color.Yellow;
+            }
+
+            lbTimeTenant.Text = DateTime.Now.ToString("HH:mm");
+            lblDateTenant.Text = DateTime.Now.ToString("dddd, MMMM dd");
+        }
+
+        private void lblUnpaidGroceriesNotification_Click(object sender, EventArgs e)
+        {
+            MenuTenant.SelectedIndex = 1;
         }
 
         //        private void refreshHouseRules()

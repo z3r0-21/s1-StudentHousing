@@ -29,10 +29,11 @@ namespace HousingSoftware
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MenuAdmin = new System.Windows.Forms.TabControl();
             this.tabHomeAdmin = new System.Windows.Forms.TabPage();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lbTime = new System.Windows.Forms.Label();
+            this.lblDateAdmin = new System.Windows.Forms.Label();
+            this.lbTimeAdmin = new System.Windows.Forms.Label();
             this.lbWelcomeMsgAdmin = new System.Windows.Forms.Label();
             this.btnLogOutAdmin = new System.Windows.Forms.Button();
             this.tabGroceriesAdmin = new System.Windows.Forms.TabPage();
@@ -114,6 +115,9 @@ namespace HousingSoftware
             this.lbPasswordRegister = new System.Windows.Forms.Label();
             this.lbFirstNameRegister = new System.Windows.Forms.Label();
             this.lbStudentNumRegister = new System.Windows.Forms.Label();
+            this.lblNewComplaintsNotifications = new System.Windows.Forms.Label();
+            this.timerAdmin = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             this.tabGroceriesAdmin.SuspendLayout();
@@ -156,8 +160,9 @@ namespace HousingSoftware
             // 
             // tabHomeAdmin
             // 
-            this.tabHomeAdmin.Controls.Add(this.lblDate);
-            this.tabHomeAdmin.Controls.Add(this.lbTime);
+            this.tabHomeAdmin.Controls.Add(this.lblNewComplaintsNotifications);
+            this.tabHomeAdmin.Controls.Add(this.lblDateAdmin);
+            this.tabHomeAdmin.Controls.Add(this.lbTimeAdmin);
             this.tabHomeAdmin.Controls.Add(this.lbWelcomeMsgAdmin);
             this.tabHomeAdmin.Controls.Add(this.btnLogOutAdmin);
             this.tabHomeAdmin.ImageKey = "(none)";
@@ -170,26 +175,26 @@ namespace HousingSoftware
             this.tabHomeAdmin.Text = "Home";
             this.tabHomeAdmin.UseVisualStyleBackColor = true;
             // 
-            // lblDate
+            // lblDateAdmin
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(105, 175);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(38, 17);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "Date";
+            this.lblDateAdmin.AutoSize = true;
+            this.lblDateAdmin.Location = new System.Drawing.Point(105, 175);
+            this.lblDateAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateAdmin.Name = "lblDateAdmin";
+            this.lblDateAdmin.Size = new System.Drawing.Size(38, 17);
+            this.lblDateAdmin.TabIndex = 5;
+            this.lblDateAdmin.Text = "Date";
             // 
-            // lbTime
+            // lbTimeAdmin
             // 
-            this.lbTime.AutoSize = true;
-            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.Location = new System.Drawing.Point(100, 150);
-            this.lbTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(60, 25);
-            this.lbTime.TabIndex = 4;
-            this.lbTime.Text = "Time";
+            this.lbTimeAdmin.AutoSize = true;
+            this.lbTimeAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimeAdmin.Location = new System.Drawing.Point(100, 150);
+            this.lbTimeAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimeAdmin.Name = "lbTimeAdmin";
+            this.lbTimeAdmin.Size = new System.Drawing.Size(60, 25);
+            this.lbTimeAdmin.TabIndex = 4;
+            this.lbTimeAdmin.Text = "Time";
             // 
             // lbWelcomeMsgAdmin
             // 
@@ -203,7 +208,7 @@ namespace HousingSoftware
             // btnLogOutAdmin
             // 
             this.btnLogOutAdmin.Location = new System.Drawing.Point(27, 459);
-            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutAdmin.Name = "btnLogOutAdmin";
             this.btnLogOutAdmin.Size = new System.Drawing.Size(104, 36);
             this.btnLogOutAdmin.TabIndex = 3;
@@ -246,7 +251,7 @@ namespace HousingSoftware
             // btnClsSelectLinePayListGroceries
             // 
             this.btnClsSelectLinePayListGroceries.Location = new System.Drawing.Point(171, 380);
-            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectLinePayListGroceries.Name = "btnClsSelectLinePayListGroceries";
             this.btnClsSelectLinePayListGroceries.Size = new System.Drawing.Size(143, 31);
             this.btnClsSelectLinePayListGroceries.TabIndex = 5;
@@ -393,7 +398,7 @@ namespace HousingSoftware
             // btnClsSelectedLineRecentGroceries
             // 
             this.btnClsSelectedLineRecentGroceries.Location = new System.Drawing.Point(88, 265);
-            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectedLineRecentGroceries.Name = "btnClsSelectedLineRecentGroceries";
             this.btnClsSelectedLineRecentGroceries.Size = new System.Drawing.Size(143, 31);
             this.btnClsSelectedLineRecentGroceries.TabIndex = 6;
@@ -558,9 +563,9 @@ namespace HousingSoftware
             this.gbxSearchAgreementAdmin.Controls.Add(this.btnSearchAgreementAdmin);
             this.gbxSearchAgreementAdmin.Controls.Add(this.tbxSearchAgreementsAdmin);
             this.gbxSearchAgreementAdmin.Location = new System.Drawing.Point(436, 191);
-            this.gbxSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementAdmin.Name = "gbxSearchAgreementAdmin";
-            this.gbxSearchAgreementAdmin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementAdmin.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementAdmin.Size = new System.Drawing.Size(381, 169);
             this.gbxSearchAgreementAdmin.TabIndex = 7;
             this.gbxSearchAgreementAdmin.TabStop = false;
@@ -569,7 +574,7 @@ namespace HousingSoftware
             // btnShowAllAgreementsAdmin
             // 
             this.btnShowAllAgreementsAdmin.Location = new System.Drawing.Point(81, 117);
-            this.btnShowAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAllAgreementsAdmin.Name = "btnShowAllAgreementsAdmin";
             this.btnShowAllAgreementsAdmin.Size = new System.Drawing.Size(207, 27);
             this.btnShowAllAgreementsAdmin.TabIndex = 2;
@@ -580,7 +585,7 @@ namespace HousingSoftware
             // btnSearchAgreementAdmin
             // 
             this.btnSearchAgreementAdmin.Location = new System.Drawing.Point(81, 79);
-            this.btnSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchAgreementAdmin.Name = "btnSearchAgreementAdmin";
             this.btnSearchAgreementAdmin.Size = new System.Drawing.Size(207, 27);
             this.btnSearchAgreementAdmin.TabIndex = 1;
@@ -591,7 +596,7 @@ namespace HousingSoftware
             // tbxSearchAgreementsAdmin
             // 
             this.tbxSearchAgreementsAdmin.Location = new System.Drawing.Point(23, 44);
-            this.tbxSearchAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxSearchAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxSearchAgreementsAdmin.Name = "tbxSearchAgreementsAdmin";
             this.tbxSearchAgreementsAdmin.Size = new System.Drawing.Size(324, 22);
             this.tbxSearchAgreementsAdmin.TabIndex = 0;
@@ -633,7 +638,7 @@ namespace HousingSoftware
             // btnSaveEditedRule
             // 
             this.btnSaveEditedRule.Location = new System.Drawing.Point(496, 459);
-            this.btnSaveEditedRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveEditedRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveEditedRule.Name = "btnSaveEditedRule";
             this.btnSaveEditedRule.Size = new System.Drawing.Size(100, 36);
             this.btnSaveEditedRule.TabIndex = 9;
@@ -644,7 +649,7 @@ namespace HousingSoftware
             // editBox
             // 
             this.editBox.Location = new System.Drawing.Point(411, 337);
-            this.editBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editBox.Margin = new System.Windows.Forms.Padding(4);
             this.editBox.Multiline = true;
             this.editBox.Name = "editBox";
             this.editBox.Size = new System.Drawing.Size(225, 109);
@@ -720,7 +725,7 @@ namespace HousingSoftware
             // btnDeleteRule
             // 
             this.btnDeleteRule.Location = new System.Drawing.Point(43, 378);
-            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteRule.Name = "btnDeleteRule";
             this.btnDeleteRule.Size = new System.Drawing.Size(100, 28);
             this.btnDeleteRule.TabIndex = 6;
@@ -730,7 +735,7 @@ namespace HousingSoftware
             // btnEditRule
             // 
             this.btnEditRule.Location = new System.Drawing.Point(207, 378);
-            this.btnEditRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditRule.Name = "btnEditRule";
             this.btnEditRule.Size = new System.Drawing.Size(100, 28);
             this.btnEditRule.TabIndex = 7;
@@ -755,9 +760,9 @@ namespace HousingSoftware
             this.gbxSearchComplaints.Controls.Add(this.btnSearchComplaint);
             this.gbxSearchComplaints.Controls.Add(this.tbxSearchComplaint);
             this.gbxSearchComplaints.Location = new System.Drawing.Point(483, 175);
-            this.gbxSearchComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchComplaints.Name = "gbxSearchComplaints";
-            this.gbxSearchComplaints.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchComplaints.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchComplaints.Size = new System.Drawing.Size(381, 169);
             this.gbxSearchComplaints.TabIndex = 8;
             this.gbxSearchComplaints.TabStop = false;
@@ -766,7 +771,7 @@ namespace HousingSoftware
             // btnShowAllComplaints
             // 
             this.btnShowAllComplaints.Location = new System.Drawing.Point(81, 117);
-            this.btnShowAllComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAllComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAllComplaints.Name = "btnShowAllComplaints";
             this.btnShowAllComplaints.Size = new System.Drawing.Size(207, 32);
             this.btnShowAllComplaints.TabIndex = 2;
@@ -777,7 +782,7 @@ namespace HousingSoftware
             // btnSearchComplaint
             // 
             this.btnSearchComplaint.Location = new System.Drawing.Point(81, 79);
-            this.btnSearchComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchComplaint.Name = "btnSearchComplaint";
             this.btnSearchComplaint.Size = new System.Drawing.Size(207, 27);
             this.btnSearchComplaint.TabIndex = 1;
@@ -788,7 +793,7 @@ namespace HousingSoftware
             // tbxSearchComplaint
             // 
             this.tbxSearchComplaint.Location = new System.Drawing.Point(23, 44);
-            this.tbxSearchComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxSearchComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.tbxSearchComplaint.Name = "tbxSearchComplaint";
             this.tbxSearchComplaint.Size = new System.Drawing.Size(324, 22);
             this.tbxSearchComplaint.TabIndex = 0;
@@ -850,9 +855,9 @@ namespace HousingSoftware
             this.gbxEditTenant.Controls.Add(this.lbEditPasswordTenant);
             this.gbxEditTenant.Controls.Add(this.tbxEditFNameTenant);
             this.gbxEditTenant.Location = new System.Drawing.Point(461, 356);
-            this.gbxEditTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxEditTenant.Margin = new System.Windows.Forms.Padding(4);
             this.gbxEditTenant.Name = "gbxEditTenant";
-            this.gbxEditTenant.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxEditTenant.Padding = new System.Windows.Forms.Padding(4);
             this.gbxEditTenant.Size = new System.Drawing.Size(401, 165);
             this.gbxEditTenant.TabIndex = 14;
             this.gbxEditTenant.TabStop = false;
@@ -909,9 +914,9 @@ namespace HousingSoftware
             this.gbxSearchTenantEdit.Controls.Add(this.tbxStudNumSearchTenantEdit);
             this.gbxSearchTenantEdit.Controls.Add(this.lbStudNumSearchTenantEdit);
             this.gbxSearchTenantEdit.Location = new System.Drawing.Point(461, 204);
-            this.gbxSearchTenantEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchTenantEdit.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchTenantEdit.Name = "gbxSearchTenantEdit";
-            this.gbxSearchTenantEdit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchTenantEdit.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchTenantEdit.Size = new System.Drawing.Size(401, 128);
             this.gbxSearchTenantEdit.TabIndex = 2;
             this.gbxSearchTenantEdit.TabStop = false;
@@ -1067,11 +1072,35 @@ namespace HousingSoftware
             this.lbStudentNumRegister.TabIndex = 0;
             this.lbStudentNumRegister.Text = "Student number:";
             // 
+            // lblNewComplaintsNotifications
+            // 
+            this.lblNewComplaintsNotifications.AutoSize = true;
+            this.lblNewComplaintsNotifications.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewComplaintsNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewComplaintsNotifications.Location = new System.Drawing.Point(89, 33);
+            this.lblNewComplaintsNotifications.Name = "lblNewComplaintsNotifications";
+            this.lblNewComplaintsNotifications.Size = new System.Drawing.Size(0, 20);
+            this.lblNewComplaintsNotifications.TabIndex = 6;
+            this.lblNewComplaintsNotifications.Click += new System.EventHandler(this.lblNewComplaintsNotifications_Click);
+            // 
+            // timerAdmin
+            // 
+            this.timerAdmin.Interval = 1000;
+            this.timerAdmin.Tick += new System.EventHandler(this.timerAdmin_Tick);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1084, 60);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 679);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.MenuAdmin);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AdminForm";
@@ -1122,8 +1151,8 @@ namespace HousingSoftware
 
         private System.Windows.Forms.TabControl MenuAdmin;
         private System.Windows.Forms.TabPage tabHomeAdmin;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Label lblDateAdmin;
+        private System.Windows.Forms.Label lbTimeAdmin;
         private System.Windows.Forms.Label lbWelcomeMsgAdmin;
         private System.Windows.Forms.Button btnLogOutAdmin;
         private System.Windows.Forms.TabPage tabGroceriesAdmin;
@@ -1205,5 +1234,8 @@ namespace HousingSoftware
         private System.Windows.Forms.Label lbPasswordRegister;
         private System.Windows.Forms.Label lbFirstNameRegister;
         private System.Windows.Forms.Label lbStudentNumRegister;
+        private System.Windows.Forms.Label lblNewComplaintsNotifications;
+        private System.Windows.Forms.Timer timerAdmin;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

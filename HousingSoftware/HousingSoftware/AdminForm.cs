@@ -30,17 +30,71 @@ namespace HousingSoftware
         private void AdminForm_Load(object sender, EventArgs e)
         {
             // Welcome msg for admin user
-            lbWelcomeMsgAdmin.Text = $"Welcome, {admin.GetUsername()}";
+            WelcomeMessageAdmin();
 
             // Make edit tenants invisible when loading the admin menu
             gbxEditTenant.Visible = false;
 
-            // Refresh the listbox containing all agreements
+            // Refreshes the listbox containing all agreements
             RefreshAgreementsAdmin();
 
-            // Refresh the listbox containing all complaints
+            // Refreshes the listbox containing all complaints
             RefreshComplaints();
+
+            lbTimeAdmin.Text = DateTime.Now.ToString("HH:mm");
+            lblDateAdmin.Text = DateTime.Now.ToString("dddd, MMMM dd");
+
+            timerAdmin.Enabled = true;
+
+            if (lbxAllComplaints.Items.Count > 0)
+            {
+                if (lbxAllComplaints.Items.Count == 1)
+                { 
+                lblNewComplaintsNotifications.Text = $"There is {lbxAllComplaints.Items.Count} new complaints.";
+                }
+                else
+                {
+                    lblNewComplaintsNotifications.Text = $"There are {lbxAllComplaints.Items.Count} new complaints.";
+
+                }
+
+                lblNewComplaintsNotifications.BackColor = Color.Yellow;
+            }
         }
+
+        private void WelcomeMessageAdmin()
+        {
+
+            string time = DateTime.Now.ToString("HH");
+
+            if(time.StartsWith("0"))
+            {
+                time.Remove(0, 1);
+            }
+
+            int currentTime = Convert.ToInt32(time);
+
+
+            if (currentTime >= 5 && currentTime < 12)
+            {
+                lbWelcomeMsgAdmin.Text = $"Good morning, {admin.GetUsername()}!";
+            }
+            else if (currentTime >= 12 && currentTime < 17)
+            {
+                lbWelcomeMsgAdmin.Text = $"Have a good afternoon, {admin.GetUsername()}";
+            }
+            else if (currentTime >= 17 && currentTime < 21)
+            {
+                lbWelcomeMsgAdmin.Text = $"Have a nice evening, {admin.GetUsername()}!";
+            }
+            else
+            {
+                lbWelcomeMsgAdmin.Text = $"Good night, {admin.GetUsername()}";
+            }
+
+        }
+
+
 
         // Method for checking if there is student with such student number
         private int searchTenantProfile(int studentNum)
@@ -191,6 +245,8 @@ namespace HousingSoftware
             LoginForm loginForm = new LoginForm(admin);
             loginForm.Show();
             this.Close();
+
+            timerAdmin.Enabled = false;
 
         }
 
@@ -523,5 +579,30 @@ namespace HousingSoftware
             RefreshAgreementsAdmin();
         }
 
+        private void timerAdmin_Tick(object sender, EventArgs e)
+        {
+            WelcomeMessageAdmin();
+
+            if (lbxAllComplaints.Items.Count > 3)
+            {
+                if (lblNewComplaintsNotifications.BackColor == Color.Yellow)
+                {
+                    lblNewComplaintsNotifications.BackColor = Color.Red;
+                }
+                else if (lblNewComplaintsNotifications.BackColor == Color.Red)
+                {
+                    lblNewComplaintsNotifications.BackColor = Color.Yellow;
+                }
+            }
+
+            lbTimeAdmin.Text = DateTime.Now.ToString("HH:mm");
+            lblDateAdmin.Text = DateTime.Now.ToString("dddd, MMMM dd");
+
+        }
+
+        private void lblNewComplaintsNotifications_Click(object sender, EventArgs e)
+        {
+            MenuAdmin.SelectedIndex = 5;
+        }
     }
 }
