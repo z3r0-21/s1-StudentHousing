@@ -240,30 +240,39 @@ namespace HousingSoftware
 
         private void AgreeDisagree(char choice) // The currently logged tenant votes for a selected agreements
         {
-            //get the student number of the currently logged tennants
-            Tenant currentTenant = admin.GetTenants()[indexCurrTenant];
-
-            string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
-            int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
-
-            //select
-            string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString().Split(':')[1];
-            selectedAgreement = selectedAgreement.Remove(0, 1);
-            int index = FindAgreementIndex(selectedAgreement);
-
-            if (!hasVoted(admin.GetAgreements()[index], stNumber))
+            if (lbxAllAgreementsTenant.SelectedIndex == -1)
             {
-                if (choice == 'a')
-                {
-                    admin.GetAgreements()[index].Agree(stNumber);
-                }
-                else if (choice == 'd')
-                {
-                    admin.GetAgreements()[index].Disagree(stNumber);
-                }
-
+                MessageBox.Show("In order to Agree/Disagree, please, maek sure to select an existing agreement from the list.");
             }
-            RefreshAgreementsTenant();
+            else
+            {
+                //get the student number of the currently logged tennants
+                Tenant currentTenant = admin.GetTenants()[indexCurrTenant];
+
+                string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
+
+
+                int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
+
+                //select
+                string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString().Split(':')[1];
+                selectedAgreement = selectedAgreement.Remove(0, 1);
+                int index = FindAgreementIndex(selectedAgreement);
+
+                if (!hasVoted(admin.GetAgreements()[index], stNumber))
+                {
+                    if (choice == 'a')
+                    {
+                        admin.GetAgreements()[index].Agree(stNumber);
+                    }
+                    else if (choice == 'd')
+                    {
+                        admin.GetAgreements()[index].Disagree(stNumber);
+                    }
+
+                }
+                RefreshAgreementsTenant();
+            }
         }
 
         private void btnAgree_Click(object sender, EventArgs e) // Agree
