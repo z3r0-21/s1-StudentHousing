@@ -776,32 +776,54 @@ namespace HousingSoftware
 
         private void btnDeleteRule_Click(object sender, EventArgs e)
         {
-            int index = lbxRulesAdmin.SelectedIndex;
-            admin.HouseRules.RemoveAt(index);
-            refreshHouseRules();
-            
+            if (lbxRulesAdmin.SelectedItem == null)
+            {
+                MessageBox.Show("Please, select a rule");
+            }
+            else
+            {
+                int index = lbxRulesAdmin.SelectedIndex;
+                admin.HouseRules.RemoveAt(index);
+                refreshHouseRules();
+
+            }
+
         }
 
         private void btnEditRule_Click(object sender, EventArgs e)
         {
-            editBox.Visible = true;
-            btnSaveEditedRule.Visible = true;
-            int index = lbxRulesAdmin.SelectedIndex;
-            string textToEdit = lbxRulesAdmin.Items[index].ToString();
-            editBox.Text = textToEdit;
+            if (lbxRulesAdmin.SelectedItem == null)
+            {
+                MessageBox.Show("Please, select a rule");
+            }
+            else
+            {
+                editBoxRule.Visible = true;
+                btnSaveEditedRule.Visible = true;
+                int index = lbxRulesAdmin.SelectedIndex;
+                string textToEdit = lbxRulesAdmin.Items[index].ToString();
+                editBoxRule.Text = textToEdit;
+            }
         }
 
         private void btnSaveEditedRule_Click(object sender, EventArgs e)
         {
-            string rule = editBox.Text;
-            newHouseRule = new HouseRules(rule);
-            int index = lbxRulesAdmin.SelectedIndex;
-            //lbxRulesAdmin.Items[index] = rule;
-            admin.HouseRules[index] = newHouseRule;
-            editBox.Visible = false;
-            btnSaveEditedRule.Visible = false;
-            refreshHouseRules();
-            editBox.Clear();
+            if (editBoxRule.Text == "")
+            {
+                MessageBox.Show("Please, add a text");
+            }
+            else
+            {
+                string rule = editBoxRule.Text;
+                newHouseRule = new HouseRules(rule);
+                int index = lbxRulesAdmin.SelectedIndex;
+                //lbxRulesAdmin.Items[index] = rule;
+                admin.HouseRules[index] = newHouseRule;
+                editBoxRule.Visible = false;
+                btnSaveEditedRule.Visible = false;
+                refreshHouseRules();
+                editBoxRule.Clear();
+            }
         }
 
     }
