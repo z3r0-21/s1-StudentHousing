@@ -32,6 +32,7 @@ namespace HousingSoftware
             this.components = new System.ComponentModel.Container();
             this.MenuAdmin = new System.Windows.Forms.TabControl();
             this.tabHomeAdmin = new System.Windows.Forms.TabPage();
+            this.lblNewComplaintsNotifications = new System.Windows.Forms.Label();
             this.lblDateAdmin = new System.Windows.Forms.Label();
             this.lbTimeAdmin = new System.Windows.Forms.Label();
             this.lbWelcomeMsgAdmin = new System.Windows.Forms.Label();
@@ -115,7 +116,6 @@ namespace HousingSoftware
             this.lbPasswordRegister = new System.Windows.Forms.Label();
             this.lbFirstNameRegister = new System.Windows.Forms.Label();
             this.lbStudentNumRegister = new System.Windows.Forms.Label();
-            this.lblNewComplaintsNotifications = new System.Windows.Forms.Label();
             this.timerAdmin = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.MenuAdmin.SuspendLayout();
@@ -174,6 +174,17 @@ namespace HousingSoftware
             this.tabHomeAdmin.TabIndex = 0;
             this.tabHomeAdmin.Text = "Home";
             this.tabHomeAdmin.UseVisualStyleBackColor = true;
+            // 
+            // lblNewComplaintsNotifications
+            // 
+            this.lblNewComplaintsNotifications.AutoSize = true;
+            this.lblNewComplaintsNotifications.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewComplaintsNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewComplaintsNotifications.Location = new System.Drawing.Point(89, 33);
+            this.lblNewComplaintsNotifications.Name = "lblNewComplaintsNotifications";
+            this.lblNewComplaintsNotifications.Size = new System.Drawing.Size(0, 20);
+            this.lblNewComplaintsNotifications.TabIndex = 6;
+            this.lblNewComplaintsNotifications.Click += new System.EventHandler(this.lblNewComplaintsNotifications_Click);
             // 
             // lblDateAdmin
             // 
@@ -482,6 +493,7 @@ namespace HousingSoftware
             this.btnPostAnnouncement.TabIndex = 2;
             this.btnPostAnnouncement.Text = "Post";
             this.btnPostAnnouncement.UseVisualStyleBackColor = true;
+            this.btnPostAnnouncement.Click += new System.EventHandler(this.btnPostAnnouncement_Click);
             // 
             // tbxPostAnnouncement
             // 
@@ -524,12 +536,13 @@ namespace HousingSoftware
             this.btndeleteAnnouncement.TabIndex = 2;
             this.btndeleteAnnouncement.Text = "Delete";
             this.btndeleteAnnouncement.UseVisualStyleBackColor = true;
+            this.btndeleteAnnouncement.Click += new System.EventHandler(this.btndeleteAnnouncement_Click);
             // 
             // lbxAllAnnouncements
             // 
             this.lbxAllAnnouncements.FormattingEnabled = true;
             this.lbxAllAnnouncements.ItemHeight = 16;
-            this.lbxAllAnnouncements.Location = new System.Drawing.Point(39, 65);
+            this.lbxAllAnnouncements.Location = new System.Drawing.Point(32, 65);
             this.lbxAllAnnouncements.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.lbxAllAnnouncements.Name = "lbxAllAnnouncements";
             this.lbxAllAnnouncements.Size = new System.Drawing.Size(307, 356);
@@ -645,6 +658,7 @@ namespace HousingSoftware
             this.btnSaveEditedRule.Text = "Save";
             this.btnSaveEditedRule.UseVisualStyleBackColor = true;
             this.btnSaveEditedRule.Visible = false;
+            this.btnSaveEditedRule.Click += new System.EventHandler(this.btnSaveEditedRule_Click_1);
             // 
             // editBox
             // 
@@ -679,6 +693,7 @@ namespace HousingSoftware
             this.btnAddRule.TabIndex = 2;
             this.btnAddRule.Text = "Add";
             this.btnAddRule.UseVisualStyleBackColor = true;
+            this.btnAddRule.Click += new System.EventHandler(this.btnAddRule_Click);
             // 
             // tbxAddRule
             // 
@@ -731,6 +746,7 @@ namespace HousingSoftware
             this.btnDeleteRule.TabIndex = 6;
             this.btnDeleteRule.Text = "Delete";
             this.btnDeleteRule.UseVisualStyleBackColor = true;
+            this.btnDeleteRule.Click += new System.EventHandler(this.btnDeleteRule_Click_1);
             // 
             // btnEditRule
             // 
@@ -741,6 +757,7 @@ namespace HousingSoftware
             this.btnEditRule.TabIndex = 7;
             this.btnEditRule.Text = "Edit";
             this.btnEditRule.UseVisualStyleBackColor = true;
+            this.btnEditRule.Click += new System.EventHandler(this.btnEditRule_Click_1);
             // 
             // tabComplaintsAdmin
             // 
@@ -1071,17 +1088,6 @@ namespace HousingSoftware
             this.lbStudentNumRegister.Size = new System.Drawing.Size(113, 17);
             this.lbStudentNumRegister.TabIndex = 0;
             this.lbStudentNumRegister.Text = "Student number:";
-            // 
-            // lblNewComplaintsNotifications
-            // 
-            this.lblNewComplaintsNotifications.AutoSize = true;
-            this.lblNewComplaintsNotifications.BackColor = System.Drawing.Color.Transparent;
-            this.lblNewComplaintsNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewComplaintsNotifications.Location = new System.Drawing.Point(89, 33);
-            this.lblNewComplaintsNotifications.Name = "lblNewComplaintsNotifications";
-            this.lblNewComplaintsNotifications.Size = new System.Drawing.Size(0, 20);
-            this.lblNewComplaintsNotifications.TabIndex = 6;
-            this.lblNewComplaintsNotifications.Click += new System.EventHandler(this.lblNewComplaintsNotifications_Click);
             // 
             // timerAdmin
             // 

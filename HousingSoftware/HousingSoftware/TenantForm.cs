@@ -59,6 +59,11 @@ namespace HousingSoftware
 
             // Refresh the listbox containing all agreements
             RefreshAgreementsTenant();
+            // Refresh house rules for teanents
+            refreshHouseRulesTeanent();
+            // Refresh announcements for teanents
+            refreshAnnouncementsTeanent();
+         
 
             timerTenant.Enabled = true;
 
@@ -321,58 +326,25 @@ namespace HousingSoftware
         {
             MenuTenant.SelectedIndex = 1;
         }
+        // refresh house rules method
+        private void refreshHouseRulesTeanent()
+        {
+        
+            lbxRulesTenant.Items.Clear();
+            foreach (HouseRules rule in admin.HouseRules)
+            {
+                lbxRulesTenant.Items.Add(rule.HouseRule);
+            }
 
-        //        private void refreshHouseRules()
-        //        {
-        //            lbxRulesAdmin.Items.Clear();
-        //            lbxRulesTenant.Items.Clear();
-        //            foreach (HouseRules rule in admin.HouseRules)
-        //            {
-        //                lbxRulesAdmin.Items.Add(rule.HouseRule);
-        //                lbxRulesTenant.Items.Add(rule.HouseRule);
-        //            }
-
-        //        }
-
-        //        private void btnAddRule_Click(object sender, EventArgs e)
-        //        {
-        //            string rule = tbxAddRule.Text;
-        //            newHouseRule = new HouseRules(rule);
-        //            admin.AddHouseRule(newHouseRule);
-        //            refreshHouseRules();
-        //            tbxAddRule.Clear();
-        //        }
-
-        //        private void btnDeleteRule_Click(object sender, EventArgs e)
-        //        {
-        //            int index = lbxRulesAdmin.SelectedIndex;
-        //            admin.HouseRules.RemoveAt(index);
-        //            refreshHouseRules();
-
-        //        }
-
-        //        private void btnEditRule_Click(object sender, EventArgs e)
-        //        {
-        //            editBox.Visible = true;
-        //            btnSaveEditedRule.Visible = true;
-        //            int index = lbxRulesAdmin.SelectedIndex;
-        //            string textToEdit = lbxRulesAdmin.Items[index].ToString();
-        //            editBox.Text = textToEdit;
-        //        }
-
-        //        private void btnSaveEditedRule_Click(object sender, EventArgs e)
-        //        {
-        //            string rule = editBox.Text;
-        //            newHouseRule = new HouseRules(rule);
-        //            int index = lbxRulesAdmin.SelectedIndex;
-        //            int indexTenant = index;
-        //            lbxRulesAdmin.Items[index] = rule;
-        //            admin.HouseRules[index] = newHouseRule;
-        //            editBox.Visible = false;
-        //            btnSaveEditedRule.Visible = false;
-        //            refreshHouseRules();
-        //            editBox.Clear();
-        //        }
+        }
+        private void refreshAnnouncementsTeanent()
+        {
+            lbxUserAllAnnouncements.Items.Clear();
+            foreach (Announcements announcement in admin.Announcements)
+            {
+                lbxUserAllAnnouncements.Items.Add(announcement.Announcement);
+            }
+        }
 
     }
 }

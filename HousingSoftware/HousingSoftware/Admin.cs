@@ -132,11 +132,15 @@ namespace HousingSoftware
         }
 
         // ANNOUNCEMENTS
-
         public void AddAnnouncement(Announcements announcement)
         {
             announcements.Add(announcement);
         }
+        public List<Announcements> Announcements
+        {
+            get { return this.announcements; }
+        }
+        
         // House Rules
         public void AddHouseRule(HouseRules HouseRule)
         {

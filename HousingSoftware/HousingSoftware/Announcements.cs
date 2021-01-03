@@ -8,26 +8,17 @@ namespace HousingSoftware
 {
     public class Announcements
     {
-        /*private List<string> announcements = new List<string>();
-        public string GetAnnouncements(string announcement)
+        private string announcement;
+
+
+        public string Announcement
         {
-            for (int i = 0; i < announcements.Count; i++)
-            {
-                announcement = announcements[i];
-            }
-            return announcement;
+            set { this.announcement = value; }
+            get { return this.announcement; }
         }
-        public void AddAnnouncement(string announcement)
+        public Announcements(string newannouncement)
         {
-           announcements.Add(announcement);
-        }*/
-        private string Announcement;
-
-
-
-        public Announcements(string newAnnouncement)
-        {
-            Announcement = newAnnouncement;
+            this.announcement = newannouncement;
         }
     }
 }

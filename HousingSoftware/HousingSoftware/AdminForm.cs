@@ -17,6 +17,7 @@ namespace HousingSoftware
         Tenant currentTenant;
         Grocery currentGrocery;
         int indexSearchedTenant = -1;
+        Announcements newannouncement;
 
         //LoginForm loginForm;
         Admin admin;
@@ -49,8 +50,8 @@ namespace HousingSoftware
             if (lbxAllComplaints.Items.Count > 0)
             {
                 if (lbxAllComplaints.Items.Count == 1)
-                { 
-                lblNewComplaintsNotifications.Text = $"There is {lbxAllComplaints.Items.Count} new complaints.";
+                {
+                    lblNewComplaintsNotifications.Text = $"There is {lbxAllComplaints.Items.Count} new complaints.";
                 }
                 else
                 {
@@ -67,7 +68,7 @@ namespace HousingSoftware
 
             string time = DateTime.Now.ToString("HH");
 
-            if(time.StartsWith("0"))
+            if (time.StartsWith("0"))
             {
                 time.Remove(0, 1);
             }
@@ -320,7 +321,7 @@ namespace HousingSoftware
             tbxGroceryPrice.Clear();
         }
 
-        
+
         private void RemoveSelectedGroceryTenants(string groceryName)
         {
             foreach (Tenant tenant in admin.GetTenants())
@@ -603,6 +604,105 @@ namespace HousingSoftware
         private void lblNewComplaintsNotifications_Click(object sender, EventArgs e)
         {
             MenuAdmin.SelectedIndex = 5;
+        }
+
+
+        // HOUSE RULES
+        private void refreshHouseRulesAdmin()
+        {
+            lbxRulesAdmin.Items.Clear();
+            foreach (HouseRules rule in admin.HouseRules)
+            {
+                lbxRulesAdmin.Items.Add(rule.HouseRule);
+            }
+
+        }
+        
+        private void btnAddRule_Click(object sender, EventArgs e)
+        {
+            string rule = tbxAddRule.Text;
+            newHouseRule = new HouseRules(rule);
+            admin.AddHouseRule(newHouseRule);
+            refreshHouseRulesAdmin();
+            tbxAddRule.Clear();
+        }
+
+
+        private void btnEditRule_Click_1(object sender, EventArgs e)
+        {
+            if (lbxRulesAdmin.SelectedItem == null)
+            {
+                MessageBox.Show("Please, select a rule");
+            }
+            else
+            {
+                editBox.Visible = true;
+                btnSaveEditedRule.Visible = true;
+                int index = lbxRulesAdmin.SelectedIndex;
+                string textToEdit = lbxRulesAdmin.Items[index].ToString();
+                editBox.Text = textToEdit;
+            }
+        }
+
+        private void btnDeleteRule_Click_1(object sender, EventArgs e)
+        {
+            if (lbxRulesAdmin.SelectedItem == null)
+            {
+                MessageBox.Show("Please, select a rule");
+            }
+            else
+            {
+                int index = lbxRulesAdmin.SelectedIndex;
+                admin.HouseRules.RemoveAt(index);
+                refreshHouseRulesAdmin();
+
+            }
+
+        }
+
+        private void btnSaveEditedRule_Click_1(object sender, EventArgs e)
+        {
+            if (editBox.Text == "")
+            {
+                MessageBox.Show("Please, add a text");
+            }
+            else
+            {
+                string rule = editBox.Text;
+                newHouseRule = new HouseRules(rule);
+                int index = lbxRulesAdmin.SelectedIndex;
+                lbxRulesAdmin.Items[index] = rule;
+                admin.HouseRules[index] = newHouseRule;
+                editBox.Visible = false;
+                btnSaveEditedRule.Visible = false;
+                refreshHouseRulesAdmin();
+                editBox.Clear();
+            }
+        }
+        private void refreshAnnouncements()
+        {
+            lbxAllAnnouncements.Items.Clear();
+            foreach (Announcements announcement in admin.Announcements)
+            {
+                lbxAllAnnouncements.Items.Add(announcement.Announcement);
+            }
+
+        }
+        private void btnPostAnnouncement_Click(object sender, EventArgs e)
+        {
+            string announcement = tbxPostAnnouncement.Text;
+            newannouncement = new Announcements(announcement);
+            admin.AddAnnouncement(newannouncement);
+            refreshAnnouncements();
+
+        }
+
+        private void btndeleteAnnouncement_Click(object sender, EventArgs e)
+        {
+            int index = lbxAllAnnouncements.SelectedIndex;
+            admin.Announcements.RemoveAt(index);
+            refreshAnnouncements();
+            tbxPostAnnouncement.Clear();
         }
     }
 }
