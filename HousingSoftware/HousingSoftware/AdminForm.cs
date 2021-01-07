@@ -28,13 +28,56 @@ namespace HousingSoftware
             //this.loginForm = loginForm;
         }
 
+        // Calculate the number of notifications for unpaid gorceries
+        private int calcGroceriesNotifications()
+        {
+            int numTenantsWithUnpaidGroceries = 0;
+            foreach (Tenant tenant in admin.GetTenants())
+            {
+                if(tenant.GetGroceriesTenant().Count() > 0)
+                {
+                    numTenantsWithUnpaidGroceries++;
+                }
+            }
+            return numTenantsWithUnpaidGroceries;
+        }
+
+        private void showGroceriesNotifications()
+        {
+            lbNewGroceriesNotifications.Text = "";
+            int numTenants = calcGroceriesNotifications();
+            if (numTenants > 0)
+            {
+                if (numTenants == 1)
+                {
+                    lbNewGroceriesNotifications.Text = $"There is {numTenants} with unpaid groceries";
+                }
+                else
+                {
+                    lbNewGroceriesNotifications.Text = $"There are {numTenants} with unpaid groceries";
+                }
+                lbNewGroceriesNotifications.BackColor = Color.Yellow;
+            }
+
+        }
+
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            // Clear default text for notification labels
+            lblNewComplaintsNotifications.Text = "";
+            lbNewGroceriesNotifications.Text = "";
+
+            // Clear default text for stud number label for unpaid groceries pay list
+            lbStudNumTenantPayListGroceries.Text = "";
+
             // Welcome msg for admin user
             WelcomeMessageAdmin();
 
             // Make edit tenants invisible when loading the admin menu
             gbxEditTenant.Visible = false;
+
+            // Calc the number of unpaid groceries
+            calcNumUnpaidGroceriesPerTenant();
 
             // Refreshes the listbox containing all agreements
             RefreshAgreementsAdmin();
@@ -61,6 +104,9 @@ namespace HousingSoftware
 
                 lblNewComplaintsNotifications.BackColor = Color.Yellow;
             }
+
+            // Show notifications for tenants with unpaid groceries
+            showGroceriesNotifications();
         }
 
         private void WelcomeMessageAdmin()
@@ -143,6 +189,12 @@ namespace HousingSoftware
                     // Add groceries to new registered tenant
                     AddGroceriesTenant(currentTenant, admin.GetAllGroceries());
                     admin.AddTenant(currentTenant);
+
+                    // Calc the number of unpaid groceries
+                    calcNumUnpaidGroceriesPerTenant();
+
+                    // Show notifications for tenants with unpaid groceries
+                    showGroceriesNotifications();
                 }
                 else
                 {
@@ -171,6 +223,12 @@ namespace HousingSoftware
                 {
                     int index = searchTenantProfile(studentNum);
                     admin.RemoveTenantAt(index);
+
+                    // Calc the number of unpaid groceries
+                    calcNumUnpaidGroceriesPerTenant();
+
+                    // Show notifications for tenants with unpaid groceries
+                    showGroceriesNotifications();
                 }
                 else
                 {
@@ -307,6 +365,12 @@ namespace HousingSoftware
                     showRecentGroceries(); // Show recent groceries in the listbox Recent groceries
 
                     addGroceryToTenants(currentGrocery);
+
+                    // Calc the number of unpaid groceries
+                    calcNumUnpaidGroceriesPerTenant();
+
+                    // Show notifications for tenants with unpaid groceries
+                    showGroceriesNotifications();
                 }
                 else
                 {
@@ -349,6 +413,12 @@ namespace HousingSoftware
                 admin.RemoveGroceryAt(index);
                 showRecentGroceries();
                 RemoveSelectedGroceryTenants(selectedGroceryName);
+
+                // Calc the number of unpaid groceries
+                calcNumUnpaidGroceriesPerTenant();
+
+                // Show notifications for tenants with unpaid groceries
+                showGroceriesNotifications();
             }
             else
             {
@@ -370,6 +440,12 @@ namespace HousingSoftware
             admin.RemoveAllGroceries();
             RemoveAllGroceriesTenants();
             showRecentGroceries();
+
+            // Calc the number of unpaid groceries
+            calcNumUnpaidGroceriesPerTenant();
+
+            // Show notifications for tenants with unpaid groceries
+            showGroceriesNotifications();
         }
 
         private void showUnpaidGroceries(ListBox unpaidGroceries, int index)
@@ -384,12 +460,56 @@ namespace HousingSoftware
             }
         }
 
+        // Calculate the number of unpaid groceries per tenant
+        private void calcNumUnpaidGroceriesPerTenant()
+        {
+            lbxNumUnpaidGroceriesAllTenants.Items.Clear();
+            foreach (Tenant tenant in admin.GetTenants())
+            {
+                if (tenant.GetGroceriesTenant().Count() > 0)
+                {
+                    lbxNumUnpaidGroceriesAllTenants.Items.Add($"{tenant.GetFirstName()} (stud.num:{tenant.GetStudentNumber()}) - {tenant.GetGroceriesTenant().Count()} unpaid groceries");
+                }
+            }
+        }
+
+        // Clear selected item in the list with number of unpaid groceries per tenant
+        private void btnClsSelectedTenantUnpaidGroceries_Click(object sender, EventArgs e)
+        {
+            if (lbxNumUnpaidGroceriesAllTenants.SelectedIndex != -1)
+            {
+                lbxNumUnpaidGroceriesAllTenants.ClearSelected();
+            }
+            else
+            {
+                MessageBox.Show("There is no selected item!");
+            }
+        }
+
+        // Go to tenant list of unpaid groceries for the chosen tenant
+        private void btnGoToTenantToPayList_Click(object sender, EventArgs e)
+        {
+            lbStudNumTenantPayListGroceries.Text = $"Tenant with stud. num:?";
+            if (lbxNumUnpaidGroceriesAllTenants.SelectedIndex != -1)
+            {
+                // Get stud. number from here: <first name of tenant> (stud.num:<stud. num>) - <number of unpaid tenants>
+                int studNum = Convert.ToInt32(lbxNumUnpaidGroceriesAllTenants.SelectedItem.ToString().Split(':')[1].Split(')')[0]);
+                indexSearchedTenant = searchTenantProfile(studNum);
+                lbStudNumTenantPayListGroceries.Text = $"Tenant with stud. num:{studNum}";
+                showUnpaidGroceries(lbxUnpaidGroceriesPerStudent, indexSearchedTenant);
+            }
+            else
+            {
+                MessageBox.Show("Please select a tenant for whom to show the unpaid groceries list!");
+            }
+        }
 
         // Btn show to-pay list groceries of a specified tenant
         private void btnShowToPayList_Click(object sender, EventArgs e)
         {
 
             lbxUnpaidGroceriesPerStudent.Items.Clear();
+            lbStudNumTenantPayListGroceries.Text = $"Tenant with stud. num:?";
             int studNum;
 
             if (!String.IsNullOrEmpty(tbxStudNumUnpaidItems.Text))
@@ -399,6 +519,7 @@ namespace HousingSoftware
                 indexSearchedTenant = searchTenantProfile(studNum);
                 if (indexSearchedTenant != -1)
                 {
+                    lbStudNumTenantPayListGroceries.Text = $"Tenant with stud. num:{studNum}";
                     showUnpaidGroceries(lbxUnpaidGroceriesPerStudent, indexSearchedTenant);
                 }
                 else
@@ -414,6 +535,12 @@ namespace HousingSoftware
             tbxStudNumUnpaidItems.Clear();
         }
 
+        private void lbGroceriesNotifications_Click(object sender, EventArgs e)
+        {
+            MenuAdmin.SelectedIndex = 1;
+        }
+
+
         // Btn mark selected grocery as paid for the specified tenant
         private void btnMarkSelectedAsPaid_Click(object sender, EventArgs e)
         {
@@ -427,6 +554,12 @@ namespace HousingSoftware
                         admin.GetTenants()[indexSearchedTenant].GetGroceriesTenant().RemoveAt(indexSelectedItem);
                         lbxUnpaidGroceriesPerStudent.Items.RemoveAt(indexSelectedItem);
                         //showUnpaidGroceries(lbxUnpaidGroceriesPerStudent, indexSearchedTenant);
+
+                        // Calc the number of unpaid groceries
+                        calcNumUnpaidGroceriesPerTenant();
+
+                        // Show notifications for tenants with unpaid groceries
+                        showGroceriesNotifications();
                     }
                     else
                     {
@@ -459,6 +592,12 @@ namespace HousingSoftware
                 {
                     markGroceriesAsPaid(indexSearchedTenant);
                     lbxUnpaidGroceriesPerStudent.Items.Clear();
+
+                    // Calc the number of unpaid groceries
+                    calcNumUnpaidGroceriesPerTenant();
+
+                    // Show notifications for tenants with unpaid groceries
+                    showGroceriesNotifications();
                 }
                 else
                 {
@@ -704,5 +843,6 @@ namespace HousingSoftware
             refreshAnnouncements();
             tbxPostAnnouncement.Clear();
         }
+
     }
 }
