@@ -74,11 +74,11 @@ namespace HousingSoftware
             {
                 if (lbxUnpaidGroceries.Items.Count == 1)
                 {
-                    lblUnpaidGroceriesNotification.Text = $"There is {lbxUnpaidGroceries.Items.Count} grocery itme to pay for.";
+                    lblUnpaidGroceriesNotification.Text = $"There is {lbxUnpaidGroceries.Items.Count} grocery item to pay for.";
                 }
                 else
                 {
-                    lblUnpaidGroceriesNotification.Text = $"There are {lbxUnpaidGroceries.Items.Count} grocery itmes to pay for.";
+                    lblUnpaidGroceriesNotification.Text = $"There are {lbxUnpaidGroceries.Items.Count} grocery items to pay for.";
 
                 }
 

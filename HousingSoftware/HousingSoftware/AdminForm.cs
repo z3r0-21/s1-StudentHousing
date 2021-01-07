@@ -50,11 +50,11 @@ namespace HousingSoftware
             {
                 if (numTenants == 1)
                 {
-                    lbNewGroceriesNotifications.Text = $"There is {numTenants} with unpaid groceries";
+                    lbNewGroceriesNotifications.Text = $"There is {numTenants} tenants with unpaid groceries";
                 }
                 else
                 {
-                    lbNewGroceriesNotifications.Text = $"There are {numTenants} with unpaid groceries";
+                    lbNewGroceriesNotifications.Text = $"There are {numTenants} tenants with unpaid groceries";
                 }
                 lbNewGroceriesNotifications.BackColor = Color.Yellow;
             }

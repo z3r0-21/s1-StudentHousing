@@ -81,7 +81,7 @@ namespace HousingSoftware
                     //MenuTenant.Show();
                     //btnLogOutTenant.Show();
 
-                    string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
+                    //string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
 
                     TenantForm tenantForm = new TenantForm(admin, indexCurrTenant);
                     tenantForm.Show();
