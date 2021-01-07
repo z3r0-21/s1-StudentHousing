@@ -64,6 +64,12 @@
     </Compile>
     <Compile Include="HouseRules.cs" />
     <Compile Include="Grocery.cs" />
+    <Compile Include="ManageAdmins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAdmins.Designer.cs">
+      <DependentUpon>ManageAdmins.cs</DependentUpon>
+    </Compile>
     <Compile Include="TenantForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAdmins.resx">
+      <DependentUpon>ManageAdmins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TenantForm.resx">
       <DependentUpon>TenantForm.cs</DependentUpon>

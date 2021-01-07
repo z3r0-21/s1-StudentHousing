@@ -9,6 +9,8 @@ namespace HousingSoftware
     public class Admin
     {
         private string username;
+        private string firstName;
+        private string lastName;
         private string password;
         private List<Tenant> tenants = new List<Tenant>();
         private List<Grocery> allGroceries = new List<Grocery>();
@@ -17,10 +19,12 @@ namespace HousingSoftware
         private List<Announcements> announcements = new List<Announcements>();
         private List<HouseRules> houseRules = new List<HouseRules>();
 
-        public Admin(string inputedUsername, string inputedPassword)
+        public Admin(string username, string password, string firstName, string lastName)
         {
-            username = inputedUsername;
-            password = inputedPassword;
+            this.username = username;
+            this.password = password;
+            this.firstName = firstName;
+            this.lastName = lastName;
         }
 
 
@@ -35,6 +39,21 @@ namespace HousingSoftware
         {
             return username;
         }
+
+        // First name
+        public string FirstName
+        {
+            set { this.firstName = value; }
+            get { return this.firstName; }
+        }
+
+        // Last name
+        public string LastName
+        {
+            set { this.lastName = value; }
+            get { return this.lastName; }
+        }
+
 
         //  PASSWORD
         public void SetPassword(string inputedPassword)

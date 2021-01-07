@@ -12,8 +12,13 @@ namespace HousingSoftware
 {
     public partial class LoginForm : Form
     {
+        // Create a superuser
+        Admin superuser = new Admin("superuser", "superuser", "Admin", "Admin");
+
+        //List of admins
+        List<Admin> admins = new List<Admin>();
         
-        Admin admin = new Admin("admin", "admin");
+        Admin admin = new Admin("admin", "admin", "Admin", "Admin");
         
         Tenant tenant1 = new Tenant();
         int indexCurrTenant;
@@ -29,6 +34,12 @@ namespace HousingSoftware
         {
             InitializeComponent();
             this.admin = admin;
+        }
+
+        public LoginForm(List<Admin> admins)
+        {
+            InitializeComponent();
+            this.admins = admins;
         }
 
 
@@ -67,7 +78,14 @@ namespace HousingSoftware
                 username = tbxUsernameLogin.Text;
                 password = tbxPasswordLogin.Text;
 
-                if (username == admin.GetUsername() && password == admin.GetPassword())
+                if(username == superuser.GetUsername() && password == superuser.GetPassword())
+                {
+                    ManageAdmins manageAdminsForm = new ManageAdmins(admins);
+                    manageAdminsForm.Show();
+                    this.Hide();
+
+                }
+                else if (username == admin.GetUsername() && password == admin.GetPassword())
                 {
                     AdminForm adminForm = new AdminForm(admin);
                     adminForm.Show();
