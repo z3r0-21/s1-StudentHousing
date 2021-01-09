@@ -838,11 +838,32 @@ namespace HousingSoftware
 
         private void btndeleteAnnouncement_Click(object sender, EventArgs e)
         {
-            int index = lbxAllAnnouncements.SelectedIndex;
-            admin.Announcements.RemoveAt(index);
-            refreshAnnouncements();
-            tbxPostAnnouncement.Clear();
+            if (lbxAllAnnouncements.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please, select announcement");
+            }
+            else
+            {
+                int index = lbxAllAnnouncements.SelectedIndex;
+                admin.Announcements.RemoveAt(index);
+                refreshAnnouncements();
+                tbxPostAnnouncement.Clear();
+            }
         }
 
+        private void tabGroceriesAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbxAllAnnouncements_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabHomeAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenantForm));
             this.MenuTenant = new System.Windows.Forms.TabControl();
             this.tabHomeTenant = new System.Windows.Forms.TabPage();
             this.lblDateTenant = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             this.lbWriteComplaint = new System.Windows.Forms.Label();
             this.timerTenant = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuTenant.SuspendLayout();
             this.tabHomeTenant.SuspendLayout();
             this.tabGroceriesTenant.SuspendLayout();
@@ -80,6 +82,7 @@
             this.gbxHouseRulseTenant.SuspendLayout();
             this.tabComplaintsTenant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuTenant
@@ -91,37 +94,39 @@
             this.MenuTenant.Controls.Add(this.tabHouseRulesTenant);
             this.MenuTenant.Controls.Add(this.tabComplaintsTenant);
             this.MenuTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuTenant.Location = new System.Drawing.Point(13, 10);
-            this.MenuTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.MenuTenant.Location = new System.Drawing.Point(17, 12);
+            this.MenuTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.MenuTenant.Name = "MenuTenant";
             this.MenuTenant.SelectedIndex = 0;
-            this.MenuTenant.Size = new System.Drawing.Size(927, 503);
+            this.MenuTenant.Size = new System.Drawing.Size(1236, 619);
             this.MenuTenant.TabIndex = 2;
             // 
             // tabHomeTenant
             // 
+            this.tabHomeTenant.BackColor = System.Drawing.Color.Teal;
+            this.tabHomeTenant.Controls.Add(this.pictureBox1);
             this.tabHomeTenant.Controls.Add(this.lblDateTenant);
             this.tabHomeTenant.Controls.Add(this.lbTimeTenant);
             this.tabHomeTenant.Controls.Add(this.lblUnpaidGroceriesNotification);
             this.tabHomeTenant.Controls.Add(this.btnLogOutTenant);
             this.tabHomeTenant.Controls.Add(this.lbWelcomeMsgTenant);
             this.tabHomeTenant.ImageKey = "(none)";
-            this.tabHomeTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabHomeTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tabHomeTenant.Location = new System.Drawing.Point(4, 26);
+            this.tabHomeTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tabHomeTenant.Name = "tabHomeTenant";
-            this.tabHomeTenant.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.tabHomeTenant.Size = new System.Drawing.Size(919, 477);
+            this.tabHomeTenant.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.tabHomeTenant.Size = new System.Drawing.Size(1228, 589);
             this.tabHomeTenant.TabIndex = 0;
             this.tabHomeTenant.Text = "Home";
-            this.tabHomeTenant.UseVisualStyleBackColor = true;
             // 
             // lblDateTenant
             // 
             this.lblDateTenant.AutoSize = true;
-            this.lblDateTenant.Location = new System.Drawing.Point(169, 207);
-            this.lblDateTenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDateTenant.Location = new System.Drawing.Point(148, 292);
+            this.lblDateTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDateTenant.Name = "lblDateTenant";
-            this.lblDateTenant.Size = new System.Drawing.Size(30, 13);
+            this.lblDateTenant.Size = new System.Drawing.Size(38, 17);
             this.lblDateTenant.TabIndex = 7;
             this.lblDateTenant.Text = "Date";
             // 
@@ -129,10 +134,11 @@
             // 
             this.lbTimeTenant.AutoSize = true;
             this.lbTimeTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimeTenant.Location = new System.Drawing.Point(164, 182);
-            this.lbTimeTenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimeTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbTimeTenant.Location = new System.Drawing.Point(146, 227);
+            this.lbTimeTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbTimeTenant.Name = "lbTimeTenant";
-            this.lbTimeTenant.Size = new System.Drawing.Size(47, 20);
+            this.lbTimeTenant.Size = new System.Drawing.Size(60, 25);
             this.lbTimeTenant.TabIndex = 6;
             this.lbTimeTenant.Text = "Time";
             // 
@@ -140,53 +146,58 @@
             // 
             this.lblUnpaidGroceriesNotification.AutoSize = true;
             this.lblUnpaidGroceriesNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnpaidGroceriesNotification.Location = new System.Drawing.Point(122, 36);
+            this.lblUnpaidGroceriesNotification.Location = new System.Drawing.Point(163, 44);
+            this.lblUnpaidGroceriesNotification.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUnpaidGroceriesNotification.Name = "lblUnpaidGroceriesNotification";
-            this.lblUnpaidGroceriesNotification.Size = new System.Drawing.Size(0, 17);
+            this.lblUnpaidGroceriesNotification.Size = new System.Drawing.Size(0, 20);
             this.lblUnpaidGroceriesNotification.TabIndex = 5;
             this.lblUnpaidGroceriesNotification.Click += new System.EventHandler(this.lblUnpaidGroceriesNotification_Click);
             // 
             // btnLogOutTenant
             // 
-            this.btnLogOutTenant.Location = new System.Drawing.Point(82, 355);
-            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLogOutTenant.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnLogOutTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLogOutTenant.Location = new System.Drawing.Point(109, 437);
+            this.btnLogOutTenant.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnLogOutTenant.Name = "btnLogOutTenant";
-            this.btnLogOutTenant.Size = new System.Drawing.Size(139, 44);
+            this.btnLogOutTenant.Size = new System.Drawing.Size(185, 54);
             this.btnLogOutTenant.TabIndex = 4;
             this.btnLogOutTenant.Text = "Log out";
-            this.btnLogOutTenant.UseVisualStyleBackColor = true;
+            this.btnLogOutTenant.UseVisualStyleBackColor = false;
             this.btnLogOutTenant.Click += new System.EventHandler(this.btnLogOutTenant_Click);
             // 
             // lbWelcomeMsgTenant
             // 
             this.lbWelcomeMsgTenant.AutoSize = true;
-            this.lbWelcomeMsgTenant.Location = new System.Drawing.Point(119, 97);
-            this.lbWelcomeMsgTenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbWelcomeMsgTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbWelcomeMsgTenant.Location = new System.Drawing.Point(148, 166);
+            this.lbWelcomeMsgTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbWelcomeMsgTenant.Name = "lbWelcomeMsgTenant";
-            this.lbWelcomeMsgTenant.Size = new System.Drawing.Size(58, 13);
+            this.lbWelcomeMsgTenant.Size = new System.Drawing.Size(74, 17);
             this.lbWelcomeMsgTenant.TabIndex = 0;
             this.lbWelcomeMsgTenant.Text = "Welcome, ";
             // 
             // tabGroceriesTenant
             // 
+            this.tabGroceriesTenant.BackColor = System.Drawing.Color.Teal;
             this.tabGroceriesTenant.Controls.Add(this.gbxPayListGroceriesTenant);
-            this.tabGroceriesTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabGroceriesTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tabGroceriesTenant.Location = new System.Drawing.Point(4, 26);
+            this.tabGroceriesTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tabGroceriesTenant.Name = "tabGroceriesTenant";
-            this.tabGroceriesTenant.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.tabGroceriesTenant.Size = new System.Drawing.Size(919, 477);
+            this.tabGroceriesTenant.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.tabGroceriesTenant.Size = new System.Drawing.Size(1228, 589);
             this.tabGroceriesTenant.TabIndex = 1;
             this.tabGroceriesTenant.Text = "Groceries";
-            this.tabGroceriesTenant.UseVisualStyleBackColor = true;
             // 
             // gbxPayListGroceriesTenant
             // 
             this.gbxPayListGroceriesTenant.Controls.Add(this.lbxUnpaidGroceries);
-            this.gbxPayListGroceriesTenant.Location = new System.Drawing.Point(32, 25);
-            this.gbxPayListGroceriesTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.gbxPayListGroceriesTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbxPayListGroceriesTenant.Location = new System.Drawing.Point(43, 31);
+            this.gbxPayListGroceriesTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.gbxPayListGroceriesTenant.Name = "gbxPayListGroceriesTenant";
-            this.gbxPayListGroceriesTenant.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.gbxPayListGroceriesTenant.Size = new System.Drawing.Size(278, 320);
+            this.gbxPayListGroceriesTenant.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.gbxPayListGroceriesTenant.Size = new System.Drawing.Size(371, 394);
             this.gbxPayListGroceriesTenant.TabIndex = 4;
             this.gbxPayListGroceriesTenant.TabStop = false;
             this.gbxPayListGroceriesTenant.Text = "Pay list groceries";
@@ -194,32 +205,34 @@
             // lbxUnpaidGroceries
             // 
             this.lbxUnpaidGroceries.FormattingEnabled = true;
-            this.lbxUnpaidGroceries.Location = new System.Drawing.Point(8, 28);
-            this.lbxUnpaidGroceries.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.lbxUnpaidGroceries.ItemHeight = 17;
+            this.lbxUnpaidGroceries.Location = new System.Drawing.Point(11, 34);
+            this.lbxUnpaidGroceries.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.lbxUnpaidGroceries.Name = "lbxUnpaidGroceries";
-            this.lbxUnpaidGroceries.Size = new System.Drawing.Size(259, 277);
+            this.lbxUnpaidGroceries.Size = new System.Drawing.Size(344, 327);
             this.lbxUnpaidGroceries.TabIndex = 3;
             // 
             // tabAnnouncementsTenant
             // 
+            this.tabAnnouncementsTenant.BackColor = System.Drawing.Color.Teal;
             this.tabAnnouncementsTenant.Controls.Add(this.gbxNewsFeedTenant);
-            this.tabAnnouncementsTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabAnnouncementsTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tabAnnouncementsTenant.Location = new System.Drawing.Point(4, 26);
+            this.tabAnnouncementsTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tabAnnouncementsTenant.Name = "tabAnnouncementsTenant";
-            this.tabAnnouncementsTenant.Size = new System.Drawing.Size(919, 477);
+            this.tabAnnouncementsTenant.Size = new System.Drawing.Size(1228, 589);
             this.tabAnnouncementsTenant.TabIndex = 2;
             this.tabAnnouncementsTenant.Text = "Announcements";
-            this.tabAnnouncementsTenant.UseVisualStyleBackColor = true;
             // 
             // gbxNewsFeedTenant
             // 
             this.gbxNewsFeedTenant.Controls.Add(this.lbxUserAllAnnouncements);
             this.gbxNewsFeedTenant.Controls.Add(this.lblAllAnnouncementTenant);
-            this.gbxNewsFeedTenant.Location = new System.Drawing.Point(24, 26);
-            this.gbxNewsFeedTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.gbxNewsFeedTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbxNewsFeedTenant.Location = new System.Drawing.Point(32, 32);
+            this.gbxNewsFeedTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.gbxNewsFeedTenant.Name = "gbxNewsFeedTenant";
-            this.gbxNewsFeedTenant.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.gbxNewsFeedTenant.Size = new System.Drawing.Size(385, 344);
+            this.gbxNewsFeedTenant.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.gbxNewsFeedTenant.Size = new System.Drawing.Size(513, 423);
             this.gbxNewsFeedTenant.TabIndex = 2;
             this.gbxNewsFeedTenant.TabStop = false;
             this.gbxNewsFeedTenant.Text = "News feed";
@@ -227,77 +240,84 @@
             // lbxUserAllAnnouncements
             // 
             this.lbxUserAllAnnouncements.FormattingEnabled = true;
-            this.lbxUserAllAnnouncements.Location = new System.Drawing.Point(8, 49);
-            this.lbxUserAllAnnouncements.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.lbxUserAllAnnouncements.ItemHeight = 17;
+            this.lbxUserAllAnnouncements.Location = new System.Drawing.Point(11, 60);
+            this.lbxUserAllAnnouncements.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.lbxUserAllAnnouncements.Name = "lbxUserAllAnnouncements";
-            this.lbxUserAllAnnouncements.Size = new System.Drawing.Size(364, 277);
+            this.lbxUserAllAnnouncements.Size = new System.Drawing.Size(484, 327);
             this.lbxUserAllAnnouncements.TabIndex = 0;
             // 
             // lblAllAnnouncementTenant
             // 
             this.lblAllAnnouncementTenant.AutoSize = true;
-            this.lblAllAnnouncementTenant.Location = new System.Drawing.Point(144, 23);
-            this.lblAllAnnouncementTenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAllAnnouncementTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAllAnnouncementTenant.Location = new System.Drawing.Point(192, 28);
+            this.lblAllAnnouncementTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAllAnnouncementTenant.Name = "lblAllAnnouncementTenant";
-            this.lblAllAnnouncementTenant.Size = new System.Drawing.Size(97, 13);
+            this.lblAllAnnouncementTenant.Size = new System.Drawing.Size(128, 17);
             this.lblAllAnnouncementTenant.TabIndex = 1;
             this.lblAllAnnouncementTenant.Text = "All announcements";
             // 
             // tabAgreementsTenant
             // 
+            this.tabAgreementsTenant.BackColor = System.Drawing.Color.Teal;
             this.tabAgreementsTenant.Controls.Add(this.gbxSearchAgreementTenant);
             this.tabAgreementsTenant.Controls.Add(this.gbxAllAgreements);
             this.tabAgreementsTenant.Controls.Add(this.gbxAddAgreement);
-            this.tabAgreementsTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabAgreementsTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tabAgreementsTenant.Location = new System.Drawing.Point(4, 26);
+            this.tabAgreementsTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tabAgreementsTenant.Name = "tabAgreementsTenant";
-            this.tabAgreementsTenant.Size = new System.Drawing.Size(919, 477);
+            this.tabAgreementsTenant.Size = new System.Drawing.Size(1228, 589);
             this.tabAgreementsTenant.TabIndex = 3;
             this.tabAgreementsTenant.Text = "Agreements";
-            this.tabAgreementsTenant.UseVisualStyleBackColor = true;
             // 
             // gbxSearchAgreementTenant
             // 
             this.gbxSearchAgreementTenant.Controls.Add(this.btnShowAllAgreementsTenant);
             this.gbxSearchAgreementTenant.Controls.Add(this.btnSearchAgreementTenant);
             this.gbxSearchAgreementTenant.Controls.Add(this.tbxSearchAgreementsTenant);
-            this.gbxSearchAgreementTenant.Location = new System.Drawing.Point(22, 263);
-            this.gbxSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(5);
+            this.gbxSearchAgreementTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbxSearchAgreementTenant.Location = new System.Drawing.Point(29, 324);
+            this.gbxSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.gbxSearchAgreementTenant.Name = "gbxSearchAgreementTenant";
-            this.gbxSearchAgreementTenant.Padding = new System.Windows.Forms.Padding(5);
-            this.gbxSearchAgreementTenant.Size = new System.Drawing.Size(456, 194);
+            this.gbxSearchAgreementTenant.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.gbxSearchAgreementTenant.Size = new System.Drawing.Size(608, 239);
             this.gbxSearchAgreementTenant.TabIndex = 6;
             this.gbxSearchAgreementTenant.TabStop = false;
             this.gbxSearchAgreementTenant.Text = "Search for an agreement";
             // 
             // btnShowAllAgreementsTenant
             // 
-            this.btnShowAllAgreementsTenant.Location = new System.Drawing.Point(88, 139);
-            this.btnShowAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(5);
+            this.btnShowAllAgreementsTenant.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnShowAllAgreementsTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnShowAllAgreementsTenant.Location = new System.Drawing.Point(222, 173);
+            this.btnShowAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnShowAllAgreementsTenant.Name = "btnShowAllAgreementsTenant";
-            this.btnShowAllAgreementsTenant.Size = new System.Drawing.Size(276, 33);
+            this.btnShowAllAgreementsTenant.Size = new System.Drawing.Size(169, 41);
             this.btnShowAllAgreementsTenant.TabIndex = 2;
             this.btnShowAllAgreementsTenant.Text = "Show all agreements";
-            this.btnShowAllAgreementsTenant.UseVisualStyleBackColor = true;
+            this.btnShowAllAgreementsTenant.UseVisualStyleBackColor = false;
             this.btnShowAllAgreementsTenant.Click += new System.EventHandler(this.btnShowAllAgreements_Click);
             // 
             // btnSearchAgreementTenant
             // 
-            this.btnSearchAgreementTenant.Location = new System.Drawing.Point(88, 91);
-            this.btnSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSearchAgreementTenant.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnSearchAgreementTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSearchAgreementTenant.Location = new System.Drawing.Point(222, 114);
+            this.btnSearchAgreementTenant.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnSearchAgreementTenant.Name = "btnSearchAgreementTenant";
-            this.btnSearchAgreementTenant.Size = new System.Drawing.Size(276, 33);
+            this.btnSearchAgreementTenant.Size = new System.Drawing.Size(169, 41);
             this.btnSearchAgreementTenant.TabIndex = 1;
             this.btnSearchAgreementTenant.Text = "Search";
-            this.btnSearchAgreementTenant.UseVisualStyleBackColor = true;
+            this.btnSearchAgreementTenant.UseVisualStyleBackColor = false;
             this.btnSearchAgreementTenant.Click += new System.EventHandler(this.btnSearchAgreement_Click);
             // 
             // tbxSearchAgreementsTenant
             // 
-            this.tbxSearchAgreementsTenant.Location = new System.Drawing.Point(11, 49);
-            this.tbxSearchAgreementsTenant.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxSearchAgreementsTenant.Location = new System.Drawing.Point(15, 60);
+            this.tbxSearchAgreementsTenant.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.tbxSearchAgreementsTenant.Name = "tbxSearchAgreementsTenant";
-            this.tbxSearchAgreementsTenant.Size = new System.Drawing.Size(431, 20);
+            this.tbxSearchAgreementsTenant.Size = new System.Drawing.Size(573, 23);
             this.tbxSearchAgreementsTenant.TabIndex = 0;
             // 
             // gbxAllAgreements
@@ -306,53 +326,59 @@
             this.gbxAllAgreements.Controls.Add(this.btnAgree);
             this.gbxAllAgreements.Controls.Add(this.lbxAllAgreementsTenant);
             this.gbxAllAgreements.Controls.Add(this.lblAllAgreementsTenant);
-            this.gbxAllAgreements.Location = new System.Drawing.Point(517, 17);
-            this.gbxAllAgreements.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.gbxAllAgreements.Location = new System.Drawing.Point(689, 21);
+            this.gbxAllAgreements.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.gbxAllAgreements.Name = "gbxAllAgreements";
-            this.gbxAllAgreements.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.gbxAllAgreements.Size = new System.Drawing.Size(355, 398);
+            this.gbxAllAgreements.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.gbxAllAgreements.Size = new System.Drawing.Size(473, 490);
             this.gbxAllAgreements.TabIndex = 5;
             this.gbxAllAgreements.TabStop = false;
             // 
             // btnDisagree
             // 
-            this.btnDisagree.Location = new System.Drawing.Point(8, 349);
-            this.btnDisagree.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.btnDisagree.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnDisagree.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDisagree.Location = new System.Drawing.Point(165, 417);
+            this.btnDisagree.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.btnDisagree.Name = "btnDisagree";
-            this.btnDisagree.Size = new System.Drawing.Size(341, 33);
+            this.btnDisagree.Size = new System.Drawing.Size(168, 41);
             this.btnDisagree.TabIndex = 3;
             this.btnDisagree.Text = "Disagree with selected";
-            this.btnDisagree.UseVisualStyleBackColor = true;
+            this.btnDisagree.UseVisualStyleBackColor = false;
             this.btnDisagree.Click += new System.EventHandler(this.btnDisagree_Click);
             // 
             // btnAgree
             // 
-            this.btnAgree.Location = new System.Drawing.Point(7, 304);
-            this.btnAgree.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.btnAgree.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAgree.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAgree.Location = new System.Drawing.Point(163, 361);
+            this.btnAgree.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.btnAgree.Name = "btnAgree";
-            this.btnAgree.Size = new System.Drawing.Size(341, 33);
+            this.btnAgree.Size = new System.Drawing.Size(168, 41);
             this.btnAgree.TabIndex = 2;
             this.btnAgree.Text = "Agree with selected";
-            this.btnAgree.UseVisualStyleBackColor = true;
+            this.btnAgree.UseVisualStyleBackColor = false;
             this.btnAgree.Click += new System.EventHandler(this.btnAgree_Click);
             // 
             // lbxAllAgreementsTenant
             // 
             this.lbxAllAgreementsTenant.FormattingEnabled = true;
             this.lbxAllAgreementsTenant.HorizontalScrollbar = true;
-            this.lbxAllAgreementsTenant.Location = new System.Drawing.Point(8, 52);
-            this.lbxAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.lbxAllAgreementsTenant.ItemHeight = 17;
+            this.lbxAllAgreementsTenant.Location = new System.Drawing.Point(11, 64);
+            this.lbxAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.lbxAllAgreementsTenant.Name = "lbxAllAgreementsTenant";
-            this.lbxAllAgreementsTenant.Size = new System.Drawing.Size(340, 238);
+            this.lbxAllAgreementsTenant.Size = new System.Drawing.Size(452, 276);
             this.lbxAllAgreementsTenant.TabIndex = 0;
             // 
             // lblAllAgreementsTenant
             // 
             this.lblAllAgreementsTenant.AutoSize = true;
-            this.lblAllAgreementsTenant.Location = new System.Drawing.Point(144, 22);
-            this.lblAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAllAgreementsTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAllAgreementsTenant.Location = new System.Drawing.Point(192, 27);
+            this.lblAllAgreementsTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblAllAgreementsTenant.Name = "lblAllAgreementsTenant";
-            this.lblAllAgreementsTenant.Size = new System.Drawing.Size(76, 13);
+            this.lblAllAgreementsTenant.Size = new System.Drawing.Size(102, 17);
             this.lblAllAgreementsTenant.TabIndex = 1;
             this.lblAllAgreementsTenant.Text = "All agreements";
             // 
@@ -361,63 +387,67 @@
             this.gbxAddAgreement.Controls.Add(this.btnAddAgreement);
             this.gbxAddAgreement.Controls.Add(this.tbxAddAgreement);
             this.gbxAddAgreement.Controls.Add(this.lbWriteAgreement);
-            this.gbxAddAgreement.Location = new System.Drawing.Point(22, 17);
-            this.gbxAddAgreement.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.gbxAddAgreement.Location = new System.Drawing.Point(29, 21);
+            this.gbxAddAgreement.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.gbxAddAgreement.Name = "gbxAddAgreement";
-            this.gbxAddAgreement.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.gbxAddAgreement.Size = new System.Drawing.Size(456, 221);
+            this.gbxAddAgreement.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.gbxAddAgreement.Size = new System.Drawing.Size(608, 272);
             this.gbxAddAgreement.TabIndex = 4;
             this.gbxAddAgreement.TabStop = false;
             // 
             // btnAddAgreement
             // 
-            this.btnAddAgreement.Location = new System.Drawing.Point(167, 166);
-            this.btnAddAgreement.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.btnAddAgreement.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddAgreement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddAgreement.Location = new System.Drawing.Point(222, 208);
+            this.btnAddAgreement.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.btnAddAgreement.Name = "btnAddAgreement";
-            this.btnAddAgreement.Size = new System.Drawing.Size(126, 37);
+            this.btnAddAgreement.Size = new System.Drawing.Size(168, 41);
             this.btnAddAgreement.TabIndex = 2;
             this.btnAddAgreement.Text = "Add";
-            this.btnAddAgreement.UseVisualStyleBackColor = true;
+            this.btnAddAgreement.UseVisualStyleBackColor = false;
             this.btnAddAgreement.Click += new System.EventHandler(this.btnAddAgreement_Click);
             // 
             // tbxAddAgreement
             // 
-            this.tbxAddAgreement.Location = new System.Drawing.Point(8, 52);
-            this.tbxAddAgreement.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tbxAddAgreement.Location = new System.Drawing.Point(11, 64);
+            this.tbxAddAgreement.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tbxAddAgreement.Multiline = true;
             this.tbxAddAgreement.Name = "tbxAddAgreement";
-            this.tbxAddAgreement.Size = new System.Drawing.Size(434, 100);
+            this.tbxAddAgreement.Size = new System.Drawing.Size(577, 122);
             this.tbxAddAgreement.TabIndex = 1;
             // 
             // lbWriteAgreement
             // 
             this.lbWriteAgreement.AutoSize = true;
-            this.lbWriteAgreement.Location = new System.Drawing.Point(164, 20);
-            this.lbWriteAgreement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbWriteAgreement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbWriteAgreement.Location = new System.Drawing.Point(219, 25);
+            this.lbWriteAgreement.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbWriteAgreement.Name = "lbWriteAgreement";
-            this.lbWriteAgreement.Size = new System.Drawing.Size(129, 13);
+            this.lbWriteAgreement.Size = new System.Drawing.Size(171, 17);
             this.lbWriteAgreement.TabIndex = 0;
             this.lbWriteAgreement.Text = "Write down your message";
             // 
             // tabHouseRulesTenant
             // 
+            this.tabHouseRulesTenant.BackColor = System.Drawing.Color.Teal;
             this.tabHouseRulesTenant.Controls.Add(this.gbxHouseRulseTenant);
-            this.tabHouseRulesTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabHouseRulesTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tabHouseRulesTenant.Location = new System.Drawing.Point(4, 26);
+            this.tabHouseRulesTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tabHouseRulesTenant.Name = "tabHouseRulesTenant";
-            this.tabHouseRulesTenant.Size = new System.Drawing.Size(919, 477);
+            this.tabHouseRulesTenant.Size = new System.Drawing.Size(1228, 589);
             this.tabHouseRulesTenant.TabIndex = 4;
             this.tabHouseRulesTenant.Text = "House Rules";
-            this.tabHouseRulesTenant.UseVisualStyleBackColor = true;
             // 
             // gbxHouseRulseTenant
             // 
             this.gbxHouseRulseTenant.Controls.Add(this.lbxRulesTenant);
-            this.gbxHouseRulseTenant.Location = new System.Drawing.Point(329, 42);
-            this.gbxHouseRulseTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.gbxHouseRulseTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbxHouseRulseTenant.Location = new System.Drawing.Point(439, 52);
+            this.gbxHouseRulseTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.gbxHouseRulseTenant.Name = "gbxHouseRulseTenant";
-            this.gbxHouseRulseTenant.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.gbxHouseRulseTenant.Size = new System.Drawing.Size(382, 334);
+            this.gbxHouseRulseTenant.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.gbxHouseRulseTenant.Size = new System.Drawing.Size(509, 411);
             this.gbxHouseRulseTenant.TabIndex = 4;
             this.gbxHouseRulseTenant.TabStop = false;
             this.gbxHouseRulseTenant.Text = "House rules";
@@ -425,52 +455,55 @@
             // lbxRulesTenant
             // 
             this.lbxRulesTenant.FormattingEnabled = true;
-            this.lbxRulesTenant.Location = new System.Drawing.Point(17, 27);
-            this.lbxRulesTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.lbxRulesTenant.ItemHeight = 17;
+            this.lbxRulesTenant.Location = new System.Drawing.Point(23, 33);
+            this.lbxRulesTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.lbxRulesTenant.Name = "lbxRulesTenant";
-            this.lbxRulesTenant.Size = new System.Drawing.Size(349, 290);
+            this.lbxRulesTenant.Size = new System.Drawing.Size(464, 344);
             this.lbxRulesTenant.TabIndex = 0;
             // 
             // tabComplaintsTenant
             // 
+            this.tabComplaintsTenant.BackColor = System.Drawing.Color.Teal;
             this.tabComplaintsTenant.Controls.Add(this.btnComplaint);
             this.tabComplaintsTenant.Controls.Add(this.tbxWriteComplaint);
             this.tabComplaintsTenant.Controls.Add(this.lbWriteComplaint);
-            this.tabComplaintsTenant.Location = new System.Drawing.Point(4, 22);
-            this.tabComplaintsTenant.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tabComplaintsTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabComplaintsTenant.Location = new System.Drawing.Point(4, 26);
+            this.tabComplaintsTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tabComplaintsTenant.Name = "tabComplaintsTenant";
-            this.tabComplaintsTenant.Size = new System.Drawing.Size(919, 477);
+            this.tabComplaintsTenant.Size = new System.Drawing.Size(1228, 589);
             this.tabComplaintsTenant.TabIndex = 5;
             this.tabComplaintsTenant.Text = "Complaints";
-            this.tabComplaintsTenant.UseVisualStyleBackColor = true;
             // 
             // btnComplaint
             // 
-            this.btnComplaint.Location = new System.Drawing.Point(422, 157);
-            this.btnComplaint.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.btnComplaint.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnComplaint.Location = new System.Drawing.Point(563, 276);
+            this.btnComplaint.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.btnComplaint.Name = "btnComplaint";
-            this.btnComplaint.Size = new System.Drawing.Size(132, 37);
+            this.btnComplaint.Size = new System.Drawing.Size(176, 46);
             this.btnComplaint.TabIndex = 2;
             this.btnComplaint.Text = "Send";
-            this.btnComplaint.UseVisualStyleBackColor = true;
+            this.btnComplaint.UseVisualStyleBackColor = false;
             this.btnComplaint.Click += new System.EventHandler(this.btnComplaint_Click);
             // 
             // tbxWriteComplaint
             // 
-            this.tbxWriteComplaint.Location = new System.Drawing.Point(294, 67);
-            this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.tbxWriteComplaint.Location = new System.Drawing.Point(392, 165);
+            this.tbxWriteComplaint.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.tbxWriteComplaint.Multiline = true;
             this.tbxWriteComplaint.Name = "tbxWriteComplaint";
-            this.tbxWriteComplaint.Size = new System.Drawing.Size(374, 75);
+            this.tbxWriteComplaint.Size = new System.Drawing.Size(497, 91);
             this.tbxWriteComplaint.TabIndex = 1;
             // 
             // lbWriteComplaint
             // 
             this.lbWriteComplaint.AutoSize = true;
-            this.lbWriteComplaint.Location = new System.Drawing.Point(419, 38);
-            this.lbWriteComplaint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbWriteComplaint.Location = new System.Drawing.Point(559, 130);
+            this.lbWriteComplaint.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbWriteComplaint.Name = "lbWriteComplaint";
-            this.lbWriteComplaint.Size = new System.Drawing.Size(135, 13);
+            this.lbWriteComplaint.Size = new System.Drawing.Size(178, 17);
             this.lbWriteComplaint.TabIndex = 0;
             this.lbWriteComplaint.Text = "Write down your complaint:";
             // 
@@ -484,14 +517,24 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(374, 129);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(516, 326);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // TenantForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 538);
+            this.ClientSize = new System.Drawing.Size(1283, 662);
             this.Controls.Add(this.MenuTenant);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "TenantForm";
             this.Text = "Tenant";
             this.Load += new System.EventHandler(this.TenantForm_Load);
@@ -515,6 +558,7 @@
             this.tabComplaintsTenant.ResumeLayout(false);
             this.tabComplaintsTenant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -557,5 +601,6 @@
         private System.Windows.Forms.Label lblDateTenant;
         private System.Windows.Forms.Label lbTimeTenant;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
