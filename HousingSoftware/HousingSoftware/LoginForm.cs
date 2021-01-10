@@ -17,30 +17,40 @@ namespace HousingSoftware
 
         //List of admins
         List<Admin> admins = new List<Admin>();
-        
+
         Admin admin = new Admin("admin", "admin", "Admin", "Admin");
-        
+
+
         Tenant tenant1 = new Tenant();
-        int indexCurrTenant;
+        //int indexCurrTenant;
 
         public LoginForm()
         {
             InitializeComponent();
+            admins.Add(admin);
             // create manual tenant only when the app is started
             tenant1.InitializeTenant(1, "user", "user");
-            admin.AddTenant(tenant1);
+            admins[0].AddTenant(tenant1);
+
         }
-        public LoginForm(Admin admin)
-        {
-            InitializeComponent();
-            this.admin = admin;
-        }
+        //public LoginForm(Admin admin)
+        //{
+        //    InitializeComponent();
+        //    this.admin = admin;
+        //}
 
         public LoginForm(List<Admin> admins)
         {
             InitializeComponent();
             this.admins = admins;
         }
+        //public LoginForm(Admin admin, List<Admin> admins)
+        //{
+        //    InitializeComponent();
+        //    this.admin = admin;
+        //    this.admins = admins;
+
+        //}
 
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -56,15 +66,57 @@ namespace HousingSoftware
         private int checkForTenantCredentials(string username, string password)
         {
             int index = -1;
-            List<Tenant> tenants = admin.GetTenants();
-            for (int i = 0; i < tenants.Count(); i++)
+
+            foreach (Admin admin in admins)
             {
-                if (tenants[i].GetStudentNumber().ToString() == username &&
-                    tenants[i].GetPassword() == password)
+                List<Tenant> tenants = admin.GetTenants();
+                for (int i = 0; i < tenants.Count(); i++)
+                {
+                    if (tenants[i].GetStudentNumber().ToString() == username &&
+                        tenants[i].GetPassword() == password)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+            }
+            return index;
+        }
+
+        private int FindAdminIndex(string username, string password)
+        {
+            int index = -1;
+
+            foreach (Admin admin in admins)
+            {
+                List<Tenant> tenants = admin.GetTenants();
+                for (int i = 0; i < tenants.Count(); i++)
+                {
+                    if (tenants[i].GetStudentNumber().ToString() == username &&
+                        tenants[i].GetPassword() == password)
+                    {
+                        index = admins.IndexOf(admin);
+                        break;
+                    }
+                }
+            }
+            return index;
+        }
+
+
+        private int checkForAdminCredentials(string username, string password)
+        {
+            int index = -1;
+
+            for (int i = 0; i < admins.Count(); i++)
+            {
+                if (admins[i].GetUsername().ToString() == username &&
+                    admins[i].GetPassword() == password)
                 {
                     index = i;
                 }
             }
+
             return index;
         }
 
@@ -78,35 +130,26 @@ namespace HousingSoftware
                 username = tbxUsernameLogin.Text;
                 password = tbxPasswordLogin.Text;
 
-                if(username == superuser.GetUsername() && password == superuser.GetPassword())
+                if (username == superuser.GetUsername() && password == superuser.GetPassword())
                 {
                     ManageAdmins manageAdminsForm = new ManageAdmins(admins);
                     manageAdminsForm.Show();
                     this.Hide();
 
                 }
-                else if (username == admin.GetUsername() && password == admin.GetPassword())
+                else if (checkForAdminCredentials(username, password) != -1)
                 {
-                    AdminForm adminForm = new AdminForm(admin);
+                    int indexCurrAdmin = checkForAdminCredentials(username, password);
+                    AdminForm adminForm = new AdminForm(indexCurrAdmin, admins);
                     adminForm.Show();
                     this.Hide();
                 }
                 else if (checkForTenantCredentials(username, password) != -1)
                 {
-                    indexCurrTenant = checkForTenantCredentials(username, password);
-                    
-                    //gbxLogin.Hide();
-                    //MenuTenant.Show();
-                    //btnLogOutTenant.Show();
-
-                    //string fname = admin.GetTenants()[indexCurrTenant].GetFirstName();
-
-                    TenantForm tenantForm = new TenantForm(admin, indexCurrTenant);
+                    int indexCurrTenant = checkForTenantCredentials(username, password);
+                    TenantForm tenantForm = new TenantForm(indexCurrTenant, FindAdminIndex(username, password), admins);
                     tenantForm.Show();
                     this.Hide();
-
-                    /*  showUnpaidGroceries(lbxUnpaidGroceries, indexCurrTenant);
-                      refreshHouseRules();*/
                 }
                 else
                 {
@@ -119,6 +162,11 @@ namespace HousingSoftware
             }
             tbxUsernameLogin.Clear();
             tbxPasswordLogin.Clear();
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

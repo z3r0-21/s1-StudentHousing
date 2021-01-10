@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TenantForm));
             this.MenuTenant = new System.Windows.Forms.TabControl();
             this.tabHomeTenant = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDateTenant = new System.Windows.Forms.Label();
             this.lbTimeTenant = new System.Windows.Forms.Label();
             this.lblUnpaidGroceriesNotification = new System.Windows.Forms.Label();
@@ -67,9 +68,9 @@
             this.lbWriteComplaint = new System.Windows.Forms.Label();
             this.timerTenant = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuTenant.SuspendLayout();
             this.tabHomeTenant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabGroceriesTenant.SuspendLayout();
             this.gbxPayListGroceriesTenant.SuspendLayout();
             this.tabAnnouncementsTenant.SuspendLayout();
@@ -82,7 +83,6 @@
             this.gbxHouseRulseTenant.SuspendLayout();
             this.tabComplaintsTenant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuTenant
@@ -118,6 +118,16 @@
             this.tabHomeTenant.Size = new System.Drawing.Size(1228, 589);
             this.tabHomeTenant.TabIndex = 0;
             this.tabHomeTenant.Text = "Home";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(374, 129);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(516, 326);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // lblDateTenant
             // 
@@ -517,16 +527,6 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(374, 129);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(516, 326);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // TenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -537,10 +537,12 @@
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "TenantForm";
             this.Text = "Tenant";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TenantForm_FormClosed);
             this.Load += new System.EventHandler(this.TenantForm_Load);
             this.MenuTenant.ResumeLayout(false);
             this.tabHomeTenant.ResumeLayout(false);
             this.tabHomeTenant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabGroceriesTenant.ResumeLayout(false);
             this.gbxPayListGroceriesTenant.ResumeLayout(false);
             this.tabAnnouncementsTenant.ResumeLayout(false);
@@ -558,7 +560,6 @@
             this.tabComplaintsTenant.ResumeLayout(false);
             this.tabComplaintsTenant.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

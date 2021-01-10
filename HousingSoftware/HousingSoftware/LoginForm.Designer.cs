@@ -128,6 +128,7 @@ namespace HousingSoftware
             this.Controls.Add(this.gbxLogin);
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.gbxLogin.ResumeLayout(false);
             this.gbxLogin.PerformLayout();

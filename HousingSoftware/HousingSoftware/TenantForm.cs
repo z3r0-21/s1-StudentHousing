@@ -12,41 +12,29 @@ namespace HousingSoftware
 {
     public partial class TenantForm : Form
     {
-        //private string adminUsername = "admin";
-        //private string adminPassword = "admin";
-
-        //Admin admin = new Admin("admin", "admin");
-        Tenant currentTenant;
-        Tenant tenant1;
-        Announcements newannouncement;
         Agreements newAgreement;
-        HouseRules newHouseRule;
-
         int indexCurrTenant;
-        int indexTenantEdit;
-
-        Grocery currentGrocery;
 
         //LoginForm LoginForm;
-        Admin admin;
-        int indexSearchedTenant = -1;
-        public TenantForm(Admin admin, int indexCurrTenant)
+        List<Admin> admins;
+        int indexCurrAdmin;
+        public TenantForm(int indexCurrTenant, int indexCurrAdmin, List<Admin> admins)
         {
             InitializeComponent();
-            this.admin = admin;
+            this.admins = admins;
+            this.indexCurrAdmin = indexCurrAdmin;
             this.indexCurrTenant = indexCurrTenant;
-            //this.LoginForm = loginForm;
         }
+
+
 
         // Show unpaid Groceries
         private void showUnpaidGroceries(ListBox unpaidGroceries, int index)
         {
-            //lbxUnpaidGroceries.Items.Clear();
             unpaidGroceries.Items.Clear();
-            List<Grocery> groceries = admin.GetTenants()[index].GetGroceriesTenant();
+            List<Grocery> groceries = admins[indexCurrAdmin].GetTenants()[index].GetGroceriesTenant();
             foreach (Grocery grocery in groceries)
             {
-                //lbxUnpaidGroceries.Items.Add(grocery.GetInfo());
                 unpaidGroceries.Items.Add(grocery.GetInfo());
             }
         }
@@ -63,7 +51,7 @@ namespace HousingSoftware
             refreshHouseRulesTeanent();
             // Refresh announcements for teanents
             refreshAnnouncementsTeanent();
-         
+
 
             timerTenant.Enabled = true;
 
@@ -84,7 +72,7 @@ namespace HousingSoftware
 
                 lblUnpaidGroceriesNotification.BackColor = Color.Yellow;
             }
-            
+
         }
 
         private void WelcomeMessageTenant()
@@ -100,57 +88,28 @@ namespace HousingSoftware
 
             if (currentTime >= 5 && currentTime < 12)
             {
-                lbWelcomeMsgTenant.Text = $"Good morning, {admin.GetTenants()[indexCurrTenant].GetFirstName()}!";
+                lbWelcomeMsgTenant.Text = $"Good morning, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}!";
             }
             else if (currentTime >= 12 && currentTime < 17)
             {
-                lbWelcomeMsgTenant.Text = $"Have a good afternoon, {admin.GetTenants()[indexCurrTenant].GetFirstName()}";
+                lbWelcomeMsgTenant.Text = $"Have a good afternoon, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}";
             }
             else if (currentTime >= 17 && currentTime < 21)
             {
-                lbWelcomeMsgTenant.Text = $"Have a nice evening, {admin.GetTenants()[indexCurrTenant].GetFirstName()}!";
+                lbWelcomeMsgTenant.Text = $"Have a nice evening, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}!";
             }
             else
             {
-                lbWelcomeMsgTenant.Text = $"Good night, {admin.GetTenants()[indexCurrTenant].GetFirstName()}";
+                lbWelcomeMsgTenant.Text = $"Good night, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}";
             }
 
         }
 
-            private void btnLogOutTenant_Click(object sender, EventArgs e)
+        private void btnLogOutTenant_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm(admin);
-            loginForm.Show();
-            this.Close();
-
             timerTenant.Enabled = false;
+            this.Close();
         }
-  
-
-        //        private void btnPostAnnouncement_Click(object sender, EventArgs e)
-        //        {
-        //            if (tbxPostAnnouncement.Text != "")
-        //            {
-        //                string announcement = tbxPostAnnouncement.Text;
-        //                newannouncement = new Announcements(announcement);
-        //                //newannouncement.AddAnnouncement(announcement);
-        //                admin.AddAnnouncement(newannouncement);
-        //                lbxAllAnnouncements.Items.Add($"{admin.GetUsername()}  -  {announcement}");
-        //                lbxUserAllAnnouncements.Items.Add($"{admin.GetUsername()}  -  {announcement}");
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show($"Please, type something.");
-        //            }
-        //            tbxPostAnnouncement.Clear();
-        //        }
-
-        //        private void btndeleteAnnouncement_Click(object sender, EventArgs e)
-        //        {
-        //            int index = lbxAllAnnouncements.SelectedIndex;
-        //            lbxAllAnnouncements.Items.RemoveAt(index);
-        //        }
-
 
         //AGREEMENTS
 
@@ -167,7 +126,7 @@ namespace HousingSoftware
                 if (tbxAddAgreement.Text != "" && tbxAddAgreement.Text.Length > 20)
                 {
                     newAgreement = new Agreements();
-                    admin.AddAgreement(newAgreement);
+                    admins[indexCurrAdmin].AddAgreement(newAgreement);
                     newAgreement.AddNewAgreement(agreement);
                     tbxAddAgreement.Clear();
 
@@ -188,18 +147,18 @@ namespace HousingSoftware
         {
             lbxAllAgreementsTenant.Items.Clear();
 
-            foreach (Agreements agreement in admin.GetAgreements())
+            foreach (Agreements agreement in admins[indexCurrAdmin].GetAgreements())
             {
                 lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
         }
-        
+
 
         private void SearchAgreementsTenant(string searchText) // Search all agreements based on string input
         {
             lbxAllAgreementsTenant.Items.Clear();
 
-            foreach (Agreements agreement in admin.GetAgreements())
+            foreach (Agreements agreement in admins[indexCurrAdmin].GetAgreements())
             {
                 if (agreement.GetAgreement().Contains(searchText))
                 {
@@ -233,11 +192,11 @@ namespace HousingSoftware
 
         private int FindAgreementIndex(string agreementText) // Finds the index in the list of the selected agreeemtnt
         {
-            foreach (Agreements agreement in admin.GetAgreements())
+            foreach (Agreements agreement in admins[indexCurrAdmin].GetAgreements())
             {
                 if (agreement.GetAgreement() == agreementText)
                 {
-                    return admin.GetAgreements().IndexOf(agreement);
+                    return admins[indexCurrAdmin].GetAgreements().IndexOf(agreement);
                 }
             }
             return -1;
@@ -247,16 +206,14 @@ namespace HousingSoftware
         {
             if (lbxAllAgreementsTenant.SelectedIndex == -1)
             {
-                MessageBox.Show("In order to Agree/Disagree, please, maek sure to select an existing agreement from the list.");
+                MessageBox.Show("In order to Agree/Disagree, please, make sure to select an existing agreement from the list.");
             }
             else
             {
                 //get the student number of the currently logged tennants
-                Tenant currentTenant = admin.GetTenants()[indexCurrTenant];
+                Tenant currentTenant = admins[indexCurrAdmin].GetTenants()[indexCurrTenant];
 
                 string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
-
-
                 int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
 
                 //select
@@ -264,15 +221,15 @@ namespace HousingSoftware
                 selectedAgreement = selectedAgreement.Remove(0, 1);
                 int index = FindAgreementIndex(selectedAgreement);
 
-                if (!hasVoted(admin.GetAgreements()[index], stNumber))
+                if (!hasVoted(admins[indexCurrAdmin].GetAgreements()[index], stNumber))
                 {
                     if (choice == 'a')
                     {
-                        admin.GetAgreements()[index].Agree(stNumber);
+                        admins[indexCurrAdmin].GetAgreements()[index].Agree(stNumber);
                     }
                     else if (choice == 'd')
                     {
-                        admin.GetAgreements()[index].Disagree(stNumber);
+                        admins[indexCurrAdmin].GetAgreements()[index].Disagree(stNumber);
                     }
 
                 }
@@ -295,7 +252,7 @@ namespace HousingSoftware
         {
             if (!String.IsNullOrEmpty(tbxWriteComplaint.Text))
             {
-                admin.AddComplaint($"{DateTime.Now.ToString("MMMM dd, yyyy")}: {tbxWriteComplaint.Text}");
+                admins[indexCurrAdmin].AddComplaint($"{DateTime.Now.ToString("MMMM dd, yyyy")}: {tbxWriteComplaint.Text}");
                 tbxWriteComplaint.Clear();
                 MessageBox.Show("Your complaint has been sent to Student Housing BV.");
             }
@@ -329,9 +286,9 @@ namespace HousingSoftware
         // refresh house rules method
         private void refreshHouseRulesTeanent()
         {
-        
+
             lbxRulesTenant.Items.Clear();
-            foreach (HouseRules rule in admin.HouseRules)
+            foreach (HouseRules rule in admins[indexCurrAdmin].HouseRules)
             {
                 lbxRulesTenant.Items.Add(rule.HouseRule);
             }
@@ -340,11 +297,16 @@ namespace HousingSoftware
         private void refreshAnnouncementsTeanent()
         {
             lbxUserAllAnnouncements.Items.Clear();
-            foreach (Announcements announcement in admin.Announcements)
+            foreach (Announcements announcement in admins[indexCurrAdmin].Announcements)
             {
                 lbxUserAllAnnouncements.Items.Add(announcement.Announcement);
             }
         }
 
+        private void TenantForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoginForm loginForm = new LoginForm(admins);
+            loginForm.Show();
+        }
     }
 }

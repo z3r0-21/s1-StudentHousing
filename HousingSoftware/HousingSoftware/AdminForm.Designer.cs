@@ -33,6 +33,7 @@ namespace HousingSoftware
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.MenuAdmin = new System.Windows.Forms.TabControl();
             this.tabHomeAdmin = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbNewGroceriesNotifications = new System.Windows.Forms.Label();
             this.lblNewComplaintsNotifications = new System.Windows.Forms.Label();
             this.lblDateAdmin = new System.Windows.Forms.Label();
@@ -124,9 +125,9 @@ namespace HousingSoftware
             this.lbFirstNameRegister = new System.Windows.Forms.Label();
             this.lbStudentNumRegister = new System.Windows.Forms.Label();
             this.timerAdmin = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabGroceriesAdmin.SuspendLayout();
             this.gbxUnpaidGroceriesAllTenants.SuspendLayout();
             this.gbxPayListGroceries.SuspendLayout();
@@ -148,7 +149,6 @@ namespace HousingSoftware
             this.gbxSearchTenantEdit.SuspendLayout();
             this.gbxRemoveTenant.SuspendLayout();
             this.gbxRegisterTenants.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuAdmin
@@ -190,7 +190,16 @@ namespace HousingSoftware
             this.tabHomeAdmin.Size = new System.Drawing.Size(971, 532);
             this.tabHomeAdmin.TabIndex = 0;
             this.tabHomeAdmin.Text = "Home";
-            this.tabHomeAdmin.Click += new System.EventHandler(this.tabHomeAdmin_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(378, 150);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(256, 238);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // lbNewGroceriesNotifications
             // 
@@ -278,7 +287,6 @@ namespace HousingSoftware
             this.tabGroceriesAdmin.Size = new System.Drawing.Size(971, 532);
             this.tabGroceriesAdmin.TabIndex = 1;
             this.tabGroceriesAdmin.Text = "Groceries";
-            this.tabGroceriesAdmin.Click += new System.EventHandler(this.tabGroceriesAdmin_Click);
             // 
             // gbxUnpaidGroceriesAllTenants
             // 
@@ -692,7 +700,6 @@ namespace HousingSoftware
             this.lbxAllAnnouncements.Name = "lbxAllAnnouncements";
             this.lbxAllAnnouncements.Size = new System.Drawing.Size(307, 356);
             this.lbxAllAnnouncements.TabIndex = 0;
-            this.lbxAllAnnouncements.SelectedIndexChanged += new System.EventHandler(this.lbxAllAnnouncements_SelectedIndexChanged);
             // 
             // lbAllAnnouncements
             // 
@@ -1282,16 +1289,6 @@ namespace HousingSoftware
             this.timerAdmin.Interval = 1000;
             this.timerAdmin.Tick += new System.EventHandler(this.timerAdmin_Tick);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(378, 150);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(256, 238);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1303,10 +1300,12 @@ namespace HousingSoftware
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AdminForm";
             this.Text = "Admin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.MenuAdmin.ResumeLayout(false);
             this.tabHomeAdmin.ResumeLayout(false);
             this.tabHomeAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabGroceriesAdmin.ResumeLayout(false);
             this.gbxUnpaidGroceriesAllTenants.ResumeLayout(false);
             this.gbxPayListGroceries.ResumeLayout(false);
@@ -1342,7 +1341,6 @@ namespace HousingSoftware
             this.gbxRemoveTenant.PerformLayout();
             this.gbxRegisterTenants.ResumeLayout(false);
             this.gbxRegisterTenants.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

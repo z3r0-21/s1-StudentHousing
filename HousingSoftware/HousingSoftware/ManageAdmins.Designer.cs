@@ -335,6 +335,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManageAdmins";
             this.Text = "ManageAdmins";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageAdmins_FormClosed);
             this.Load += new System.EventHandler(this.ManageAdmins_Load);
             this.gbxRegisterAdmins.ResumeLayout(false);
             this.gbxRegisterAdmins.PerformLayout();

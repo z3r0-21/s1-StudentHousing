@@ -31,7 +31,7 @@ namespace HousingSoftware
             int index = -1;
             foreach (Admin admin in admins)
             {
-                if(admin.GetUsername() == username)
+                if (admin.GetUsername() == username)
                 {
                     index = admins.IndexOf(admin);
                 }
@@ -46,7 +46,7 @@ namespace HousingSoftware
             string username;
             string password;
 
-            if(!String.IsNullOrEmpty(tbxFirstName.Text) && !String.IsNullOrEmpty(tbxLastName.Text) 
+            if (!String.IsNullOrEmpty(tbxFirstName.Text) && !String.IsNullOrEmpty(tbxLastName.Text)
                 && !String.IsNullOrEmpty(tbxUsername.Text) && !String.IsNullOrEmpty(tbxPassword.Text))
             {
                 fName = tbxFirstName.Text;
@@ -54,7 +54,7 @@ namespace HousingSoftware
                 username = tbxUsername.Text;
                 password = tbxPassword.Text;
 
-                if(isAdminExist(username) == -1)
+                if (isAdminExist(username) == -1)
                 {
                     currentAdmin = new Admin(username, password, fName, lName);
                     admins.Add(currentAdmin);
@@ -77,7 +77,7 @@ namespace HousingSoftware
         private void btnRemoveAdmin_Click(object sender, EventArgs e)
         {
             string username;
-            if(!String.IsNullOrEmpty(tbxUsernameRemoveEditAdmin.Text))
+            if (!String.IsNullOrEmpty(tbxUsernameRemoveEditAdmin.Text))
             {
                 username = tbxUsernameRemoveEditAdmin.Text;
                 int index = isAdminExist(username);
@@ -126,7 +126,7 @@ namespace HousingSoftware
 
         private void btnSaveChangesAdminProfile_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(tbxFNameEditAdmin.Text) && !String.IsNullOrEmpty(tbxLNameEditAdmin.Text)
+            if (!String.IsNullOrEmpty(tbxFNameEditAdmin.Text) && !String.IsNullOrEmpty(tbxLNameEditAdmin.Text)
                 && !String.IsNullOrEmpty(tbxPasswordEditAdmin.Text))
             {
                 admins[indexCurrAdminEdit].FirstName = tbxFNameEditAdmin.Text;
@@ -146,9 +146,13 @@ namespace HousingSoftware
 
         private void btnLogOutSuperuser_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void ManageAdmins_FormClosed(object sender, FormClosedEventArgs e)
+        {
             LoginForm loginForm = new LoginForm(admins);
             loginForm.Show();
-            this.Close();
         }
     }
 }
