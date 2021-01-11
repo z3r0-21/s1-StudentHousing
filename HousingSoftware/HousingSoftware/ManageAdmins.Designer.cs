@@ -69,11 +69,11 @@
             this.gbxRegisterAdmins.Controls.Add(this.tbxFirstName);
             this.gbxRegisterAdmins.Controls.Add(this.lbFirstName);
             this.gbxRegisterAdmins.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbxRegisterAdmins.Location = new System.Drawing.Point(29, 31);
+            this.gbxRegisterAdmins.Location = new System.Drawing.Point(26, 25);
             this.gbxRegisterAdmins.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxRegisterAdmins.Name = "gbxRegisterAdmins";
             this.gbxRegisterAdmins.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxRegisterAdmins.Size = new System.Drawing.Size(370, 338);
+            this.gbxRegisterAdmins.Size = new System.Drawing.Size(329, 270);
             this.gbxRegisterAdmins.TabIndex = 0;
             this.gbxRegisterAdmins.TabStop = false;
             this.gbxRegisterAdmins.Text = "Register admins";
@@ -82,10 +82,10 @@
             // 
             this.btnRegister.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRegister.Location = new System.Drawing.Point(132, 250);
+            this.btnRegister.Location = new System.Drawing.Point(117, 200);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(170, 41);
+            this.btnRegister.Size = new System.Drawing.Size(151, 33);
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -93,73 +93,73 @@
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(132, 195);
+            this.tbxPassword.Location = new System.Drawing.Point(117, 156);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxPassword.Name = "tbxPassword";
-            this.tbxPassword.Size = new System.Drawing.Size(170, 26);
+            this.tbxPassword.Size = new System.Drawing.Size(152, 22);
             this.tbxPassword.TabIndex = 7;
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbPassword.Location = new System.Drawing.Point(25, 198);
+            this.lbPassword.Location = new System.Drawing.Point(22, 158);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(82, 20);
+            this.lbPassword.Size = new System.Drawing.Size(73, 17);
             this.lbPassword.TabIndex = 6;
             this.lbPassword.Text = "Password:";
             // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(132, 148);
+            this.tbxUsername.Location = new System.Drawing.Point(117, 118);
             this.tbxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(170, 26);
+            this.tbxUsername.Size = new System.Drawing.Size(152, 22);
             this.tbxUsername.TabIndex = 5;
             // 
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
             this.lbUsername.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbUsername.Location = new System.Drawing.Point(19, 151);
+            this.lbUsername.Location = new System.Drawing.Point(17, 121);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(87, 20);
+            this.lbUsername.Size = new System.Drawing.Size(77, 17);
             this.lbUsername.TabIndex = 4;
             this.lbUsername.Text = "Username:";
             // 
             // tbxLastName
             // 
-            this.tbxLastName.Location = new System.Drawing.Point(132, 98);
+            this.tbxLastName.Location = new System.Drawing.Point(117, 78);
             this.tbxLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxLastName.Name = "tbxLastName";
-            this.tbxLastName.Size = new System.Drawing.Size(170, 26);
+            this.tbxLastName.Size = new System.Drawing.Size(152, 22);
             this.tbxLastName.TabIndex = 3;
             // 
             // lbLastName
             // 
             this.lbLastName.AutoSize = true;
             this.lbLastName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbLastName.Location = new System.Drawing.Point(21, 100);
+            this.lbLastName.Location = new System.Drawing.Point(19, 80);
             this.lbLastName.Name = "lbLastName";
-            this.lbLastName.Size = new System.Drawing.Size(86, 20);
+            this.lbLastName.Size = new System.Drawing.Size(76, 17);
             this.lbLastName.TabIndex = 2;
             this.lbLastName.Text = "LastName:";
             // 
             // tbxFirstName
             // 
-            this.tbxFirstName.Location = new System.Drawing.Point(132, 50);
+            this.tbxFirstName.Location = new System.Drawing.Point(117, 40);
             this.tbxFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxFirstName.Name = "tbxFirstName";
-            this.tbxFirstName.Size = new System.Drawing.Size(170, 26);
+            this.tbxFirstName.Size = new System.Drawing.Size(152, 22);
             this.tbxFirstName.TabIndex = 1;
             // 
             // lbFirstName
             // 
             this.lbFirstName.AutoSize = true;
             this.lbFirstName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbFirstName.Location = new System.Drawing.Point(19, 52);
+            this.lbFirstName.Location = new System.Drawing.Point(17, 42);
             this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(88, 20);
+            this.lbFirstName.Size = new System.Drawing.Size(78, 17);
             this.lbFirstName.TabIndex = 0;
             this.lbFirstName.Text = "First name:";
             // 
@@ -170,11 +170,11 @@
             this.gbxRemoveEditAdmins.Controls.Add(this.tbxUsernameRemoveEditAdmin);
             this.gbxRemoveEditAdmins.Controls.Add(this.lbUsernameRemoveEditAdmin);
             this.gbxRemoveEditAdmins.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbxRemoveEditAdmins.Location = new System.Drawing.Point(434, 31);
+            this.gbxRemoveEditAdmins.Location = new System.Drawing.Point(386, 25);
             this.gbxRemoveEditAdmins.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxRemoveEditAdmins.Name = "gbxRemoveEditAdmins";
             this.gbxRemoveEditAdmins.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxRemoveEditAdmins.Size = new System.Drawing.Size(396, 158);
+            this.gbxRemoveEditAdmins.Size = new System.Drawing.Size(352, 126);
             this.gbxRemoveEditAdmins.TabIndex = 1;
             this.gbxRemoveEditAdmins.TabStop = false;
             this.gbxRemoveEditAdmins.Text = "Remove/Edit admin profile";
@@ -183,10 +183,10 @@
             // 
             this.btnEditAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnEditAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditAdmin.Location = new System.Drawing.Point(204, 90);
+            this.btnEditAdmin.Location = new System.Drawing.Point(181, 72);
             this.btnEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditAdmin.Name = "btnEditAdmin";
-            this.btnEditAdmin.Size = new System.Drawing.Size(170, 41);
+            this.btnEditAdmin.Size = new System.Drawing.Size(151, 33);
             this.btnEditAdmin.TabIndex = 11;
             this.btnEditAdmin.Text = "Edit";
             this.btnEditAdmin.UseVisualStyleBackColor = false;
@@ -196,10 +196,10 @@
             // 
             this.btnRemoveAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRemoveAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRemoveAdmin.Location = new System.Drawing.Point(19, 90);
+            this.btnRemoveAdmin.Location = new System.Drawing.Point(17, 72);
             this.btnRemoveAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemoveAdmin.Name = "btnRemoveAdmin";
-            this.btnRemoveAdmin.Size = new System.Drawing.Size(170, 41);
+            this.btnRemoveAdmin.Size = new System.Drawing.Size(151, 33);
             this.btnRemoveAdmin.TabIndex = 10;
             this.btnRemoveAdmin.Text = "Remove";
             this.btnRemoveAdmin.UseVisualStyleBackColor = false;
@@ -207,19 +207,19 @@
             // 
             // tbxUsernameRemoveEditAdmin
             // 
-            this.tbxUsernameRemoveEditAdmin.Location = new System.Drawing.Point(152, 36);
+            this.tbxUsernameRemoveEditAdmin.Location = new System.Drawing.Point(135, 29);
             this.tbxUsernameRemoveEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxUsernameRemoveEditAdmin.Name = "tbxUsernameRemoveEditAdmin";
-            this.tbxUsernameRemoveEditAdmin.Size = new System.Drawing.Size(212, 26);
+            this.tbxUsernameRemoveEditAdmin.Size = new System.Drawing.Size(189, 22);
             this.tbxUsernameRemoveEditAdmin.TabIndex = 9;
             // 
             // lbUsernameRemoveEditAdmin
             // 
             this.lbUsernameRemoveEditAdmin.AutoSize = true;
             this.lbUsernameRemoveEditAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbUsernameRemoveEditAdmin.Location = new System.Drawing.Point(39, 39);
+            this.lbUsernameRemoveEditAdmin.Location = new System.Drawing.Point(35, 31);
             this.lbUsernameRemoveEditAdmin.Name = "lbUsernameRemoveEditAdmin";
-            this.lbUsernameRemoveEditAdmin.Size = new System.Drawing.Size(87, 20);
+            this.lbUsernameRemoveEditAdmin.Size = new System.Drawing.Size(77, 17);
             this.lbUsernameRemoveEditAdmin.TabIndex = 8;
             this.lbUsernameRemoveEditAdmin.Text = "Username:";
             // 
@@ -233,11 +233,11 @@
             this.gbxEditAdmin.Controls.Add(this.tbxFNameEditAdmin);
             this.gbxEditAdmin.Controls.Add(this.lbFNameEditAdmin);
             this.gbxEditAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbxEditAdmin.Location = new System.Drawing.Point(434, 208);
+            this.gbxEditAdmin.Location = new System.Drawing.Point(386, 166);
             this.gbxEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxEditAdmin.Name = "gbxEditAdmin";
             this.gbxEditAdmin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxEditAdmin.Size = new System.Drawing.Size(396, 231);
+            this.gbxEditAdmin.Size = new System.Drawing.Size(352, 185);
             this.gbxEditAdmin.TabIndex = 2;
             this.gbxEditAdmin.TabStop = false;
             this.gbxEditAdmin.Text = "Edit admin profile";
@@ -246,10 +246,10 @@
             // 
             this.btnSaveChangesAdminProfile.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSaveChangesAdminProfile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSaveChangesAdminProfile.Location = new System.Drawing.Point(151, 175);
+            this.btnSaveChangesAdminProfile.Location = new System.Drawing.Point(134, 140);
             this.btnSaveChangesAdminProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveChangesAdminProfile.Name = "btnSaveChangesAdminProfile";
-            this.btnSaveChangesAdminProfile.Size = new System.Drawing.Size(170, 41);
+            this.btnSaveChangesAdminProfile.Size = new System.Drawing.Size(151, 33);
             this.btnSaveChangesAdminProfile.TabIndex = 10;
             this.btnSaveChangesAdminProfile.Text = "Save changes";
             this.btnSaveChangesAdminProfile.UseVisualStyleBackColor = false;
@@ -257,55 +257,55 @@
             // 
             // tbxPasswordEditAdmin
             // 
-            this.tbxPasswordEditAdmin.Location = new System.Drawing.Point(151, 126);
+            this.tbxPasswordEditAdmin.Location = new System.Drawing.Point(134, 101);
             this.tbxPasswordEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxPasswordEditAdmin.Name = "tbxPasswordEditAdmin";
-            this.tbxPasswordEditAdmin.Size = new System.Drawing.Size(170, 26);
+            this.tbxPasswordEditAdmin.Size = new System.Drawing.Size(152, 22);
             this.tbxPasswordEditAdmin.TabIndex = 9;
             // 
             // lbPasswordEditAdmin
             // 
             this.lbPasswordEditAdmin.AutoSize = true;
             this.lbPasswordEditAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbPasswordEditAdmin.Location = new System.Drawing.Point(44, 129);
+            this.lbPasswordEditAdmin.Location = new System.Drawing.Point(39, 103);
             this.lbPasswordEditAdmin.Name = "lbPasswordEditAdmin";
-            this.lbPasswordEditAdmin.Size = new System.Drawing.Size(82, 20);
+            this.lbPasswordEditAdmin.Size = new System.Drawing.Size(73, 17);
             this.lbPasswordEditAdmin.TabIndex = 8;
             this.lbPasswordEditAdmin.Text = "Password:";
             // 
             // tbxLNameEditAdmin
             // 
-            this.tbxLNameEditAdmin.Location = new System.Drawing.Point(152, 81);
+            this.tbxLNameEditAdmin.Location = new System.Drawing.Point(135, 65);
             this.tbxLNameEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxLNameEditAdmin.Name = "tbxLNameEditAdmin";
-            this.tbxLNameEditAdmin.Size = new System.Drawing.Size(170, 26);
+            this.tbxLNameEditAdmin.Size = new System.Drawing.Size(152, 22);
             this.tbxLNameEditAdmin.TabIndex = 7;
             // 
             // lbLNameEditAdmin
             // 
             this.lbLNameEditAdmin.AutoSize = true;
             this.lbLNameEditAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbLNameEditAdmin.Location = new System.Drawing.Point(40, 84);
+            this.lbLNameEditAdmin.Location = new System.Drawing.Point(36, 67);
             this.lbLNameEditAdmin.Name = "lbLNameEditAdmin";
-            this.lbLNameEditAdmin.Size = new System.Drawing.Size(86, 20);
+            this.lbLNameEditAdmin.Size = new System.Drawing.Size(76, 17);
             this.lbLNameEditAdmin.TabIndex = 6;
             this.lbLNameEditAdmin.Text = "LastName:";
             // 
             // tbxFNameEditAdmin
             // 
-            this.tbxFNameEditAdmin.Location = new System.Drawing.Point(152, 34);
+            this.tbxFNameEditAdmin.Location = new System.Drawing.Point(135, 27);
             this.tbxFNameEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxFNameEditAdmin.Name = "tbxFNameEditAdmin";
-            this.tbxFNameEditAdmin.Size = new System.Drawing.Size(170, 26);
+            this.tbxFNameEditAdmin.Size = new System.Drawing.Size(152, 22);
             this.tbxFNameEditAdmin.TabIndex = 5;
             // 
             // lbFNameEditAdmin
             // 
             this.lbFNameEditAdmin.AutoSize = true;
             this.lbFNameEditAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbFNameEditAdmin.Location = new System.Drawing.Point(39, 38);
+            this.lbFNameEditAdmin.Location = new System.Drawing.Point(35, 30);
             this.lbFNameEditAdmin.Name = "lbFNameEditAdmin";
-            this.lbFNameEditAdmin.Size = new System.Drawing.Size(88, 20);
+            this.lbFNameEditAdmin.Size = new System.Drawing.Size(78, 17);
             this.lbFNameEditAdmin.TabIndex = 4;
             this.lbFNameEditAdmin.Text = "First name:";
             // 
@@ -313,10 +313,10 @@
             // 
             this.btnLogOutSuperuser.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogOutSuperuser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogOutSuperuser.Location = new System.Drawing.Point(113, 385);
+            this.btnLogOutSuperuser.Location = new System.Drawing.Point(100, 308);
             this.btnLogOutSuperuser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOutSuperuser.Name = "btnLogOutSuperuser";
-            this.btnLogOutSuperuser.Size = new System.Drawing.Size(197, 54);
+            this.btnLogOutSuperuser.Size = new System.Drawing.Size(175, 43);
             this.btnLogOutSuperuser.TabIndex = 3;
             this.btnLogOutSuperuser.Text = "Log out";
             this.btnLogOutSuperuser.UseVisualStyleBackColor = false;
@@ -324,18 +324,18 @@
             // 
             // ManageAdmins
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(899, 450);
+            this.ClientSize = new System.Drawing.Size(799, 360);
             this.Controls.Add(this.btnLogOutSuperuser);
             this.Controls.Add(this.gbxEditAdmin);
             this.Controls.Add(this.gbxRemoveEditAdmins);
             this.Controls.Add(this.gbxRegisterAdmins);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManageAdmins";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageAdmins";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageAdmins_FormClosed);
             this.Load += new System.EventHandler(this.ManageAdmins_Load);
             this.gbxRegisterAdmins.ResumeLayout(false);
