@@ -21,15 +21,16 @@ namespace HousingSoftware
         Admin admin = new Admin("admin", "admin", "Admin", "Admin");
 
 
-        Tenant tenant1 = new Tenant();
+        Tenant tenant1;
         //int indexCurrTenant;
 
         public LoginForm()
         {
             InitializeComponent();
             admins.Add(admin);
+
             // create manual tenant only when the app is started
-            tenant1.InitializeTenant(1, "user", "user");
+            tenant1 = new Tenant(1, "user", "user");
             admins[0].AddTenant(tenant1);
 
         }
@@ -69,11 +70,11 @@ namespace HousingSoftware
 
             foreach (Admin admin in admins)
             {
-                List<Tenant> tenants = admin.GetTenants();
+                List<Tenant> tenants = admin.Tenants;
                 for (int i = 0; i < tenants.Count(); i++)
                 {
-                    if (tenants[i].GetStudentNumber().ToString() == username &&
-                        tenants[i].GetPassword() == password)
+                    if (tenants[i].StudentNumber.ToString() == username &&
+                        tenants[i].Password == password)
                     {
                         index = i;
                         break;
@@ -89,11 +90,11 @@ namespace HousingSoftware
 
             foreach (Admin admin in admins)
             {
-                List<Tenant> tenants = admin.GetTenants();
+                List<Tenant> tenants = admin.Tenants;
                 for (int i = 0; i < tenants.Count(); i++)
                 {
-                    if (tenants[i].GetStudentNumber().ToString() == username &&
-                        tenants[i].GetPassword() == password)
+                    if (tenants[i].StudentNumber.ToString() == username &&
+                        tenants[i].Password == password)
                     {
                         index = admins.IndexOf(admin);
                         break;
@@ -110,8 +111,8 @@ namespace HousingSoftware
 
             for (int i = 0; i < admins.Count(); i++)
             {
-                if (admins[i].GetUsername().ToString() == username &&
-                    admins[i].GetPassword() == password)
+                if (admins[i].Username.ToString() == username &&
+                    admins[i].Password == password)
                 {
                     index = i;
                 }
@@ -130,7 +131,7 @@ namespace HousingSoftware
                 username = tbxUsernameLogin.Text;
                 password = tbxPasswordLogin.Text;
 
-                if (username == superuser.GetUsername() && password == superuser.GetPassword())
+                if (username == superuser.Username && password == superuser.Password)
                 {
                     ManageAdmins manageAdminsForm = new ManageAdmins(admins);
                     manageAdminsForm.Show();

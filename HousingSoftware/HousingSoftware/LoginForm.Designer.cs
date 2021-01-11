@@ -49,11 +49,11 @@ namespace HousingSoftware
             this.gbxLogin.Controls.Add(this.lbPasswordLogin);
             this.gbxLogin.Controls.Add(this.lbUsernameLogin);
             this.gbxLogin.Controls.Add(this.pictureBox1);
-            this.gbxLogin.Location = new System.Drawing.Point(58, 119);
-            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.gbxLogin.Location = new System.Drawing.Point(65, 149);
+            this.gbxLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbxLogin.Name = "gbxLogin";
-            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4);
-            this.gbxLogin.Size = new System.Drawing.Size(685, 212);
+            this.gbxLogin.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbxLogin.Size = new System.Drawing.Size(771, 265);
             this.gbxLogin.TabIndex = 2;
             this.gbxLogin.TabStop = false;
             // 
@@ -61,10 +61,10 @@ namespace HousingSoftware
             // 
             this.btnLogin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogin.Location = new System.Drawing.Point(356, 153);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Location = new System.Drawing.Point(400, 191);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(143, 31);
+            this.btnLogin.Size = new System.Drawing.Size(161, 39);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -72,29 +72,29 @@ namespace HousingSoftware
             // 
             // tbxPasswordLogin
             // 
-            this.tbxPasswordLogin.Location = new System.Drawing.Point(356, 102);
-            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxPasswordLogin.Location = new System.Drawing.Point(400, 128);
+            this.tbxPasswordLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxPasswordLogin.Name = "tbxPasswordLogin";
-            this.tbxPasswordLogin.Size = new System.Drawing.Size(141, 22);
+            this.tbxPasswordLogin.Size = new System.Drawing.Size(158, 26);
             this.tbxPasswordLogin.TabIndex = 3;
             this.tbxPasswordLogin.UseSystemPasswordChar = true;
             // 
             // tbxUsernameLogin
             // 
-            this.tbxUsernameLogin.Location = new System.Drawing.Point(358, 63);
-            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxUsernameLogin.Location = new System.Drawing.Point(403, 79);
+            this.tbxUsernameLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxUsernameLogin.Name = "tbxUsernameLogin";
-            this.tbxUsernameLogin.Size = new System.Drawing.Size(139, 22);
+            this.tbxUsernameLogin.Size = new System.Drawing.Size(156, 26);
             this.tbxUsernameLogin.TabIndex = 2;
             // 
             // lbPasswordLogin
             // 
             this.lbPasswordLogin.AutoSize = true;
             this.lbPasswordLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbPasswordLogin.Location = new System.Drawing.Point(241, 102);
+            this.lbPasswordLogin.Location = new System.Drawing.Point(271, 128);
             this.lbPasswordLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPasswordLogin.Name = "lbPasswordLogin";
-            this.lbPasswordLogin.Size = new System.Drawing.Size(73, 17);
+            this.lbPasswordLogin.Size = new System.Drawing.Size(82, 20);
             this.lbPasswordLogin.TabIndex = 1;
             this.lbPasswordLogin.Text = "Password:";
             // 
@@ -102,10 +102,10 @@ namespace HousingSoftware
             // 
             this.lbUsernameLogin.AutoSize = true;
             this.lbUsernameLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbUsernameLogin.Location = new System.Drawing.Point(124, 66);
+            this.lbUsernameLogin.Location = new System.Drawing.Point(140, 82);
             this.lbUsernameLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUsernameLogin.Name = "lbUsernameLogin";
-            this.lbUsernameLogin.Size = new System.Drawing.Size(190, 17);
+            this.lbUsernameLogin.Size = new System.Drawing.Size(214, 20);
             this.lbUsernameLogin.TabIndex = 0;
             this.lbUsernameLogin.Text = "Username / Student number:";
             // 
@@ -113,21 +113,24 @@ namespace HousingSoftware
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(294, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(331, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 212);
+            this.pictureBox1.Size = new System.Drawing.Size(298, 265);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.gbxLogin);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.gbxLogin.ResumeLayout(false);

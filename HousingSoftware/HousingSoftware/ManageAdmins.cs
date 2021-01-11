@@ -31,7 +31,7 @@ namespace HousingSoftware
             int index = -1;
             foreach (Admin admin in admins)
             {
-                if (admin.GetUsername() == username)
+                if (admin.Username == username)
                 {
                     index = admins.IndexOf(admin);
                 }
@@ -110,7 +110,7 @@ namespace HousingSoftware
                     gbxEditAdmin.Visible = true;
                     tbxFNameEditAdmin.Text = admins[index].FirstName;
                     tbxLNameEditAdmin.Text = admins[index].LastName;
-                    tbxPasswordEditAdmin.Text = admins[index].GetPassword();
+                    tbxPasswordEditAdmin.Text = admins[index].Password;
                 }
                 else
                 {
@@ -131,7 +131,7 @@ namespace HousingSoftware
             {
                 admins[indexCurrAdminEdit].FirstName = tbxFNameEditAdmin.Text;
                 admins[indexCurrAdminEdit].LastName = tbxLNameEditAdmin.Text;
-                admins[indexCurrAdminEdit].SetPassword(tbxPasswordEditAdmin.Text);
+                admins[indexCurrAdminEdit].Password = tbxPasswordEditAdmin.Text;
             }
             else
             {

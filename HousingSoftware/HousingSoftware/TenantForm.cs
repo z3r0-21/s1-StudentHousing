@@ -32,7 +32,7 @@ namespace HousingSoftware
         private void showUnpaidGroceries(ListBox unpaidGroceries, int index)
         {
             unpaidGroceries.Items.Clear();
-            List<Grocery> groceries = admins[indexCurrAdmin].GetTenants()[index].GetGroceriesTenant();
+            List<Grocery> groceries = admins[indexCurrAdmin].Tenants[index].GroceriesTenant;
             foreach (Grocery grocery in groceries)
             {
                 unpaidGroceries.Items.Add(grocery.GetInfo());
@@ -57,6 +57,9 @@ namespace HousingSoftware
 
             lbTimeTenant.Text = DateTime.Now.ToString("HH:mm");
             lblDateTenant.Text = DateTime.Now.ToString("dddd, MMMM dd");
+
+            // Clear default text for the label for groceries notifications
+            lblUnpaidGroceriesNotification.Text = "";
 
             if (lbxUnpaidGroceries.Items.Count > 0)
             {
@@ -88,19 +91,19 @@ namespace HousingSoftware
 
             if (currentTime >= 5 && currentTime < 12)
             {
-                lbWelcomeMsgTenant.Text = $"Good morning, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}!";
+                lbWelcomeMsgTenant.Text = $"Good morning, {admins[indexCurrAdmin].Tenants[indexCurrTenant].FirstName}!";
             }
             else if (currentTime >= 12 && currentTime < 17)
             {
-                lbWelcomeMsgTenant.Text = $"Have a good afternoon, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}";
+                lbWelcomeMsgTenant.Text = $"Have a good afternoon, {admins[indexCurrAdmin].Tenants[indexCurrTenant].FirstName}";
             }
             else if (currentTime >= 17 && currentTime < 21)
             {
-                lbWelcomeMsgTenant.Text = $"Have a nice evening, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}!";
+                lbWelcomeMsgTenant.Text = $"Have a nice evening, {admins[indexCurrAdmin].Tenants[indexCurrTenant].FirstName}!";
             }
             else
             {
-                lbWelcomeMsgTenant.Text = $"Good night, {admins[indexCurrAdmin].GetTenants()[indexCurrTenant].GetFirstName()}";
+                lbWelcomeMsgTenant.Text = $"Good night, {admins[indexCurrAdmin].Tenants[indexCurrTenant].FirstName}";
             }
 
         }
@@ -147,7 +150,7 @@ namespace HousingSoftware
         {
             lbxAllAgreementsTenant.Items.Clear();
 
-            foreach (Agreements agreement in admins[indexCurrAdmin].GetAgreements())
+            foreach (Agreements agreement in admins[indexCurrAdmin].Agreements)
             {
                 lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
@@ -158,7 +161,7 @@ namespace HousingSoftware
         {
             lbxAllAgreementsTenant.Items.Clear();
 
-            foreach (Agreements agreement in admins[indexCurrAdmin].GetAgreements())
+            foreach (Agreements agreement in admins[indexCurrAdmin].Agreements)
             {
                 if (agreement.GetAgreement().Contains(searchText))
                 {
@@ -192,11 +195,11 @@ namespace HousingSoftware
 
         private int FindAgreementIndex(string agreementText) // Finds the index in the list of the selected agreeemtnt
         {
-            foreach (Agreements agreement in admins[indexCurrAdmin].GetAgreements())
+            foreach (Agreements agreement in admins[indexCurrAdmin].Agreements)
             {
                 if (agreement.GetAgreement() == agreementText)
                 {
-                    return admins[indexCurrAdmin].GetAgreements().IndexOf(agreement);
+                    return admins[indexCurrAdmin].Agreements.IndexOf(agreement);
                 }
             }
             return -1;
@@ -211,25 +214,25 @@ namespace HousingSoftware
             else
             {
                 //get the student number of the currently logged tennants
-                Tenant currentTenant = admins[indexCurrAdmin].GetTenants()[indexCurrTenant];
+                Tenant currentTenant = admins[indexCurrAdmin].Tenants[indexCurrTenant];
 
                 string agreement = lbxAllAgreementsTenant.SelectedItem.ToString();
-                int stNumber = Convert.ToInt32(currentTenant.GetStudentNumber());
+                int stNumber = Convert.ToInt32(currentTenant.StudentNumber);
 
                 //select
                 string selectedAgreement = lbxAllAgreementsTenant.SelectedItem.ToString().Split(':')[1];
                 selectedAgreement = selectedAgreement.Remove(0, 1);
                 int index = FindAgreementIndex(selectedAgreement);
 
-                if (!hasVoted(admins[indexCurrAdmin].GetAgreements()[index], stNumber))
+                if (!hasVoted(admins[indexCurrAdmin].Agreements[index], stNumber))
                 {
                     if (choice == 'a')
                     {
-                        admins[indexCurrAdmin].GetAgreements()[index].Agree(stNumber);
+                        admins[indexCurrAdmin].Agreements[index].Agree(stNumber);
                     }
                     else if (choice == 'd')
                     {
-                        admins[indexCurrAdmin].GetAgreements()[index].Disagree(stNumber);
+                        admins[indexCurrAdmin].Agreements[index].Disagree(stNumber);
                     }
 
                 }

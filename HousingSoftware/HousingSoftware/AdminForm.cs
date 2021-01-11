@@ -36,9 +36,9 @@ namespace HousingSoftware
         private int calcGroceriesNotifications()
         {
             int numTenantsWithUnpaidGroceries = 0;
-            foreach (Tenant tenant in admins[indexCurrAdmin].GetTenants())
+            foreach (Tenant tenant in admins[indexCurrAdmin].Tenants)
             {
-                if (tenant.GetGroceriesTenant().Count() > 0)
+                if (tenant.GroceriesTenant.Count() > 0)
                 {
                     numTenantsWithUnpaidGroceries++;
                 }
@@ -54,7 +54,7 @@ namespace HousingSoftware
             {
                 if (numTenants == 1)
                 {
-                    lbNewGroceriesNotifications.Text = $"There is {numTenants} tenants with unpaid groceries";
+                    lbNewGroceriesNotifications.Text = $"There is {numTenants} tenant with unpaid groceries";
                 }
                 else
                 {
@@ -128,19 +128,19 @@ namespace HousingSoftware
 
             if (currentTime >= 5 && currentTime < 12)
             {
-                lbWelcomeMsgAdmin.Text = $"Good morning, {currentAdmin.GetUsername()}!";
+                lbWelcomeMsgAdmin.Text = $"Good morning, {currentAdmin.Username}!";
             }
             else if (currentTime >= 12 && currentTime < 17)
             {
-                lbWelcomeMsgAdmin.Text = $"Have a good afternoon, {currentAdmin.GetUsername()}";
+                lbWelcomeMsgAdmin.Text = $"Have a good afternoon, {currentAdmin.Username}";
             }
             else if (currentTime >= 17 && currentTime < 21)
             {
-                lbWelcomeMsgAdmin.Text = $"Have a nice evening, {currentAdmin.GetUsername()}!";
+                lbWelcomeMsgAdmin.Text = $"Have a nice evening, {currentAdmin.Username}!";
             }
             else
             {
-                lbWelcomeMsgAdmin.Text = $"Good night, {currentAdmin.GetUsername()}";
+                lbWelcomeMsgAdmin.Text = $"Good night, {currentAdmin.Username}";
             }
 
         }
@@ -153,10 +153,10 @@ namespace HousingSoftware
             int index = -1;
             foreach (Admin admin in admins)
             {
-                List<Tenant> allRegisteredTenants = admin.GetTenants();
+                List<Tenant> allRegisteredTenants = admin.Tenants;
                 for (int i = 0; i < allRegisteredTenants.Count(); i++)
                 {
-                    if (allRegisteredTenants[i].GetStudentNumber() == studentNum)
+                    if (allRegisteredTenants[i].StudentNumber == studentNum)
                     {
                         index = i;
                     }
@@ -190,12 +190,12 @@ namespace HousingSoftware
 
                 if (searchTenantProfile(studentNum) == -1)
                 {
-                    currentTenant = new Tenant();
-                    currentTenant.InitializeTenant(studentNum, fname, password);
+                    currentTenant = new Tenant(studentNum, fname, password);
+                    //currentTenant.InitializeTenant(studentNum, fname, password);
                     //currentTenant.SetGroceriesTenant(admin.GetAllGroceries());
 
                     // Add groceries to new registered tenant
-                    AddGroceriesTenant(currentTenant, currentAdmin.GetAllGroceries());
+                    AddGroceriesTenant(currentTenant, currentAdmin.Groceries);
                     currentAdmin.AddTenant(currentTenant);
 
                     // Calc the number of unpaid groceries
@@ -262,8 +262,8 @@ namespace HousingSoftware
                 {
                     // Show the groupbox for edit profile of the chosen tenant
                     gbxEditTenant.Visible = true;
-                    string currentFName = currentAdmin.GetTenants()[indexTenantEdit].GetFirstName();
-                    string currentPassword = currentAdmin.GetTenants()[indexTenantEdit].GetPassword();
+                    string currentFName = currentAdmin.Tenants[indexTenantEdit].FirstName;
+                    string currentPassword = currentAdmin.Tenants[indexTenantEdit].Password;
 
                     // Show the current data for the searched tenant profile for edit
                     tbxEditFNameTenant.Text = currentFName;
@@ -293,8 +293,8 @@ namespace HousingSoftware
                 password = tbxEditPasswordTenant.Text;
 
                 // Set new values for first name and password of the tenant
-                currentAdmin.GetTenants()[indexTenantEdit].SetFirstName(fName);
-                currentAdmin.GetTenants()[indexTenantEdit].SetPassword(password);
+                currentAdmin.Tenants[indexTenantEdit].FirstName = fName;
+                currentAdmin.Tenants[indexTenantEdit].Password = password;
 
             }
             else
@@ -320,7 +320,7 @@ namespace HousingSoftware
             // clear the listbox for all recent groceries
             lbxRecentGroceries.Items.Clear();
 
-            foreach (Grocery grocery in currentAdmin.GetAllGroceries())
+            foreach (Grocery grocery in currentAdmin.Groceries)
             {
                 lbxRecentGroceries.Items.Add(grocery.GetInfo());
             }
@@ -328,7 +328,7 @@ namespace HousingSoftware
 
         private bool isGroceryExist(string groceryName)
         {
-            foreach (Grocery grocery in currentAdmin.GetAllGroceries())
+            foreach (Grocery grocery in currentAdmin.Groceries)
             {
                 if (grocery.GetName() == groceryName)
                 {
@@ -341,7 +341,7 @@ namespace HousingSoftware
         private void addGroceryToTenants(Grocery grocery)
         {
 
-            foreach (Tenant tenant in currentAdmin.GetTenants())
+            foreach (Tenant tenant in currentAdmin.Tenants)
             {
 
                 tenant.AddGrocery(grocery);
@@ -392,9 +392,9 @@ namespace HousingSoftware
 
         private void RemoveSelectedGroceryTenants(string groceryName)
         {
-            foreach (Tenant tenant in currentAdmin.GetTenants())
+            foreach (Tenant tenant in currentAdmin.Tenants)
             {
-                foreach (Grocery grocery in tenant.GetGroceriesTenant())
+                foreach (Grocery grocery in tenant.GroceriesTenant)
                 {
                     if (grocery.GetName() == groceryName)
                     {
@@ -431,7 +431,7 @@ namespace HousingSoftware
 
         private void RemoveAllGroceriesTenants()
         {
-            foreach (Tenant tenant in currentAdmin.GetTenants())
+            foreach (Tenant tenant in currentAdmin.Tenants)
             {
                 tenant.RemoveAllGroceries();
             }
@@ -455,7 +455,7 @@ namespace HousingSoftware
         {
             //lbxUnpaidGroceries.Items.Clear();
             unpaidGroceries.Items.Clear();
-            List<Grocery> groceries = currentAdmin.GetTenants()[index].GetGroceriesTenant();
+            List<Grocery> groceries = currentAdmin.Tenants[index].GroceriesTenant;
             foreach (Grocery grocery in groceries)
             {
                 //lbxUnpaidGroceries.Items.Add(grocery.GetInfo());
@@ -467,11 +467,11 @@ namespace HousingSoftware
         private void calcNumUnpaidGroceriesPerTenant()
         {
             lbxNumUnpaidGroceriesAllTenants.Items.Clear();
-            foreach (Tenant tenant in currentAdmin.GetTenants())
+            foreach (Tenant tenant in currentAdmin.Tenants)
             {
-                if (tenant.GetGroceriesTenant().Count() > 0)
+                if (tenant.GroceriesTenant.Count() > 0)
                 {
-                    lbxNumUnpaidGroceriesAllTenants.Items.Add($"{tenant.GetFirstName()} (stud.num:{tenant.GetStudentNumber()}) - {tenant.GetGroceriesTenant().Count()} unpaid groceries");
+                    lbxNumUnpaidGroceriesAllTenants.Items.Add($"{tenant.FirstName} (stud.num:{tenant.StudentNumber}) - {tenant.GroceriesTenant.Count()} unpaid groceries");
                 }
             }
         }
@@ -554,7 +554,7 @@ namespace HousingSoftware
                 {
                     if (indexSelectedItem != -1)
                     {
-                        currentAdmin.GetTenants()[indexSearchedTenant].GetGroceriesTenant().RemoveAt(indexSelectedItem);
+                        currentAdmin.Tenants[indexSearchedTenant].GroceriesTenant.RemoveAt(indexSelectedItem);
                         lbxUnpaidGroceriesPerStudent.Items.RemoveAt(indexSelectedItem);
 
                         // Calc the number of unpaid groceries
@@ -582,7 +582,7 @@ namespace HousingSoftware
 
         public void markGroceriesAsPaid(int indexTenant)
         {
-            currentAdmin.GetTenants()[indexTenant].RemoveAllGroceries();
+            currentAdmin.Tenants[indexTenant].RemoveAllGroceries();
         }
 
         // Btn Mark all groceries as paid for the specified tenant
@@ -645,7 +645,7 @@ namespace HousingSoftware
 
             lbxAllComplaints.Items.Clear();
 
-            foreach (string complaint in currentAdmin.GetComplaints())
+            foreach (string complaint in currentAdmin.Complaints)
             {
                 lbxAllComplaints.Items.Add(complaint);
             }
@@ -654,7 +654,7 @@ namespace HousingSoftware
         private void btnMarkAsDone_Click(object sender, EventArgs e) // Removes the selected agreement from the listbox (and from the list itslef as well)
         {
 
-            if (currentAdmin.GetComplaints().Count > 0 && lbxAllComplaints.SelectedIndex != -1)
+            if (currentAdmin.Complaints.Count > 0 && lbxAllComplaints.SelectedIndex != -1)
             {
                 currentAdmin.RemoveComplaint(lbxAllComplaints.SelectedItem.ToString());
                 RefreshComplaints();
@@ -669,7 +669,7 @@ namespace HousingSoftware
         {
             lbxAllComplaints.Items.Clear();
 
-            foreach (string complaint in currentAdmin.GetComplaints())
+            foreach (string complaint in currentAdmin.Complaints)
             {
                 if (complaint.Contains(searchText))
                 {
@@ -693,7 +693,7 @@ namespace HousingSoftware
         {
             lbxAllAgreementsAdmin.Items.Clear();
 
-            foreach (Agreements agreement in currentAdmin.GetAgreements())
+            foreach (Agreements agreement in currentAdmin.Agreements)
             {
                 lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
@@ -703,7 +703,7 @@ namespace HousingSoftware
         {
             lbxAllAgreementsAdmin.Items.Clear();
 
-            foreach (Agreements agreement in currentAdmin.GetAgreements())
+            foreach (Agreements agreement in currentAdmin.Agreements)
             {
                 if (agreement.GetAgreement().Contains(searchText))
                 {
