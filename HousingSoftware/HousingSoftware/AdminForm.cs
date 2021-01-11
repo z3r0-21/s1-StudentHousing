@@ -695,7 +695,7 @@ namespace HousingSoftware
 
             foreach (Agreements agreement in currentAdmin.Agreements)
             {
-                lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                lbxAllAgreementsAdmin.Items.Add($"{Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
         }
 

@@ -9,7 +9,7 @@ namespace HousingSoftware
     public class Agreements
     {
         private string agreement;
-        private int approveRate;
+        private double approveRate;
         private List<int> tenantsAgreed = new List<int>();
         private List<int> tenantsDisagreed = new List<int>();
        
@@ -40,7 +40,7 @@ namespace HousingSoftware
             }
         }
 
-        public int GetAgreementRatio()
+        public double GetAgreementRatio()
         {
             
                 if (tenantsAgreed.Count != 0 && tenantsDisagreed.Count == 0)
@@ -49,7 +49,7 @@ namespace HousingSoftware
                 }
                 else if (tenantsAgreed.Count != 0 && tenantsDisagreed.Count != 0)
                 {
-                    approveRate = (tenantsAgreed.Count / tenantsDisagreed.Count) * 100;
+                    approveRate = (Convert.ToDouble(tenantsAgreed.Count) / (Convert.ToDouble(tenantsAgreed.Count) + Convert.ToDouble(tenantsDisagreed.Count))) * 100;
                     return approveRate;
                 }
                 else

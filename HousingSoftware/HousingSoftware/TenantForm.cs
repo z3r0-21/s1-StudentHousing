@@ -152,7 +152,7 @@ namespace HousingSoftware
 
             foreach (Agreements agreement in admins[indexCurrAdmin].Agreements)
             {
-                lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                lbxAllAgreementsTenant.Items.Add($"{Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
         }
 
