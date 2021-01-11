@@ -208,7 +208,7 @@ namespace HousingSoftware
             this.lbNewGroceriesNotifications.Location = new System.Drawing.Point(588, 53);
             this.lbNewGroceriesNotifications.Name = "lbNewGroceriesNotifications";
             this.lbNewGroceriesNotifications.Size = new System.Drawing.Size(171, 18);
-            this.lbNewGroceriesNotifications.TabIndex = 7;
+            this.lbNewGroceriesNotifications.TabIndex = 1;
             this.lbNewGroceriesNotifications.Text = "Groceries notification";
             this.lbNewGroceriesNotifications.Click += new System.EventHandler(this.lbGroceriesNotifications_Click);
             // 
@@ -221,7 +221,7 @@ namespace HousingSoftware
             this.lblNewComplaintsNotifications.Location = new System.Drawing.Point(118, 53);
             this.lblNewComplaintsNotifications.Name = "lblNewComplaintsNotifications";
             this.lblNewComplaintsNotifications.Size = new System.Drawing.Size(190, 18);
-            this.lblNewComplaintsNotifications.TabIndex = 6;
+            this.lblNewComplaintsNotifications.TabIndex = 0;
             this.lblNewComplaintsNotifications.Text = "Complaints notifications";
             this.lblNewComplaintsNotifications.Click += new System.EventHandler(this.lblNewComplaintsNotifications_Click);
             // 
@@ -233,7 +233,7 @@ namespace HousingSoftware
             this.lblDateAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateAdmin.Name = "lblDateAdmin";
             this.lblDateAdmin.Size = new System.Drawing.Size(38, 17);
-            this.lblDateAdmin.TabIndex = 5;
+            this.lblDateAdmin.TabIndex = 4;
             this.lblDateAdmin.Text = "Date";
             // 
             // lbTimeAdmin
@@ -245,7 +245,7 @@ namespace HousingSoftware
             this.lbTimeAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimeAdmin.Name = "lbTimeAdmin";
             this.lbTimeAdmin.Size = new System.Drawing.Size(60, 25);
-            this.lbTimeAdmin.TabIndex = 4;
+            this.lbTimeAdmin.TabIndex = 3;
             this.lbTimeAdmin.Text = "Time";
             // 
             // lbWelcomeMsgAdmin
@@ -255,7 +255,7 @@ namespace HousingSoftware
             this.lbWelcomeMsgAdmin.Location = new System.Drawing.Point(50, 159);
             this.lbWelcomeMsgAdmin.Name = "lbWelcomeMsgAdmin";
             this.lbWelcomeMsgAdmin.Size = new System.Drawing.Size(74, 17);
-            this.lbWelcomeMsgAdmin.TabIndex = 0;
+            this.lbWelcomeMsgAdmin.TabIndex = 2;
             this.lbWelcomeMsgAdmin.Text = "Welcome, ";
             // 
             // btnLogOutAdmin
@@ -263,10 +263,10 @@ namespace HousingSoftware
             this.btnLogOutAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogOutAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLogOutAdmin.Location = new System.Drawing.Point(53, 441);
-            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutAdmin.Name = "btnLogOutAdmin";
             this.btnLogOutAdmin.Size = new System.Drawing.Size(104, 36);
-            this.btnLogOutAdmin.TabIndex = 3;
+            this.btnLogOutAdmin.TabIndex = 5;
             this.btnLogOutAdmin.Text = "Log out";
             this.btnLogOutAdmin.UseVisualStyleBackColor = false;
             this.btnLogOutAdmin.Click += new System.EventHandler(this.btnLogOutAdmin_Click);
@@ -298,7 +298,7 @@ namespace HousingSoftware
             this.gbxUnpaidGroceriesAllTenants.Name = "gbxUnpaidGroceriesAllTenants";
             this.gbxUnpaidGroceriesAllTenants.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxUnpaidGroceriesAllTenants.Size = new System.Drawing.Size(500, 212);
-            this.gbxUnpaidGroceriesAllTenants.TabIndex = 9;
+            this.gbxUnpaidGroceriesAllTenants.TabIndex = 7;
             this.gbxUnpaidGroceriesAllTenants.TabStop = false;
             this.gbxUnpaidGroceriesAllTenants.Text = "Number of unpaid groceries for all tenants";
             // 
@@ -312,14 +312,14 @@ namespace HousingSoftware
             this.lbxNumUnpaidGroceriesAllTenants.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbxNumUnpaidGroceriesAllTenants.Name = "lbxNumUnpaidGroceriesAllTenants";
             this.lbxNumUnpaidGroceriesAllTenants.Size = new System.Drawing.Size(252, 180);
-            this.lbxNumUnpaidGroceriesAllTenants.TabIndex = 5;
+            this.lbxNumUnpaidGroceriesAllTenants.TabIndex = 7;
             // 
             // btnClsSelectedTenantUnpaidGroceries
             // 
             this.btnClsSelectedTenantUnpaidGroceries.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClsSelectedTenantUnpaidGroceries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClsSelectedTenantUnpaidGroceries.Location = new System.Drawing.Point(291, 44);
-            this.btnClsSelectedTenantUnpaidGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectedTenantUnpaidGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectedTenantUnpaidGroceries.Name = "btnClsSelectedTenantUnpaidGroceries";
             this.btnClsSelectedTenantUnpaidGroceries.Size = new System.Drawing.Size(185, 31);
             this.btnClsSelectedTenantUnpaidGroceries.TabIndex = 8;
@@ -335,7 +335,7 @@ namespace HousingSoftware
             this.btnGoToTenantToPayList.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnGoToTenantToPayList.Name = "btnGoToTenantToPayList";
             this.btnGoToTenantToPayList.Size = new System.Drawing.Size(185, 31);
-            this.btnGoToTenantToPayList.TabIndex = 7;
+            this.btnGoToTenantToPayList.TabIndex = 9;
             this.btnGoToTenantToPayList.Text = "Go to tenant\'s to-pay list";
             this.btnGoToTenantToPayList.UseVisualStyleBackColor = false;
             this.btnGoToTenantToPayList.Click += new System.EventHandler(this.btnGoToTenantToPayList_Click);
@@ -356,7 +356,7 @@ namespace HousingSoftware
             this.gbxPayListGroceries.Name = "gbxPayListGroceries";
             this.gbxPayListGroceries.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxPayListGroceries.Size = new System.Drawing.Size(500, 297);
-            this.gbxPayListGroceries.TabIndex = 4;
+            this.gbxPayListGroceries.TabIndex = 10;
             this.gbxPayListGroceries.TabStop = false;
             this.gbxPayListGroceries.Text = "Pay list groceries";
             // 
@@ -375,10 +375,10 @@ namespace HousingSoftware
             this.btnClsSelectLinePayListGroceries.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClsSelectLinePayListGroceries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClsSelectLinePayListGroceries.Location = new System.Drawing.Point(308, 126);
-            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectLinePayListGroceries.Name = "btnClsSelectLinePayListGroceries";
             this.btnClsSelectLinePayListGroceries.Size = new System.Drawing.Size(168, 31);
-            this.btnClsSelectLinePayListGroceries.TabIndex = 5;
+            this.btnClsSelectLinePayListGroceries.TabIndex = 13;
             this.btnClsSelectLinePayListGroceries.Text = "Clear selected";
             this.btnClsSelectLinePayListGroceries.UseVisualStyleBackColor = false;
             this.btnClsSelectLinePayListGroceries.Click += new System.EventHandler(this.btnClsSelectLinePayListGroceries_Click);
@@ -391,7 +391,7 @@ namespace HousingSoftware
             this.btnMarkAllAsPaid.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnMarkAllAsPaid.Name = "btnMarkAllAsPaid";
             this.btnMarkAllAsPaid.Size = new System.Drawing.Size(168, 31);
-            this.btnMarkAllAsPaid.TabIndex = 4;
+            this.btnMarkAllAsPaid.TabIndex = 15;
             this.btnMarkAllAsPaid.Text = "Mark all as paid";
             this.btnMarkAllAsPaid.UseVisualStyleBackColor = false;
             this.btnMarkAllAsPaid.Click += new System.EventHandler(this.btnMarkAllAsPaid_Click);
@@ -404,7 +404,7 @@ namespace HousingSoftware
             this.btnMarkSelectedAsPaid.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnMarkSelectedAsPaid.Name = "btnMarkSelectedAsPaid";
             this.btnMarkSelectedAsPaid.Size = new System.Drawing.Size(168, 31);
-            this.btnMarkSelectedAsPaid.TabIndex = 4;
+            this.btnMarkSelectedAsPaid.TabIndex = 14;
             this.btnMarkSelectedAsPaid.Text = "Mark selected as paid";
             this.btnMarkSelectedAsPaid.UseVisualStyleBackColor = false;
             this.btnMarkSelectedAsPaid.Click += new System.EventHandler(this.btnMarkSelectedAsPaid_Click);
@@ -419,7 +419,7 @@ namespace HousingSoftware
             this.lbxUnpaidGroceriesPerStudent.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.lbxUnpaidGroceriesPerStudent.Name = "lbxUnpaidGroceriesPerStudent";
             this.lbxUnpaidGroceriesPerStudent.Size = new System.Drawing.Size(272, 164);
-            this.lbxUnpaidGroceriesPerStudent.TabIndex = 3;
+            this.lbxUnpaidGroceriesPerStudent.TabIndex = 12;
             // 
             // tbxStudNumUnpaidItems
             // 
@@ -428,7 +428,7 @@ namespace HousingSoftware
             this.tbxStudNumUnpaidItems.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxStudNumUnpaidItems.Name = "tbxStudNumUnpaidItems";
             this.tbxStudNumUnpaidItems.Size = new System.Drawing.Size(157, 22);
-            this.tbxStudNumUnpaidItems.TabIndex = 2;
+            this.tbxStudNumUnpaidItems.TabIndex = 10;
             // 
             // btnShowToPayList
             // 
@@ -438,7 +438,7 @@ namespace HousingSoftware
             this.btnShowToPayList.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnShowToPayList.Name = "btnShowToPayList";
             this.btnShowToPayList.Size = new System.Drawing.Size(168, 31);
-            this.btnShowToPayList.TabIndex = 1;
+            this.btnShowToPayList.TabIndex = 11;
             this.btnShowToPayList.Text = "Show to-pay list";
             this.btnShowToPayList.UseVisualStyleBackColor = false;
             this.btnShowToPayList.Click += new System.EventHandler(this.btnShowToPayList_Click);
@@ -467,7 +467,7 @@ namespace HousingSoftware
             this.gbxAddGrocery.Name = "gbxAddGrocery";
             this.gbxAddGrocery.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxAddGrocery.Size = new System.Drawing.Size(308, 144);
-            this.gbxAddGrocery.TabIndex = 3;
+            this.gbxAddGrocery.TabIndex = 0;
             this.gbxAddGrocery.TabStop = false;
             this.gbxAddGrocery.Text = "Add groceries";
             // 
@@ -478,7 +478,7 @@ namespace HousingSoftware
             this.tbxGroceryPrice.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxGroceryPrice.Name = "tbxGroceryPrice";
             this.tbxGroceryPrice.Size = new System.Drawing.Size(119, 22);
-            this.tbxGroceryPrice.TabIndex = 4;
+            this.tbxGroceryPrice.TabIndex = 1;
             // 
             // lbGroceryPrice
             // 
@@ -511,7 +511,7 @@ namespace HousingSoftware
             this.tbxGroceryName.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxGroceryName.Name = "tbxGroceryName";
             this.tbxGroceryName.Size = new System.Drawing.Size(119, 22);
-            this.tbxGroceryName.TabIndex = 1;
+            this.tbxGroceryName.TabIndex = 0;
             // 
             // lbGroceryName
             // 
@@ -536,7 +536,7 @@ namespace HousingSoftware
             this.gbxGroceriesAdmin.Name = "gbxGroceriesAdmin";
             this.gbxGroceriesAdmin.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxGroceriesAdmin.Size = new System.Drawing.Size(308, 362);
-            this.gbxGroceriesAdmin.TabIndex = 2;
+            this.gbxGroceriesAdmin.TabIndex = 3;
             this.gbxGroceriesAdmin.TabStop = false;
             // 
             // btnClsSelectedLineRecentGroceries
@@ -544,10 +544,10 @@ namespace HousingSoftware
             this.btnClsSelectedLineRecentGroceries.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClsSelectedLineRecentGroceries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClsSelectedLineRecentGroceries.Location = new System.Drawing.Point(88, 265);
-            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectedLineRecentGroceries.Name = "btnClsSelectedLineRecentGroceries";
             this.btnClsSelectedLineRecentGroceries.Size = new System.Drawing.Size(143, 31);
-            this.btnClsSelectedLineRecentGroceries.TabIndex = 6;
+            this.btnClsSelectedLineRecentGroceries.TabIndex = 4;
             this.btnClsSelectedLineRecentGroceries.Text = "Clear selected";
             this.btnClsSelectedLineRecentGroceries.UseVisualStyleBackColor = false;
             this.btnClsSelectedLineRecentGroceries.Click += new System.EventHandler(this.btnClsSelectedLineRecentGroceries_Click);
@@ -560,7 +560,7 @@ namespace HousingSoftware
             this.btnRemoveAllGroceries.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnRemoveAllGroceries.Name = "btnRemoveAllGroceries";
             this.btnRemoveAllGroceries.Size = new System.Drawing.Size(129, 31);
-            this.btnRemoveAllGroceries.TabIndex = 3;
+            this.btnRemoveAllGroceries.TabIndex = 6;
             this.btnRemoveAllGroceries.Text = "Remove all";
             this.btnRemoveAllGroceries.UseVisualStyleBackColor = false;
             this.btnRemoveAllGroceries.Click += new System.EventHandler(this.btnRemoveAllGroceries_Click);
@@ -573,7 +573,7 @@ namespace HousingSoftware
             this.btnRemoveSelectedGrocery.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnRemoveSelectedGrocery.Name = "btnRemoveSelectedGrocery";
             this.btnRemoveSelectedGrocery.Size = new System.Drawing.Size(140, 31);
-            this.btnRemoveSelectedGrocery.TabIndex = 2;
+            this.btnRemoveSelectedGrocery.TabIndex = 5;
             this.btnRemoveSelectedGrocery.Text = "Remove selected";
             this.btnRemoveSelectedGrocery.UseVisualStyleBackColor = false;
             this.btnRemoveSelectedGrocery.Click += new System.EventHandler(this.btnRemoveSelectedGrocery_Click);
@@ -588,7 +588,7 @@ namespace HousingSoftware
             this.lbxRecentGroceries.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.lbxRecentGroceries.Name = "lbxRecentGroceries";
             this.lbxRecentGroceries.Size = new System.Drawing.Size(207, 180);
-            this.lbxRecentGroceries.TabIndex = 0;
+            this.lbxRecentGroceries.TabIndex = 3;
             // 
             // lbRecentGroceries
             // 
@@ -623,7 +623,7 @@ namespace HousingSoftware
             this.gbxPostAnnouncements.Name = "gbxPostAnnouncements";
             this.gbxPostAnnouncements.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxPostAnnouncements.Size = new System.Drawing.Size(381, 324);
-            this.gbxPostAnnouncements.TabIndex = 3;
+            this.gbxPostAnnouncements.TabIndex = 2;
             this.gbxPostAnnouncements.TabStop = false;
             this.gbxPostAnnouncements.Text = "Post an announcement";
             // 
@@ -635,7 +635,7 @@ namespace HousingSoftware
             this.btnPostAnnouncement.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnPostAnnouncement.Name = "btnPostAnnouncement";
             this.btnPostAnnouncement.Size = new System.Drawing.Size(161, 37);
-            this.btnPostAnnouncement.TabIndex = 2;
+            this.btnPostAnnouncement.TabIndex = 3;
             this.btnPostAnnouncement.Text = "Post";
             this.btnPostAnnouncement.UseVisualStyleBackColor = false;
             this.btnPostAnnouncement.Click += new System.EventHandler(this.btnPostAnnouncement_Click);
@@ -648,7 +648,7 @@ namespace HousingSoftware
             this.tbxPostAnnouncement.Multiline = true;
             this.tbxPostAnnouncement.Name = "tbxPostAnnouncement";
             this.tbxPostAnnouncement.Size = new System.Drawing.Size(303, 169);
-            this.tbxPostAnnouncement.TabIndex = 1;
+            this.tbxPostAnnouncement.TabIndex = 2;
             // 
             // lbWriteMessage
             // 
@@ -671,7 +671,7 @@ namespace HousingSoftware
             this.gbxNewsFeed.Name = "gbxNewsFeed";
             this.gbxNewsFeed.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxNewsFeed.Size = new System.Drawing.Size(377, 496);
-            this.gbxNewsFeed.TabIndex = 2;
+            this.gbxNewsFeed.TabIndex = 0;
             this.gbxNewsFeed.TabStop = false;
             this.gbxNewsFeed.Text = "News feed";
             // 
@@ -684,7 +684,7 @@ namespace HousingSoftware
             this.btndeleteAnnouncement.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btndeleteAnnouncement.Name = "btndeleteAnnouncement";
             this.btndeleteAnnouncement.Size = new System.Drawing.Size(161, 37);
-            this.btndeleteAnnouncement.TabIndex = 2;
+            this.btndeleteAnnouncement.TabIndex = 1;
             this.btndeleteAnnouncement.Text = "Delete";
             this.btndeleteAnnouncement.UseVisualStyleBackColor = false;
             this.btndeleteAnnouncement.Click += new System.EventHandler(this.btndeleteAnnouncement_Click);
@@ -730,11 +730,11 @@ namespace HousingSoftware
             this.gbxSearchAgreementAdmin.Controls.Add(this.tbxSearchAgreementsAdmin);
             this.gbxSearchAgreementAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxSearchAgreementAdmin.Location = new System.Drawing.Point(436, 191);
-            this.gbxSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementAdmin.Name = "gbxSearchAgreementAdmin";
-            this.gbxSearchAgreementAdmin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementAdmin.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementAdmin.Size = new System.Drawing.Size(381, 169);
-            this.gbxSearchAgreementAdmin.TabIndex = 7;
+            this.gbxSearchAgreementAdmin.TabIndex = 1;
             this.gbxSearchAgreementAdmin.TabStop = false;
             this.gbxSearchAgreementAdmin.Text = "Search for an agreement";
             // 
@@ -743,10 +743,10 @@ namespace HousingSoftware
             this.btnShowAllAgreementsAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnShowAllAgreementsAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnShowAllAgreementsAdmin.Location = new System.Drawing.Point(81, 117);
-            this.btnShowAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAllAgreementsAdmin.Name = "btnShowAllAgreementsAdmin";
             this.btnShowAllAgreementsAdmin.Size = new System.Drawing.Size(207, 27);
-            this.btnShowAllAgreementsAdmin.TabIndex = 2;
+            this.btnShowAllAgreementsAdmin.TabIndex = 3;
             this.btnShowAllAgreementsAdmin.Text = "Show all agreements";
             this.btnShowAllAgreementsAdmin.UseVisualStyleBackColor = false;
             this.btnShowAllAgreementsAdmin.Click += new System.EventHandler(this.btnShowAllAgreementsAdmin_Click);
@@ -756,10 +756,10 @@ namespace HousingSoftware
             this.btnSearchAgreementAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSearchAgreementAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSearchAgreementAdmin.Location = new System.Drawing.Point(81, 79);
-            this.btnSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchAgreementAdmin.Name = "btnSearchAgreementAdmin";
             this.btnSearchAgreementAdmin.Size = new System.Drawing.Size(207, 27);
-            this.btnSearchAgreementAdmin.TabIndex = 1;
+            this.btnSearchAgreementAdmin.TabIndex = 2;
             this.btnSearchAgreementAdmin.Text = "Search";
             this.btnSearchAgreementAdmin.UseVisualStyleBackColor = false;
             this.btnSearchAgreementAdmin.Click += new System.EventHandler(this.btnSearchAgreementAdmin_Click);
@@ -768,10 +768,10 @@ namespace HousingSoftware
             // 
             this.tbxSearchAgreementsAdmin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbxSearchAgreementsAdmin.Location = new System.Drawing.Point(23, 44);
-            this.tbxSearchAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxSearchAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxSearchAgreementsAdmin.Name = "tbxSearchAgreementsAdmin";
             this.tbxSearchAgreementsAdmin.Size = new System.Drawing.Size(324, 22);
-            this.tbxSearchAgreementsAdmin.TabIndex = 0;
+            this.tbxSearchAgreementsAdmin.TabIndex = 1;
             // 
             // lbxAllAgreementsAdmin
             // 
@@ -814,10 +814,10 @@ namespace HousingSoftware
             this.btnSaveEditedRule.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSaveEditedRule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSaveEditedRule.Location = new System.Drawing.Point(480, 459);
-            this.btnSaveEditedRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveEditedRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveEditedRule.Name = "btnSaveEditedRule";
             this.btnSaveEditedRule.Size = new System.Drawing.Size(100, 28);
-            this.btnSaveEditedRule.TabIndex = 9;
+            this.btnSaveEditedRule.TabIndex = 6;
             this.btnSaveEditedRule.Text = "Save";
             this.btnSaveEditedRule.UseVisualStyleBackColor = false;
             this.btnSaveEditedRule.Visible = false;
@@ -826,11 +826,11 @@ namespace HousingSoftware
             // editBox
             // 
             this.editBox.Location = new System.Drawing.Point(411, 337);
-            this.editBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editBox.Margin = new System.Windows.Forms.Padding(4);
             this.editBox.Multiline = true;
             this.editBox.Name = "editBox";
             this.editBox.Size = new System.Drawing.Size(225, 109);
-            this.editBox.TabIndex = 8;
+            this.editBox.TabIndex = 5;
             this.editBox.Visible = false;
             // 
             // gbxRule
@@ -844,7 +844,7 @@ namespace HousingSoftware
             this.gbxRule.Name = "gbxRule";
             this.gbxRule.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxRule.Size = new System.Drawing.Size(353, 278);
-            this.gbxRule.TabIndex = 5;
+            this.gbxRule.TabIndex = 3;
             this.gbxRule.TabStop = false;
             this.gbxRule.Text = "Add rule";
             // 
@@ -856,7 +856,7 @@ namespace HousingSoftware
             this.btnAddRule.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnAddRule.Name = "btnAddRule";
             this.btnAddRule.Size = new System.Drawing.Size(100, 28);
-            this.btnAddRule.TabIndex = 2;
+            this.btnAddRule.TabIndex = 4;
             this.btnAddRule.Text = "Add";
             this.btnAddRule.UseVisualStyleBackColor = false;
             this.btnAddRule.Click += new System.EventHandler(this.btnAddRule_Click);
@@ -868,7 +868,7 @@ namespace HousingSoftware
             this.tbxAddRule.Multiline = true;
             this.tbxAddRule.Name = "tbxAddRule";
             this.tbxAddRule.Size = new System.Drawing.Size(219, 169);
-            this.tbxAddRule.TabIndex = 1;
+            this.tbxAddRule.TabIndex = 3;
             // 
             // lbWriteRule
             // 
@@ -891,7 +891,7 @@ namespace HousingSoftware
             this.gbxRules.Name = "gbxRules";
             this.gbxRules.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxRules.Size = new System.Drawing.Size(357, 423);
-            this.gbxRules.TabIndex = 4;
+            this.gbxRules.TabIndex = 0;
             this.gbxRules.TabStop = false;
             this.gbxRules.Text = "House rules";
             // 
@@ -910,10 +910,10 @@ namespace HousingSoftware
             this.btnDeleteRule.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDeleteRule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDeleteRule.Location = new System.Drawing.Point(198, 378);
-            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteRule.Name = "btnDeleteRule";
             this.btnDeleteRule.Size = new System.Drawing.Size(100, 28);
-            this.btnDeleteRule.TabIndex = 6;
+            this.btnDeleteRule.TabIndex = 2;
             this.btnDeleteRule.Text = "Delete";
             this.btnDeleteRule.UseVisualStyleBackColor = false;
             this.btnDeleteRule.Click += new System.EventHandler(this.btnDeleteRule_Click_1);
@@ -923,10 +923,10 @@ namespace HousingSoftware
             this.btnEditRule.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnEditRule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditRule.Location = new System.Drawing.Point(43, 378);
-            this.btnEditRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditRule.Name = "btnEditRule";
             this.btnEditRule.Size = new System.Drawing.Size(100, 28);
-            this.btnEditRule.TabIndex = 7;
+            this.btnEditRule.TabIndex = 1;
             this.btnEditRule.Text = "Edit";
             this.btnEditRule.UseVisualStyleBackColor = false;
             this.btnEditRule.Click += new System.EventHandler(this.btnEditRule_Click_1);
@@ -950,11 +950,11 @@ namespace HousingSoftware
             this.gbxSearchComplaints.Controls.Add(this.tbxSearchComplaint);
             this.gbxSearchComplaints.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxSearchComplaints.Location = new System.Drawing.Point(483, 175);
-            this.gbxSearchComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchComplaints.Name = "gbxSearchComplaints";
-            this.gbxSearchComplaints.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchComplaints.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchComplaints.Size = new System.Drawing.Size(381, 169);
-            this.gbxSearchComplaints.TabIndex = 8;
+            this.gbxSearchComplaints.TabIndex = 2;
             this.gbxSearchComplaints.TabStop = false;
             this.gbxSearchComplaints.Text = "Search for a complaint";
             // 
@@ -963,10 +963,10 @@ namespace HousingSoftware
             this.btnShowAllComplaints.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnShowAllComplaints.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnShowAllComplaints.Location = new System.Drawing.Point(81, 117);
-            this.btnShowAllComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAllComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAllComplaints.Name = "btnShowAllComplaints";
             this.btnShowAllComplaints.Size = new System.Drawing.Size(207, 32);
-            this.btnShowAllComplaints.TabIndex = 2;
+            this.btnShowAllComplaints.TabIndex = 4;
             this.btnShowAllComplaints.Text = "Show all complaints";
             this.btnShowAllComplaints.UseVisualStyleBackColor = false;
             this.btnShowAllComplaints.Click += new System.EventHandler(this.btnShowAllComplaints_Click);
@@ -976,10 +976,10 @@ namespace HousingSoftware
             this.btnSearchComplaint.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSearchComplaint.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSearchComplaint.Location = new System.Drawing.Point(81, 79);
-            this.btnSearchComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchComplaint.Name = "btnSearchComplaint";
             this.btnSearchComplaint.Size = new System.Drawing.Size(207, 27);
-            this.btnSearchComplaint.TabIndex = 1;
+            this.btnSearchComplaint.TabIndex = 3;
             this.btnSearchComplaint.Text = "Search";
             this.btnSearchComplaint.UseVisualStyleBackColor = false;
             this.btnSearchComplaint.Click += new System.EventHandler(this.btnSearchComplaint_Click);
@@ -987,10 +987,10 @@ namespace HousingSoftware
             // tbxSearchComplaint
             // 
             this.tbxSearchComplaint.Location = new System.Drawing.Point(23, 44);
-            this.tbxSearchComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxSearchComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.tbxSearchComplaint.Name = "tbxSearchComplaint";
             this.tbxSearchComplaint.Size = new System.Drawing.Size(324, 22);
-            this.tbxSearchComplaint.TabIndex = 0;
+            this.tbxSearchComplaint.TabIndex = 2;
             // 
             // gbxAllComplaints
             // 
@@ -1002,7 +1002,7 @@ namespace HousingSoftware
             this.gbxAllComplaints.Name = "gbxAllComplaints";
             this.gbxAllComplaints.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxAllComplaints.Size = new System.Drawing.Size(369, 405);
-            this.gbxAllComplaints.TabIndex = 3;
+            this.gbxAllComplaints.TabIndex = 0;
             this.gbxAllComplaints.TabStop = false;
             this.gbxAllComplaints.Text = "All complaints";
             // 
@@ -1014,7 +1014,7 @@ namespace HousingSoftware
             this.btnMarkAsDone.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnMarkAsDone.Name = "btnMarkAsDone";
             this.btnMarkAsDone.Size = new System.Drawing.Size(308, 43);
-            this.btnMarkAsDone.TabIndex = 4;
+            this.btnMarkAsDone.TabIndex = 1;
             this.btnMarkAsDone.Text = "Mark the selected complaint as done";
             this.btnMarkAsDone.UseVisualStyleBackColor = false;
             this.btnMarkAsDone.Click += new System.EventHandler(this.btnMarkAsDone_Click);
@@ -1053,11 +1053,11 @@ namespace HousingSoftware
             this.gbxEditTenant.Controls.Add(this.tbxEditFNameTenant);
             this.gbxEditTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxEditTenant.Location = new System.Drawing.Point(461, 356);
-            this.gbxEditTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxEditTenant.Margin = new System.Windows.Forms.Padding(4);
             this.gbxEditTenant.Name = "gbxEditTenant";
-            this.gbxEditTenant.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxEditTenant.Padding = new System.Windows.Forms.Padding(4);
             this.gbxEditTenant.Size = new System.Drawing.Size(401, 165);
-            this.gbxEditTenant.TabIndex = 14;
+            this.gbxEditTenant.TabIndex = 9;
             this.gbxEditTenant.TabStop = false;
             this.gbxEditTenant.Text = "Edit profile";
             // 
@@ -1067,7 +1067,7 @@ namespace HousingSoftware
             this.tbxEditPasswordTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxEditPasswordTenant.Name = "tbxEditPasswordTenant";
             this.tbxEditPasswordTenant.Size = new System.Drawing.Size(152, 22);
-            this.tbxEditPasswordTenant.TabIndex = 8;
+            this.tbxEditPasswordTenant.TabIndex = 10;
             // 
             // btnSaveChangesEditTenantProfile
             // 
@@ -1077,7 +1077,7 @@ namespace HousingSoftware
             this.btnSaveChangesEditTenantProfile.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnSaveChangesEditTenantProfile.Name = "btnSaveChangesEditTenantProfile";
             this.btnSaveChangesEditTenantProfile.Size = new System.Drawing.Size(152, 31);
-            this.btnSaveChangesEditTenantProfile.TabIndex = 13;
+            this.btnSaveChangesEditTenantProfile.TabIndex = 11;
             this.btnSaveChangesEditTenantProfile.Text = "Save changes";
             this.btnSaveChangesEditTenantProfile.UseVisualStyleBackColor = false;
             this.btnSaveChangesEditTenantProfile.Click += new System.EventHandler(this.btnSaveChangesEditTenantProfile_Click);
@@ -1106,7 +1106,7 @@ namespace HousingSoftware
             this.tbxEditFNameTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxEditFNameTenant.Name = "tbxEditFNameTenant";
             this.tbxEditFNameTenant.Size = new System.Drawing.Size(152, 22);
-            this.tbxEditFNameTenant.TabIndex = 12;
+            this.tbxEditFNameTenant.TabIndex = 9;
             // 
             // gbxSearchTenantEdit
             // 
@@ -1115,11 +1115,11 @@ namespace HousingSoftware
             this.gbxSearchTenantEdit.Controls.Add(this.lbStudNumSearchTenantEdit);
             this.gbxSearchTenantEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxSearchTenantEdit.Location = new System.Drawing.Point(461, 204);
-            this.gbxSearchTenantEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchTenantEdit.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchTenantEdit.Name = "gbxSearchTenantEdit";
-            this.gbxSearchTenantEdit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchTenantEdit.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchTenantEdit.Size = new System.Drawing.Size(401, 128);
-            this.gbxSearchTenantEdit.TabIndex = 2;
+            this.gbxSearchTenantEdit.TabIndex = 7;
             this.gbxSearchTenantEdit.TabStop = false;
             this.gbxSearchTenantEdit.Text = "Find a profile to edit";
             // 
@@ -1131,7 +1131,7 @@ namespace HousingSoftware
             this.btnShowTenantProfileEdit.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnShowTenantProfileEdit.Name = "btnShowTenantProfileEdit";
             this.btnShowTenantProfileEdit.Size = new System.Drawing.Size(152, 31);
-            this.btnShowTenantProfileEdit.TabIndex = 10;
+            this.btnShowTenantProfileEdit.TabIndex = 8;
             this.btnShowTenantProfileEdit.Text = "Show profile to edit";
             this.btnShowTenantProfileEdit.UseVisualStyleBackColor = false;
             this.btnShowTenantProfileEdit.Click += new System.EventHandler(this.btnShowTenantProfileEdit_Click);
@@ -1142,7 +1142,7 @@ namespace HousingSoftware
             this.tbxStudNumSearchTenantEdit.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxStudNumSearchTenantEdit.Name = "tbxStudNumSearchTenantEdit";
             this.tbxStudNumSearchTenantEdit.Size = new System.Drawing.Size(152, 22);
-            this.tbxStudNumSearchTenantEdit.TabIndex = 9;
+            this.tbxStudNumSearchTenantEdit.TabIndex = 7;
             // 
             // lbStudNumSearchTenantEdit
             // 
@@ -1164,7 +1164,7 @@ namespace HousingSoftware
             this.gbxRemoveTenant.Name = "gbxRemoveTenant";
             this.gbxRemoveTenant.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.gbxRemoveTenant.Size = new System.Drawing.Size(401, 171);
-            this.gbxRemoveTenant.TabIndex = 1;
+            this.gbxRemoveTenant.TabIndex = 5;
             this.gbxRemoveTenant.TabStop = false;
             this.gbxRemoveTenant.Text = "Remove tenant";
             // 
@@ -1175,7 +1175,7 @@ namespace HousingSoftware
             this.btnRemoveTenant.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnRemoveTenant.Name = "btnRemoveTenant";
             this.btnRemoveTenant.Size = new System.Drawing.Size(152, 31);
-            this.btnRemoveTenant.TabIndex = 7;
+            this.btnRemoveTenant.TabIndex = 6;
             this.btnRemoveTenant.Text = "Remove";
             this.btnRemoveTenant.UseVisualStyleBackColor = false;
             this.btnRemoveTenant.Click += new System.EventHandler(this.btnRemoveTenant_Click);
@@ -1224,7 +1224,7 @@ namespace HousingSoftware
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(152, 31);
-            this.btnRegister.TabIndex = 6;
+            this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -1235,7 +1235,7 @@ namespace HousingSoftware
             this.tbxPasswordRegister.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxPasswordRegister.Name = "tbxPasswordRegister";
             this.tbxPasswordRegister.Size = new System.Drawing.Size(152, 22);
-            this.tbxPasswordRegister.TabIndex = 5;
+            this.tbxPasswordRegister.TabIndex = 3;
             // 
             // tbxFirstNameRegister
             // 
@@ -1243,7 +1243,7 @@ namespace HousingSoftware
             this.tbxFirstNameRegister.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxFirstNameRegister.Name = "tbxFirstNameRegister";
             this.tbxFirstNameRegister.Size = new System.Drawing.Size(152, 22);
-            this.tbxFirstNameRegister.TabIndex = 4;
+            this.tbxFirstNameRegister.TabIndex = 2;
             // 
             // tbxStudentNumRegister
             // 
@@ -1251,7 +1251,7 @@ namespace HousingSoftware
             this.tbxStudentNumRegister.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbxStudentNumRegister.Name = "tbxStudentNumRegister";
             this.tbxStudentNumRegister.Size = new System.Drawing.Size(152, 22);
-            this.tbxStudentNumRegister.TabIndex = 3;
+            this.tbxStudentNumRegister.TabIndex = 1;
             // 
             // lbPasswordRegister
             // 

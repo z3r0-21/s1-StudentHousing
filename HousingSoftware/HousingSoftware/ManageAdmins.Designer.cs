@@ -250,7 +250,7 @@
             this.btnSaveChangesAdminProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSaveChangesAdminProfile.Name = "btnSaveChangesAdminProfile";
             this.btnSaveChangesAdminProfile.Size = new System.Drawing.Size(151, 33);
-            this.btnSaveChangesAdminProfile.TabIndex = 10;
+            this.btnSaveChangesAdminProfile.TabIndex = 15;
             this.btnSaveChangesAdminProfile.Text = "Save changes";
             this.btnSaveChangesAdminProfile.UseVisualStyleBackColor = false;
             this.btnSaveChangesAdminProfile.Click += new System.EventHandler(this.btnSaveChangesAdminProfile_Click);
@@ -261,7 +261,7 @@
             this.tbxPasswordEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxPasswordEditAdmin.Name = "tbxPasswordEditAdmin";
             this.tbxPasswordEditAdmin.Size = new System.Drawing.Size(152, 22);
-            this.tbxPasswordEditAdmin.TabIndex = 9;
+            this.tbxPasswordEditAdmin.TabIndex = 14;
             // 
             // lbPasswordEditAdmin
             // 
@@ -279,7 +279,7 @@
             this.tbxLNameEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxLNameEditAdmin.Name = "tbxLNameEditAdmin";
             this.tbxLNameEditAdmin.Size = new System.Drawing.Size(152, 22);
-            this.tbxLNameEditAdmin.TabIndex = 7;
+            this.tbxLNameEditAdmin.TabIndex = 13;
             // 
             // lbLNameEditAdmin
             // 
@@ -297,7 +297,7 @@
             this.tbxFNameEditAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxFNameEditAdmin.Name = "tbxFNameEditAdmin";
             this.tbxFNameEditAdmin.Size = new System.Drawing.Size(152, 22);
-            this.tbxFNameEditAdmin.TabIndex = 5;
+            this.tbxFNameEditAdmin.TabIndex = 12;
             // 
             // lbFNameEditAdmin
             // 
