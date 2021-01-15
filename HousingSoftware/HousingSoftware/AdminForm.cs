@@ -168,6 +168,19 @@ namespace HousingSoftware
             }
             return index;
         }
+        private int searchTenantProfile(int studentNum, Admin admin)
+        {
+            int index = -1;
+            List<Tenant> allRegisteredTenants = currentAdmin.Tenants;
+            for (int i = 0; i < allRegisteredTenants.Count(); i++)
+            {
+                if (allRegisteredTenants[i].StudentNumber == studentNum)
+                {
+                    index = i;
+                }
+            }
+            return index;
+        }
 
         // Add groceries to new registered tenant
         private void AddGroceriesTenant(Tenant tenant, List<Grocery> groceries)
@@ -233,9 +246,9 @@ namespace HousingSoftware
             {
                 studentNum = Convert.ToInt32(tbxStudentNumRemove.Text);
 
-                if (searchTenantProfile(studentNum) != -1)
+                if (searchTenantProfile(studentNum, currentAdmin) != -1)
                 {
-                    int index = searchTenantProfile(studentNum);
+                    int index = searchTenantProfile(studentNum, currentAdmin);
                     currentAdmin.RemoveTenantAt(index);
 
                     // Calc the number of unpaid groceries
@@ -246,7 +259,7 @@ namespace HousingSoftware
                 }
                 else
                 {
-                    MessageBox.Show("There is no such profile!");
+                    MessageBox.Show("There is no such tenant profile assigned to you!");
                 }
             }
             else
@@ -266,7 +279,7 @@ namespace HousingSoftware
             if (!String.IsNullOrEmpty(tbxStudNumSearchTenantEdit.Text))
             {
                 studNum = Convert.ToInt32(tbxStudNumSearchTenantEdit.Text);
-                indexTenantEdit = searchTenantProfile(studNum);
+                indexTenantEdit = searchTenantProfile(studNum, currentAdmin);
                 if (indexTenantEdit != -1)
                 {
                     // Show the groupbox for edit profile of the chosen tenant
@@ -280,7 +293,7 @@ namespace HousingSoftware
                 }
                 else
                 {
-                    MessageBox.Show("Tenant with such student number doesn't exist!");
+                    MessageBox.Show("Tenant with such student number doesn't exist among your tenants!");
                 }
             }
             else
@@ -465,11 +478,14 @@ namespace HousingSoftware
             //lbxUnpaidGroceries.Items.Clear();
             unpaidGroceries.Items.Clear();
             List<Grocery> groceries = currentAdmin.Tenants[index].GroceriesTenant;
+
+
             foreach (Grocery grocery in groceries)
             {
                 //lbxUnpaidGroceries.Items.Add(grocery.GetInfo());
                 unpaidGroceries.Items.Add(grocery.GetInfo());
             }
+            
         }
 
         // Calculate the number of unpaid groceries per tenant
@@ -506,7 +522,7 @@ namespace HousingSoftware
             {
                 // Get stud. number from here: <first name of tenant> (stud.num:<stud. num>) - <number of unpaid tenants>
                 int studNum = Convert.ToInt32(lbxNumUnpaidGroceriesAllTenants.SelectedItem.ToString().Split(':')[1].Split(')')[0]);
-                indexSearchedTenant = searchTenantProfile(studNum);
+                indexSearchedTenant = searchTenantProfile(studNum, currentAdmin);
                 lbStudNumTenantPayListGroceries.Text = $"Tenant with stud. num:{studNum}";
                 showUnpaidGroceries(lbxUnpaidGroceriesPerStudent, indexSearchedTenant);
             }
@@ -528,7 +544,7 @@ namespace HousingSoftware
             {
                 studNum = Convert.ToInt32(tbxStudNumUnpaidItems.Text);
 
-                indexSearchedTenant = searchTenantProfile(studNum);
+                indexSearchedTenant = searchTenantProfile(studNum, currentAdmin);
                 if (indexSearchedTenant != -1)
                 {
                     lbStudNumTenantPayListGroceries.Text = $"Tenant with stud. num:{studNum}";
@@ -536,7 +552,7 @@ namespace HousingSoftware
                 }
                 else
                 {
-                    MessageBox.Show("There is no student with such student number!");
+                    MessageBox.Show("There is no student with such student number among your tenants!");
                 }
 
             }
