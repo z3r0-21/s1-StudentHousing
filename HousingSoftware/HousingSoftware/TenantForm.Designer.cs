@@ -68,6 +68,7 @@
             this.lbWriteComplaint = new System.Windows.Forms.Label();
             this.timerTenant = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.lblAgreementsInfoTenant = new System.Windows.Forms.Label();
             this.MenuTenant.SuspendLayout();
             this.tabHomeTenant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -334,6 +335,7 @@
             // 
             // gbxAllAgreements
             // 
+            this.gbxAllAgreements.Controls.Add(this.lblAgreementsInfoTenant);
             this.gbxAllAgreements.Controls.Add(this.btnDisagree);
             this.gbxAllAgreements.Controls.Add(this.btnAgree);
             this.gbxAllAgreements.Controls.Add(this.lbxAllAgreementsTenant);
@@ -342,7 +344,7 @@
             this.gbxAllAgreements.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.gbxAllAgreements.Name = "gbxAllAgreements";
             this.gbxAllAgreements.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.gbxAllAgreements.Size = new System.Drawing.Size(473, 490);
+            this.gbxAllAgreements.Size = new System.Drawing.Size(473, 537);
             this.gbxAllAgreements.TabIndex = 5;
             this.gbxAllAgreements.TabStop = false;
             // 
@@ -350,7 +352,7 @@
             // 
             this.btnDisagree.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDisagree.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDisagree.Location = new System.Drawing.Point(163, 405);
+            this.btnDisagree.Location = new System.Drawing.Point(163, 468);
             this.btnDisagree.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.btnDisagree.Name = "btnDisagree";
             this.btnDisagree.Size = new System.Drawing.Size(168, 54);
@@ -363,7 +365,7 @@
             // 
             this.btnAgree.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAgree.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAgree.Location = new System.Drawing.Point(163, 351);
+            this.btnAgree.Location = new System.Drawing.Point(163, 425);
             this.btnAgree.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
             this.btnAgree.Name = "btnAgree";
             this.btnAgree.Size = new System.Drawing.Size(168, 41);
@@ -530,6 +532,15 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // lblAgreementsInfoTenant
+            // 
+            this.lblAgreementsInfoTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAgreementsInfoTenant.Location = new System.Drawing.Point(10, 324);
+            this.lblAgreementsInfoTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAgreementsInfoTenant.Name = "lblAgreementsInfoTenant";
+            this.lblAgreementsInfoTenant.Size = new System.Drawing.Size(453, 83);
+            this.lblAgreementsInfoTenant.TabIndex = 8;
+            // 
             // TenantForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -609,5 +620,6 @@
         private System.Windows.Forms.Label lbTimeTenant;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblAgreementsInfoTenant;
     }
 }
