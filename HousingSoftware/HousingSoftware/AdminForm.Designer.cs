@@ -125,6 +125,7 @@ namespace HousingSoftware
             this.lbFirstNameRegister = new System.Windows.Forms.Label();
             this.lbStudentNumRegister = new System.Windows.Forms.Label();
             this.timerAdmin = new System.Windows.Forms.Timer(this.components);
+            this.lblAgreementsInfoAdmin = new System.Windows.Forms.Label();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -263,7 +264,7 @@ namespace HousingSoftware
             this.btnLogOutAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnLogOutAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnLogOutAdmin.Location = new System.Drawing.Point(53, 441);
-            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOutAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOutAdmin.Name = "btnLogOutAdmin";
             this.btnLogOutAdmin.Size = new System.Drawing.Size(104, 36);
             this.btnLogOutAdmin.TabIndex = 3;
@@ -319,7 +320,7 @@ namespace HousingSoftware
             this.btnClsSelectedTenantUnpaidGroceries.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClsSelectedTenantUnpaidGroceries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClsSelectedTenantUnpaidGroceries.Location = new System.Drawing.Point(291, 44);
-            this.btnClsSelectedTenantUnpaidGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectedTenantUnpaidGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectedTenantUnpaidGroceries.Name = "btnClsSelectedTenantUnpaidGroceries";
             this.btnClsSelectedTenantUnpaidGroceries.Size = new System.Drawing.Size(185, 31);
             this.btnClsSelectedTenantUnpaidGroceries.TabIndex = 8;
@@ -375,7 +376,7 @@ namespace HousingSoftware
             this.btnClsSelectLinePayListGroceries.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClsSelectLinePayListGroceries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClsSelectLinePayListGroceries.Location = new System.Drawing.Point(308, 126);
-            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectLinePayListGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectLinePayListGroceries.Name = "btnClsSelectLinePayListGroceries";
             this.btnClsSelectLinePayListGroceries.Size = new System.Drawing.Size(168, 31);
             this.btnClsSelectLinePayListGroceries.TabIndex = 5;
@@ -544,7 +545,7 @@ namespace HousingSoftware
             this.btnClsSelectedLineRecentGroceries.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnClsSelectedLineRecentGroceries.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClsSelectedLineRecentGroceries.Location = new System.Drawing.Point(88, 265);
-            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClsSelectedLineRecentGroceries.Margin = new System.Windows.Forms.Padding(4);
             this.btnClsSelectedLineRecentGroceries.Name = "btnClsSelectedLineRecentGroceries";
             this.btnClsSelectedLineRecentGroceries.Size = new System.Drawing.Size(143, 31);
             this.btnClsSelectedLineRecentGroceries.TabIndex = 6;
@@ -713,6 +714,7 @@ namespace HousingSoftware
             // tabAgreementsAdmin
             // 
             this.tabAgreementsAdmin.BackColor = System.Drawing.Color.Teal;
+            this.tabAgreementsAdmin.Controls.Add(this.lblAgreementsInfoAdmin);
             this.tabAgreementsAdmin.Controls.Add(this.gbxSearchAgreementAdmin);
             this.tabAgreementsAdmin.Controls.Add(this.lbxAllAgreementsAdmin);
             this.tabAgreementsAdmin.Controls.Add(this.lbAllAgreementsAdmin);
@@ -730,9 +732,9 @@ namespace HousingSoftware
             this.gbxSearchAgreementAdmin.Controls.Add(this.tbxSearchAgreementsAdmin);
             this.gbxSearchAgreementAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxSearchAgreementAdmin.Location = new System.Drawing.Point(436, 191);
-            this.gbxSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementAdmin.Name = "gbxSearchAgreementAdmin";
-            this.gbxSearchAgreementAdmin.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchAgreementAdmin.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchAgreementAdmin.Size = new System.Drawing.Size(381, 169);
             this.gbxSearchAgreementAdmin.TabIndex = 7;
             this.gbxSearchAgreementAdmin.TabStop = false;
@@ -743,7 +745,7 @@ namespace HousingSoftware
             this.btnShowAllAgreementsAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnShowAllAgreementsAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnShowAllAgreementsAdmin.Location = new System.Drawing.Point(81, 117);
-            this.btnShowAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAllAgreementsAdmin.Name = "btnShowAllAgreementsAdmin";
             this.btnShowAllAgreementsAdmin.Size = new System.Drawing.Size(207, 27);
             this.btnShowAllAgreementsAdmin.TabIndex = 2;
@@ -756,7 +758,7 @@ namespace HousingSoftware
             this.btnSearchAgreementAdmin.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSearchAgreementAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSearchAgreementAdmin.Location = new System.Drawing.Point(81, 79);
-            this.btnSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchAgreementAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchAgreementAdmin.Name = "btnSearchAgreementAdmin";
             this.btnSearchAgreementAdmin.Size = new System.Drawing.Size(207, 27);
             this.btnSearchAgreementAdmin.TabIndex = 1;
@@ -768,7 +770,7 @@ namespace HousingSoftware
             // 
             this.tbxSearchAgreementsAdmin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbxSearchAgreementsAdmin.Location = new System.Drawing.Point(23, 44);
-            this.tbxSearchAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxSearchAgreementsAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.tbxSearchAgreementsAdmin.Name = "tbxSearchAgreementsAdmin";
             this.tbxSearchAgreementsAdmin.Size = new System.Drawing.Size(324, 22);
             this.tbxSearchAgreementsAdmin.TabIndex = 0;
@@ -779,7 +781,7 @@ namespace HousingSoftware
             this.lbxAllAgreementsAdmin.FormattingEnabled = true;
             this.lbxAllAgreementsAdmin.HorizontalScrollbar = true;
             this.lbxAllAgreementsAdmin.ItemHeight = 16;
-            this.lbxAllAgreementsAdmin.Location = new System.Drawing.Point(57, 95);
+            this.lbxAllAgreementsAdmin.Location = new System.Drawing.Point(57, 65);
             this.lbxAllAgreementsAdmin.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.lbxAllAgreementsAdmin.Name = "lbxAllAgreementsAdmin";
             this.lbxAllAgreementsAdmin.Size = new System.Drawing.Size(307, 356);
@@ -789,7 +791,7 @@ namespace HousingSoftware
             // 
             this.lbAllAgreementsAdmin.AutoSize = true;
             this.lbAllAgreementsAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbAllAgreementsAdmin.Location = new System.Drawing.Point(143, 60);
+            this.lbAllAgreementsAdmin.Location = new System.Drawing.Point(142, 37);
             this.lbAllAgreementsAdmin.Name = "lbAllAgreementsAdmin";
             this.lbAllAgreementsAdmin.Size = new System.Drawing.Size(102, 17);
             this.lbAllAgreementsAdmin.TabIndex = 1;
@@ -814,7 +816,7 @@ namespace HousingSoftware
             this.btnSaveEditedRule.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSaveEditedRule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSaveEditedRule.Location = new System.Drawing.Point(480, 459);
-            this.btnSaveEditedRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveEditedRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveEditedRule.Name = "btnSaveEditedRule";
             this.btnSaveEditedRule.Size = new System.Drawing.Size(100, 28);
             this.btnSaveEditedRule.TabIndex = 9;
@@ -826,7 +828,7 @@ namespace HousingSoftware
             // editBox
             // 
             this.editBox.Location = new System.Drawing.Point(411, 337);
-            this.editBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editBox.Margin = new System.Windows.Forms.Padding(4);
             this.editBox.Multiline = true;
             this.editBox.Name = "editBox";
             this.editBox.Size = new System.Drawing.Size(225, 109);
@@ -910,7 +912,7 @@ namespace HousingSoftware
             this.btnDeleteRule.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDeleteRule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDeleteRule.Location = new System.Drawing.Point(198, 378);
-            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteRule.Name = "btnDeleteRule";
             this.btnDeleteRule.Size = new System.Drawing.Size(100, 28);
             this.btnDeleteRule.TabIndex = 6;
@@ -923,7 +925,7 @@ namespace HousingSoftware
             this.btnEditRule.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnEditRule.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEditRule.Location = new System.Drawing.Point(43, 378);
-            this.btnEditRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditRule.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditRule.Name = "btnEditRule";
             this.btnEditRule.Size = new System.Drawing.Size(100, 28);
             this.btnEditRule.TabIndex = 7;
@@ -950,9 +952,9 @@ namespace HousingSoftware
             this.gbxSearchComplaints.Controls.Add(this.tbxSearchComplaint);
             this.gbxSearchComplaints.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxSearchComplaints.Location = new System.Drawing.Point(483, 175);
-            this.gbxSearchComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchComplaints.Name = "gbxSearchComplaints";
-            this.gbxSearchComplaints.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchComplaints.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchComplaints.Size = new System.Drawing.Size(381, 169);
             this.gbxSearchComplaints.TabIndex = 8;
             this.gbxSearchComplaints.TabStop = false;
@@ -963,7 +965,7 @@ namespace HousingSoftware
             this.btnShowAllComplaints.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnShowAllComplaints.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnShowAllComplaints.Location = new System.Drawing.Point(81, 117);
-            this.btnShowAllComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowAllComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAllComplaints.Name = "btnShowAllComplaints";
             this.btnShowAllComplaints.Size = new System.Drawing.Size(207, 32);
             this.btnShowAllComplaints.TabIndex = 2;
@@ -976,7 +978,7 @@ namespace HousingSoftware
             this.btnSearchComplaint.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnSearchComplaint.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSearchComplaint.Location = new System.Drawing.Point(81, 79);
-            this.btnSearchComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchComplaint.Name = "btnSearchComplaint";
             this.btnSearchComplaint.Size = new System.Drawing.Size(207, 27);
             this.btnSearchComplaint.TabIndex = 1;
@@ -987,7 +989,7 @@ namespace HousingSoftware
             // tbxSearchComplaint
             // 
             this.tbxSearchComplaint.Location = new System.Drawing.Point(23, 44);
-            this.tbxSearchComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxSearchComplaint.Margin = new System.Windows.Forms.Padding(4);
             this.tbxSearchComplaint.Name = "tbxSearchComplaint";
             this.tbxSearchComplaint.Size = new System.Drawing.Size(324, 22);
             this.tbxSearchComplaint.TabIndex = 0;
@@ -1053,9 +1055,9 @@ namespace HousingSoftware
             this.gbxEditTenant.Controls.Add(this.tbxEditFNameTenant);
             this.gbxEditTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxEditTenant.Location = new System.Drawing.Point(461, 356);
-            this.gbxEditTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxEditTenant.Margin = new System.Windows.Forms.Padding(4);
             this.gbxEditTenant.Name = "gbxEditTenant";
-            this.gbxEditTenant.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxEditTenant.Padding = new System.Windows.Forms.Padding(4);
             this.gbxEditTenant.Size = new System.Drawing.Size(401, 165);
             this.gbxEditTenant.TabIndex = 14;
             this.gbxEditTenant.TabStop = false;
@@ -1115,9 +1117,9 @@ namespace HousingSoftware
             this.gbxSearchTenantEdit.Controls.Add(this.lbStudNumSearchTenantEdit);
             this.gbxSearchTenantEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbxSearchTenantEdit.Location = new System.Drawing.Point(461, 204);
-            this.gbxSearchTenantEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchTenantEdit.Margin = new System.Windows.Forms.Padding(4);
             this.gbxSearchTenantEdit.Name = "gbxSearchTenantEdit";
-            this.gbxSearchTenantEdit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxSearchTenantEdit.Padding = new System.Windows.Forms.Padding(4);
             this.gbxSearchTenantEdit.Size = new System.Drawing.Size(401, 128);
             this.gbxSearchTenantEdit.TabIndex = 2;
             this.gbxSearchTenantEdit.TabStop = false;
@@ -1288,6 +1290,15 @@ namespace HousingSoftware
             this.timerAdmin.Interval = 1000;
             this.timerAdmin.Tick += new System.EventHandler(this.timerAdmin_Tick);
             // 
+            // lblAgreementsInfoAdmin
+            // 
+            this.lblAgreementsInfoAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAgreementsInfoAdmin.Location = new System.Drawing.Point(54, 422);
+            this.lblAgreementsInfoAdmin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAgreementsInfoAdmin.Name = "lblAgreementsInfoAdmin";
+            this.lblAgreementsInfoAdmin.Size = new System.Drawing.Size(310, 96);
+            this.lblAgreementsInfoAdmin.TabIndex = 8;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1441,5 +1452,6 @@ namespace HousingSoftware
         private System.Windows.Forms.Label lbWelcomeMsgAdmin;
         private System.Windows.Forms.Button btnLogOutAdmin;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblAgreementsInfoAdmin;
     }
 }

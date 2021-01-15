@@ -30,6 +30,9 @@ namespace HousingSoftware
             this.admins = admins;
             this.indexCurrAdmin = indexCurrAdmin;
             currentAdmin = admins[indexCurrAdmin];
+
+            lblAgreementsInfoAdmin.Text = $"In order for agreements to be considred as approved by the tenants, at least half of all tenants should agree with it.\nCurrently there are {admins[indexCurrAdmin].Tenants.Count} tenants.";
+
         }
 
         // Calculate the number of notifications for unpaid gorceries
@@ -213,6 +216,9 @@ namespace HousingSoftware
             {
                 MessageBox.Show("Please fill all the textboxes!");
             }
+
+            lblAgreementsInfoAdmin.Text = $"In order for agreements to be considred as approved by the tenants, at least half of all tenants should agree with it.\nCurrently there are {admins[indexCurrAdmin].Tenants.Count} tenants.";
+
             tbxStudentNumRegister.Clear();
             tbxFirstNameRegister.Clear();
             tbxPasswordRegister.Clear();
@@ -248,6 +254,9 @@ namespace HousingSoftware
                 MessageBox.Show("Please fill the textbox!");
             }
             tbxStudentNumRemove.Clear();
+
+            lblAgreementsInfoAdmin.Text = $"In order for agreements to be considred as approved by the tenants, at least half of all tenants should agree with it.\nCurrently there are {admins[indexCurrAdmin].Tenants.Count} tenants.";
+
         }
 
         // Btn Show chosen tenant profile for edit
@@ -695,7 +704,7 @@ namespace HousingSoftware
 
             foreach (Agreements agreement in currentAdmin.Agreements)
             {
-                lbxAllAgreementsAdmin.Items.Add($"{Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                lbxAllAgreementsAdmin.Items.Add($"({agreement.GetAgreed().Count + agreement.GetDisagreed().Count} / {admins[indexCurrAdmin].Tenants.Count}){Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
         }
 
@@ -707,7 +716,7 @@ namespace HousingSoftware
             {
                 if (agreement.GetAgreement().Contains(searchText))
                 {
-                    lbxAllAgreementsAdmin.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                    lbxAllAgreementsAdmin.Items.Add($"({agreement.GetAgreed().Count + agreement.GetDisagreed().Count} / {admins[indexCurrAdmin].Tenants.Count}){Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
                 }
             }
         }

@@ -24,6 +24,8 @@ namespace HousingSoftware
             this.admins = admins;
             this.indexCurrAdmin = indexCurrAdmin;
             this.indexCurrTenant = indexCurrTenant;
+
+            lblAgreementsInfoTenant.Text = $"In order for agreements to be considred as approved by the tenants, at least half of all tenants should agree with it.\nCurrently there are {admins[indexCurrAdmin].Tenants.Count} tenants.";
         }
 
 
@@ -152,7 +154,7 @@ namespace HousingSoftware
 
             foreach (Agreements agreement in admins[indexCurrAdmin].Agreements)
             {
-                lbxAllAgreementsTenant.Items.Add($"{Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                lbxAllAgreementsTenant.Items.Add($"({agreement.GetAgreed().Count + agreement.GetDisagreed().Count} / {admins[indexCurrAdmin].Tenants.Count}){Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
             }
         }
 
@@ -165,7 +167,7 @@ namespace HousingSoftware
             {
                 if (agreement.GetAgreement().Contains(searchText))
                 {
-                    lbxAllAgreementsTenant.Items.Add($"{agreement.GetAgreementRatio()}% agreed: {Convert.ToString(agreement.GetAgreement())}");
+                    lbxAllAgreementsTenant.Items.Add($"({agreement.GetAgreed().Count + agreement.GetDisagreed().Count} / {admins[indexCurrAdmin].Tenants.Count}){Convert.ToInt32(agreement.GetAgreementRatio())}% agreed: {Convert.ToString(agreement.GetAgreement())}");
                 }
             }
         }
