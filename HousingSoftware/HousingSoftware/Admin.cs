@@ -9,7 +9,11 @@ namespace HousingSoftware
     public class Admin
     {
         private string username;
+        private string firstName;
+        private string lastName;
         private string password;
+
+        // Lists
         private List<Tenant> tenants = new List<Tenant>();
         private List<Grocery> allGroceries = new List<Grocery>();
         private List<string> complaints = new List<string>();
@@ -17,34 +21,45 @@ namespace HousingSoftware
         private List<Announcements> announcements = new List<Announcements>();
         private List<HouseRules> houseRules = new List<HouseRules>();
 
-        public Admin(string inputedUsername, string inputedPassword)
+        public Admin(string username, string password, string firstName, string lastName)
         {
-            username = inputedUsername;
-            password = inputedPassword;
+            this.username = username;
+            this.password = password;
+            this.firstName = firstName;
+            this.lastName = lastName;
         }
 
 
 
         //  USERNAME
-        public void SetUsername(string inputedUsername)
+        public string Username
         {
-            username = inputedUsername;
+            get { return this.username; }
+            set { this.username = value; }
         }
 
-        public string GetUsername()
+
+        // First name
+        public string FirstName
         {
-            return username;
+            set { this.firstName = value; }
+            get { return this.firstName; }
         }
+
+        // Last name
+        public string LastName
+        {
+            set { this.lastName = value; }
+            get { return this.lastName; }
+        }
+
 
         //  PASSWORD
-        public void SetPassword(string inputedPassword)
-        {
-            password = inputedPassword;
-        }
 
-        public string GetPassword()
+        public string Password
         {
-            return password;
+            get { return this.password; }
+            set { this.password = value; }
         }
 
         //  MANAGE TENANTS
@@ -63,25 +78,18 @@ namespace HousingSoftware
             tenants.RemoveAt(index);
         }
 
-        public void SetTenants(List<Tenant> inputedTenants)
+        public List<Tenant> Tenants
         {
-            tenants = inputedTenants;
-        }
-
-        public List<Tenant> GetTenants()
-        {
-            return tenants;
+            get { return this.tenants; }
+            set { this.tenants = value; }
         }
 
         //  MANAGE GROCERIES
-        public void SetAllGroceries(List<Grocery> groceries)
-        {
-            allGroceries = groceries;
-        }
 
-        public List<Grocery> GetAllGroceries()
+        public List<Grocery> Groceries
         {
-            return allGroceries;
+            get { return this.allGroceries; }
+            set { this.allGroceries = value; }
         }
 
         public void AddGrocery(Grocery grocery)
@@ -115,9 +123,10 @@ namespace HousingSoftware
             complaints.Remove(selectedComplaint);
         }
 
-        public List<string> GetComplaints()
+        public List<string> Complaints
         {
-            return complaints;
+            get { return this.complaints; }
+            set { this.complaints = value; }
         }
 
         // AGREEMENTS
@@ -126,17 +135,23 @@ namespace HousingSoftware
             agreements.Add(newAgreements);
         }
 
-        public List<Agreements> GetAgreements()
+        public List<Agreements> Agreements
         {
-            return agreements;
+            get { return this.agreements; }
+            set { this.agreements = value; }
         }
 
         // ANNOUNCEMENTS
-
         public void AddAnnouncement(Announcements announcement)
         {
             announcements.Add(announcement);
         }
+        public List<Announcements> Announcements
+        {
+            set { this.announcements = value; }
+            get { return this.announcements; }
+        }
+        
         // House Rules
         public void AddHouseRule(HouseRules HouseRule)
         {
@@ -145,6 +160,7 @@ namespace HousingSoftware
 
         public List<HouseRules> HouseRules
         {
+            set { this.houseRules = value; }
             get {return this.houseRules; }
         }
 

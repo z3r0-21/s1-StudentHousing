@@ -13,51 +13,40 @@ namespace HousingSoftware
         private string password;
         private List<Grocery> groceriesTenant = new List<Grocery>();
 
-        public void SetStudentNumber(int studNum)
+        public Tenant(int studNum, string fname, string inputedPassword)
         {
-            studentNumber = studNum;
+            this.studentNumber = studNum;
+            this.firstname = fname;
+            this.password = inputedPassword;
         }
 
-        public int GetStudentNumber()
+        // STUDENT NUMBER
+        public int StudentNumber
         {
-            return studentNumber;
+            set { this.studentNumber = value; }
+            get { return this.studentNumber; }
         }
 
-        public void SetFirstName(string fname)
+        // FIRST NAME
+        public string FirstName
         {
-            firstname = fname;
+            set { this.firstname = value; }
+            get { return this.firstname; }
         }
 
-        public string GetFirstName()
+
+        // PASSWORD
+        public string Password
         {
-            return firstname;
+            set { this.password = value; }
+            get { return this.password; }
         }
 
-        public void SetPassword(string inputedPassword)
+        // Groceries
+        public List<Grocery> GroceriesTenant
         {
-            password = inputedPassword;
-        }
-
-        public string GetPassword()
-        {
-            return password;
-        }
-
-        public void InitializeTenant(int studNum, string fname, string inputedPassword)
-        {
-            studentNumber = studNum;
-            firstname = fname;
-            password = inputedPassword;
-        }
-
-        public void SetGroceriesTenant(List<Grocery> groceries)
-        {
-            groceriesTenant = groceries;
-        }
-
-        public List<Grocery> GetGroceriesTenant()
-        {
-            return groceriesTenant;
+            set { this.groceriesTenant = value; }
+            get { return this.groceriesTenant; }
         }
 
         public void AddGrocery(Grocery grocery)
@@ -79,7 +68,5 @@ namespace HousingSoftware
         {
             groceriesTenant.Clear();
         }
-
-
     }
 }
