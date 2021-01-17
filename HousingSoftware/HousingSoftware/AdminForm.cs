@@ -92,6 +92,17 @@ namespace HousingSoftware
             // Refreshes the listbox containing all complaints
             RefreshComplaints();
 
+            // Refresh the listbox containing all house rules
+            refreshHouseRulesAdmin();
+
+            // Refresh the listbox containing all announcements
+            refreshAnnouncements();
+
+
+            // Refresh the listbox containing the recent groceries
+            showRecentGroceries();
+
+
             lbTimeAdmin.Text = DateTime.Now.ToString("HH:mm");
             lblDateAdmin.Text = DateTime.Now.ToString("dddd, MMMM dd");
 
@@ -114,6 +125,7 @@ namespace HousingSoftware
 
             // Show notifications for tenants with unpaid groceries
             showGroceriesNotifications();
+
         }
 
         private void WelcomeMessageAdmin()
