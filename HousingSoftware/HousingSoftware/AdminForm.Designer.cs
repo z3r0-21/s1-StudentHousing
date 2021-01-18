@@ -76,6 +76,7 @@ namespace HousingSoftware
             this.lbxAllAnnouncements = new System.Windows.Forms.ListBox();
             this.lbAllAnnouncements = new System.Windows.Forms.Label();
             this.tabAgreementsAdmin = new System.Windows.Forms.TabPage();
+            this.lblAgreementsInfoAdmin = new System.Windows.Forms.Label();
             this.gbxSearchAgreementAdmin = new System.Windows.Forms.GroupBox();
             this.btnShowAllAgreementsAdmin = new System.Windows.Forms.Button();
             this.btnSearchAgreementAdmin = new System.Windows.Forms.Button();
@@ -125,7 +126,6 @@ namespace HousingSoftware
             this.lbFirstNameRegister = new System.Windows.Forms.Label();
             this.lbStudentNumRegister = new System.Windows.Forms.Label();
             this.timerAdmin = new System.Windows.Forms.Timer(this.components);
-            this.lblAgreementsInfoAdmin = new System.Windows.Forms.Label();
             this.MenuAdmin.SuspendLayout();
             this.tabHomeAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -694,6 +694,7 @@ namespace HousingSoftware
             // 
             this.lbxAllAnnouncements.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbxAllAnnouncements.FormattingEnabled = true;
+            this.lbxAllAnnouncements.HorizontalScrollbar = true;
             this.lbxAllAnnouncements.ItemHeight = 16;
             this.lbxAllAnnouncements.Location = new System.Drawing.Point(32, 65);
             this.lbxAllAnnouncements.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
@@ -724,6 +725,15 @@ namespace HousingSoftware
             this.tabAgreementsAdmin.Size = new System.Drawing.Size(971, 532);
             this.tabAgreementsAdmin.TabIndex = 3;
             this.tabAgreementsAdmin.Text = "Agreements";
+            // 
+            // lblAgreementsInfoAdmin
+            // 
+            this.lblAgreementsInfoAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAgreementsInfoAdmin.Location = new System.Drawing.Point(54, 422);
+            this.lblAgreementsInfoAdmin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAgreementsInfoAdmin.Name = "lblAgreementsInfoAdmin";
+            this.lblAgreementsInfoAdmin.Size = new System.Drawing.Size(310, 96);
+            this.lblAgreementsInfoAdmin.TabIndex = 8;
             // 
             // gbxSearchAgreementAdmin
             // 
@@ -900,6 +910,7 @@ namespace HousingSoftware
             // lbxRulesAdmin
             // 
             this.lbxRulesAdmin.FormattingEnabled = true;
+            this.lbxRulesAdmin.HorizontalScrollbar = true;
             this.lbxRulesAdmin.ItemHeight = 16;
             this.lbxRulesAdmin.Location = new System.Drawing.Point(25, 47);
             this.lbxRulesAdmin.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
@@ -1289,15 +1300,6 @@ namespace HousingSoftware
             // 
             this.timerAdmin.Interval = 1000;
             this.timerAdmin.Tick += new System.EventHandler(this.timerAdmin_Tick);
-            // 
-            // lblAgreementsInfoAdmin
-            // 
-            this.lblAgreementsInfoAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAgreementsInfoAdmin.Location = new System.Drawing.Point(54, 422);
-            this.lblAgreementsInfoAdmin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblAgreementsInfoAdmin.Name = "lblAgreementsInfoAdmin";
-            this.lblAgreementsInfoAdmin.Size = new System.Drawing.Size(310, 96);
-            this.lblAgreementsInfoAdmin.TabIndex = 8;
             // 
             // AdminForm
             // 

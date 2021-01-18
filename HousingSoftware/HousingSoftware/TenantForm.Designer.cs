@@ -51,6 +51,7 @@
             this.btnSearchAgreementTenant = new System.Windows.Forms.Button();
             this.tbxSearchAgreementsTenant = new System.Windows.Forms.TextBox();
             this.gbxAllAgreements = new System.Windows.Forms.GroupBox();
+            this.lblAgreementsInfoTenant = new System.Windows.Forms.Label();
             this.btnDisagree = new System.Windows.Forms.Button();
             this.btnAgree = new System.Windows.Forms.Button();
             this.lbxAllAgreementsTenant = new System.Windows.Forms.ListBox();
@@ -68,7 +69,6 @@
             this.lbWriteComplaint = new System.Windows.Forms.Label();
             this.timerTenant = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.lblAgreementsInfoTenant = new System.Windows.Forms.Label();
             this.MenuTenant.SuspendLayout();
             this.tabHomeTenant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -218,6 +218,7 @@
             // lbxUnpaidGroceries
             // 
             this.lbxUnpaidGroceries.FormattingEnabled = true;
+            this.lbxUnpaidGroceries.HorizontalScrollbar = true;
             this.lbxUnpaidGroceries.ItemHeight = 17;
             this.lbxUnpaidGroceries.Location = new System.Drawing.Point(11, 34);
             this.lbxUnpaidGroceries.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
@@ -253,6 +254,7 @@
             // lbxUserAllAnnouncements
             // 
             this.lbxUserAllAnnouncements.FormattingEnabled = true;
+            this.lbxUserAllAnnouncements.HorizontalScrollbar = true;
             this.lbxUserAllAnnouncements.ItemHeight = 17;
             this.lbxUserAllAnnouncements.Location = new System.Drawing.Point(11, 60);
             this.lbxUserAllAnnouncements.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
@@ -347,6 +349,15 @@
             this.gbxAllAgreements.Size = new System.Drawing.Size(473, 537);
             this.gbxAllAgreements.TabIndex = 5;
             this.gbxAllAgreements.TabStop = false;
+            // 
+            // lblAgreementsInfoTenant
+            // 
+            this.lblAgreementsInfoTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAgreementsInfoTenant.Location = new System.Drawing.Point(10, 324);
+            this.lblAgreementsInfoTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAgreementsInfoTenant.Name = "lblAgreementsInfoTenant";
+            this.lblAgreementsInfoTenant.Size = new System.Drawing.Size(453, 83);
+            this.lblAgreementsInfoTenant.TabIndex = 8;
             // 
             // btnDisagree
             // 
@@ -470,6 +481,7 @@
             // lbxRulesTenant
             // 
             this.lbxRulesTenant.FormattingEnabled = true;
+            this.lbxRulesTenant.HorizontalScrollbar = true;
             this.lbxRulesTenant.ItemHeight = 17;
             this.lbxRulesTenant.Location = new System.Drawing.Point(23, 33);
             this.lbxRulesTenant.Margin = new System.Windows.Forms.Padding(5, 1, 5, 1);
@@ -531,15 +543,6 @@
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // lblAgreementsInfoTenant
-            // 
-            this.lblAgreementsInfoTenant.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblAgreementsInfoTenant.Location = new System.Drawing.Point(10, 324);
-            this.lblAgreementsInfoTenant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblAgreementsInfoTenant.Name = "lblAgreementsInfoTenant";
-            this.lblAgreementsInfoTenant.Size = new System.Drawing.Size(453, 83);
-            this.lblAgreementsInfoTenant.TabIndex = 8;
             // 
             // TenantForm
             // 
